@@ -1,0 +1,15 @@
+{
+  "name": "dailydollar-record-manager",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Local listing manager for selling a vinyl record collection across eBay and Facebook Marketplace",
+  "main": "server/server.js",
+  "scripts": {
+    "start": "node server/server.js"
+  },
+  "dependencies": {
+    "express": "^4.19.2",
+    "multer": "^2.0.1",
+    "sharp": "^0.35.3"
+  }
+}

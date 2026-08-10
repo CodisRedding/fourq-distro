@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Fourq Distro</title>
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <h1>Fourq Distro</h1>
+    <div id="stats" class="stats"></div>
+  </header>
+
+  <div class="toolbar">
+    <input id="search" type="text" placeholder="Search artist, title, label…">
+    <select id="tierFilter">
+      <option value="">All tiers</option>
+      <option value="Tier 1 - Individual (high value)">Tier 1 — high value</option>
+      <option value="Tier 1 - Individual (no comp, needs research)">Tier 1 — no comp</option>
+      <option value="Tier 2 - Lot">Tier 2 — artist lots</option>
+      <option value="Tier 3 - Bulk grab bag">Tier 3 — bulk</option>
+    </select>
+    <select id="ebayFilter">
+      <option value="">eBay: any status</option>
+      <option value="unlisted">Unlisted</option>
+      <option value="listed">Listed</option>
+      <option value="sold">Sold</option>
+    </select>
+    <select id="fbFilter">
+      <option value="">FB: any status</option>
+      <option value="unlisted">Unlisted</option>
+      <option value="listed">Listed</option>
+      <option value="sold">Sold</option>
+    </select>
+    <select id="discogsFilter">
+      <option value="">Discogs: any status</option>
+      <option value="unlisted">Unlisted</option>
+      <option value="listed">Listed</option>
+      <option value="sold">Sold</option>
+    </select>
+    <label class="hide-sold"><input id="hideSold" type="checkbox" checked> Hide sold</label>
+    <button id="addRecordBtn" class="primary">+ Add record</button>
+  </div>
+
+  <div class="table-wrap">
+    <table id="table">
+      <thead>
+        <tr>
+          <th>Artist</th>
+          <th>Title</th>
+          <th>Format</th>
+          <th>Year</th>
+          <th>Tier</th>
+          <th>Asking</th>
+          <th>eBay</th>
+          <th>FB</th>
+          <th>Discogs</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody id="tbody"></tbody>
+    </table>
+  </div>
+
+  <div id="overlay" class="overlay hidden">
+    <div id="panel" class="panel"></div>
+  </div>
+
+  <script src="fees.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
