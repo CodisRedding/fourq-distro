@@ -1,8 +1,8 @@
 {
-  "name": "dailydollar-record-manager",
+  "name": "fourq-distro",
   "version": "1.0.0",
   "private": true,
-  "description": "Local listing manager for selling a vinyl record collection across eBay and Facebook Marketplace",
+  "description": "Local listing manager for Fourq Distro — selling a vinyl record collection across eBay, Discogs, and Facebook Marketplace",
   "main": "server/server.js",
   "scripts": {
     "start": "node server/server.js"
