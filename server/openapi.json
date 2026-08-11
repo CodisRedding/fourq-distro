@@ -1,0 +1,515 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "Fourq Distro API",
+    "version": "1.0.0",
+    "description": "Local listing manager for selling a vinyl record collection across eBay, Discogs, and Facebook Marketplace."
+  },
+  "servers": [
+    { "url": "http://localhost:3000" }
+  ],
+  "tags": [
+    { "name": "Inventory", "description": "Create, read, update, delete, and filter records" },
+    { "name": "Pricing & Discogs", "description": "Price suggestions and Discogs marketplace integration" },
+    { "name": "Listing", "description": "Generated listing text for eBay / Facebook" },
+    { "name": "Photos", "description": "Upload, delete, and reorder record photos" },
+    { "name": "eBay", "description": "eBay OAuth setup and publishing" }
+  ],
+  "paths": {
+    "/api/inventory": {
+      "get": {
+        "tags": ["Inventory"],
+        "summary": "List / filter records",
+        "parameters": [
+          { "name": "tier", "in": "query", "schema": { "type": "string" }, "description": "Prefix-matches the tier field" },
+          { "name": "ebay_status", "in": "query", "schema": { "type": "string", "enum": ["unlisted", "listed"] } },
+          { "name": "fb_status", "in": "query", "schema": { "type": "string", "enum": ["unlisted", "listed"] } },
+          { "name": "discogs_status", "in": "query", "schema": { "type": "string", "enum": ["unlisted", "listed"] } },
+          { "name": "search", "in": "query", "schema": { "type": "string" }, "description": "Matches artist, title, or label" },
+          { "name": "sold", "in": "query", "schema": { "type": "string", "enum": ["true", "false"] } }
+        ],
+        "responses": {
+          "200": {
+            "description": "Matching records",
+            "content": { "application/json": { "schema": { "type": "array", "items": { "$ref": "#/components/schemas/Record" } } } }
+          }
+        }
+      },
+      "post": {
+        "tags": ["Inventory"],
+        "summary": "Create a blank record",
+        "description": "Used by the photo-identification workflow — everything gets filled in after uploading photos.",
+        "responses": {
+          "201": {
+            "description": "The newly-created blank record",
+            "content": { "application/json": { "schema": { "$ref": "#/components/schemas/Record" } } }
+          }
+        }
+      }
+    },
+    "/api/inventory/{id}": {
+      "get": {
+        "tags": ["Inventory"],
+        "summary": "Get one record",
+        "parameters": [{ "$ref": "#/components/parameters/RecordId" }],
+        "responses": {
+          "200": { "description": "The record", "content": { "application/json": { "schema": { "$ref": "#/components/schemas/Record" } } } },
+          "404": { "$ref": "#/components/responses/NotFound" }
+        }
+      },
+      "patch": {
+        "tags": ["Inventory"],
+        "summary": "Update a record",
+        "description": "Only a fixed allow-list of fields can be patched: artist, title, format, year, country, label, asking_price, condition_media, condition_sleeve, matrix_number, sealed, notes, listing_extras, status, sold, discogs_sold_stats.",
+        "parameters": [{ "$ref": "#/components/parameters/RecordId" }],
+        "requestBody": {
+          "content": { "application/json": { "schema": { "$ref": "#/components/schemas/RecordPatch" } } }
+        },
+        "responses": {
+          "200": { "description": "The updated record", "content": { "application/json": { "schema": { "$ref": "#/components/schemas/Record" } } } },
+          "404": { "$ref": "#/components/responses/NotFound" }
+        }
+      },
+      "delete": {
+        "tags": ["Inventory"],
+        "summary": "Delete a record",
+        "parameters": [{ "$ref": "#/components/parameters/RecordId" }],
+        "responses": {
+          "200": { "description": "Deleted", "content": { "application/json": { "schema": { "type": "object", "properties": { "ok": { "type": "boolean" } } } } } },
+          "404": { "$ref": "#/components/responses/NotFound" }
+        }
+      }
+    },
+    "/api/stats": {
+      "get": {
+        "tags": ["Inventory"],
+        "summary": "Inventory-wide stats",
+        "description": "Totals, tier breakdown, and how many are listed per marketplace.",
+        "responses": {
+          "200": {
+            "description": "Stats",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "total": { "type": "integer" },
+                    "sold": { "type": "integer" },
+                    "byTier": { "type": "object", "additionalProperties": { "type": "integer" } },
+                    "ebayListed": { "type": "integer" },
+                    "fbListed": { "type": "integer" },
+                    "discogsListed": { "type": "integer" },
+                    "ebayConfigured": { "type": "boolean" },
+                    "discogsConfigured": { "type": "boolean" }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/grades": {
+      "get": {
+        "tags": ["Inventory"],
+        "summary": "Standard Goldmine/Discogs condition grades",
+        "responses": {
+          "200": {
+            "description": "Media and sleeve grade options",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "media": { "type": "array", "items": { "type": "string" }, "example": ["M", "NM", "VG+", "VG", "G+", "G", "F", "P"] },
+                    "sleeve": { "type": "array", "items": { "type": "string" }, "example": ["M", "NM", "VG+", "VG", "G+", "G", "F", "P", "Generic", "No Cover", "Not Graded"] }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/inventory/{id}/price-suggestion": {
+      "get": {
+        "tags": ["Pricing & Discogs"],
+        "summary": "App's own suggested price for this record",
+        "description": "Grade-based, computed from a previously-looked-up discogs_price_by_grade — not a live call.",
+        "parameters": [{ "$ref": "#/components/parameters/RecordId" }],
+        "responses": {
+          "200": {
+            "description": "Suggestion",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "suggested": { "type": ["number", "null"] },
+                    "reason": { "type": "string" },
+                    "demand": { "type": ["string", "null"] }
+                  }
+                }
+              }
+            }
+          },
+          "404": { "$ref": "#/components/responses/NotFound" }
+        }
+      }
+    },
+    "/api/inventory/{id}/discogs-lookup": {
+      "post": {
+        "tags": ["Pricing & Discogs"],
+        "summary": "Find/refresh this record's Discogs match",
+        "description": "Searches Discogs by artist/title if no release is matched yet (or reuses discogs_release_id if already set), then fetches price-by-grade and community stats. Re-sorts the tier if it's still in a provisional state.",
+        "parameters": [{ "$ref": "#/components/parameters/RecordId" }],
+        "responses": {
+          "200": { "description": "The updated record", "content": { "application/json": { "schema": { "$ref": "#/components/schemas/Record" } } } },
+          "404": { "description": "No matching release found on Discogs, or record not found" },
+          "400": { "description": "Discogs is not configured (missing DISCOGS_TOKEN)" }
+        }
+      }
+    },
+    "/api/inventory/{id}/publish-discogs": {
+      "post": {
+        "tags": ["Pricing & Discogs"],
+        "summary": "Publish a live Discogs marketplace listing",
+        "parameters": [{ "$ref": "#/components/parameters/RecordId" }],
+        "responses": {
+          "200": { "description": "The updated record", "content": { "application/json": { "schema": { "$ref": "#/components/schemas/Record" } } } },
+          "400": { "description": "Not configured, no matching release, missing condition, or missing price" },
+          "404": { "$ref": "#/components/responses/NotFound" }
+        }
+      }
+    },
+    "/api/inventory/{id}/unlist-discogs": {
+      "post": {
+        "tags": ["Pricing & Discogs"],
+        "summary": "Remove the live Discogs listing",
+        "parameters": [{ "$ref": "#/components/parameters/RecordId" }],
+        "responses": {
+          "200": { "description": "The updated record", "content": { "application/json": { "schema": { "$ref": "#/components/schemas/Record" } } } },
+          "400": { "description": "This record has no active Discogs listing, or Discogs is not configured" },
+          "404": { "$ref": "#/components/responses/NotFound" }
+        }
+      }
+    },
+    "/api/inventory/{id}/listing": {
+      "get": {
+        "tags": ["Listing"],
+        "summary": "Generate eBay / Facebook listing text",
+        "parameters": [{ "$ref": "#/components/parameters/RecordId" }],
+        "responses": {
+          "200": {
+            "description": "Generated listing text",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "coreFacts": { "type": "string" },
+                    "ebayTitle": { "type": "string" },
+                    "ebayWrapper": { "type": "string" },
+                    "ebayDescription": { "type": "string" },
+                    "fbTitle": { "type": "string" },
+                    "fbWrapper": { "type": "string" },
+                    "fbDescription": { "type": "string" }
+                  }
+                }
+              }
+            }
+          },
+          "404": { "$ref": "#/components/responses/NotFound" }
+        }
+      }
+    },
+    "/api/inventory/{id}/photos": {
+      "post": {
+        "tags": ["Photos"],
+        "summary": "Upload photos",
+        "description": "Multipart upload, field name `photos`, up to 10 files per request, 15MB each, images only.",
+        "parameters": [{ "$ref": "#/components/parameters/RecordId" }],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "photos": { "type": "array", "items": { "type": "string", "format": "binary" } }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": { "description": "The updated record with new photo URLs appended", "content": { "application/json": { "schema": { "$ref": "#/components/schemas/Record" } } } },
+          "404": { "$ref": "#/components/responses/NotFound" }
+        }
+      },
+      "delete": {
+        "tags": ["Photos"],
+        "summary": "Remove one photo",
+        "parameters": [{ "$ref": "#/components/parameters/RecordId" }],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": { "type": "object", "properties": { "url": { "type": "string", "example": "/photos/<record-id>/162...-front.jpg" } } }
+            }
+          }
+        },
+        "responses": {
+          "200": { "description": "The updated record", "content": { "application/json": { "schema": { "$ref": "#/components/schemas/Record" } } } },
+          "404": { "$ref": "#/components/responses/NotFound" }
+        }
+      }
+    },
+    "/api/inventory/{id}/photos/reorder": {
+      "post": {
+        "tags": ["Photos"],
+        "summary": "Reorder photos",
+        "description": "The first photo becomes the primary thumbnail on eBay and most marketplaces. Body must be a permutation of the record's existing photo URLs.",
+        "parameters": [{ "$ref": "#/components/parameters/RecordId" }],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": { "type": "object", "properties": { "photos": { "type": "array", "items": { "type": "string" } } } }
+            }
+          }
+        },
+        "responses": {
+          "200": { "description": "The updated record", "content": { "application/json": { "schema": { "$ref": "#/components/schemas/Record" } } } },
+          "400": { "description": "New order must contain exactly the same photos as before" },
+          "404": { "$ref": "#/components/responses/NotFound" }
+        }
+      }
+    },
+    "/photos/{recordId}/{filename}": {
+      "get": {
+        "tags": ["Photos"],
+        "summary": "Fetch a stored photo",
+        "description": "Static file serving straight from data/photos.",
+        "parameters": [
+          { "name": "recordId", "in": "path", "required": true, "schema": { "type": "string" } },
+          { "name": "filename", "in": "path", "required": true, "schema": { "type": "string" } }
+        ],
+        "responses": { "200": { "description": "The image file" }, "404": { "description": "Not found" } }
+      }
+    },
+    "/api/ebay/status": {
+      "get": {
+        "tags": ["eBay"],
+        "summary": "Whether eBay credentials are configured",
+        "responses": {
+          "200": { "description": "Status", "content": { "application/json": { "schema": { "type": "object", "properties": { "configured": { "type": "boolean" } } } } } }
+        }
+      }
+    },
+    "/api/ebay/authorize-url": {
+      "get": {
+        "tags": ["eBay"],
+        "summary": "Build the eBay OAuth consent URL",
+        "responses": {
+          "200": { "description": "URL", "content": { "application/json": { "schema": { "type": "object", "properties": { "url": { "type": "string" } } } } } }
+        }
+      }
+    },
+    "/ebay/callback": {
+      "get": {
+        "tags": ["eBay"],
+        "summary": "OAuth redirect target",
+        "description": "eBay redirects here after consent. Exchanges the one-time code for a refresh token and shows it in an HTML page to paste into .env — never stored server-side.",
+        "parameters": [
+          { "name": "code", "in": "query", "schema": { "type": "string" } },
+          { "name": "error", "in": "query", "schema": { "type": "string" } }
+        ],
+        "responses": { "200": { "description": "HTML page with the refresh token, or an error message" } }
+      }
+    },
+    "/api/ebay/setup-location": {
+      "post": {
+        "tags": ["eBay"],
+        "summary": "Create an eBay inventory location",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": ["locationKey", "addressLine1", "city", "postalCode"],
+                "properties": {
+                  "locationKey": { "type": "string" },
+                  "addressLine1": { "type": "string" },
+                  "city": { "type": "string" },
+                  "stateOrProvince": { "type": "string" },
+                  "postalCode": { "type": "string" },
+                  "country": { "type": "string", "default": "US" }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": { "description": "Created", "content": { "application/json": { "schema": { "type": "object", "properties": { "ok": { "type": "boolean" }, "locationKey": { "type": "string" } } } } } },
+          "400": { "description": "Missing required fields" }
+        }
+      }
+    },
+    "/api/ebay/business-policies": {
+      "get": {
+        "tags": ["eBay"],
+        "summary": "Fetch fulfillment / payment / return policy IDs from Seller Hub",
+        "responses": {
+          "200": {
+            "description": "Policy IDs",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "fulfillmentPolicyId": { "type": "string" },
+                    "fulfillmentPolicyName": { "type": "string" },
+                    "paymentPolicyId": { "type": "string" },
+                    "paymentPolicyName": { "type": "string" },
+                    "returnPolicyId": { "type": "string" },
+                    "returnPolicyName": { "type": "string" }
+                  }
+                }
+              }
+            }
+          },
+          "500": { "description": "Missing one or more Business Policies in Seller Hub" }
+        }
+      }
+    },
+    "/api/inventory/{id}/publish-ebay": {
+      "post": {
+        "tags": ["eBay"],
+        "summary": "Publish a live eBay listing",
+        "description": "Hosts photos (via ImgBB), generates listing text, then creates/updates the eBay inventory item and offer and publishes it.",
+        "parameters": [{ "$ref": "#/components/parameters/RecordId" }],
+        "responses": {
+          "200": { "description": "The updated record", "content": { "application/json": { "schema": { "$ref": "#/components/schemas/Record" } } } },
+          "400": { "description": "eBay not configured, ImgBB not configured, or no photos" },
+          "404": { "$ref": "#/components/responses/NotFound" }
+        }
+      }
+    }
+  },
+  "components": {
+    "parameters": {
+      "RecordId": {
+        "name": "id",
+        "in": "path",
+        "required": true,
+        "schema": { "type": "string" },
+        "description": "Record ID — a slug derived from artist/title/label for imported records, or a UUID for ones created via the photo-ID workflow."
+      }
+    },
+    "responses": {
+      "NotFound": {
+        "description": "Record not found",
+        "content": { "application/json": { "schema": { "type": "object", "properties": { "error": { "type": "string", "example": "Not found" } } } } }
+      }
+    },
+    "schemas": {
+      "Record": {
+        "type": "object",
+        "properties": {
+          "id": { "type": "string" },
+          "artist": { "type": "string" },
+          "title": { "type": "string" },
+          "year": { "type": "string" },
+          "country": { "type": "string" },
+          "format": { "type": "string" },
+          "label": { "type": "string" },
+          "tier": { "type": "string", "example": "Tier 1 - Individual (high value)" },
+          "discogs_low_price": { "type": "string" },
+          "copies_for_sale_on_discogs": { "type": "string" },
+          "asking_price": { "type": "string" },
+          "condition_media": { "type": "string", "example": "NM" },
+          "condition_sleeve": { "type": "string", "example": "NM" },
+          "matrix_number": { "type": "string" },
+          "sealed": { "type": "boolean" },
+          "notes": { "type": "string" },
+          "listing_extras": { "type": "string" },
+          "photos": { "type": "array", "items": { "type": "string" } },
+          "status": {
+            "type": "object",
+            "properties": {
+              "ebay": { "type": "string", "enum": ["unlisted", "listed"] },
+              "fb": { "type": "string", "enum": ["unlisted", "listed"] },
+              "discogs": { "type": "string", "enum": ["unlisted", "listed"] }
+            }
+          },
+          "ebay_listing_id": { "type": ["string", "null"] },
+          "ebay_sku": { "type": ["string", "null"] },
+          "discogs_release_id": { "type": ["integer", "null"] },
+          "discogs_price_by_grade": {
+            "type": ["object", "null"],
+            "additionalProperties": {
+              "type": "object",
+              "properties": { "currency": { "type": "string" }, "value": { "type": "number" } }
+            }
+          },
+          "discogs_community": {
+            "type": ["object", "null"],
+            "properties": {
+              "have": { "type": "integer" },
+              "want": { "type": "integer" },
+              "ratingAverage": { "type": "number" },
+              "ratingCount": { "type": "integer" }
+            }
+          },
+          "discogs_sold_stats": {
+            "type": "object",
+            "properties": {
+              "low": { "type": "string" },
+              "median": { "type": "string" },
+              "high": { "type": "string" },
+              "lastSoldDate": { "type": "string" }
+            }
+          },
+          "discogs_listing_id": { "type": ["string", "null"] },
+          "photo_hosted_urls": { "type": "object", "additionalProperties": { "type": "string" } },
+          "sold": { "type": "boolean" }
+        }
+      },
+      "RecordPatch": {
+        "type": "object",
+        "description": "Any subset of these fields — anything else is silently ignored.",
+        "properties": {
+          "artist": { "type": "string" },
+          "title": { "type": "string" },
+          "format": { "type": "string" },
+          "year": { "type": "string" },
+          "country": { "type": "string" },
+          "label": { "type": "string" },
+          "asking_price": { "type": "string" },
+          "condition_media": { "type": "string" },
+          "condition_sleeve": { "type": "string" },
+          "matrix_number": { "type": "string" },
+          "sealed": { "type": "boolean" },
+          "notes": { "type": "string" },
+          "listing_extras": { "type": "string" },
+          "status": {
+            "type": "object",
+            "properties": {
+              "ebay": { "type": "string", "enum": ["unlisted", "listed"] },
+              "fb": { "type": "string", "enum": ["unlisted", "listed"] },
+              "discogs": { "type": "string", "enum": ["unlisted", "listed"] }
+            }
+          },
+          "sold": { "type": "boolean" },
+          "discogs_sold_stats": {
+            "type": "object",
+            "properties": {
+              "low": { "type": "string" },
+              "median": { "type": "string" },
+              "high": { "type": "string" },
+              "lastSoldDate": { "type": "string" }
+            }
+          }
+        }
+      }
+    }
+  }
+}

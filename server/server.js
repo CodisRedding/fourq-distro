@@ -28,6 +28,16 @@ app.use(express.json());
 app.use(express.static(path.join(__dirname, '..', 'public')));
 app.use('/photos', express.static(PHOTOS_DIR));
 
+// ---- API docs ----
+app.get('/api/openapi.json', (req, res) => {
+  res.sendFile(path.join(__dirname, 'openapi.json'));
+});
+// @scalar/express-api-reference is ESM-only; the rest of this app is CommonJS,
+// so it's loaded via dynamic import rather than require().
+import('@scalar/express-api-reference').then(({ apiReference }) => {
+  app.get('/docs', apiReference({ url: '/api/openapi.json', pageTitle: 'Fourq Distro API' }));
+});
+
 // ---- inventory list / filter ----
 app.get('/api/inventory', (req, res) => {
   let records = store.readAll();
