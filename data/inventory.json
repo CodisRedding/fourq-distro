@@ -109,7 +109,7 @@
   },
   {
     "id": "sweet-tea-2-wendy-rene__after-laughter-comes-tears__light-in-the-attic-l",
-    "artist": "Sweet Tea (2) / Wendy Rene",
+    "artist": "Sweet Tea / Wendy Rene",
     "title": "After Laughter (Comes Tears)",
     "year": "2012",
     "country": "US",
@@ -118,7 +118,7 @@
     "tier": "Tier 1 - Individual (high value)",
     "discogs_low_price": "130.00",
     "copies_for_sale_on_discogs": "3",
-    "asking_price": "90.00",
+    "asking_price": "79",
     "condition_media": "NM",
     "condition_sleeve": "NM",
     "notes": "Purple vinyl, hype sticker still attached to poly sleeve. Vinyl surface looks clean/glossy in photos with no visible scuffs; sleeve has no visible creases or wear. Grading estimated from photos only — worth a quick physical check before publishing.",
@@ -1291,7 +1291,7 @@
     "tier": "Tier 1 - Individual (high value)",
     "discogs_low_price": "49.30",
     "copies_for_sale_on_discogs": "2",
-    "asking_price": "60",
+    "asking_price": "39",
     "condition_media": "M",
     "condition_sleeve": "M",
     "notes": "",
@@ -5021,33 +5021,86 @@
     "country": "US",
     "format": "Vinyl, 7\", 45 RPM, EP, Reissue, Repress, Unofficial Release",
     "label": "Dangerhouse (2) – SFD-400",
-    "tier": "Tier 1 - Individual (no comp, needs research)",
+    "tier": "Tier 3 - Bulk grab bag",
     "discogs_low_price": "",
     "copies_for_sale_on_discogs": "",
-    "asking_price": "",
-    "condition_media": "",
-    "condition_sleeve": "",
+    "asking_price": "22.47",
+    "condition_media": "NM",
+    "condition_sleeve": "VG+",
     "notes": "",
-    "photos": [],
+    "photos": [
+      "/photos/avengers__we-are-the-one__dangerhouse-2-sfd-40/1786646816191-IMG_E1114.jpg",
+      "/photos/avengers__we-are-the-one__dangerhouse-2-sfd-40/1786646816201-IMG_E1115.jpg",
+      "/photos/avengers__we-are-the-one__dangerhouse-2-sfd-40/1786646816208-IMG_E1116.jpg",
+      "/photos/avengers__we-are-the-one__dangerhouse-2-sfd-40/1786646816216-IMG_E1117.jpg",
+      "/photos/avengers__we-are-the-one__dangerhouse-2-sfd-40/1786646816232-IMG_E1118.jpg",
+      "/photos/avengers__we-are-the-one__dangerhouse-2-sfd-40/1786646816236-IMG_E1119.jpg"
+    ],
     "status": {
-      "ebay": "unlisted",
+      "ebay": "listed",
       "fb": "unlisted",
       "discogs": "unlisted"
     },
-    "ebay_listing_id": null,
+    "ebay_listing_id": "407142270687",
     "sold": false,
-    "discogs_release_id": null,
-    "discogs_price_by_grade": null,
-    "discogs_community": null,
+    "discogs_release_id": 9526375,
+    "discogs_price_by_grade": {
+      "Mint (M)": {
+        "currency": "USD",
+        "value": 25.11494252873563
+      },
+      "Near Mint (NM or M-)": {
+        "currency": "USD",
+        "value": 22.47126436781609
+      },
+      "Very Good Plus (VG+)": {
+        "currency": "USD",
+        "value": 17.18390804597701
+      },
+      "Very Good (VG)": {
+        "currency": "USD",
+        "value": 11.89655172413793
+      },
+      "Good Plus (G+)": {
+        "currency": "USD",
+        "value": 6.60919540229885
+      },
+      "Good (G)": {
+        "currency": "USD",
+        "value": 3.9655172413793096
+      },
+      "Fair (F)": {
+        "currency": "USD",
+        "value": 2.6436781609195403
+      },
+      "Poor (P)": {
+        "currency": "USD",
+        "value": 1.3218390804597702
+      }
+    },
+    "discogs_community": {
+      "have": 184,
+      "want": 144,
+      "ratingAverage": 4.71,
+      "ratingCount": 14
+    },
     "discogs_sold_stats": {
-      "low": "",
-      "median": "",
-      "high": "",
-      "lastSoldDate": ""
+      "low": "6.54",
+      "median": "12.08",
+      "high": "28.74",
+      "lastSoldDate": "Jun 25, 2026"
     },
     "discogs_listing_id": null,
     "listing_extras": "",
-    "photo_hosted_urls": {}
+    "photo_hosted_urls": {
+      "/photos/avengers__we-are-the-one__dangerhouse-2-sfd-40/1786646816191-IMG_E1114.jpg": "https://i.ibb.co/JwVSpcnz/1786646816191-IMG-E1114.jpg",
+      "/photos/avengers__we-are-the-one__dangerhouse-2-sfd-40/1786646816201-IMG_E1115.jpg": "https://i.ibb.co/PZf0smdr/1786646816201-IMG-E1115.jpg",
+      "/photos/avengers__we-are-the-one__dangerhouse-2-sfd-40/1786646816208-IMG_E1116.jpg": "https://i.ibb.co/kgVMh3M0/1786646816208-IMG-E1116.jpg",
+      "/photos/avengers__we-are-the-one__dangerhouse-2-sfd-40/1786646816216-IMG_E1117.jpg": "https://i.ibb.co/KdQ15g0/1786646816216-IMG-E1117.jpg",
+      "/photos/avengers__we-are-the-one__dangerhouse-2-sfd-40/1786646816232-IMG_E1118.jpg": "https://i.ibb.co/3mr8B5zy/1786646816232-IMG-E1118.jpg",
+      "/photos/avengers__we-are-the-one__dangerhouse-2-sfd-40/1786646816236-IMG_E1119.jpg": "https://i.ibb.co/NdVt5Vdn/1786646816236-IMG-E1119.jpg"
+    },
+    "ebay_sku": "avengerswearetheonedangerhouse2sfd40"
   },
   {
     "id": "crowbar-4__hippie-punks__skin-head-records-2-",
@@ -7268,20 +7321,64 @@
     "discogs_low_price": "9.97",
     "copies_for_sale_on_discogs": "3",
     "asking_price": "9.97",
-    "condition_media": "",
-    "condition_sleeve": "",
+    "condition_media": "NM",
+    "condition_sleeve": "NM",
     "notes": "",
-    "photos": [],
+    "photos": [
+      "/photos/sheer-terror__pall-in-the-family__reaper-records-2-rr8/1786391918151-attach_3_yellow_front.png",
+      "/photos/sheer-terror__pall-in-the-family__reaper-records-2-rr8/1786392102819-vinyl_yellow.jpg",
+      "/photos/sheer-terror__pall-in-the-family__reaper-records-2-rr8/1786390232393-front_cover.jpg",
+      "/photos/sheer-terror__pall-in-the-family__reaper-records-2-rr8/1786390232398-IMG_0983.jpg",
+      "/photos/sheer-terror__pall-in-the-family__reaper-records-2-rr8/1786391918153-attach_4_back_cover.png"
+    ],
     "status": {
-      "ebay": "unlisted",
+      "ebay": "listed",
       "fb": "unlisted",
       "discogs": "unlisted"
     },
-    "ebay_listing_id": null,
+    "ebay_listing_id": "407134633807",
     "sold": false,
-    "discogs_release_id": null,
-    "discogs_price_by_grade": null,
-    "discogs_community": null,
+    "discogs_release_id": 12415573,
+    "discogs_price_by_grade": {
+      "Mint (M)": {
+        "currency": "USD",
+        "value": 14.195402298850574
+      },
+      "Near Mint (NM or M-)": {
+        "currency": "USD",
+        "value": 12.701149425287356
+      },
+      "Very Good Plus (VG+)": {
+        "currency": "USD",
+        "value": 9.71264367816092
+      },
+      "Very Good (VG)": {
+        "currency": "USD",
+        "value": 6.724137931034483
+      },
+      "Good Plus (G+)": {
+        "currency": "USD",
+        "value": 3.735632183908046
+      },
+      "Good (G)": {
+        "currency": "USD",
+        "value": 2.2413793103448274
+      },
+      "Fair (F)": {
+        "currency": "USD",
+        "value": 1.4942528735632186
+      },
+      "Poor (P)": {
+        "currency": "USD",
+        "value": 0.7471264367816093
+      }
+    },
+    "discogs_community": {
+      "have": 219,
+      "want": 26,
+      "ratingAverage": 4.63,
+      "ratingCount": 8
+    },
     "discogs_sold_stats": {
       "low": "",
       "median": "",
@@ -7290,7 +7387,16 @@
     },
     "discogs_listing_id": null,
     "listing_extras": "",
-    "photo_hosted_urls": {}
+    "photo_hosted_urls": {
+      "/photos/sheer-terror__pall-in-the-family__reaper-records-2-rr8/1786391918151-attach_3_yellow_front.png": "https://i.ibb.co/dsGcb3z1/1786391918151-attach-3-yellow-front.jpg",
+      "/photos/sheer-terror__pall-in-the-family__reaper-records-2-rr8/1786392102819-vinyl_yellow.jpg": "https://i.ibb.co/kVy0wkQN/1786392102819-vinyl-yellow.jpg",
+      "/photos/sheer-terror__pall-in-the-family__reaper-records-2-rr8/1786390232393-front_cover.jpg": "https://i.ibb.co/4gwcVBmK/1786390232393-front-cover.jpg",
+      "/photos/sheer-terror__pall-in-the-family__reaper-records-2-rr8/1786390232398-IMG_0983.jpg": "https://i.ibb.co/YThMZH9F/1786390232398-IMG-0983.jpg",
+      "/photos/sheer-terror__pall-in-the-family__reaper-records-2-rr8/1786391918153-attach_4_back_cover.png": "https://i.ibb.co/5Whrzvrq/1786391918153-attach-4-back-cover.jpg"
+    },
+    "sealed": false,
+    "matrix_number": "",
+    "ebay_sku": "sheerterrorpallinthefamilyreaperrecords2rr8"
   },
   {
     "id": "sheer-terror__pall-in-the-family__reaper-records-2-rr8__2",
@@ -7304,20 +7410,64 @@
     "discogs_low_price": "8.00",
     "copies_for_sale_on_discogs": "7",
     "asking_price": "8.00",
-    "condition_media": "",
-    "condition_sleeve": "",
+    "condition_media": "NM",
+    "condition_sleeve": "NM",
     "notes": "",
-    "photos": [],
+    "photos": [
+      "/photos/sheer-terror__pall-in-the-family__reaper-records-2-rr8__2/1786391918172-attach_1_green_front.png",
+      "/photos/sheer-terror__pall-in-the-family__reaper-records-2-rr8__2/1786392102844-vinyl_green.jpg",
+      "/photos/sheer-terror__pall-in-the-family__reaper-records-2-rr8__2/1786390232437-front_cover.jpg",
+      "/photos/sheer-terror__pall-in-the-family__reaper-records-2-rr8__2/1786390232441-IMG_0983.jpg",
+      "/photos/sheer-terror__pall-in-the-family__reaper-records-2-rr8__2/1786391918173-attach_4_back_cover.png"
+    ],
     "status": {
-      "ebay": "unlisted",
+      "ebay": "listed",
       "fb": "unlisted",
       "discogs": "unlisted"
     },
-    "ebay_listing_id": null,
+    "ebay_listing_id": "407134631870",
     "sold": false,
-    "discogs_release_id": null,
-    "discogs_price_by_grade": null,
-    "discogs_community": null,
+    "discogs_release_id": 12415573,
+    "discogs_price_by_grade": {
+      "Mint (M)": {
+        "currency": "USD",
+        "value": 14.195402298850574
+      },
+      "Near Mint (NM or M-)": {
+        "currency": "USD",
+        "value": 12.701149425287356
+      },
+      "Very Good Plus (VG+)": {
+        "currency": "USD",
+        "value": 9.71264367816092
+      },
+      "Very Good (VG)": {
+        "currency": "USD",
+        "value": 6.724137931034483
+      },
+      "Good Plus (G+)": {
+        "currency": "USD",
+        "value": 3.735632183908046
+      },
+      "Good (G)": {
+        "currency": "USD",
+        "value": 2.2413793103448274
+      },
+      "Fair (F)": {
+        "currency": "USD",
+        "value": 1.4942528735632186
+      },
+      "Poor (P)": {
+        "currency": "USD",
+        "value": 0.7471264367816093
+      }
+    },
+    "discogs_community": {
+      "have": 219,
+      "want": 26,
+      "ratingAverage": 4.63,
+      "ratingCount": 8
+    },
     "discogs_sold_stats": {
       "low": "",
       "median": "",
@@ -7326,7 +7476,16 @@
     },
     "discogs_listing_id": null,
     "listing_extras": "",
-    "photo_hosted_urls": {}
+    "photo_hosted_urls": {
+      "/photos/sheer-terror__pall-in-the-family__reaper-records-2-rr8__2/1786391918172-attach_1_green_front.png": "https://i.ibb.co/Lds35qPb/1786391918172-attach-1-green-front.jpg",
+      "/photos/sheer-terror__pall-in-the-family__reaper-records-2-rr8__2/1786392102844-vinyl_green.jpg": "https://i.ibb.co/vCXJDKvx/1786392102844-vinyl-green.jpg",
+      "/photos/sheer-terror__pall-in-the-family__reaper-records-2-rr8__2/1786390232437-front_cover.jpg": "https://i.ibb.co/4gwcVBmK/1786390232393-front-cover.jpg",
+      "/photos/sheer-terror__pall-in-the-family__reaper-records-2-rr8__2/1786390232441-IMG_0983.jpg": "https://i.ibb.co/YThMZH9F/1786390232398-IMG-0983.jpg",
+      "/photos/sheer-terror__pall-in-the-family__reaper-records-2-rr8__2/1786391918173-attach_4_back_cover.png": "https://i.ibb.co/5Whrzvrq/1786391918153-attach-4-back-cover.jpg"
+    },
+    "sealed": false,
+    "matrix_number": "",
+    "ebay_sku": "sheerterrorpallinthefamilyreaperrecords2rr82"
   },
   {
     "id": "the-suicide-commandos__time-bomb__twin-tone-records-tt",
@@ -7375,30 +7534,87 @@
     "tier": "Tier 2 - Lot (suicide commandos)",
     "discogs_low_price": "8.03",
     "copies_for_sale_on_discogs": "26",
-    "asking_price": "8.03",
-    "condition_media": "",
-    "condition_sleeve": "",
+    "asking_price": "15",
+    "condition_media": "NM",
+    "condition_sleeve": "VG+",
     "notes": "",
-    "photos": [],
+    "photos": [
+      "/photos/the-suicide-commandos__mark-he-s-a-terror__p-s-records-30787-p-/1786645364006-IMG_E1126.jpg",
+      "/photos/the-suicide-commandos__mark-he-s-a-terror__p-s-records-30787-p-/1786645364021-IMG_E1127.jpg",
+      "/photos/the-suicide-commandos__mark-he-s-a-terror__p-s-records-30787-p-/1786645364039-IMG_E1128.jpg",
+      "/photos/the-suicide-commandos__mark-he-s-a-terror__p-s-records-30787-p-/1786645364059-IMG_E1129.jpg",
+      "/photos/the-suicide-commandos__mark-he-s-a-terror__p-s-records-30787-p-/1786645364073-IMG_E1130.jpg",
+      "/photos/the-suicide-commandos__mark-he-s-a-terror__p-s-records-30787-p-/1786645364080-IMG_E1131.jpg",
+      "/photos/the-suicide-commandos__mark-he-s-a-terror__p-s-records-30787-p-/1786645364094-IMG_E1132.jpg",
+      "/photos/the-suicide-commandos__mark-he-s-a-terror__p-s-records-30787-p-/1786645364102-IMG_E1133.jpg"
+    ],
     "status": {
-      "ebay": "unlisted",
+      "ebay": "listed",
       "fb": "unlisted",
       "discogs": "unlisted"
     },
-    "ebay_listing_id": null,
+    "ebay_listing_id": "407142219767",
     "sold": false,
-    "discogs_release_id": null,
-    "discogs_price_by_grade": null,
-    "discogs_community": null,
+    "discogs_release_id": 1772362,
+    "discogs_price_by_grade": {
+      "Mint (M)": {
+        "currency": "USD",
+        "value": 21.293103448275858
+      },
+      "Near Mint (NM or M-)": {
+        "currency": "USD",
+        "value": 19.051724137931032
+      },
+      "Very Good Plus (VG+)": {
+        "currency": "USD",
+        "value": 14.568965517241379
+      },
+      "Very Good (VG)": {
+        "currency": "USD",
+        "value": 10.086206896551724
+      },
+      "Good Plus (G+)": {
+        "currency": "USD",
+        "value": 5.6034482758620685
+      },
+      "Good (G)": {
+        "currency": "USD",
+        "value": 3.362068965517241
+      },
+      "Fair (F)": {
+        "currency": "USD",
+        "value": 2.2413793103448274
+      },
+      "Poor (P)": {
+        "currency": "USD",
+        "value": 1.1206896551724137
+      }
+    },
+    "discogs_community": {
+      "have": 408,
+      "want": 209,
+      "ratingAverage": 4,
+      "ratingCount": 26
+    },
     "discogs_sold_stats": {
-      "low": "",
-      "median": "",
-      "high": "",
-      "lastSoldDate": ""
+      "low": "6.00",
+      "median": "14.41",
+      "high": "25.50",
+      "lastSoldDate": "Aug 12, 2026"
     },
     "discogs_listing_id": null,
     "listing_extras": "",
-    "photo_hosted_urls": {}
+    "photo_hosted_urls": {
+      "/photos/the-suicide-commandos__mark-he-s-a-terror__p-s-records-30787-p-/1786645364006-IMG_E1126.jpg": "https://i.ibb.co/PshY3zwH/1786645364006-IMG-E1126.jpg",
+      "/photos/the-suicide-commandos__mark-he-s-a-terror__p-s-records-30787-p-/1786645364021-IMG_E1127.jpg": "https://i.ibb.co/Kj3y7zBx/1786645364021-IMG-E1127.jpg",
+      "/photos/the-suicide-commandos__mark-he-s-a-terror__p-s-records-30787-p-/1786645364039-IMG_E1128.jpg": "https://i.ibb.co/hFVy6yFX/1786645364039-IMG-E1128.jpg",
+      "/photos/the-suicide-commandos__mark-he-s-a-terror__p-s-records-30787-p-/1786645364059-IMG_E1129.jpg": "https://i.ibb.co/h1mddxgD/1786645364059-IMG-E1129.jpg",
+      "/photos/the-suicide-commandos__mark-he-s-a-terror__p-s-records-30787-p-/1786645364073-IMG_E1130.jpg": "https://i.ibb.co/5WvPqZ2K/1786645364073-IMG-E1130.jpg",
+      "/photos/the-suicide-commandos__mark-he-s-a-terror__p-s-records-30787-p-/1786645364080-IMG_E1131.jpg": "https://i.ibb.co/PGTkbT4v/1786645364080-IMG-E1131.jpg",
+      "/photos/the-suicide-commandos__mark-he-s-a-terror__p-s-records-30787-p-/1786645364094-IMG_E1132.jpg": "https://i.ibb.co/7tkQWxSK/1786645364094-IMG-E1132.jpg",
+      "/photos/the-suicide-commandos__mark-he-s-a-terror__p-s-records-30787-p-/1786645364102-IMG_E1133.jpg": "https://i.ibb.co/CyV9kYB/1786645364102-IMG-E1133.jpg"
+    },
+    "ebay_sku": "thesuicidecommandosmarkhesaterrorpsrecords30787p"
   },
   {
     "id": "the-templars__1118-1312__do-a-runner-recordin",
@@ -10099,30 +10315,89 @@
     "tier": "Tier 3 - Bulk grab bag",
     "discogs_low_price": "14.00",
     "copies_for_sale_on_discogs": "4",
-    "asking_price": "14.00",
-    "condition_media": "",
-    "condition_sleeve": "",
+    "asking_price": "19",
+    "condition_media": "NM",
+    "condition_sleeve": "NM",
     "notes": "",
-    "photos": [],
+    "photos": [
+      "/photos/various__music-from-the-film-the-ungovernable-force__brink-music-bmus0903/1786466411550-IMG_E1059.jpg",
+      "/photos/various__music-from-the-film-the-ungovernable-force__brink-music-bmus0903/1786466411577-IMG_E1060.jpg",
+      "/photos/various__music-from-the-film-the-ungovernable-force__brink-music-bmus0903/1786466411589-IMG_E1061.jpg",
+      "/photos/various__music-from-the-film-the-ungovernable-force__brink-music-bmus0903/1786466411603-IMG_E1062.jpg",
+      "/photos/various__music-from-the-film-the-ungovernable-force__brink-music-bmus0903/1786466411608-IMG_E1063.jpg",
+      "/photos/various__music-from-the-film-the-ungovernable-force__brink-music-bmus0903/1786466411615-IMG_E1064.jpg",
+      "/photos/various__music-from-the-film-the-ungovernable-force__brink-music-bmus0903/1786466411624-IMG_E1065.jpg",
+      "/photos/various__music-from-the-film-the-ungovernable-force__brink-music-bmus0903/1786466411629-IMG_E1066.jpg",
+      "/photos/various__music-from-the-film-the-ungovernable-force__brink-music-bmus0903/1786466411635-IMG_E1067.jpg"
+    ],
     "status": {
-      "ebay": "unlisted",
+      "ebay": "listed",
       "fb": "unlisted",
       "discogs": "unlisted"
     },
-    "ebay_listing_id": null,
+    "ebay_listing_id": "407136839971",
     "sold": false,
-    "discogs_release_id": null,
-    "discogs_price_by_grade": null,
-    "discogs_community": null,
+    "discogs_release_id": 10786987,
+    "discogs_price_by_grade": {
+      "Mint (M)": {
+        "currency": "USD",
+        "value": 21.824324324324323
+      },
+      "Near Mint (NM or M-)": {
+        "currency": "USD",
+        "value": 19.527027027027025
+      },
+      "Very Good Plus (VG+)": {
+        "currency": "USD",
+        "value": 14.932432432432432
+      },
+      "Very Good (VG)": {
+        "currency": "USD",
+        "value": 10.337837837837837
+      },
+      "Good Plus (G+)": {
+        "currency": "USD",
+        "value": 5.743243243243243
+      },
+      "Good (G)": {
+        "currency": "USD",
+        "value": 3.4459459459459456
+      },
+      "Fair (F)": {
+        "currency": "USD",
+        "value": 2.2972972972972974
+      },
+      "Poor (P)": {
+        "currency": "USD",
+        "value": 1.1486486486486487
+      }
+    },
+    "discogs_community": {
+      "have": 20,
+      "want": 81,
+      "ratingAverage": 4.5,
+      "ratingCount": 2
+    },
     "discogs_sold_stats": {
-      "low": "",
-      "median": "",
-      "high": "",
-      "lastSoldDate": ""
+      "low": "14.99",
+      "median": "18.18",
+      "high": "22.97",
+      "lastSoldDate": "Aug 29, 2020"
     },
     "discogs_listing_id": null,
     "listing_extras": "",
-    "photo_hosted_urls": {}
+    "photo_hosted_urls": {
+      "/photos/various__music-from-the-film-the-ungovernable-force__brink-music-bmus0903/1786466411550-IMG_E1059.jpg": "https://i.ibb.co/vxVxxXfV/1786466411550-IMG-E1059.jpg",
+      "/photos/various__music-from-the-film-the-ungovernable-force__brink-music-bmus0903/1786466411577-IMG_E1060.jpg": "https://i.ibb.co/v4gXstLX/1786466411577-IMG-E1060.jpg",
+      "/photos/various__music-from-the-film-the-ungovernable-force__brink-music-bmus0903/1786466411589-IMG_E1061.jpg": "https://i.ibb.co/7xz5TH2H/1786466411589-IMG-E1061.jpg",
+      "/photos/various__music-from-the-film-the-ungovernable-force__brink-music-bmus0903/1786466411603-IMG_E1062.jpg": "https://i.ibb.co/FL7ZnQ5L/1786466411603-IMG-E1062.jpg",
+      "/photos/various__music-from-the-film-the-ungovernable-force__brink-music-bmus0903/1786466411608-IMG_E1063.jpg": "https://i.ibb.co/PGFzG04L/1786466411608-IMG-E1063.jpg",
+      "/photos/various__music-from-the-film-the-ungovernable-force__brink-music-bmus0903/1786466411615-IMG_E1064.jpg": "https://i.ibb.co/zqSPpmk/1786466411615-IMG-E1064.jpg",
+      "/photos/various__music-from-the-film-the-ungovernable-force__brink-music-bmus0903/1786466411624-IMG_E1065.jpg": "https://i.ibb.co/Y4zM8hkY/1786466411624-IMG-E1065.jpg",
+      "/photos/various__music-from-the-film-the-ungovernable-force__brink-music-bmus0903/1786466411629-IMG_E1066.jpg": "https://i.ibb.co/qLP8vwnB/1786466411629-IMG-E1066.jpg",
+      "/photos/various__music-from-the-film-the-ungovernable-force__brink-music-bmus0903/1786466411635-IMG_E1067.jpg": "https://i.ibb.co/BV5KCRMg/1786466411635-IMG-E1067.jpg"
+    },
+    "ebay_sku": "variousmusicfromthefilmtheungovernableforcebrinkmu"
   },
   {
     "id": "patriot-2-fatskins__patriot-fatskins__90-proof-records-90-",
@@ -12187,30 +12462,89 @@
     "tier": "Tier 3 - Bulk grab bag",
     "discogs_low_price": "7.99",
     "copies_for_sale_on_discogs": "2",
-    "asking_price": "7.99",
-    "condition_media": "",
-    "condition_sleeve": "",
+    "asking_price": "21",
+    "condition_media": "NM",
+    "condition_sleeve": "NM",
     "notes": "",
-    "photos": [],
+    "photos": [
+      "/photos/young-identities__ep__540-records-540-018/1786648129633-IMG_E1103.jpg",
+      "/photos/young-identities__ep__540-records-540-018/1786648129643-IMG_E1104.jpg",
+      "/photos/young-identities__ep__540-records-540-018/1786648129652-IMG_E1105.jpg",
+      "/photos/young-identities__ep__540-records-540-018/1786648129662-IMG_E1106.jpg",
+      "/photos/young-identities__ep__540-records-540-018/1786648129674-IMG_E1107.jpg",
+      "/photos/young-identities__ep__540-records-540-018/1786648129708-IMG_E1108.jpg",
+      "/photos/young-identities__ep__540-records-540-018/1786648129716-IMG_E1109.jpg",
+      "/photos/young-identities__ep__540-records-540-018/1786648129723-IMG_E1110.jpg",
+      "/photos/young-identities__ep__540-records-540-018/1786648129727-IMG_E1111.jpg"
+    ],
     "status": {
-      "ebay": "unlisted",
+      "ebay": "listed",
       "fb": "unlisted",
       "discogs": "unlisted"
     },
-    "ebay_listing_id": null,
+    "ebay_listing_id": "407142318882",
     "sold": false,
-    "discogs_release_id": null,
-    "discogs_price_by_grade": null,
-    "discogs_community": null,
+    "discogs_release_id": 2759382,
+    "discogs_price_by_grade": {
+      "Mint (M)": {
+        "currency": "USD",
+        "value": 24.022988505747122
+      },
+      "Near Mint (NM or M-)": {
+        "currency": "USD",
+        "value": 21.494252873563216
+      },
+      "Very Good Plus (VG+)": {
+        "currency": "USD",
+        "value": 16.4367816091954
+      },
+      "Very Good (VG)": {
+        "currency": "USD",
+        "value": 11.379310344827585
+      },
+      "Good Plus (G+)": {
+        "currency": "USD",
+        "value": 6.321839080459769
+      },
+      "Good (G)": {
+        "currency": "USD",
+        "value": 3.793103448275861
+      },
+      "Fair (F)": {
+        "currency": "USD",
+        "value": 2.528735632183908
+      },
+      "Poor (P)": {
+        "currency": "USD",
+        "value": 1.264367816091954
+      }
+    },
+    "discogs_community": {
+      "have": 286,
+      "want": 116,
+      "ratingAverage": 3.87,
+      "ratingCount": 23
+    },
     "discogs_sold_stats": {
-      "low": "",
-      "median": "",
-      "high": "",
-      "lastSoldDate": ""
+      "low": "1.99",
+      "median": "6.00",
+      "high": "25.29",
+      "lastSoldDate": "Apr 30, 2026"
     },
     "discogs_listing_id": null,
     "listing_extras": "",
-    "photo_hosted_urls": {}
+    "photo_hosted_urls": {
+      "/photos/young-identities__ep__540-records-540-018/1786648129633-IMG_E1103.jpg": "https://i.ibb.co/gFL0Bmvt/1786648129633-IMG-E1103.jpg",
+      "/photos/young-identities__ep__540-records-540-018/1786648129643-IMG_E1104.jpg": "https://i.ibb.co/tpzmK5z4/1786648129643-IMG-E1104.jpg",
+      "/photos/young-identities__ep__540-records-540-018/1786648129652-IMG_E1105.jpg": "https://i.ibb.co/PsjrZRrb/1786648129652-IMG-E1105.jpg",
+      "/photos/young-identities__ep__540-records-540-018/1786648129662-IMG_E1106.jpg": "https://i.ibb.co/b5r2v7sV/1786648129662-IMG-E1106.jpg",
+      "/photos/young-identities__ep__540-records-540-018/1786648129674-IMG_E1107.jpg": "https://i.ibb.co/TnW1TN2/1786648129674-IMG-E1107.jpg",
+      "/photos/young-identities__ep__540-records-540-018/1786648129708-IMG_E1108.jpg": "https://i.ibb.co/N68BB6b3/1786648129708-IMG-E1108.jpg",
+      "/photos/young-identities__ep__540-records-540-018/1786648129716-IMG_E1109.jpg": "https://i.ibb.co/k22CdPNJ/1786648129716-IMG-E1109.jpg",
+      "/photos/young-identities__ep__540-records-540-018/1786648129723-IMG_E1110.jpg": "https://i.ibb.co/YFqYz4Fj/1786648129723-IMG-E1110.jpg",
+      "/photos/young-identities__ep__540-records-540-018/1786648129727-IMG_E1111.jpg": "https://i.ibb.co/7NRRDC5p/1786648129727-IMG-E1111.jpg"
+    },
+    "ebay_sku": "youngidentitiesep540records540018"
   },
   {
     "id": "various__fallen-upon-deaf-ears__skull-duggery-cs1900",
@@ -13699,21 +14033,64 @@
     "tier": "Tier 3 - Bulk grab bag",
     "discogs_low_price": "4.60",
     "copies_for_sale_on_discogs": "2",
-    "asking_price": "4.60",
-    "condition_media": "",
-    "condition_sleeve": "",
+    "asking_price": "5",
+    "condition_media": "NM",
+    "condition_sleeve": "NM",
     "notes": "",
-    "photos": [],
+    "photos": [
+      "/photos/straitjacket-4-shock-nagasaki__won-t-say-sorry-palisades-renegades__tko-records-tko-roun/1786469442436-split_front.jpg",
+      "/photos/straitjacket-4-shock-nagasaki__won-t-say-sorry-palisades-renegades__tko-records-tko-roun/1786469442437-split_back.jpg",
+      "/photos/straitjacket-4-shock-nagasaki__won-t-say-sorry-palisades-renegades__tko-records-tko-roun/1786469442439-split_vinyl_A.jpg",
+      "/photos/straitjacket-4-shock-nagasaki__won-t-say-sorry-palisades-renegades__tko-records-tko-roun/1786469442442-split_vinyl_B.jpg"
+    ],
     "status": {
-      "ebay": "unlisted",
+      "ebay": "listed",
       "fb": "unlisted",
       "discogs": "unlisted"
     },
-    "ebay_listing_id": null,
+    "ebay_listing_id": "407136951916",
     "sold": false,
-    "discogs_release_id": null,
-    "discogs_price_by_grade": null,
-    "discogs_community": null,
+    "discogs_release_id": 3360186,
+    "discogs_price_by_grade": {
+      "Mint (M)": {
+        "currency": "USD",
+        "value": 5.451575
+      },
+      "Near Mint (NM or M-)": {
+        "currency": "USD",
+        "value": 4.877725
+      },
+      "Very Good Plus (VG+)": {
+        "currency": "USD",
+        "value": 3.7300250000000004
+      },
+      "Very Good (VG)": {
+        "currency": "USD",
+        "value": 2.582325
+      },
+      "Good Plus (G+)": {
+        "currency": "USD",
+        "value": 1.434625
+      },
+      "Good (G)": {
+        "currency": "USD",
+        "value": 0.860775
+      },
+      "Fair (F)": {
+        "currency": "USD",
+        "value": 0.5738500000000001
+      },
+      "Poor (P)": {
+        "currency": "USD",
+        "value": 0.28692500000000004
+      }
+    },
+    "discogs_community": {
+      "have": 29,
+      "want": 12,
+      "ratingAverage": 3.5,
+      "ratingCount": 2
+    },
     "discogs_sold_stats": {
       "low": "",
       "median": "",
@@ -13722,7 +14099,13 @@
     },
     "discogs_listing_id": null,
     "listing_extras": "",
-    "photo_hosted_urls": {}
+    "photo_hosted_urls": {
+      "/photos/straitjacket-4-shock-nagasaki__won-t-say-sorry-palisades-renegades__tko-records-tko-roun/1786469442436-split_front.jpg": "https://i.ibb.co/WNsgNzTW/1786469442436-split-front.jpg",
+      "/photos/straitjacket-4-shock-nagasaki__won-t-say-sorry-palisades-renegades__tko-records-tko-roun/1786469442437-split_back.jpg": "https://i.ibb.co/7J9rrZRp/1786469442437-split-back.jpg",
+      "/photos/straitjacket-4-shock-nagasaki__won-t-say-sorry-palisades-renegades__tko-records-tko-roun/1786469442439-split_vinyl_A.jpg": "https://i.ibb.co/s7Lsf3B/1786469442439-split-vinyl-A.jpg",
+      "/photos/straitjacket-4-shock-nagasaki__won-t-say-sorry-palisades-renegades__tko-records-tko-roun/1786469442442-split_vinyl_B.jpg": "https://i.ibb.co/sBH8prn/1786469442442-split-vinyl-B.jpg"
+    },
+    "ebay_sku": "straitjacket4shocknagasakiwontsaysorrypalisadesren"
   },
   {
     "id": "nots__cold-line-tv-od__goner-records-132gon",
@@ -14059,30 +14442,87 @@
     "tier": "Tier 3 - Bulk grab bag",
     "discogs_low_price": "4.04",
     "copies_for_sale_on_discogs": "38",
-    "asking_price": "4.04",
-    "condition_media": "",
-    "condition_sleeve": "",
+    "asking_price": "14.99",
+    "condition_media": "VG+",
+    "condition_sleeve": "VG+",
     "notes": "",
-    "photos": [],
+    "photos": [
+      "/photos/the-valves__robot-love-for-adolfs-only__zoom-records-zum-1/1786393727783-IMG_E0985.jpg",
+      "/photos/the-valves__robot-love-for-adolfs-only__zoom-records-zum-1/1786393727792-IMG_E0986.jpg",
+      "/photos/the-valves__robot-love-for-adolfs-only__zoom-records-zum-1/1786393727802-IMG_E0987.jpg",
+      "/photos/the-valves__robot-love-for-adolfs-only__zoom-records-zum-1/1786393727816-IMG_E0988.jpg",
+      "/photos/the-valves__robot-love-for-adolfs-only__zoom-records-zum-1/1786393909318-IMG_0989.jpg",
+      "/photos/the-valves__robot-love-for-adolfs-only__zoom-records-zum-1/1786393909323-IMG_0990.jpg",
+      "/photos/the-valves__robot-love-for-adolfs-only__zoom-records-zum-1/1786393909328-IMG_0991.jpg",
+      "/photos/the-valves__robot-love-for-adolfs-only__zoom-records-zum-1/1786393909333-IMG_0992.jpg"
+    ],
     "status": {
-      "ebay": "unlisted",
+      "ebay": "listed",
       "fb": "unlisted",
       "discogs": "unlisted"
     },
-    "ebay_listing_id": null,
+    "ebay_listing_id": "407134662043",
     "sold": false,
-    "discogs_release_id": null,
-    "discogs_price_by_grade": null,
-    "discogs_community": null,
+    "discogs_release_id": 1491863,
+    "discogs_price_by_grade": {
+      "Mint (M)": {
+        "currency": "USD",
+        "value": 10.919540229885056
+      },
+      "Near Mint (NM or M-)": {
+        "currency": "USD",
+        "value": 9.770114942528735
+      },
+      "Very Good Plus (VG+)": {
+        "currency": "USD",
+        "value": 7.471264367816092
+      },
+      "Very Good (VG)": {
+        "currency": "USD",
+        "value": 5.172413793103448
+      },
+      "Good Plus (G+)": {
+        "currency": "USD",
+        "value": 2.8735632183908044
+      },
+      "Good (G)": {
+        "currency": "USD",
+        "value": 1.7241379310344827
+      },
+      "Fair (F)": {
+        "currency": "USD",
+        "value": 1.1494252873563218
+      },
+      "Poor (P)": {
+        "currency": "USD",
+        "value": 0.5747126436781609
+      }
+    },
+    "discogs_community": {
+      "have": 1194,
+      "want": 587,
+      "ratingAverage": 4.34,
+      "ratingCount": 91
+    },
     "discogs_sold_stats": {
-      "low": "",
-      "median": "",
-      "high": "",
-      "lastSoldDate": ""
+      "low": "6.76",
+      "median": "14.19",
+      "high": "26.50",
+      "lastSoldDate": "Jul 22, 2026"
     },
     "discogs_listing_id": null,
     "listing_extras": "",
-    "photo_hosted_urls": {}
+    "photo_hosted_urls": {
+      "/photos/the-valves__robot-love-for-adolfs-only__zoom-records-zum-1/1786393727783-IMG_E0985.jpg": "https://i.ibb.co/60TqTQj0/1786393727783-IMG-E0985.jpg",
+      "/photos/the-valves__robot-love-for-adolfs-only__zoom-records-zum-1/1786393727792-IMG_E0986.jpg": "https://i.ibb.co/wFyrSzsW/1786393727792-IMG-E0986.jpg",
+      "/photos/the-valves__robot-love-for-adolfs-only__zoom-records-zum-1/1786393727802-IMG_E0987.jpg": "https://i.ibb.co/v4zRy8yh/1786393727802-IMG-E0987.jpg",
+      "/photos/the-valves__robot-love-for-adolfs-only__zoom-records-zum-1/1786393727816-IMG_E0988.jpg": "https://i.ibb.co/qLsp1tkW/1786393727816-IMG-E0988.jpg",
+      "/photos/the-valves__robot-love-for-adolfs-only__zoom-records-zum-1/1786393909318-IMG_0989.jpg": "https://i.ibb.co/Y7Yn4bC7/1786393909318-IMG-0989.jpg",
+      "/photos/the-valves__robot-love-for-adolfs-only__zoom-records-zum-1/1786393909323-IMG_0990.jpg": "https://i.ibb.co/Jw2f0bVc/1786393909323-IMG-0990.jpg",
+      "/photos/the-valves__robot-love-for-adolfs-only__zoom-records-zum-1/1786393909328-IMG_0991.jpg": "https://i.ibb.co/VYkfj54T/1786393909328-IMG-0991.jpg",
+      "/photos/the-valves__robot-love-for-adolfs-only__zoom-records-zum-1/1786393909333-IMG_0992.jpg": "https://i.ibb.co/ycvBLXf4/1786393909333-IMG-0992.jpg"
+    },
+    "ebay_sku": "thevalvesrobotloveforadolfsonlyzoomrecordszum1"
   },
   {
     "id": "two-saints__in-nomine-solis__shakin-street-record",
@@ -15694,6 +16134,376 @@
       "/photos/3b47ba7c-61ff-4a65-a7f3-fa7bcaff6039/1786314210554-05_all_singles_poster_laid_out_2.jpeg": "https://i.ibb.co/PzYvM38Q/1786314210554-05-all-singles-poster-laid-out-2.jpg",
       "/photos/3b47ba7c-61ff-4a65-a7f3-fa7bcaff6039/1786314210560-06_records_front_labels.jpeg": "https://i.ibb.co/Xf5Bd1xq/1786314210560-06-records-front-labels.jpg",
       "/photos/3b47ba7c-61ff-4a65-a7f3-fa7bcaff6039/1786314210571-07_records_back_labels.jpeg": "https://i.ibb.co/LXfjxDTy/1786314210571-07-records-back-labels.jpg"
+    },
+    "sold": false
+  },
+  {
+    "id": "2270fc3c-6d08-4712-a06e-8c3d27432b13",
+    "artist": "Sheer Terror",
+    "title": "Pall In The Family",
+    "year": "2018",
+    "country": "US",
+    "format": "Vinyl, 7\", 33 ⅓ RPM, EP, Orange With Black Splatter",
+    "label": "Reaper Records (2) – RR82",
+    "tier": "Tier 2 - Lot (sheer terror)",
+    "discogs_low_price": "",
+    "copies_for_sale_on_discogs": "",
+    "asking_price": "12.75",
+    "condition_media": "NM",
+    "condition_sleeve": "NM",
+    "matrix_number": "",
+    "sealed": false,
+    "notes": "",
+    "listing_extras": "",
+    "photos": [
+      "/photos/2270fc3c-6d08-4712-a06e-8c3d27432b13/1786391918191-attach_2_orange_front.png",
+      "/photos/2270fc3c-6d08-4712-a06e-8c3d27432b13/1786392102863-vinyl_orange.jpg",
+      "/photos/2270fc3c-6d08-4712-a06e-8c3d27432b13/1786390232475-front_cover.jpg",
+      "/photos/2270fc3c-6d08-4712-a06e-8c3d27432b13/1786390232480-IMG_0983.jpg",
+      "/photos/2270fc3c-6d08-4712-a06e-8c3d27432b13/1786391918192-attach_4_back_cover.png"
+    ],
+    "status": {
+      "ebay": "listed",
+      "fb": "unlisted",
+      "discogs": "unlisted"
+    },
+    "ebay_listing_id": "407134626941",
+    "ebay_sku": "2270fc3c6d084712a06e8c3d27432b13",
+    "discogs_release_id": 12415573,
+    "discogs_price_by_grade": {
+      "Mint (M)": {
+        "currency": "USD",
+        "value": 14.195402298850574
+      },
+      "Near Mint (NM or M-)": {
+        "currency": "USD",
+        "value": 12.701149425287356
+      },
+      "Very Good Plus (VG+)": {
+        "currency": "USD",
+        "value": 9.71264367816092
+      },
+      "Very Good (VG)": {
+        "currency": "USD",
+        "value": 6.724137931034483
+      },
+      "Good Plus (G+)": {
+        "currency": "USD",
+        "value": 3.735632183908046
+      },
+      "Good (G)": {
+        "currency": "USD",
+        "value": 2.2413793103448274
+      },
+      "Fair (F)": {
+        "currency": "USD",
+        "value": 1.4942528735632186
+      },
+      "Poor (P)": {
+        "currency": "USD",
+        "value": 0.7471264367816093
+      }
+    },
+    "discogs_community": {
+      "have": 219,
+      "want": 26,
+      "ratingAverage": 4.63,
+      "ratingCount": 8
+    },
+    "discogs_sold_stats": {
+      "low": "",
+      "median": "",
+      "high": "",
+      "lastSoldDate": ""
+    },
+    "discogs_listing_id": null,
+    "photo_hosted_urls": {
+      "/photos/2270fc3c-6d08-4712-a06e-8c3d27432b13/1786391918191-attach_2_orange_front.png": "https://i.ibb.co/3yf1Q4nL/1786391918191-attach-2-orange-front.jpg",
+      "/photos/2270fc3c-6d08-4712-a06e-8c3d27432b13/1786392102863-vinyl_orange.jpg": "https://i.ibb.co/8DVd379q/1786392102863-vinyl-orange.jpg",
+      "/photos/2270fc3c-6d08-4712-a06e-8c3d27432b13/1786390232475-front_cover.jpg": "https://i.ibb.co/4gwcVBmK/1786390232393-front-cover.jpg",
+      "/photos/2270fc3c-6d08-4712-a06e-8c3d27432b13/1786390232480-IMG_0983.jpg": "https://i.ibb.co/YThMZH9F/1786390232398-IMG-0983.jpg",
+      "/photos/2270fc3c-6d08-4712-a06e-8c3d27432b13/1786391918192-attach_4_back_cover.png": "https://i.ibb.co/5Whrzvrq/1786391918153-attach-4-back-cover.jpg"
+    },
+    "sold": false
+  },
+  {
+    "id": "2630dc27-e8b8-444f-b7da-f57dbf975fb2",
+    "artist": "Koro",
+    "title": "Koro EP",
+    "year": "2006",
+    "country": "US",
+    "format": "Vinyl, 7\", EP",
+    "label": "Sorry State Records – SSR7002",
+    "tier": "Tier 1 - Individual (no comp, needs research)",
+    "discogs_low_price": "",
+    "copies_for_sale_on_discogs": "",
+    "asking_price": "30",
+    "condition_media": "NM",
+    "condition_sleeve": "NM",
+    "matrix_number": "RECORDPRESSING.COM - SSR7002-A / RECORDPRESSING.COM - SSR7002-B",
+    "sealed": false,
+    "notes": "",
+    "listing_extras": "",
+    "photos": [
+      "/photos/2630dc27-e8b8-444f-b7da-f57dbf975fb2/1786465498246-IMG_E0993.jpg",
+      "/photos/2630dc27-e8b8-444f-b7da-f57dbf975fb2/1786465498255-IMG_E0994.jpg",
+      "/photos/2630dc27-e8b8-444f-b7da-f57dbf975fb2/1786465498351-IMG_E0995.jpg",
+      "/photos/2630dc27-e8b8-444f-b7da-f57dbf975fb2/1786465498360-IMG_E0996.jpg",
+      "/photos/2630dc27-e8b8-444f-b7da-f57dbf975fb2/1786465498267-IMG_0998.jpg",
+      "/photos/2630dc27-e8b8-444f-b7da-f57dbf975fb2/1786465498276-IMG_0999.jpg",
+      "/photos/2630dc27-e8b8-444f-b7da-f57dbf975fb2/1786465498285-IMG_1001.jpg",
+      "/photos/2630dc27-e8b8-444f-b7da-f57dbf975fb2/1786465498291-IMG_1002.jpg",
+      "/photos/2630dc27-e8b8-444f-b7da-f57dbf975fb2/1786465498295-IMG_1003.jpg",
+      "/photos/2630dc27-e8b8-444f-b7da-f57dbf975fb2/1786465498333-IMG_0997.jpg",
+      "/photos/2630dc27-e8b8-444f-b7da-f57dbf975fb2/1786465498345-IMG_E0997.jpg"
+    ],
+    "status": {
+      "ebay": "listed",
+      "fb": "unlisted",
+      "discogs": "unlisted"
+    },
+    "ebay_listing_id": "407136777310",
+    "ebay_sku": "2630dc27e8b8444fb7daf57dbf975fb2",
+    "discogs_release_id": 1325032,
+    "discogs_price_by_grade": {
+      "Mint (M)": {
+        "currency": "USD",
+        "value": 38.218390804597696
+      },
+      "Near Mint (NM or M-)": {
+        "currency": "USD",
+        "value": 34.195402298850574
+      },
+      "Very Good Plus (VG+)": {
+        "currency": "USD",
+        "value": 26.149425287356323
+      },
+      "Very Good (VG)": {
+        "currency": "USD",
+        "value": 18.10344827586207
+      },
+      "Good Plus (G+)": {
+        "currency": "USD",
+        "value": 10.057471264367816
+      },
+      "Good (G)": {
+        "currency": "USD",
+        "value": 6.0344827586206895
+      },
+      "Fair (F)": {
+        "currency": "USD",
+        "value": 4.022988505747127
+      },
+      "Poor (P)": {
+        "currency": "USD",
+        "value": 2.0114942528735633
+      }
+    },
+    "discogs_community": {
+      "have": 846,
+      "want": 184,
+      "ratingAverage": 4.56,
+      "ratingCount": 57
+    },
+    "discogs_sold_stats": {
+      "low": "",
+      "median": "",
+      "high": "",
+      "lastSoldDate": ""
+    },
+    "discogs_listing_id": null,
+    "photo_hosted_urls": {
+      "/photos/2630dc27-e8b8-444f-b7da-f57dbf975fb2/1786465498246-IMG_E0993.jpg": "https://i.ibb.co/1tTYsDMY/1786465498246-IMG-E0993.jpg",
+      "/photos/2630dc27-e8b8-444f-b7da-f57dbf975fb2/1786465498255-IMG_E0994.jpg": "https://i.ibb.co/ch6Z9KmT/1786465498255-IMG-E0994.jpg",
+      "/photos/2630dc27-e8b8-444f-b7da-f57dbf975fb2/1786465498351-IMG_E0995.jpg": "https://i.ibb.co/1Y1LjjR1/1786465498351-IMG-E0995.jpg",
+      "/photos/2630dc27-e8b8-444f-b7da-f57dbf975fb2/1786465498360-IMG_E0996.jpg": "https://i.ibb.co/Q7T1r1Tb/1786465498360-IMG-E0996.jpg",
+      "/photos/2630dc27-e8b8-444f-b7da-f57dbf975fb2/1786465498267-IMG_0998.jpg": "https://i.ibb.co/1Y6mxgT3/1786465498267-IMG-0998.jpg",
+      "/photos/2630dc27-e8b8-444f-b7da-f57dbf975fb2/1786465498276-IMG_0999.jpg": "https://i.ibb.co/d431rtZM/1786465498276-IMG-0999.jpg",
+      "/photos/2630dc27-e8b8-444f-b7da-f57dbf975fb2/1786465498285-IMG_1001.jpg": "https://i.ibb.co/tPXsTd8j/1786465498285-IMG-1001.jpg",
+      "/photos/2630dc27-e8b8-444f-b7da-f57dbf975fb2/1786465498291-IMG_1002.jpg": "https://i.ibb.co/RWgWCGg/1786465498291-IMG-1002.jpg",
+      "/photos/2630dc27-e8b8-444f-b7da-f57dbf975fb2/1786465498295-IMG_1003.jpg": "https://i.ibb.co/DgsprZbP/1786465498295-IMG-1003.jpg",
+      "/photos/2630dc27-e8b8-444f-b7da-f57dbf975fb2/1786465498333-IMG_0997.jpg": "https://i.ibb.co/srqK8n0/1786465498333-IMG-0997.jpg",
+      "/photos/2630dc27-e8b8-444f-b7da-f57dbf975fb2/1786465498345-IMG_E0997.jpg": "https://i.ibb.co/FkJ7xLmr/1786465498345-IMG-E0997.jpg"
+    },
+    "sold": false
+  },
+  {
+    "id": "866705ff-5023-46bb-ab12-8ed3605578ac",
+    "artist": "Pink Lincolns",
+    "title": "I Am A Genius",
+    "year": "",
+    "country": "US",
+    "format": "Vinyl, 7\", 33 ⅓ RPM, EP",
+    "label": "Rad Girlfriend Records – rgf-139",
+    "tier": "Tier 1 - Individual (no comp, needs research)",
+    "discogs_low_price": "",
+    "copies_for_sale_on_discogs": "",
+    "asking_price": "13",
+    "condition_media": "VG+",
+    "condition_sleeve": "NM",
+    "matrix_number": "",
+    "sealed": false,
+    "notes": "",
+    "listing_extras": "",
+    "photos": [
+      "/photos/866705ff-5023-46bb-ab12-8ed3605578ac/1786644435095-IMG_E1134.jpg",
+      "/photos/866705ff-5023-46bb-ab12-8ed3605578ac/1786644435109-IMG_E1135.jpg",
+      "/photos/866705ff-5023-46bb-ab12-8ed3605578ac/1786644435120-IMG_E1136.jpg",
+      "/photos/866705ff-5023-46bb-ab12-8ed3605578ac/1786644435129-IMG_E1137.jpg",
+      "/photos/866705ff-5023-46bb-ab12-8ed3605578ac/1786644435140-IMG_E1138.jpg"
+    ],
+    "status": {
+      "ebay": "listed",
+      "fb": "unlisted",
+      "discogs": "unlisted"
+    },
+    "ebay_listing_id": "407142197484",
+    "ebay_sku": "866705ff502346bbab128ed3605578ac",
+    "discogs_release_id": 21169384,
+    "discogs_price_by_grade": {
+      "Mint (M)": {
+        "currency": "USD",
+        "value": 18.45402298850574
+      },
+      "Near Mint (NM or M-)": {
+        "currency": "USD",
+        "value": 16.51149425287356
+      },
+      "Very Good Plus (VG+)": {
+        "currency": "USD",
+        "value": 12.626436781609193
+      },
+      "Very Good (VG)": {
+        "currency": "USD",
+        "value": 8.741379310344826
+      },
+      "Good Plus (G+)": {
+        "currency": "USD",
+        "value": 4.856321839080459
+      },
+      "Good (G)": {
+        "currency": "USD",
+        "value": 2.9137931034482754
+      },
+      "Fair (F)": {
+        "currency": "USD",
+        "value": 1.9425287356321836
+      },
+      "Poor (P)": {
+        "currency": "USD",
+        "value": 0.9712643678160918
+      }
+    },
+    "discogs_community": {
+      "have": 66,
+      "want": 23,
+      "ratingAverage": 5,
+      "ratingCount": 1
+    },
+    "discogs_sold_stats": {
+      "low": "8.00",
+      "median": "12.00",
+      "high": "19.43",
+      "lastSoldDate": "Feb 22, 2024"
+    },
+    "discogs_listing_id": null,
+    "photo_hosted_urls": {
+      "/photos/866705ff-5023-46bb-ab12-8ed3605578ac/1786644435095-IMG_E1134.jpg": "https://i.ibb.co/zW1R07C9/1786644435095-IMG-E1134.jpg",
+      "/photos/866705ff-5023-46bb-ab12-8ed3605578ac/1786644435109-IMG_E1135.jpg": "https://i.ibb.co/1GG4N6cR/1786644435109-IMG-E1135.jpg",
+      "/photos/866705ff-5023-46bb-ab12-8ed3605578ac/1786644435120-IMG_E1136.jpg": "https://i.ibb.co/Cs5130sv/1786644435120-IMG-E1136.jpg",
+      "/photos/866705ff-5023-46bb-ab12-8ed3605578ac/1786644435129-IMG_E1137.jpg": "https://i.ibb.co/5x574FFb/1786644435129-IMG-E1137.jpg",
+      "/photos/866705ff-5023-46bb-ab12-8ed3605578ac/1786644435140-IMG_E1138.jpg": "https://i.ibb.co/r2VLQdVW/1786644435140-IMG-E1138.jpg"
+    },
+    "sold": false
+  },
+  {
+    "id": "853e43d4-cf2c-4217-8975-aa505f1cfc83",
+    "artist": "Various",
+    "title": "Authorities Tribute E.P.",
+    "year": "2011",
+    "country": "US",
+    "format": "Vinyl, 7\", 45 RPM, EP, Red",
+    "label": "Get Hip Recordings – GH-253",
+    "tier": "Tier 1 - Individual (no comp, needs research)",
+    "discogs_low_price": "",
+    "copies_for_sale_on_discogs": "",
+    "asking_price": "9",
+    "condition_media": "NM",
+    "condition_sleeve": "NM",
+    "matrix_number": "",
+    "sealed": false,
+    "notes": "",
+    "listing_extras": "",
+    "photos": [
+      "/photos/853e43d4-cf2c-4217-8975-aa505f1cfc83/1786645994726-IMG_E1120.jpg",
+      "/photos/853e43d4-cf2c-4217-8975-aa505f1cfc83/1786645994737-IMG_E1121.jpg",
+      "/photos/853e43d4-cf2c-4217-8975-aa505f1cfc83/1786645994746-IMG_E1122.jpg",
+      "/photos/853e43d4-cf2c-4217-8975-aa505f1cfc83/1786645994755-IMG_E1123.jpg",
+      "/photos/853e43d4-cf2c-4217-8975-aa505f1cfc83/1786645994762-IMG_E1124.jpg",
+      "/photos/853e43d4-cf2c-4217-8975-aa505f1cfc83/1786645994767-IMG_E1125.jpg"
+    ],
+    "status": {
+      "ebay": "listed",
+      "fb": "unlisted",
+      "discogs": "unlisted"
+    },
+    "ebay_listing_id": "407142241063",
+    "ebay_sku": "853e43d4cf2c42178975aa505f1cfc83",
+    "discogs_release_id": 15523385,
+    "discogs_price_by_grade": {
+      "Mint (M)": {
+        "currency": "USD",
+        "value": 8.5405
+      },
+      "Near Mint (NM or M-)": {
+        "currency": "USD",
+        "value": 7.6415
+      },
+      "Very Good Plus (VG+)": {
+        "currency": "USD",
+        "value": 5.843500000000001
+      },
+      "Very Good (VG)": {
+        "currency": "USD",
+        "value": 4.0455000000000005
+      },
+      "Good Plus (G+)": {
+        "currency": "USD",
+        "value": 2.2475
+      },
+      "Good (G)": {
+        "currency": "USD",
+        "value": 1.3485
+      },
+      "Fair (F)": {
+        "currency": "USD",
+        "value": 0.899
+      },
+      "Poor (P)": {
+        "currency": "USD",
+        "value": 0.4495
+      }
+    },
+    "discogs_community": {
+      "have": 8,
+      "want": 7,
+      "ratingAverage": 0,
+      "ratingCount": 0
+    },
+    "discogs_sold_stats": {
+      "low": "8.00",
+      "median": "8.50",
+      "high": "8.99",
+      "lastSoldDate": "May 19, 2024"
+    },
+    "discogs_listing_id": null,
+    "photo_hosted_urls": {
+      "/photos/853e43d4-cf2c-4217-8975-aa505f1cfc83/1786645994726-IMG_E1120.jpg": "https://i.ibb.co/8L4h0nS8/1786645994726-IMG-E1120.jpg",
+      "/photos/853e43d4-cf2c-4217-8975-aa505f1cfc83/1786645994737-IMG_E1121.jpg": "https://i.ibb.co/MDZNxLQh/1786645994737-IMG-E1121.jpg",
+      "/photos/853e43d4-cf2c-4217-8975-aa505f1cfc83/1786645994746-IMG_E1122.jpg": "https://i.ibb.co/prrFnPJY/1786645994746-IMG-E1122.jpg",
+      "/photos/853e43d4-cf2c-4217-8975-aa505f1cfc83/1786645994755-IMG_E1123.jpg": "https://i.ibb.co/7xjyhbd6/1786645994755-IMG-E1123.jpg",
+      "/photos/853e43d4-cf2c-4217-8975-aa505f1cfc83/1786645994762-IMG_E1124.jpg": "https://i.ibb.co/jvm8h31D/1786645994762-IMG-E1124.jpg",
+      "/photos/853e43d4-cf2c-4217-8975-aa505f1cfc83/1786645994767-IMG_E1125.jpg": "https://i.ibb.co/nvXGBQ8/1786645994767-IMG-E1125.jpg"
     },
     "sold": false
   }
