@@ -263,6 +263,57 @@
         }
       }
     },
+    "/api/inventory/{id}/photos-zip": {
+      "post": {
+        "tags": ["Photos"],
+        "summary": "Upload a zip of a camera-roll export",
+        "description": "Extracts the zip, converts any HEIC photos to JPEG, auto-corrects EXIF orientation on every photo, and appends them all to the record's photos in filename order. Field name `zip`, single file, up to 200MB.",
+        "parameters": [{ "$ref": "#/components/parameters/RecordId" }],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "zip": { "type": "string", "format": "binary" }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": { "description": "The updated record with new photo URLs appended", "content": { "application/json": { "schema": { "$ref": "#/components/schemas/Record" } } } },
+          "400": { "description": "No zip uploaded, or no usable images found inside it" },
+          "404": { "$ref": "#/components/responses/NotFound" }
+        }
+      }
+    },
+    "/api/inventory/{id}/photos/rotate": {
+      "post": {
+        "tags": ["Photos"],
+        "summary": "Rotate one photo 90° increments",
+        "description": "Rewrites the photo file in place and invalidates its cached hosted URL so the next publish re-uploads the corrected image.",
+        "parameters": [{ "$ref": "#/components/parameters/RecordId" }],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "url": { "type": "string", "example": "/photos/<record-id>/162...-front.jpg" },
+                  "degrees": { "type": "number", "example": 90 }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": { "description": "The updated record", "content": { "application/json": { "schema": { "$ref": "#/components/schemas/Record" } } } },
+          "400": { "description": "Unknown photo url for this record" },
+          "404": { "$ref": "#/components/responses/NotFound" }
+        }
+      }
+    },
     "/api/inventory/{id}/photos/reorder": {
       "post": {
         "tags": ["Photos"],

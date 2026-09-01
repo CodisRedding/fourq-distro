@@ -1,7 +1,20 @@
 const fs = require('fs');
+const os = require('os');
 const path = require('path');
+const crypto = require('crypto');
+const { execFile } = require('child_process');
 const express = require('express');
 const multer = require('multer');
+const AdmZip = require('adm-zip');
+const sharp = require('sharp');
+
+// Phones store rotation as EXIF metadata rather than baking it into the
+// pixels — sharp ignores that by default, so anything downstream (the photo
+// grid here, the branding border, eBay's hosted copy) can end up sideways
+// unless we explicitly bake the rotation in once, up front.
+async function normalizeOrientation(buffer) {
+  return sharp(buffer).rotate().jpeg({ quality: 92 }).toBuffer();
+}
 
 // --- tiny .env loader (no extra dependency) ---
 const envPath = path.join(__dirname, '..', '.env');
@@ -224,17 +237,7 @@ app.get('/api/inventory/:id/listing', (req, res) => {
 
 // ---- photos ----
 const upload = multer({
-  storage: multer.diskStorage({
-    destination: (req, file, cb) => {
-      const dir = path.join(PHOTOS_DIR, req.params.id);
-      fs.mkdirSync(dir, { recursive: true });
-      cb(null, dir);
-    },
-    filename: (req, file, cb) => {
-      const safe = Date.now() + '-' + file.originalname.replace(/[^a-zA-Z0-9.\-]/g, '_');
-      cb(null, safe);
-    }
-  }),
+  storage: multer.memoryStorage(),
   limits: { fileSize: 15 * 1024 * 1024 },
   fileFilter: (req, file, cb) => {
     if (!/^image\//.test(file.mimetype)) return cb(new Error('Only image uploads are allowed'));
@@ -242,13 +245,123 @@ const upload = multer({
   }
 });
 
-app.post('/api/inventory/:id/photos', upload.array('photos', 10), (req, res) => {
+app.post('/api/inventory/:id/photos', upload.array('photos', 10), async (req, res) => {
   const record = store.getById(req.params.id);
   if (!record) return res.status(404).json({ error: 'Not found' });
-  const newPhotos = (req.files || []).map(f => `/photos/${req.params.id}/${f.filename}`);
-  const photos = [...(record.photos || []), ...newPhotos];
-  const updated = store.updateById(req.params.id, { photos });
-  res.json(updated);
+  const dir = path.join(PHOTOS_DIR, req.params.id);
+  fs.mkdirSync(dir, { recursive: true });
+  try {
+    const newPhotos = [];
+    const files = req.files || [];
+    for (let i = 0; i < files.length; i++) {
+      const f = files[i];
+      const normalized = await normalizeOrientation(f.buffer);
+      const base = f.originalname.replace(/\.[^.]+$/, '').replace(/[^a-zA-Z0-9.\-]/g, '_');
+      const safe = Date.now() + '-' + i + '-' + base + '.jpg';
+      fs.writeFileSync(path.join(dir, safe), normalized);
+      newPhotos.push(`/photos/${req.params.id}/${safe}`);
+    }
+    const photos = [...(record.photos || []), ...newPhotos];
+    const updated = store.updateById(req.params.id, { photos });
+    res.json(updated);
+  } catch (err) {
+    res.status(500).json({ error: 'Photo processing failed: ' + err.message });
+  }
+});
+
+// Accepts a zip of a phone's camera roll export for one record — extracts
+// it, converts any HEIC photos to JPEG (iPhones export HEIC by default, and
+// our image-processing pipeline can't read it), and appends everything to
+// the record's photos in filename order (which matches capture order, so
+// front-cover-first as long as that's the first shot taken).
+const zipUpload = multer({
+  storage: multer.memoryStorage(),
+  limits: { fileSize: 200 * 1024 * 1024 },
+  fileFilter: (req, file, cb) => {
+    if (!/\.zip$/i.test(file.originalname) && file.mimetype !== 'application/zip' && file.mimetype !== 'application/x-zip-compressed') {
+      return cb(new Error('Only .zip uploads are allowed on this endpoint'));
+    }
+    cb(null, true);
+  }
+});
+
+const IMAGE_EXT = new Set(['.jpg', '.jpeg', '.png']);
+const HEIC_EXT = new Set(['.heic']);
+
+function walkFiles(dir) {
+  let results = [];
+  for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
+    if (entry.name.startsWith('.') || entry.name === '__MACOSX') continue;
+    const full = path.join(dir, entry.name);
+    if (entry.isDirectory()) {
+      results = results.concat(walkFiles(full));
+    } else {
+      results.push(full);
+    }
+  }
+  return results;
+}
+
+function runHeicConvert(folder) {
+  return new Promise((resolve, reject) => {
+    const scriptPath = path.join(__dirname, '..', 'tools', 'heic-convert.ps1');
+    execFile('powershell.exe', ['-NoProfile', '-ExecutionPolicy', 'Bypass', '-File', scriptPath, '-Folder', folder],
+      { timeout: 120000 },
+      (err, stdout, stderr) => {
+        if (err) return reject(new Error(stderr || err.message));
+        resolve(stdout);
+      });
+  });
+}
+
+app.post('/api/inventory/:id/photos-zip', zipUpload.single('zip'), async (req, res) => {
+  const record = store.getById(req.params.id);
+  if (!record) return res.status(404).json({ error: 'Not found' });
+  if (!req.file) return res.status(400).json({ error: 'No zip file uploaded (field name must be "zip").' });
+
+  const tempDir = path.join(os.tmpdir(), 'fourq-distro-zip-' + crypto.randomUUID());
+  try {
+    fs.mkdirSync(tempDir, { recursive: true });
+    const zip = new AdmZip(req.file.buffer);
+    zip.extractAllTo(tempDir, true);
+
+    const allFiles = walkFiles(tempDir);
+    const heicFiles = allFiles.filter(f => HEIC_EXT.has(path.extname(f).toLowerCase()));
+    const heicFolders = new Set(heicFiles.map(f => path.dirname(f)));
+    for (const folder of heicFolders) {
+      await runHeicConvert(folder);
+    }
+
+    // Re-walk after conversion so the new .jpg siblings show up, and only
+    // keep images (skip the now-redundant original .HEIC source files).
+    const finalFiles = walkFiles(tempDir)
+      .filter(f => IMAGE_EXT.has(path.extname(f).toLowerCase()))
+      .sort((a, b) => path.basename(a).localeCompare(path.basename(b), undefined, { numeric: true }));
+
+    if (!finalFiles.length) {
+      return res.status(400).json({ error: 'No usable images found in that zip (after HEIC conversion, if any).' });
+    }
+
+    const destDir = path.join(PHOTOS_DIR, req.params.id);
+    fs.mkdirSync(destDir, { recursive: true });
+    const newPhotos = [];
+    for (let i = 0; i < finalFiles.length; i++) {
+      const f = finalFiles[i];
+      const normalized = await normalizeOrientation(fs.readFileSync(f));
+      const base = path.basename(f).replace(/\.[^.]+$/, '').replace(/[^a-zA-Z0-9.\-]/g, '_');
+      const safeName = Date.now() + '-' + i + '-' + base + '.jpg';
+      fs.writeFileSync(path.join(destDir, safeName), normalized);
+      newPhotos.push(`/photos/${req.params.id}/${safeName}`);
+    }
+
+    const photos = [...(record.photos || []), ...newPhotos];
+    const updated = store.updateById(req.params.id, { photos });
+    res.json(updated);
+  } catch (err) {
+    res.status(500).json({ error: 'Zip processing failed: ' + err.message });
+  } finally {
+    fs.rm(tempDir, { recursive: true, force: true }, () => {});
+  }
 });
 
 app.delete('/api/inventory/:id/photos', (req, res) => {
@@ -280,6 +393,34 @@ app.post('/api/inventory/:id/photos/reorder', (req, res) => {
   }
   const updated = store.updateById(req.params.id, { photos: newOrder });
   res.json(updated);
+});
+
+// Manual rotate for when auto-orientation didn't catch it (or a photo was
+// genuinely shot sideways on purpose). Rewrites the file in place and drops
+// any cached hosted copy so the next publish re-uploads the corrected image
+// instead of the stale rotated-wrong one.
+app.post('/api/inventory/:id/photos/rotate', async (req, res) => {
+  const record = store.getById(req.params.id);
+  if (!record) return res.status(404).json({ error: 'Not found' });
+  const { url, degrees } = req.body;
+  if (!url || !(record.photos || []).includes(url)) {
+    return res.status(400).json({ error: 'Unknown photo url for this record.' });
+  }
+  const turn = ((Number(degrees) % 360) + 360) % 360;
+  const filePath = path.join(__dirname, '..', 'data', url.replace(/^\/photos/, 'photos'));
+  try {
+    // .rotate() with no args bakes in any leftover EXIF orientation from
+    // photos uploaded before auto-normalization existed; .rotate(turn) then
+    // applies the manual turn on top of that already-upright image.
+    const rotated = await sharp(fs.readFileSync(filePath)).rotate().rotate(turn).jpeg({ quality: 92 }).toBuffer();
+    fs.writeFileSync(filePath, rotated);
+    const hostedUrls = { ...(record.photo_hosted_urls || {}) };
+    delete hostedUrls[url];
+    const updated = store.updateById(req.params.id, { photo_hosted_urls: hostedUrls });
+    res.json(updated);
+  } catch (err) {
+    res.status(500).json({ error: 'Rotate failed: ' + err.message });
+  }
 });
 
 // ---- eBay ----

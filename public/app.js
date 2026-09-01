@@ -123,14 +123,48 @@ function closePanel() {
 
 function renderPanel(r, listing, priceSuggestion) {
   const isNewArrival = r.tier.startsWith('Unsorted');
+  const hasPhotos = (r.photos || []).length > 0;
+  const panelRenderStamp = Date.now();
+
+  const photosMarkup = `
+      <label>Photos <span class="meta">(first photo is the primary/thumbnail image on eBay and most marketplaces)</span></label>
+      <div class="photos" id="photos">
+        ${(r.photos || []).map((p, i) => `
+          <div class="photo-wrap">
+            ${i === 0 ? '<span class="photo-primary-badge">1st</span>' : ''}
+            <img src="${p}?v=${panelRenderStamp}">
+            <button data-url="${p}" class="delPhoto" title="Delete">✕</button>
+            <button data-url="${p}" class="rotatePhoto" title="Rotate 90°">⟳</button>
+            <div class="photo-move-controls">
+              <button data-idx="${i}" data-dir="-1" class="movePhoto" ${i === 0 ? 'disabled' : ''} title="Move earlier">◀</button>
+              <button data-idx="${i}" data-dir="1" class="movePhoto" ${i === r.photos.length - 1 ? 'disabled' : ''} title="Move later">▶</button>
+            </div>
+          </div>
+        `).join('')}
+      </div>
+      <input type="file" id="photoInput" accept="image/*,.zip" multiple>
+      <div class="meta" style="margin-top:4px">Tip: drop a .zip of a whole camera-roll export here instead — HEIC photos get converted automatically.</div>
+      <div id="photoUploadStatus" class="publish-status" hidden></div>
+  `;
+
+  const newArrivalStep1 = isNewArrival ? `
+    <div class="section">
+      <div class="section-header">Step 1 — Upload photos</div>
+      <div class="meta">Add the photos for this record (or drop a .zip of the whole camera-roll export). Once they're up, open them to see the artist/title/label, then fill in the details below.</div>
+      ${photosMarkup}
+    </div>
+  ` : '';
+
   panel.innerHTML = `
     <button class="close-btn" id="closeBtn">Close ✕</button>
-    <h2>${r.artist || r.title ? escapeHtml(r.artist) + ' — ' + escapeHtml(r.title) : 'New record — fill in details below'}</h2>
+    <h2>${r.artist || r.title ? escapeHtml(r.artist) + ' — ' + escapeHtml(r.title) : 'New record'}</h2>
     <div class="meta">Discogs low comp: ${r.discogs_low_price ? '$' + r.discogs_low_price : 'none'} · Tier: ${escapeHtml(r.tier)}</div>
 
+    ${newArrivalStep1}
+
     <div class="section">
-      <div class="section-header">Details</div>
-      ${isNewArrival ? '<div class="meta">Upload photos below, then fill in what you can identify from them.</div>' : ''}
+      <div class="section-header">${isNewArrival ? 'Step 2 — Fill in details' : 'Details'}</div>
+      ${isNewArrival && !hasPhotos ? '<div class="meta">Upload photos above first, then fill in what you can identify from them.</div>' : ''}
       <div class="row">
         <div>
           <label>Artist</label>
@@ -188,21 +222,7 @@ function renderPanel(r, listing, priceSuggestion) {
       <label>Listing extras <span class="meta">(public — included in every eBay/FB description and Discogs comments)</span></label>
       <textarea id="listingExtras" placeholder="e.g. hand-etched runouts, included insert/sticker, notable provenance...">${escapeHtml(r.listing_extras || '')}</textarea>
 
-      <label>Photos <span class="meta">(first photo is the primary/thumbnail image on eBay and most marketplaces)</span></label>
-      <div class="photos" id="photos">
-        ${(r.photos || []).map((p, i) => `
-          <div class="photo-wrap">
-            ${i === 0 ? '<span class="photo-primary-badge">1st</span>' : ''}
-            <img src="${p}">
-            <button data-url="${p}" class="delPhoto" title="Delete">✕</button>
-            <div class="photo-move-controls">
-              <button data-idx="${i}" data-dir="-1" class="movePhoto" ${i === 0 ? 'disabled' : ''} title="Move earlier">◀</button>
-              <button data-idx="${i}" data-dir="1" class="movePhoto" ${i === r.photos.length - 1 ? 'disabled' : ''} title="Move later">▶</button>
-            </div>
-          </div>
-        `).join('')}
-      </div>
-      <input type="file" id="photoInput" accept="image/*" multiple>
+      ${isNewArrival ? '' : photosMarkup}
 
       <div class="actions">
         <button id="saveBtn" class="primary">Save changes</button>
@@ -552,6 +572,29 @@ function renderPanel(r, listing, priceSuggestion) {
   document.getElementById('photoInput').onchange = async (e) => {
     const files = e.target.files;
     if (!files.length) return;
+    const statusEl = document.getElementById('photoUploadStatus');
+
+    const isSingleZip = files.length === 1 && /\.zip$/i.test(files[0].name);
+    if (isSingleZip) {
+      statusEl.hidden = false;
+      statusEl.innerHTML = '<span class="spinner"></span> <span class="step-text">Extracting zip and converting any HEIC photos…</span>';
+      const formData = new FormData();
+      formData.append('zip', files[0]);
+      try {
+        const res = await fetch(`/api/inventory/${r.id}/photos-zip`, { method: 'POST', body: formData });
+        const json = await res.json();
+        if (!res.ok) throw new Error(json.error || 'Zip upload failed');
+        statusEl.innerHTML = `<span class="step-done">✓ Added ${json.photos.length - (r.photos || []).length} photo(s)</span>`;
+        setTimeout(() => { statusEl.hidden = true; }, 4000);
+      } catch (err) {
+        statusEl.hidden = true;
+        alert(err.message);
+      }
+      await openPanel(r.id);
+      await loadTable();
+      return;
+    }
+
     const formData = new FormData();
     for (const f of files) formData.append('photos', f);
     await fetch(`/api/inventory/${r.id}/photos`, { method: 'POST', body: formData });
@@ -565,6 +608,18 @@ function renderPanel(r, listing, priceSuggestion) {
         method: 'DELETE',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ url: btn.dataset.url })
+      });
+      await openPanel(r.id);
+    };
+  });
+
+  [...panel.querySelectorAll('.rotatePhoto')].forEach(btn => {
+    btn.onclick = async () => {
+      btn.disabled = true;
+      await fetch(`/api/inventory/${r.id}/photos/rotate`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ url: btn.dataset.url, degrees: 90 })
       });
       await openPanel(r.id);
     };
