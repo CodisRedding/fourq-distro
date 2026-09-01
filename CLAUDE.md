@@ -25,6 +25,22 @@ at the UI instead. Only step in for genuine judgment calls: identifying an
 obscure/unclear record from a photo, pricing research the app can't automate,
 or actual code changes/bug fixes.
 
+**Claude session workflow, to keep token usage down when a Claude session
+*is* warranted (a code change, bug fix, or judgment call):**
+
+1. Finish the task.
+2. `/rename` the session while it still has full context, so the name is
+   meaningful if you ever `/resume` it later.
+3. `/clear`.
+4. Start the next task.
+
+Clear between unrelated tasks even mid-session — e.g. after finishing a bug
+fix, before starting a different feature — not just when stopping for the
+day. `/context` isn't a required step every cycle; it's a spot-check, worth
+running occasionally (every 30–60 min of active work) to catch the Messages
+category creeping back up past ~100k, rather than after every single
+`/clear`.
+
 ## Running the app
 
 ```bash
