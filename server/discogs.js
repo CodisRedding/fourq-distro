@@ -5,7 +5,7 @@
 // (see DISCOGS_SETUP.md) before either pricing or listing calls will work.
 
 const API_BASE = 'https://api.discogs.com';
-const USER_AGENT = 'DailyDollarRecordManager/1.0';
+const USER_AGENT = 'FourqDistro/1.0';
 
 // Discogs' price_suggestions response is keyed by these exact strings.
 const GRADE_KEY_MAP = {
