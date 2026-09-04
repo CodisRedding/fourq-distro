@@ -11,6 +11,24 @@ const API_BASE = 'https://api.ebay.com';
 // for publishOffer to succeed, confirmed via eBay's own Developer AI Assistant.
 const SCOPES = 'https://api.ebay.com/oauth/api_scope/sell.inventory https://api.ebay.com/oauth/api_scope/sell.account.readonly';
 
+// eBay Item Specific aspect values (Format, Release Title, etc. — the
+// `aspects` object on an inventory item) each have their own 65-character
+// cap, separate from the actual listing title/description which have their
+// own much longer limits (built in listing.js). Confirmed via real publish
+// failures (errorId 25002) on both Release Title and Format. Truncates
+// rather than fails outright — these are secondary listing metadata, not
+// the actual title/description buyers read.
+function truncateAspect(value, max = 65) {
+  if (!value || value.length <= max) return value;
+  return value.slice(0, max - 1).trimEnd() + '…';
+}
+
+function truncateAspects(aspects) {
+  return Object.fromEntries(
+    Object.entries(aspects).map(([key, values]) => [key, values.map(v => truncateAspect(v))])
+  );
+}
+
 function recordSize(format) {
   if (!format) return null;
   if (/12"/.test(format)) return '12"';
@@ -191,6 +209,23 @@ async function publishListing(record, listingText, imageUrls) {
     err.code = 'NO_PHOTOS';
     throw err;
   }
+  // eBay's Sell Inventory API caps product.imageUrls at 12 — the "up to 24
+  // photos" figure quoted around eBay is for the older Trading API/listing
+  // tool, not this REST endpoint. Sending more fails inventory-item creation
+  // outright (errorId 25601, "size for ImageLinks cannot exceed..."), so cap
+  // here rather than let a well-photographed record fail to publish at all.
+  // Keep the first 12 in the app's own photo order (the first photo is
+  // already the primary/thumbnail image by convention).
+  const ebayImageUrls = imageUrls.slice(0, 12);
+  if (!record.asking_price || Number(record.asking_price) <= 0) {
+    // Without this check, a blank/zero price silently became the string '0'
+    // below and eBay rejected the offer with a cryptic "price is either
+    // invalid or below the minimum price of FIXED_PRICE" 400 — same failure
+    // mode Discogs' publish path already guards against explicitly.
+    const err = new Error('Set an asking price before publishing to eBay.');
+    err.code = 'MISSING_PRICE';
+    throw err;
+  }
 
   const token = await getUserAccessToken();
   // Reuse the SKU from a prior publish if one exists — SKU is the identity
@@ -228,12 +263,20 @@ async function publishListing(record, listingText, imageUrls) {
       product: {
         title: listingText.ebayTitle,
         description: listingText.ebayDescription,
-        imageUrls,
+        imageUrls: ebayImageUrls,
         // UPC is a required-looking field in eBay's UI, but these are obscure
         // punk/indie pressings that never had barcodes — "Does not apply" is
         // the standard way to satisfy it honestly instead of leaving it blank.
         upc: ['Does not apply'],
-        aspects: {
+        // eBay Item Specific aspect *values* have their own 65-character cap
+        // — confirmed the hard way on both Release Title and Format (a
+        // record with a lot of format descriptors, e.g. "Vinyl, 7", 33 1/3
+        // RPM, Limited Edition, Numbered, Remastered, Stereo", blew past it
+        // too). Rather than truncate field-by-field as each one turns up in
+        // a real failure, truncate every aspect value here — separate from
+        // the actual listing title/description, which have their own much
+        // longer limits and are unaffected.
+        aspects: truncateAspects({
           Artist: [record.artist],
           Format: [record.format],
           Genre: ['Punk'],
@@ -248,7 +291,7 @@ async function publishListing(record, listingText, imageUrls) {
           ...(record.condition_sleeve ? { 'Sleeve Grading': [record.condition_sleeve] } : {}),
           ...(catalogNumber(record.label) ? { 'Catalog Number': [catalogNumber(record.label)] } : {}),
           ...(record.matrix_number ? { 'Vinyl Matrix Number': [record.matrix_number] } : {})
-        }
+        })
       }
     })
   });
@@ -272,7 +315,7 @@ async function publishListing(record, listingText, imageUrls) {
     categoryId: process.env.EBAY_CATEGORY_ID || '176985', // Vinyl Records category
     listingDescription: listingText.ebayDescription,
     pricingSummary: {
-      price: { value: record.asking_price || '0', currency: 'USD' }
+      price: { value: record.asking_price, currency: 'USD' }
     },
     merchantLocationKey: process.env.EBAY_LOCATION_KEY,
     listingPolicies: {

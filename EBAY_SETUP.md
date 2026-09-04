@@ -133,6 +133,29 @@ something breaks in the future:
 - If a publish attempt fails partway through, it can leave an orphaned unpublished
   offer behind that blocks retrying — the code now detects this (errorId 25002) and
   reuses the existing offer automatically rather than erroring out.
+- Publishing a record with no asking price used to send eBay `price: 0`, which it
+  rejects with a genuinely cryptic 400 (`errorId 25016`, "price is either invalid or
+  below the minimum price of FIXED_PRICE"). The app now checks for this upfront and
+  shows a plain "Set an asking price before publishing to eBay" message instead —
+  if you ever see the raw eBay error text again, that's the field to check first.
+- The Sell Inventory API's `product.imageUrls` caps out at 12 images per item —
+  the "up to 24 photos" figure quoted around eBay is for the older Trading
+  API/listing tool, not this REST endpoint. A well-photographed record (12+
+  photos, easy with a full camera-roll zip) used to fail inventory-item creation
+  outright (`errorId 25601`, "size for ImageLinks cannot exceed..."). The app now
+  only sends the first 12 photos in the record's own photo order (so it's whatever
+  you've set as the primary/first photo onward) — reorder photos in the UI if you
+  want different ones to make the cut.
+- Every Item Specific aspect *value* (Format, Release Title, Record Label,
+  etc. — the `aspects` object on an inventory item) has its own 65-character
+  cap, separate from the actual listing title/description (which have their
+  own much longer limits, built in `listing.js`). Confirmed the hard way on
+  both a long compilation-style title and a format string with a lot of
+  descriptors ("Vinyl, 7", 33 1/3 RPM, Limited Edition, Numbered,
+  Remastered, Stereo") — both failed publishing outright (`errorId 25002`,
+  "value is too long"). The app now truncates every aspect value with an
+  ellipsis if needed — the real, full text is unaffected everywhere else in
+  the listing (title, description).
 
 ---
 
