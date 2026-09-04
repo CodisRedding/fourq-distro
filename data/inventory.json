@@ -1733,21 +1733,70 @@
     "tier": "Tier 1 - Individual (high value)",
     "discogs_low_price": "44.71",
     "copies_for_sale_on_discogs": "1",
-    "asking_price": "44.71",
-    "condition_media": "",
-    "condition_sleeve": "",
+    "asking_price": "65",
+    "condition_media": "NM",
+    "condition_sleeve": "NM",
     "notes": "",
-    "photos": [],
+    "photos": [
+      "/photos/pink-panzer-2__man-thunder__chapter-eleven-recor/1788454067719-9-IMG_E1815.jpg",
+      "/photos/pink-panzer-2__man-thunder__chapter-eleven-recor/1788454066884-0-IMG_E1804.jpg",
+      "/photos/pink-panzer-2__man-thunder__chapter-eleven-recor/1788454066923-1-IMG_E1805.jpg",
+      "/photos/pink-panzer-2__man-thunder__chapter-eleven-recor/1788454067066-2-IMG_E1806.jpg",
+      "/photos/pink-panzer-2__man-thunder__chapter-eleven-recor/1788454067212-3-IMG_E1807.jpg",
+      "/photos/pink-panzer-2__man-thunder__chapter-eleven-recor/1788454067285-4-IMG_E1808.jpg",
+      "/photos/pink-panzer-2__man-thunder__chapter-eleven-recor/1788454067352-5-IMG_E1809.jpg",
+      "/photos/pink-panzer-2__man-thunder__chapter-eleven-recor/1788454067426-6-IMG_E1810.jpg",
+      "/photos/pink-panzer-2__man-thunder__chapter-eleven-recor/1788454067493-7-IMG_E1811.jpg",
+      "/photos/pink-panzer-2__man-thunder__chapter-eleven-recor/1788454067563-8-IMG_E1813.jpg"
+    ],
     "status": {
-      "ebay": "unlisted",
+      "ebay": "listed",
       "fb": "unlisted",
       "discogs": "unlisted"
     },
-    "ebay_listing_id": null,
+    "ebay_listing_id": "407190673296",
     "sold": false,
-    "discogs_release_id": null,
-    "discogs_price_by_grade": null,
-    "discogs_community": null,
+    "discogs_release_id": 6256883,
+    "discogs_price_by_grade": {
+      "Mint (M)": {
+        "currency": "USD",
+        "value": 87.39999999999999
+      },
+      "Near Mint (NM or M-)": {
+        "currency": "USD",
+        "value": 78.2
+      },
+      "Very Good Plus (VG+)": {
+        "currency": "USD",
+        "value": 59.800000000000004
+      },
+      "Very Good (VG)": {
+        "currency": "USD",
+        "value": 41.4
+      },
+      "Good Plus (G+)": {
+        "currency": "USD",
+        "value": 23
+      },
+      "Good (G)": {
+        "currency": "USD",
+        "value": 13.799999999999999
+      },
+      "Fair (F)": {
+        "currency": "USD",
+        "value": 9.200000000000001
+      },
+      "Poor (P)": {
+        "currency": "USD",
+        "value": 4.6000000000000005
+      }
+    },
+    "discogs_community": {
+      "have": 18,
+      "want": 94,
+      "ratingAverage": 4,
+      "ratingCount": 3
+    },
     "discogs_sold_stats": {
       "low": "",
       "median": "",
@@ -1756,7 +1805,28 @@
     },
     "discogs_listing_id": null,
     "listing_extras": "",
-    "photo_hosted_urls": {}
+    "photo_hosted_urls": {
+      "/photos/pink-panzer-2__man-thunder__chapter-eleven-recor/1788454067719-9-IMG_E1815.jpg": "https://i.ibb.co/67vNh8MR/1788454067719-9-IMG-E1815.jpg",
+      "/photos/pink-panzer-2__man-thunder__chapter-eleven-recor/1788454066884-0-IMG_E1804.jpg": "https://i.ibb.co/Dgz57ZTY/1788454066884-0-IMG-E1804.jpg",
+      "/photos/pink-panzer-2__man-thunder__chapter-eleven-recor/1788454066923-1-IMG_E1805.jpg": "https://i.ibb.co/Q7kmk9NB/1788454066923-1-IMG-E1805.jpg",
+      "/photos/pink-panzer-2__man-thunder__chapter-eleven-recor/1788454067066-2-IMG_E1806.jpg": "https://i.ibb.co/ycDm2Z23/1788454067066-2-IMG-E1806.jpg",
+      "/photos/pink-panzer-2__man-thunder__chapter-eleven-recor/1788454067212-3-IMG_E1807.jpg": "https://i.ibb.co/8Ly7kPfF/1788454067212-3-IMG-E1807.jpg",
+      "/photos/pink-panzer-2__man-thunder__chapter-eleven-recor/1788454067285-4-IMG_E1808.jpg": "https://i.ibb.co/7xFkbR3t/1788454067285-4-IMG-E1808.jpg",
+      "/photos/pink-panzer-2__man-thunder__chapter-eleven-recor/1788454067352-5-IMG_E1809.jpg": "https://i.ibb.co/n2K4jWz/1788454067352-5-IMG-E1809.jpg",
+      "/photos/pink-panzer-2__man-thunder__chapter-eleven-recor/1788454067426-6-IMG_E1810.jpg": "https://i.ibb.co/zVxtBV4d/1788454067426-6-IMG-E1810.jpg",
+      "/photos/pink-panzer-2__man-thunder__chapter-eleven-recor/1788454067493-7-IMG_E1811.jpg": "https://i.ibb.co/KcZt7mZv/1788454067493-7-IMG-E1811.jpg",
+      "/photos/pink-panzer-2__man-thunder__chapter-eleven-recor/1788454067563-8-IMG_E1813.jpg": "https://i.ibb.co/Q71WqBXb/1788454067563-8-IMG-E1813.jpg"
+    },
+    "matrix_number": "",
+    "sealed": false,
+    "deadwax_photos": [
+      "/photos/pink-panzer-2__man-thunder__chapter-eleven-recor/1788454067285-4-IMG_E1808.jpg",
+      "/photos/pink-panzer-2__man-thunder__chapter-eleven-recor/1788454067352-5-IMG_E1809.jpg",
+      "/photos/pink-panzer-2__man-thunder__chapter-eleven-recor/1788454067426-6-IMG_E1810.jpg",
+      "/photos/pink-panzer-2__man-thunder__chapter-eleven-recor/1788454067493-7-IMG_E1811.jpg",
+      "/photos/pink-panzer-2__man-thunder__chapter-eleven-recor/1788454067563-8-IMG_E1813.jpg"
+    ],
+    "ebay_sku": "pinkpanzer2manthunderchapterelevenrecor"
   },
   {
     "id": "the-deadbeats__kill-the-hippies__munster-records-mr-7",
@@ -2129,17 +2199,29 @@
     "tier": "Tier 1 - Individual (high value)",
     "discogs_low_price": "40.00",
     "copies_for_sale_on_discogs": "1",
-    "asking_price": "40.00",
-    "condition_media": "",
-    "condition_sleeve": "",
+    "asking_price": "35",
+    "condition_media": "NM",
+    "condition_sleeve": "VG+",
     "notes": "",
-    "photos": [],
+    "photos": [
+      "/photos/swingin-utters-uk-subs__split-vision-volume-one__new-red-archives-nra/1788318215491-9-IMG_E1592.jpg",
+      "/photos/swingin-utters-uk-subs__split-vision-volume-one__new-red-archives-nra/1788318215634-10-IMG_E1593.jpg",
+      "/photos/swingin-utters-uk-subs__split-vision-volume-one__new-red-archives-nra/1788318214741-0-IMG_E1583.jpg",
+      "/photos/swingin-utters-uk-subs__split-vision-volume-one__new-red-archives-nra/1788318214875-1-IMG_E1584.jpg",
+      "/photos/swingin-utters-uk-subs__split-vision-volume-one__new-red-archives-nra/1788318214950-2-IMG_E1585.jpg",
+      "/photos/swingin-utters-uk-subs__split-vision-volume-one__new-red-archives-nra/1788318215017-3-IMG_E1586.jpg",
+      "/photos/swingin-utters-uk-subs__split-vision-volume-one__new-red-archives-nra/1788318215084-4-IMG_E1587.jpg",
+      "/photos/swingin-utters-uk-subs__split-vision-volume-one__new-red-archives-nra/1788318215150-5-IMG_E1588.jpg",
+      "/photos/swingin-utters-uk-subs__split-vision-volume-one__new-red-archives-nra/1788318215222-6-IMG_E1589.jpg",
+      "/photos/swingin-utters-uk-subs__split-vision-volume-one__new-red-archives-nra/1788318215285-7-IMG_E1590.jpg",
+      "/photos/swingin-utters-uk-subs__split-vision-volume-one__new-red-archives-nra/1788318215348-8-IMG_E1591.jpg"
+    ],
     "status": {
-      "ebay": "unlisted",
+      "ebay": "listed",
       "fb": "unlisted",
       "discogs": "unlisted"
     },
-    "ebay_listing_id": null,
+    "ebay_listing_id": "407186491165",
     "sold": false,
     "discogs_release_id": null,
     "discogs_price_by_grade": null,
@@ -2152,7 +2234,30 @@
     },
     "discogs_listing_id": null,
     "listing_extras": "",
-    "photo_hosted_urls": {}
+    "photo_hosted_urls": {
+      "/photos/swingin-utters-uk-subs__split-vision-volume-one__new-red-archives-nra/1788318215491-9-IMG_E1592.jpg": "https://i.ibb.co/fYJYqW48/1788318215491-9-IMG-E1592.jpg",
+      "/photos/swingin-utters-uk-subs__split-vision-volume-one__new-red-archives-nra/1788318215634-10-IMG_E1593.jpg": "https://i.ibb.co/Nn7cVJcS/1788318215634-10-IMG-E1593.jpg",
+      "/photos/swingin-utters-uk-subs__split-vision-volume-one__new-red-archives-nra/1788318214741-0-IMG_E1583.jpg": "https://i.ibb.co/7JgBrT03/1788318214741-0-IMG-E1583.jpg",
+      "/photos/swingin-utters-uk-subs__split-vision-volume-one__new-red-archives-nra/1788318214875-1-IMG_E1584.jpg": "https://i.ibb.co/JSDpcj7/1788318214875-1-IMG-E1584.jpg",
+      "/photos/swingin-utters-uk-subs__split-vision-volume-one__new-red-archives-nra/1788318214950-2-IMG_E1585.jpg": "https://i.ibb.co/tMk7Ddff/1788318214950-2-IMG-E1585.jpg",
+      "/photos/swingin-utters-uk-subs__split-vision-volume-one__new-red-archives-nra/1788318215017-3-IMG_E1586.jpg": "https://i.ibb.co/7tgNGmpy/1788318215017-3-IMG-E1586.jpg",
+      "/photos/swingin-utters-uk-subs__split-vision-volume-one__new-red-archives-nra/1788318215084-4-IMG_E1587.jpg": "https://i.ibb.co/KjY1HTYS/1788318215084-4-IMG-E1587.jpg",
+      "/photos/swingin-utters-uk-subs__split-vision-volume-one__new-red-archives-nra/1788318215150-5-IMG_E1588.jpg": "https://i.ibb.co/jP7GnPZy/1788318215150-5-IMG-E1588.jpg",
+      "/photos/swingin-utters-uk-subs__split-vision-volume-one__new-red-archives-nra/1788318215222-6-IMG_E1589.jpg": "https://i.ibb.co/n9Jww5F/1788318215222-6-IMG-E1589.jpg",
+      "/photos/swingin-utters-uk-subs__split-vision-volume-one__new-red-archives-nra/1788318215285-7-IMG_E1590.jpg": "https://i.ibb.co/GvNQgQmm/1788318215285-7-IMG-E1590.jpg",
+      "/photos/swingin-utters-uk-subs__split-vision-volume-one__new-red-archives-nra/1788318215348-8-IMG_E1591.jpg": "https://i.ibb.co/pj7GzDbQ/1788318215348-8-IMG-E1591.jpg"
+    },
+    "deadwax_photos": [
+      "/photos/swingin-utters-uk-subs__split-vision-volume-one__new-red-archives-nra/1788318215017-3-IMG_E1586.jpg",
+      "/photos/swingin-utters-uk-subs__split-vision-volume-one__new-red-archives-nra/1788318215084-4-IMG_E1587.jpg",
+      "/photos/swingin-utters-uk-subs__split-vision-volume-one__new-red-archives-nra/1788318215150-5-IMG_E1588.jpg",
+      "/photos/swingin-utters-uk-subs__split-vision-volume-one__new-red-archives-nra/1788318215222-6-IMG_E1589.jpg",
+      "/photos/swingin-utters-uk-subs__split-vision-volume-one__new-red-archives-nra/1788318215285-7-IMG_E1590.jpg",
+      "/photos/swingin-utters-uk-subs__split-vision-volume-one__new-red-archives-nra/1788318215348-8-IMG_E1591.jpg"
+    ],
+    "matrix_number": "",
+    "sealed": false,
+    "ebay_sku": "swinginuttersuksubssplitvisionvolumeonenewredarchi"
   },
   {
     "id": "templars-90-proof__templars-90-proof__90-proof-records-90-",
@@ -3514,7 +3619,7 @@
   },
   {
     "id": "pink-panzer-2__hail-the-new-dong__chapter-eleven-recor",
-    "artist": "Pink Panzer (2)",
+    "artist": "Pink Panzer",
     "title": "Hail The New Dong",
     "year": "2015",
     "country": "US",
@@ -3523,21 +3628,69 @@
     "tier": "Tier 1 - Individual (high value)",
     "discogs_low_price": "28.17",
     "copies_for_sale_on_discogs": "2",
-    "asking_price": "28.17",
-    "condition_media": "",
-    "condition_sleeve": "",
+    "asking_price": "42.50",
+    "condition_media": "NM",
+    "condition_sleeve": "M",
     "notes": "",
-    "photos": [],
+    "photos": [
+      "/photos/pink-panzer-2__hail-the-new-dong__chapter-eleven-recor/1788468834607-0-IMG_E1952.jpg",
+      "/photos/pink-panzer-2__hail-the-new-dong__chapter-eleven-recor/1788468834745-1-IMG_E1953.jpg",
+      "/photos/pink-panzer-2__hail-the-new-dong__chapter-eleven-recor/1788468834784-2-IMG_E1954.jpg",
+      "/photos/pink-panzer-2__hail-the-new-dong__chapter-eleven-recor/1788468835214-6-IMG_E1958.jpg",
+      "/photos/pink-panzer-2__hail-the-new-dong__chapter-eleven-recor/1788468834926-3-IMG_E1955.jpg",
+      "/photos/pink-panzer-2__hail-the-new-dong__chapter-eleven-recor/1788468834997-4-IMG_E1956.jpg",
+      "/photos/pink-panzer-2__hail-the-new-dong__chapter-eleven-recor/1788468835073-5-IMG_E1957.jpg",
+      "/photos/pink-panzer-2__hail-the-new-dong__chapter-eleven-recor/1788468835290-7-IMG_E1959.jpg",
+      "/photos/pink-panzer-2__hail-the-new-dong__chapter-eleven-recor/1788468835363-8-IMG_E1960.jpg"
+    ],
     "status": {
-      "ebay": "unlisted",
+      "ebay": "listed",
       "fb": "unlisted",
       "discogs": "unlisted"
     },
-    "ebay_listing_id": null,
+    "ebay_listing_id": "407191061737",
     "sold": false,
-    "discogs_release_id": null,
-    "discogs_price_by_grade": null,
-    "discogs_community": null,
+    "discogs_release_id": 7024887,
+    "discogs_price_by_grade": {
+      "Mint (M)": {
+        "currency": "USD",
+        "value": 47.4905
+      },
+      "Near Mint (NM or M-)": {
+        "currency": "USD",
+        "value": 42.4915
+      },
+      "Very Good Plus (VG+)": {
+        "currency": "USD",
+        "value": 32.493500000000004
+      },
+      "Very Good (VG)": {
+        "currency": "USD",
+        "value": 22.4955
+      },
+      "Good Plus (G+)": {
+        "currency": "USD",
+        "value": 12.4975
+      },
+      "Good (G)": {
+        "currency": "USD",
+        "value": 7.4985
+      },
+      "Fair (F)": {
+        "currency": "USD",
+        "value": 4.9990000000000006
+      },
+      "Poor (P)": {
+        "currency": "USD",
+        "value": 2.4995000000000003
+      }
+    },
+    "discogs_community": {
+      "have": 83,
+      "want": 79,
+      "ratingAverage": 4.25,
+      "ratingCount": 4
+    },
     "discogs_sold_stats": {
       "low": "",
       "median": "",
@@ -3546,7 +3699,26 @@
     },
     "discogs_listing_id": null,
     "listing_extras": "",
-    "photo_hosted_urls": {}
+    "photo_hosted_urls": {
+      "/photos/pink-panzer-2__hail-the-new-dong__chapter-eleven-recor/1788468834607-0-IMG_E1952.jpg": "https://i.ibb.co/TxsBVzst/1788468834607-0-IMG-E1952.jpg",
+      "/photos/pink-panzer-2__hail-the-new-dong__chapter-eleven-recor/1788468834745-1-IMG_E1953.jpg": "https://i.ibb.co/Xfg8K1jD/1788468834745-1-IMG-E1953.jpg",
+      "/photos/pink-panzer-2__hail-the-new-dong__chapter-eleven-recor/1788468834784-2-IMG_E1954.jpg": "https://i.ibb.co/LzVjWpw2/1788468834784-2-IMG-E1954.jpg",
+      "/photos/pink-panzer-2__hail-the-new-dong__chapter-eleven-recor/1788468835214-6-IMG_E1958.jpg": "https://i.ibb.co/1YtvKWTQ/1788468835214-6-IMG-E1958.jpg",
+      "/photos/pink-panzer-2__hail-the-new-dong__chapter-eleven-recor/1788468834926-3-IMG_E1955.jpg": "https://i.ibb.co/jZTDk9wJ/1788468834926-3-IMG-E1955.jpg",
+      "/photos/pink-panzer-2__hail-the-new-dong__chapter-eleven-recor/1788468834997-4-IMG_E1956.jpg": "https://i.ibb.co/sJD62vjZ/1788468834997-4-IMG-E1956.jpg",
+      "/photos/pink-panzer-2__hail-the-new-dong__chapter-eleven-recor/1788468835073-5-IMG_E1957.jpg": "https://i.ibb.co/Cpv8zyS2/1788468835073-5-IMG-E1957.jpg",
+      "/photos/pink-panzer-2__hail-the-new-dong__chapter-eleven-recor/1788468835290-7-IMG_E1959.jpg": "https://i.ibb.co/twPNS8Qk/1788468835290-7-IMG-E1959.jpg",
+      "/photos/pink-panzer-2__hail-the-new-dong__chapter-eleven-recor/1788468835363-8-IMG_E1960.jpg": "https://i.ibb.co/nqsYHnmx/1788468835363-8-IMG-E1960.jpg"
+    },
+    "matrix_number": "",
+    "sealed": false,
+    "deadwax_photos": [
+      "/photos/pink-panzer-2__hail-the-new-dong__chapter-eleven-recor/1788468834997-4-IMG_E1956.jpg",
+      "/photos/pink-panzer-2__hail-the-new-dong__chapter-eleven-recor/1788468835073-5-IMG_E1957.jpg",
+      "/photos/pink-panzer-2__hail-the-new-dong__chapter-eleven-recor/1788468835290-7-IMG_E1959.jpg",
+      "/photos/pink-panzer-2__hail-the-new-dong__chapter-eleven-recor/1788468835363-8-IMG_E1960.jpg"
+    ],
+    "ebay_sku": "pinkpanzer2hailthenewdongchapterelevenrecor"
   },
   {
     "id": "crimpshrine__duct-tape-soup__lookout-records-57-l",
@@ -3971,7 +4143,7 @@
   },
   {
     "id": "the-accident__kill-the-bee-gees__knifeman-records-km-",
-    "artist": "The Accident*",
+    "artist": "The Accident",
     "title": "Kill The Bee Gees",
     "year": "1990",
     "country": "US",
@@ -3980,17 +4152,29 @@
     "tier": "Tier 1 - Individual (high value)",
     "discogs_low_price": "25.00",
     "copies_for_sale_on_discogs": "3",
-    "asking_price": "25.00",
-    "condition_media": "",
-    "condition_sleeve": "",
+    "asking_price": "30",
+    "condition_media": "NM",
+    "condition_sleeve": "NM",
     "notes": "",
-    "photos": [],
+    "photos": [
+      "/photos/the-accident__kill-the-bee-gees__knifeman-records-km-/1788361804579-0-IMG_E1701.jpg",
+      "/photos/the-accident__kill-the-bee-gees__knifeman-records-km-/1788361804727-1-IMG_E1702.jpg",
+      "/photos/the-accident__kill-the-bee-gees__knifeman-records-km-/1788361804878-2-IMG_E1703.jpg",
+      "/photos/the-accident__kill-the-bee-gees__knifeman-records-km-/1788361805029-3-IMG_E1704.jpg",
+      "/photos/the-accident__kill-the-bee-gees__knifeman-records-km-/1788361805180-4-IMG_E1705.jpg",
+      "/photos/the-accident__kill-the-bee-gees__knifeman-records-km-/1788361805333-5-IMG_E1706.jpg",
+      "/photos/the-accident__kill-the-bee-gees__knifeman-records-km-/1788361805418-6-IMG_E1707.jpg",
+      "/photos/the-accident__kill-the-bee-gees__knifeman-records-km-/1788361805501-7-IMG_E1708.jpg",
+      "/photos/the-accident__kill-the-bee-gees__knifeman-records-km-/1788361805584-8-IMG_E1709.jpg",
+      "/photos/the-accident__kill-the-bee-gees__knifeman-records-km-/1788361805665-9-IMG_E1711.jpg",
+      "/photos/the-accident__kill-the-bee-gees__knifeman-records-km-/1788361805743-10-IMG_E1712.jpg"
+    ],
     "status": {
-      "ebay": "unlisted",
+      "ebay": "listed",
       "fb": "unlisted",
       "discogs": "unlisted"
     },
-    "ebay_listing_id": null,
+    "ebay_listing_id": "407188030014",
     "sold": false,
     "discogs_release_id": null,
     "discogs_price_by_grade": null,
@@ -4003,11 +4187,33 @@
     },
     "discogs_listing_id": null,
     "listing_extras": "",
-    "photo_hosted_urls": {}
+    "photo_hosted_urls": {
+      "/photos/the-accident__kill-the-bee-gees__knifeman-records-km-/1788361804579-0-IMG_E1701.jpg": "https://i.ibb.co/MkRgvSqR/1788361804579-0-IMG-E1701.jpg",
+      "/photos/the-accident__kill-the-bee-gees__knifeman-records-km-/1788361804727-1-IMG_E1702.jpg": "https://i.ibb.co/HTwGQYz9/1788361804727-1-IMG-E1702.jpg",
+      "/photos/the-accident__kill-the-bee-gees__knifeman-records-km-/1788361804878-2-IMG_E1703.jpg": "https://i.ibb.co/HTGNBppz/1788361804878-2-IMG-E1703.jpg",
+      "/photos/the-accident__kill-the-bee-gees__knifeman-records-km-/1788361805029-3-IMG_E1704.jpg": "https://i.ibb.co/B5rz1jp7/1788361805029-3-IMG-E1704.jpg",
+      "/photos/the-accident__kill-the-bee-gees__knifeman-records-km-/1788361805180-4-IMG_E1705.jpg": "https://i.ibb.co/ccHYJfFw/1788361805180-4-IMG-E1705.jpg",
+      "/photos/the-accident__kill-the-bee-gees__knifeman-records-km-/1788361805333-5-IMG_E1706.jpg": "https://i.ibb.co/ZzVgPr0z/1788361805333-5-IMG-E1706.jpg",
+      "/photos/the-accident__kill-the-bee-gees__knifeman-records-km-/1788361805418-6-IMG_E1707.jpg": "https://i.ibb.co/tT0K5WqC/1788361805418-6-IMG-E1707.jpg",
+      "/photos/the-accident__kill-the-bee-gees__knifeman-records-km-/1788361805501-7-IMG_E1708.jpg": "https://i.ibb.co/ZzLpjhBt/1788361805501-7-IMG-E1708.jpg",
+      "/photos/the-accident__kill-the-bee-gees__knifeman-records-km-/1788361805584-8-IMG_E1709.jpg": "https://i.ibb.co/kL49FJw/1788361805584-8-IMG-E1709.jpg",
+      "/photos/the-accident__kill-the-bee-gees__knifeman-records-km-/1788361805665-9-IMG_E1711.jpg": "https://i.ibb.co/1YMbCNkR/1788361805665-9-IMG-E1711.jpg",
+      "/photos/the-accident__kill-the-bee-gees__knifeman-records-km-/1788361805743-10-IMG_E1712.jpg": "https://i.ibb.co/tMKKb2FB/1788361805743-10-IMG-E1712.jpg"
+    },
+    "deadwax_photos": [
+      "/photos/the-accident__kill-the-bee-gees__knifeman-records-km-/1788361805418-6-IMG_E1707.jpg",
+      "/photos/the-accident__kill-the-bee-gees__knifeman-records-km-/1788361805501-7-IMG_E1708.jpg",
+      "/photos/the-accident__kill-the-bee-gees__knifeman-records-km-/1788361805584-8-IMG_E1709.jpg",
+      "/photos/the-accident__kill-the-bee-gees__knifeman-records-km-/1788361805665-9-IMG_E1711.jpg",
+      "/photos/the-accident__kill-the-bee-gees__knifeman-records-km-/1788361805743-10-IMG_E1712.jpg"
+    ],
+    "matrix_number": "",
+    "sealed": false,
+    "ebay_sku": "theaccidentkillthebeegeesknifemanrecordskm"
   },
   {
     "id": "templars__out-of-the-darkness__templecombe-682",
-    "artist": "Templars*",
+    "artist": "Templars",
     "title": "Out Of The Darkness",
     "year": "2008",
     "country": "US",
@@ -4016,21 +4222,69 @@
     "tier": "Tier 1 - Individual (high value)",
     "discogs_low_price": "25.00",
     "copies_for_sale_on_discogs": "1",
-    "asking_price": "25.00",
-    "condition_media": "",
-    "condition_sleeve": "",
+    "asking_price": "45",
+    "condition_media": "VG+",
+    "condition_sleeve": "VG+",
     "notes": "",
-    "photos": [],
+    "photos": [
+      "/photos/templars__out-of-the-darkness__templecombe-682/1788459402396-0-IMG_E1875.jpg",
+      "/photos/templars__out-of-the-darkness__templecombe-682/1788459402561-1-IMG_E1876.jpg",
+      "/photos/templars__out-of-the-darkness__templecombe-682/1788459402715-2-IMG_E1877.jpg",
+      "/photos/templars__out-of-the-darkness__templecombe-682/1788459403021-5-IMG_E1880.jpg",
+      "/photos/templars__out-of-the-darkness__templecombe-682/1788459402796-3-IMG_E1878.jpg",
+      "/photos/templars__out-of-the-darkness__templecombe-682/1788459402877-4-IMG_E1879.jpg",
+      "/photos/templars__out-of-the-darkness__templecombe-682/1788459403101-6-IMG_E1881.jpg",
+      "/photos/templars__out-of-the-darkness__templecombe-682/1788459403181-7-IMG_E1882.jpg",
+      "/photos/templars__out-of-the-darkness__templecombe-682/1788459403260-8-IMG_E1883.jpg"
+    ],
     "status": {
-      "ebay": "unlisted",
+      "ebay": "listed",
       "fb": "unlisted",
       "discogs": "unlisted"
     },
-    "ebay_listing_id": null,
+    "ebay_listing_id": "407190849603",
     "sold": false,
-    "discogs_release_id": null,
-    "discogs_price_by_grade": null,
-    "discogs_community": null,
+    "discogs_release_id": 4167137,
+    "discogs_price_by_grade": {
+      "Mint (M)": {
+        "currency": "USD",
+        "value": 546.25
+      },
+      "Near Mint (NM or M-)": {
+        "currency": "USD",
+        "value": 488.75
+      },
+      "Very Good Plus (VG+)": {
+        "currency": "USD",
+        "value": 373.75
+      },
+      "Very Good (VG)": {
+        "currency": "USD",
+        "value": 258.75
+      },
+      "Good Plus (G+)": {
+        "currency": "USD",
+        "value": 143.75
+      },
+      "Good (G)": {
+        "currency": "USD",
+        "value": 86.25
+      },
+      "Fair (F)": {
+        "currency": "USD",
+        "value": 57.5
+      },
+      "Poor (P)": {
+        "currency": "USD",
+        "value": 28.75
+      }
+    },
+    "discogs_community": {
+      "have": 10,
+      "want": 85,
+      "ratingAverage": 5,
+      "ratingCount": 3
+    },
     "discogs_sold_stats": {
       "low": "",
       "median": "",
@@ -4039,7 +4293,27 @@
     },
     "discogs_listing_id": null,
     "listing_extras": "",
-    "photo_hosted_urls": {}
+    "photo_hosted_urls": {
+      "/photos/templars__out-of-the-darkness__templecombe-682/1788459402396-0-IMG_E1875.jpg": "https://i.ibb.co/QvdXtBFJ/1788459402396-0-IMG-E1875.jpg",
+      "/photos/templars__out-of-the-darkness__templecombe-682/1788459402561-1-IMG_E1876.jpg": "https://i.ibb.co/MQWr7r3/1788459402561-1-IMG-E1876.jpg",
+      "/photos/templars__out-of-the-darkness__templecombe-682/1788459402715-2-IMG_E1877.jpg": "https://i.ibb.co/PzVysKGx/1788459402715-2-IMG-E1877.jpg",
+      "/photos/templars__out-of-the-darkness__templecombe-682/1788459403021-5-IMG_E1880.jpg": "https://i.ibb.co/Z6SCJdRs/1788459403021-5-IMG-E1880.jpg",
+      "/photos/templars__out-of-the-darkness__templecombe-682/1788459402796-3-IMG_E1878.jpg": "https://i.ibb.co/Ld2Y9chd/1788459402796-3-IMG-E1878.jpg",
+      "/photos/templars__out-of-the-darkness__templecombe-682/1788459402877-4-IMG_E1879.jpg": "https://i.ibb.co/S4QT9xyg/1788459402877-4-IMG-E1879.jpg",
+      "/photos/templars__out-of-the-darkness__templecombe-682/1788459403101-6-IMG_E1881.jpg": "https://i.ibb.co/0V6Y66WF/1788459403101-6-IMG-E1881.jpg",
+      "/photos/templars__out-of-the-darkness__templecombe-682/1788459403181-7-IMG_E1882.jpg": "https://i.ibb.co/jkbkVD0C/1788459403181-7-IMG-E1882.jpg",
+      "/photos/templars__out-of-the-darkness__templecombe-682/1788459403260-8-IMG_E1883.jpg": "https://i.ibb.co/3PqnkGS/1788459403260-8-IMG-E1883.jpg"
+    },
+    "matrix_number": "",
+    "sealed": false,
+    "deadwax_photos": [
+      "/photos/templars__out-of-the-darkness__templecombe-682/1788459402796-3-IMG_E1878.jpg",
+      "/photos/templars__out-of-the-darkness__templecombe-682/1788459402877-4-IMG_E1879.jpg",
+      "/photos/templars__out-of-the-darkness__templecombe-682/1788459403101-6-IMG_E1881.jpg",
+      "/photos/templars__out-of-the-darkness__templecombe-682/1788459403181-7-IMG_E1882.jpg",
+      "/photos/templars__out-of-the-darkness__templecombe-682/1788459403260-8-IMG_E1883.jpg"
+    ],
+    "ebay_sku": "templarsoutofthedarknesstemplecombe682"
   },
   {
     "id": "freestone__bummer-bitch__last-laugh-records-2",
@@ -4778,7 +5052,7 @@
   },
   {
     "id": "the-fits-2__bored-of-education__ugly-pop-records-up0",
-    "artist": "The Fits (2)",
+    "artist": "The Fits",
     "title": "Bored Of Education",
     "year": "2018",
     "country": "Canada",
@@ -4787,21 +5061,42 @@
     "tier": "Tier 1 - Individual (no comp, needs research)",
     "discogs_low_price": "",
     "copies_for_sale_on_discogs": "",
-    "asking_price": "",
-    "condition_media": "",
-    "condition_sleeve": "",
+    "asking_price": "13",
+    "condition_media": "M",
+    "condition_sleeve": "M",
     "notes": "",
-    "photos": [],
+    "photos": [
+      "/photos/the-fits-2__bored-of-education__ugly-pop-records-up0/1788362713948-0-IMG_E1674.jpg",
+      "/photos/the-fits-2__bored-of-education__ugly-pop-records-up0/1788362714110-1-IMG_E1675.jpg",
+      "/photos/the-fits-2__bored-of-education__ugly-pop-records-up0/1788362714270-2-IMG_E1676.jpg",
+      "/photos/the-fits-2__bored-of-education__ugly-pop-records-up0/1788362714423-3-IMG_E1677.jpg",
+      "/photos/the-fits-2__bored-of-education__ugly-pop-records-up0/1788362714582-4-IMG_E1678.jpg",
+      "/photos/the-fits-2__bored-of-education__ugly-pop-records-up0/1788362714736-5-IMG_E1679.jpg",
+      "/photos/the-fits-2__bored-of-education__ugly-pop-records-up0/1788362714887-6-IMG_E1680.jpg",
+      "/photos/the-fits-2__bored-of-education__ugly-pop-records-up0/1788362715038-7-IMG_E1681.jpg",
+      "/photos/the-fits-2__bored-of-education__ugly-pop-records-up0/1788362715183-8-IMG_E1682.jpg",
+      "/photos/the-fits-2__bored-of-education__ugly-pop-records-up0/1788362715322-9-IMG_E1683.jpg",
+      "/photos/the-fits-2__bored-of-education__ugly-pop-records-up0/1788362715398-10-IMG_E1684.jpg",
+      "/photos/the-fits-2__bored-of-education__ugly-pop-records-up0/1788362715475-11-IMG_E1685.jpg",
+      "/photos/the-fits-2__bored-of-education__ugly-pop-records-up0/1788362715549-12-IMG_E1686.jpg",
+      "/photos/the-fits-2__bored-of-education__ugly-pop-records-up0/1788362715622-13-IMG_E1687.jpg",
+      "/photos/the-fits-2__bored-of-education__ugly-pop-records-up0/1788362715757-14-IMG_E1688.jpg"
+    ],
     "status": {
-      "ebay": "unlisted",
+      "ebay": "listed",
       "fb": "unlisted",
       "discogs": "unlisted"
     },
-    "ebay_listing_id": null,
+    "ebay_listing_id": "407188064176",
     "sold": false,
-    "discogs_release_id": null,
-    "discogs_price_by_grade": null,
-    "discogs_community": null,
+    "discogs_release_id": 11852403,
+    "discogs_price_by_grade": {},
+    "discogs_community": {
+      "have": 5,
+      "want": 20,
+      "ratingAverage": 5,
+      "ratingCount": 1
+    },
     "discogs_sold_stats": {
       "low": "",
       "median": "",
@@ -4809,8 +5104,33 @@
       "lastSoldDate": ""
     },
     "discogs_listing_id": null,
-    "listing_extras": "",
-    "photo_hosted_urls": {}
+    "listing_extras": "Never played",
+    "photo_hosted_urls": {
+      "/photos/the-fits-2__bored-of-education__ugly-pop-records-up0/1788362713948-0-IMG_E1674.jpg": "https://i.ibb.co/svKHc7sr/1788362713948-0-IMG-E1674.jpg",
+      "/photos/the-fits-2__bored-of-education__ugly-pop-records-up0/1788362714110-1-IMG_E1675.jpg": "https://i.ibb.co/KcQFbrWk/1788362714110-1-IMG-E1675.jpg",
+      "/photos/the-fits-2__bored-of-education__ugly-pop-records-up0/1788362714270-2-IMG_E1676.jpg": "https://i.ibb.co/B5NgRDGv/1788362714270-2-IMG-E1676.jpg",
+      "/photos/the-fits-2__bored-of-education__ugly-pop-records-up0/1788362714423-3-IMG_E1677.jpg": "https://i.ibb.co/GZxXRDJ/1788362714423-3-IMG-E1677.jpg",
+      "/photos/the-fits-2__bored-of-education__ugly-pop-records-up0/1788362714582-4-IMG_E1678.jpg": "https://i.ibb.co/232kNF0N/1788362714582-4-IMG-E1678.jpg",
+      "/photos/the-fits-2__bored-of-education__ugly-pop-records-up0/1788362714736-5-IMG_E1679.jpg": "https://i.ibb.co/Tq8K6Bmx/1788362714736-5-IMG-E1679.jpg",
+      "/photos/the-fits-2__bored-of-education__ugly-pop-records-up0/1788362714887-6-IMG_E1680.jpg": "https://i.ibb.co/C5M9Pytm/1788362714887-6-IMG-E1680.jpg",
+      "/photos/the-fits-2__bored-of-education__ugly-pop-records-up0/1788362715038-7-IMG_E1681.jpg": "https://i.ibb.co/Sw5NtrLW/1788362715038-7-IMG-E1681.jpg",
+      "/photos/the-fits-2__bored-of-education__ugly-pop-records-up0/1788362715183-8-IMG_E1682.jpg": "https://i.ibb.co/tPmRkvTN/1788362715183-8-IMG-E1682.jpg",
+      "/photos/the-fits-2__bored-of-education__ugly-pop-records-up0/1788362715322-9-IMG_E1683.jpg": "https://i.ibb.co/mFhQZSfh/1788362715322-9-IMG-E1683.jpg",
+      "/photos/the-fits-2__bored-of-education__ugly-pop-records-up0/1788362715398-10-IMG_E1684.jpg": "https://i.ibb.co/d4WcKffS/1788362715398-10-IMG-E1684.jpg",
+      "/photos/the-fits-2__bored-of-education__ugly-pop-records-up0/1788362715475-11-IMG_E1685.jpg": "https://i.ibb.co/p6Gw4Hc0/1788362715475-11-IMG-E1685.jpg",
+      "/photos/the-fits-2__bored-of-education__ugly-pop-records-up0/1788362715549-12-IMG_E1686.jpg": "https://i.ibb.co/fV4fgPmx/1788362715549-12-IMG-E1686.jpg",
+      "/photos/the-fits-2__bored-of-education__ugly-pop-records-up0/1788362715622-13-IMG_E1687.jpg": "https://i.ibb.co/JRxxd4DF/1788362715622-13-IMG-E1687.jpg",
+      "/photos/the-fits-2__bored-of-education__ugly-pop-records-up0/1788362715757-14-IMG_E1688.jpg": "https://i.ibb.co/5WM85pVD/1788362715757-14-IMG-E1688.jpg"
+    },
+    "matrix_number": "",
+    "sealed": false,
+    "deadwax_photos": [
+      "/photos/the-fits-2__bored-of-education__ugly-pop-records-up0/1788362715475-11-IMG_E1685.jpg",
+      "/photos/the-fits-2__bored-of-education__ugly-pop-records-up0/1788362715549-12-IMG_E1686.jpg",
+      "/photos/the-fits-2__bored-of-education__ugly-pop-records-up0/1788362715622-13-IMG_E1687.jpg",
+      "/photos/the-fits-2__bored-of-education__ugly-pop-records-up0/1788362715398-10-IMG_E1684.jpg"
+    ],
+    "ebay_sku": "thefits2boredofeducationuglypoprecordsup0"
   },
   {
     "id": "midnite-snaxxx__like-lightning-givin-me-the-business__raw-deluxe-records-d",
@@ -6621,7 +6941,7 @@
   },
   {
     "id": "the-pagans__six-and-change__danger-records-11-dr",
-    "artist": "The Pagans*",
+    "artist": "The Pagans",
     "title": "Six And Change",
     "year": "2017",
     "country": "France",
@@ -6630,17 +6950,24 @@
     "tier": "Tier 2 - Lot (pagans)",
     "discogs_low_price": "7.93",
     "copies_for_sale_on_discogs": "9",
-    "asking_price": "7.93",
-    "condition_media": "",
-    "condition_sleeve": "",
+    "asking_price": "20",
+    "condition_media": "NM",
+    "condition_sleeve": "NM",
     "notes": "",
-    "photos": [],
+    "photos": [
+      "/photos/the-pagans__six-and-change__danger-records-11-dr/1788374838438-0-IMG_E1786.jpg",
+      "/photos/the-pagans__six-and-change__danger-records-11-dr/1788374838586-1-IMG_E1787.jpg",
+      "/photos/the-pagans__six-and-change__danger-records-11-dr/1788374838964-5-IMG_E1791.jpg",
+      "/photos/the-pagans__six-and-change__danger-records-11-dr/1788374838667-2-IMG_E1788.jpg",
+      "/photos/the-pagans__six-and-change__danger-records-11-dr/1788374838744-3-IMG_E1789.jpg",
+      "/photos/the-pagans__six-and-change__danger-records-11-dr/1788374838818-4-IMG_E1790.jpg"
+    ],
     "status": {
-      "ebay": "unlisted",
+      "ebay": "listed",
       "fb": "unlisted",
       "discogs": "unlisted"
     },
-    "ebay_listing_id": null,
+    "ebay_listing_id": "407188418993",
     "sold": false,
     "discogs_release_id": null,
     "discogs_price_by_grade": null,
@@ -6653,7 +6980,22 @@
     },
     "discogs_listing_id": null,
     "listing_extras": "",
-    "photo_hosted_urls": {}
+    "photo_hosted_urls": {
+      "/photos/the-pagans__six-and-change__danger-records-11-dr/1788374838438-0-IMG_E1786.jpg": "https://i.ibb.co/Wp5tGGzR/1788374838438-0-IMG-E1786.jpg",
+      "/photos/the-pagans__six-and-change__danger-records-11-dr/1788374838586-1-IMG_E1787.jpg": "https://i.ibb.co/279QCThs/1788374838586-1-IMG-E1787.jpg",
+      "/photos/the-pagans__six-and-change__danger-records-11-dr/1788374838964-5-IMG_E1791.jpg": "https://i.ibb.co/S45tc6j9/1788374838964-5-IMG-E1791.jpg",
+      "/photos/the-pagans__six-and-change__danger-records-11-dr/1788374838667-2-IMG_E1788.jpg": "https://i.ibb.co/1tDyKkkP/1788374838667-2-IMG-E1788.jpg",
+      "/photos/the-pagans__six-and-change__danger-records-11-dr/1788374838744-3-IMG_E1789.jpg": "https://i.ibb.co/Lby4b3m/1788374838744-3-IMG-E1789.jpg",
+      "/photos/the-pagans__six-and-change__danger-records-11-dr/1788374838818-4-IMG_E1790.jpg": "https://i.ibb.co/FqnskxLM/1788374838818-4-IMG-E1790.jpg"
+    },
+    "matrix_number": "",
+    "sealed": false,
+    "deadwax_photos": [
+      "/photos/the-pagans__six-and-change__danger-records-11-dr/1788374838667-2-IMG_E1788.jpg",
+      "/photos/the-pagans__six-and-change__danger-records-11-dr/1788374838744-3-IMG_E1789.jpg",
+      "/photos/the-pagans__six-and-change__danger-records-11-dr/1788374838818-4-IMG_E1790.jpg"
+    ],
+    "ebay_sku": "thepaganssixandchangedangerrecords11dr"
   },
   {
     "id": "the-plain-dealers__terminal-darkness__no-front-teeth-recor",
@@ -6810,11 +7152,22 @@
     "tier": "Tier 2 - Lot (queers)",
     "discogs_low_price": "18.00",
     "copies_for_sale_on_discogs": "4",
-    "asking_price": "18.00",
-    "condition_media": "",
-    "condition_sleeve": "",
+    "asking_price": "27",
+    "condition_media": "NM",
+    "condition_sleeve": "VG+",
     "notes": "",
-    "photos": [],
+    "photos": [
+      "/photos/the-queers__my-old-man-s-a-fatso__woundup-records-wr-0/1788538684719-0-IMG_E2007.jpg",
+      "/photos/the-queers__my-old-man-s-a-fatso__woundup-records-wr-0/1788538684869-1-IMG_E2008.jpg",
+      "/photos/the-queers__my-old-man-s-a-fatso__woundup-records-wr-0/1788538685021-2-IMG_E2009.jpg",
+      "/photos/the-queers__my-old-man-s-a-fatso__woundup-records-wr-0/1788538685174-3-IMG_E2010.jpg",
+      "/photos/the-queers__my-old-man-s-a-fatso__woundup-records-wr-0/1788538685553-6-IMG_E2013.jpg",
+      "/photos/the-queers__my-old-man-s-a-fatso__woundup-records-wr-0/1788538685322-4-IMG_E2011.jpg",
+      "/photos/the-queers__my-old-man-s-a-fatso__woundup-records-wr-0/1788538685785-8-IMG_E2015.jpg",
+      "/photos/the-queers__my-old-man-s-a-fatso__woundup-records-wr-0/1788538685924-9-IMG_E2016.jpg",
+      "/photos/the-queers__my-old-man-s-a-fatso__woundup-records-wr-0/1788538685407-5-IMG_E2012.jpg",
+      "/photos/the-queers__my-old-man-s-a-fatso__woundup-records-wr-0/1788538685635-7-IMG_E2014.jpg"
+    ],
     "status": {
       "ebay": "unlisted",
       "fb": "unlisted",
@@ -6822,9 +7175,47 @@
     },
     "ebay_listing_id": null,
     "sold": false,
-    "discogs_release_id": null,
-    "discogs_price_by_grade": null,
-    "discogs_community": null,
+    "discogs_release_id": 1112080,
+    "discogs_price_by_grade": {
+      "Mint (M)": {
+        "currency": "USD",
+        "value": 27.85340314136125
+      },
+      "Near Mint (NM or M-)": {
+        "currency": "USD",
+        "value": 24.921465968586386
+      },
+      "Very Good Plus (VG+)": {
+        "currency": "USD",
+        "value": 19.057591623036647
+      },
+      "Very Good (VG)": {
+        "currency": "USD",
+        "value": 13.19371727748691
+      },
+      "Good Plus (G+)": {
+        "currency": "USD",
+        "value": 7.329842931937172
+      },
+      "Good (G)": {
+        "currency": "USD",
+        "value": 4.397905759162303
+      },
+      "Fair (F)": {
+        "currency": "USD",
+        "value": 2.931937172774869
+      },
+      "Poor (P)": {
+        "currency": "USD",
+        "value": 1.4659685863874345
+      }
+    },
+    "discogs_community": {
+      "have": 445,
+      "want": 141,
+      "ratingAverage": 4.63,
+      "ratingCount": 19
+    },
     "discogs_sold_stats": {
       "low": "",
       "median": "",
@@ -6833,7 +7224,13 @@
     },
     "discogs_listing_id": null,
     "listing_extras": "",
-    "photo_hosted_urls": {}
+    "photo_hosted_urls": {},
+    "matrix_number": "",
+    "sealed": false,
+    "deadwax_photos": [
+      "/photos/the-queers__my-old-man-s-a-fatso__woundup-records-wr-0/1788538685407-5-IMG_E2012.jpg",
+      "/photos/the-queers__my-old-man-s-a-fatso__woundup-records-wr-0/1788538685635-7-IMG_E2014.jpg"
+    ]
   },
   {
     "id": "the-queers__too-dumb-to-quit__selfless-records-sfl",
@@ -7924,7 +8321,7 @@
   },
   {
     "id": "the-warriors-7__the-full-monty__step-1-music-step-lp",
-    "artist": "The Warriors (7)",
+    "artist": "The Warriors",
     "title": "The Full Monty",
     "year": "1996",
     "country": "UK",
@@ -7956,11 +8353,13 @@
     },
     "discogs_listing_id": null,
     "listing_extras": "",
-    "photo_hosted_urls": {}
+    "photo_hosted_urls": {},
+    "matrix_number": "",
+    "sealed": false
   },
   {
     "id": "the-warriors-7__made-in-england__durango-95-records-n",
-    "artist": "The Warriors (7)",
+    "artist": "The Warriors",
     "title": "Made In England",
     "year": "1999",
     "country": "Italy",
@@ -7969,21 +8368,36 @@
     "tier": "Tier 2 - Lot (warriors)",
     "discogs_low_price": "10.00",
     "copies_for_sale_on_discogs": "7",
-    "asking_price": "10.00",
-    "condition_media": "",
-    "condition_sleeve": "",
+    "asking_price": "13",
+    "condition_media": "NM",
+    "condition_sleeve": "VG+",
     "notes": "",
-    "photos": [],
+    "photos": [
+      "/photos/the-warriors-7__made-in-england__durango-95-records-n/1788363251646-0-IMG_E1654.jpg",
+      "/photos/the-warriors-7__made-in-england__durango-95-records-n/1788363251803-1-IMG_E1655.jpg",
+      "/photos/the-warriors-7__made-in-england__durango-95-records-n/1788363251956-2-IMG_E1656.jpg",
+      "/photos/the-warriors-7__made-in-england__durango-95-records-n/1788363252103-3-IMG_E1657.jpg",
+      "/photos/the-warriors-7__made-in-england__durango-95-records-n/1788363252181-4-IMG_E1658.jpg",
+      "/photos/the-warriors-7__made-in-england__durango-95-records-n/1788363252256-5-IMG_E1659.jpg",
+      "/photos/the-warriors-7__made-in-england__durango-95-records-n/1788363252336-6-IMG_E1660.jpg",
+      "/photos/the-warriors-7__made-in-england__durango-95-records-n/1788363252474-7-IMG_E1661.jpg",
+      "/photos/the-warriors-7__made-in-england__durango-95-records-n/1788363252609-8-IMG_E1662.jpg"
+    ],
     "status": {
-      "ebay": "unlisted",
+      "ebay": "listed",
       "fb": "unlisted",
       "discogs": "unlisted"
     },
-    "ebay_listing_id": null,
+    "ebay_listing_id": "407188083181",
     "sold": false,
-    "discogs_release_id": null,
-    "discogs_price_by_grade": null,
-    "discogs_community": null,
+    "discogs_release_id": 15604655,
+    "discogs_price_by_grade": {},
+    "discogs_community": {
+      "have": 8,
+      "want": 12,
+      "ratingAverage": 4,
+      "ratingCount": 1
+    },
     "discogs_sold_stats": {
       "low": "",
       "median": "",
@@ -7992,11 +8406,29 @@
     },
     "discogs_listing_id": null,
     "listing_extras": "",
-    "photo_hosted_urls": {}
+    "photo_hosted_urls": {
+      "/photos/the-warriors-7__made-in-england__durango-95-records-n/1788363251646-0-IMG_E1654.jpg": "https://i.ibb.co/M5NtKJ5p/1788363251646-0-IMG-E1654.jpg",
+      "/photos/the-warriors-7__made-in-england__durango-95-records-n/1788363251803-1-IMG_E1655.jpg": "https://i.ibb.co/q3xWRvk4/1788363251803-1-IMG-E1655.jpg",
+      "/photos/the-warriors-7__made-in-england__durango-95-records-n/1788363251956-2-IMG_E1656.jpg": "https://i.ibb.co/FbVrdNgS/1788363251956-2-IMG-E1656.jpg",
+      "/photos/the-warriors-7__made-in-england__durango-95-records-n/1788363252103-3-IMG_E1657.jpg": "https://i.ibb.co/Ng0mP7gx/1788363252103-3-IMG-E1657.jpg",
+      "/photos/the-warriors-7__made-in-england__durango-95-records-n/1788363252181-4-IMG_E1658.jpg": "https://i.ibb.co/YBXkMmXF/1788363252181-4-IMG-E1658.jpg",
+      "/photos/the-warriors-7__made-in-england__durango-95-records-n/1788363252256-5-IMG_E1659.jpg": "https://i.ibb.co/tTh3y6Nk/1788363252256-5-IMG-E1659.jpg",
+      "/photos/the-warriors-7__made-in-england__durango-95-records-n/1788363252336-6-IMG_E1660.jpg": "https://i.ibb.co/mCc2y83P/1788363252336-6-IMG-E1660.jpg",
+      "/photos/the-warriors-7__made-in-england__durango-95-records-n/1788363252474-7-IMG_E1661.jpg": "https://i.ibb.co/nMpjFMcG/1788363252474-7-IMG-E1661.jpg",
+      "/photos/the-warriors-7__made-in-england__durango-95-records-n/1788363252609-8-IMG_E1662.jpg": "https://i.ibb.co/N26pFY5N/1788363252609-8-IMG-E1662.jpg"
+    },
+    "matrix_number": "",
+    "sealed": false,
+    "deadwax_photos": [
+      "/photos/the-warriors-7__made-in-england__durango-95-records-n/1788363252336-6-IMG_E1660.jpg",
+      "/photos/the-warriors-7__made-in-england__durango-95-records-n/1788363252256-5-IMG_E1659.jpg",
+      "/photos/the-warriors-7__made-in-england__durango-95-records-n/1788363252181-4-IMG_E1658.jpg"
+    ],
+    "ebay_sku": "thewarriors7madeinenglanddurango95recordsn"
   },
   {
     "id": "the-warriors-7__come-out-to-play__visionary-vinyl-v707",
-    "artist": "The Warriors (7)",
+    "artist": "The Warriors",
     "title": "Come Out To Play",
     "year": "1996",
     "country": "UK",
@@ -8005,21 +8437,71 @@
     "tier": "Tier 2 - Lot (warriors)",
     "discogs_low_price": "8.00",
     "copies_for_sale_on_discogs": "5",
-    "asking_price": "8.00",
-    "condition_media": "",
-    "condition_sleeve": "",
+    "asking_price": "11",
+    "condition_media": "VG+",
+    "condition_sleeve": "VG",
     "notes": "",
-    "photos": [],
+    "photos": [
+      "/photos/the-warriors-7__come-out-to-play__visionary-vinyl-v707/1788363582595-0-IMG_E1663.jpg",
+      "/photos/the-warriors-7__come-out-to-play__visionary-vinyl-v707/1788363582760-1-IMG_E1664.jpg",
+      "/photos/the-warriors-7__come-out-to-play__visionary-vinyl-v707/1788363582922-2-IMG_E1665.jpg",
+      "/photos/the-warriors-7__come-out-to-play__visionary-vinyl-v707/1788363583072-3-IMG_E1666.jpg",
+      "/photos/the-warriors-7__come-out-to-play__visionary-vinyl-v707/1788363583220-4-IMG_E1667.jpg",
+      "/photos/the-warriors-7__come-out-to-play__visionary-vinyl-v707/1788363583362-5-IMG_E1668.jpg",
+      "/photos/the-warriors-7__come-out-to-play__visionary-vinyl-v707/1788363583440-6-IMG_E1669.jpg",
+      "/photos/the-warriors-7__come-out-to-play__visionary-vinyl-v707/1788363583585-7-IMG_E1670.jpg",
+      "/photos/the-warriors-7__come-out-to-play__visionary-vinyl-v707/1788363583665-8-IMG_E1671.jpg",
+      "/photos/the-warriors-7__come-out-to-play__visionary-vinyl-v707/1788363583749-9-IMG_E1672.jpg",
+      "/photos/the-warriors-7__come-out-to-play__visionary-vinyl-v707/1788363583895-10-IMG_E1673.jpg"
+    ],
     "status": {
-      "ebay": "unlisted",
+      "ebay": "listed",
       "fb": "unlisted",
       "discogs": "unlisted"
     },
-    "ebay_listing_id": null,
+    "ebay_listing_id": "407188092791",
     "sold": false,
-    "discogs_release_id": null,
-    "discogs_price_by_grade": null,
-    "discogs_community": null,
+    "discogs_release_id": 2869902,
+    "discogs_price_by_grade": {
+      "Mint (M)": {
+        "currency": "USD",
+        "value": 13.25581395348837
+      },
+      "Near Mint (NM or M-)": {
+        "currency": "USD",
+        "value": 11.86046511627907
+      },
+      "Very Good Plus (VG+)": {
+        "currency": "USD",
+        "value": 9.069767441860465
+      },
+      "Very Good (VG)": {
+        "currency": "USD",
+        "value": 6.279069767441861
+      },
+      "Good Plus (G+)": {
+        "currency": "USD",
+        "value": 3.488372093023256
+      },
+      "Good (G)": {
+        "currency": "USD",
+        "value": 2.093023255813953
+      },
+      "Fair (F)": {
+        "currency": "USD",
+        "value": 1.3953488372093024
+      },
+      "Poor (P)": {
+        "currency": "USD",
+        "value": 0.6976744186046512
+      }
+    },
+    "discogs_community": {
+      "have": 178,
+      "want": 56,
+      "ratingAverage": 4.71,
+      "ratingCount": 7
+    },
     "discogs_sold_stats": {
       "low": "",
       "median": "",
@@ -8028,7 +8510,27 @@
     },
     "discogs_listing_id": null,
     "listing_extras": "",
-    "photo_hosted_urls": {}
+    "photo_hosted_urls": {
+      "/photos/the-warriors-7__come-out-to-play__visionary-vinyl-v707/1788363582595-0-IMG_E1663.jpg": "https://i.ibb.co/qFMkBgJ2/1788363582595-0-IMG-E1663.jpg",
+      "/photos/the-warriors-7__come-out-to-play__visionary-vinyl-v707/1788363582760-1-IMG_E1664.jpg": "https://i.ibb.co/fzvkFzWr/1788363582760-1-IMG-E1664.jpg",
+      "/photos/the-warriors-7__come-out-to-play__visionary-vinyl-v707/1788363582922-2-IMG_E1665.jpg": "https://i.ibb.co/gMKzJGqq/1788363582922-2-IMG-E1665.jpg",
+      "/photos/the-warriors-7__come-out-to-play__visionary-vinyl-v707/1788363583072-3-IMG_E1666.jpg": "https://i.ibb.co/QFcxtp1v/1788363583072-3-IMG-E1666.jpg",
+      "/photos/the-warriors-7__come-out-to-play__visionary-vinyl-v707/1788363583220-4-IMG_E1667.jpg": "https://i.ibb.co/bx9G3mB/1788363583220-4-IMG-E1667.jpg",
+      "/photos/the-warriors-7__come-out-to-play__visionary-vinyl-v707/1788363583362-5-IMG_E1668.jpg": "https://i.ibb.co/ZzktZPgB/1788363583362-5-IMG-E1668.jpg",
+      "/photos/the-warriors-7__come-out-to-play__visionary-vinyl-v707/1788363583440-6-IMG_E1669.jpg": "https://i.ibb.co/h19dsd5C/1788363583440-6-IMG-E1669.jpg",
+      "/photos/the-warriors-7__come-out-to-play__visionary-vinyl-v707/1788363583585-7-IMG_E1670.jpg": "https://i.ibb.co/4nYk1Mh5/1788363583585-7-IMG-E1670.jpg",
+      "/photos/the-warriors-7__come-out-to-play__visionary-vinyl-v707/1788363583665-8-IMG_E1671.jpg": "https://i.ibb.co/Qjbdq8gj/1788363583665-8-IMG-E1671.jpg",
+      "/photos/the-warriors-7__come-out-to-play__visionary-vinyl-v707/1788363583749-9-IMG_E1672.jpg": "https://i.ibb.co/kVPK6vXt/1788363583749-9-IMG-E1672.jpg",
+      "/photos/the-warriors-7__come-out-to-play__visionary-vinyl-v707/1788363583895-10-IMG_E1673.jpg": "https://i.ibb.co/KxWsWJV2/1788363583895-10-IMG-E1673.jpg"
+    },
+    "matrix_number": "",
+    "sealed": false,
+    "deadwax_photos": [
+      "/photos/the-warriors-7__come-out-to-play__visionary-vinyl-v707/1788363583665-8-IMG_E1671.jpg",
+      "/photos/the-warriors-7__come-out-to-play__visionary-vinyl-v707/1788363583749-9-IMG_E1672.jpg",
+      "/photos/the-warriors-7__come-out-to-play__visionary-vinyl-v707/1788363583440-6-IMG_E1669.jpg"
+    ],
+    "ebay_sku": "thewarriors7comeouttoplayvisionaryvinylv707"
   },
   {
     "id": "machines-3__true-life__1977-records-1977-s0",
@@ -9760,7 +10262,7 @@
   },
   {
     "id": "the-mutants-5__so-american-piece-o-shit__ftm-records-ftm-001",
-    "artist": "The Mutants (5)",
+    "artist": "The Mutants",
     "title": "So American /....Piece O' Shit",
     "year": "1978",
     "country": "US",
@@ -9769,17 +10271,29 @@
     "tier": "Tier 3 - Bulk grab bag",
     "discogs_low_price": "17.00",
     "copies_for_sale_on_discogs": "7",
-    "asking_price": "17.00",
-    "condition_media": "",
-    "condition_sleeve": "",
+    "asking_price": "40",
+    "condition_media": "NM",
+    "condition_sleeve": "VG+",
     "notes": "",
-    "photos": [],
+    "photos": [
+      "/photos/the-mutants-5__so-american-piece-o-shit__ftm-records-ftm-001/1788366397933-0-IMG_E1714.jpg",
+      "/photos/the-mutants-5__so-american-piece-o-shit__ftm-records-ftm-001/1788366398079-1-IMG_E1715.jpg",
+      "/photos/the-mutants-5__so-american-piece-o-shit__ftm-records-ftm-001/1788366398229-2-IMG_E1716.jpg",
+      "/photos/the-mutants-5__so-american-piece-o-shit__ftm-records-ftm-001/1788366398373-3-IMG_E1717.jpg",
+      "/photos/the-mutants-5__so-american-piece-o-shit__ftm-records-ftm-001/1788366398677-6-IMG_E1720.jpg",
+      "/photos/the-mutants-5__so-american-piece-o-shit__ftm-records-ftm-001/1788366398825-7-IMG_E1721.jpg",
+      "/photos/the-mutants-5__so-american-piece-o-shit__ftm-records-ftm-001/1788366398453-4-IMG_E1718.jpg",
+      "/photos/the-mutants-5__so-american-piece-o-shit__ftm-records-ftm-001/1788366398527-5-IMG_E1719.jpg",
+      "/photos/the-mutants-5__so-american-piece-o-shit__ftm-records-ftm-001/1788366398908-8-IMG_E1722.jpg",
+      "/photos/the-mutants-5__so-american-piece-o-shit__ftm-records-ftm-001/1788366398988-9-IMG_E1723.jpg",
+      "/photos/the-mutants-5__so-american-piece-o-shit__ftm-records-ftm-001/1788366399066-10-IMG_E1724.jpg"
+    ],
     "status": {
-      "ebay": "unlisted",
+      "ebay": "listed",
       "fb": "unlisted",
       "discogs": "unlisted"
     },
-    "ebay_listing_id": null,
+    "ebay_listing_id": "407188167238",
     "sold": false,
     "discogs_release_id": null,
     "discogs_price_by_grade": null,
@@ -9792,11 +10306,32 @@
     },
     "discogs_listing_id": null,
     "listing_extras": "",
-    "photo_hosted_urls": {}
+    "photo_hosted_urls": {
+      "/photos/the-mutants-5__so-american-piece-o-shit__ftm-records-ftm-001/1788366397933-0-IMG_E1714.jpg": "https://i.ibb.co/DgPXwcf9/1788366397933-0-IMG-E1714.jpg",
+      "/photos/the-mutants-5__so-american-piece-o-shit__ftm-records-ftm-001/1788366398079-1-IMG_E1715.jpg": "https://i.ibb.co/ynNtD8vb/1788366398079-1-IMG-E1715.jpg",
+      "/photos/the-mutants-5__so-american-piece-o-shit__ftm-records-ftm-001/1788366398229-2-IMG_E1716.jpg": "https://i.ibb.co/QFrwhJC9/1788366398229-2-IMG-E1716.jpg",
+      "/photos/the-mutants-5__so-american-piece-o-shit__ftm-records-ftm-001/1788366398373-3-IMG_E1717.jpg": "https://i.ibb.co/rBsssj6/1788366398373-3-IMG-E1717.jpg",
+      "/photos/the-mutants-5__so-american-piece-o-shit__ftm-records-ftm-001/1788366398677-6-IMG_E1720.jpg": "https://i.ibb.co/G4rqq3NG/1788366398677-6-IMG-E1720.jpg",
+      "/photos/the-mutants-5__so-american-piece-o-shit__ftm-records-ftm-001/1788366398825-7-IMG_E1721.jpg": "https://i.ibb.co/nNGJy8Ln/1788366398825-7-IMG-E1721.jpg",
+      "/photos/the-mutants-5__so-american-piece-o-shit__ftm-records-ftm-001/1788366398453-4-IMG_E1718.jpg": "https://i.ibb.co/Tq7j6W5m/1788366398453-4-IMG-E1718.jpg",
+      "/photos/the-mutants-5__so-american-piece-o-shit__ftm-records-ftm-001/1788366398527-5-IMG_E1719.jpg": "https://i.ibb.co/8ntTrnYp/1788366398527-5-IMG-E1719.jpg",
+      "/photos/the-mutants-5__so-american-piece-o-shit__ftm-records-ftm-001/1788366398908-8-IMG_E1722.jpg": "https://i.ibb.co/995CjZjW/1788366398908-8-IMG-E1722.jpg",
+      "/photos/the-mutants-5__so-american-piece-o-shit__ftm-records-ftm-001/1788366398988-9-IMG_E1723.jpg": "https://i.ibb.co/WNJMR546/1788366398988-9-IMG-E1723.jpg",
+      "/photos/the-mutants-5__so-american-piece-o-shit__ftm-records-ftm-001/1788366399066-10-IMG_E1724.jpg": "https://i.ibb.co/9k92rRvV/1788366399066-10-IMG-E1724.jpg"
+    },
+    "matrix_number": "",
+    "sealed": false,
+    "deadwax_photos": [
+      "/photos/the-mutants-5__so-american-piece-o-shit__ftm-records-ftm-001/1788366398453-4-IMG_E1718.jpg",
+      "/photos/the-mutants-5__so-american-piece-o-shit__ftm-records-ftm-001/1788366398527-5-IMG_E1719.jpg",
+      "/photos/the-mutants-5__so-american-piece-o-shit__ftm-records-ftm-001/1788366398908-8-IMG_E1722.jpg",
+      "/photos/the-mutants-5__so-american-piece-o-shit__ftm-records-ftm-001/1788366398988-9-IMG_E1723.jpg"
+    ],
+    "ebay_sku": "themutants5soamericanpieceoshitftmrecordsftm001"
   },
   {
     "id": "the-scabs-2__the-scabs-e-p__hosehead-records-hhr",
-    "artist": "The Scabs (2)",
+    "artist": "The Scabs",
     "title": "The Scabs e.p",
     "year": "2016",
     "country": "Canada",
@@ -9805,17 +10340,30 @@
     "tier": "Tier 3 - Bulk grab bag",
     "discogs_low_price": "16.88",
     "copies_for_sale_on_discogs": "5",
-    "asking_price": "16.88",
-    "condition_media": "",
-    "condition_sleeve": "",
+    "asking_price": "21",
+    "condition_media": "NM",
+    "condition_sleeve": "NM",
     "notes": "",
-    "photos": [],
+    "photos": [
+      "/photos/the-scabs-2__the-scabs-e-p__hosehead-records-hhr/1788362468707-0-IMG_E1689.jpg",
+      "/photos/the-scabs-2__the-scabs-e-p__hosehead-records-hhr/1788362468852-1-IMG_E1690.jpg",
+      "/photos/the-scabs-2__the-scabs-e-p__hosehead-records-hhr/1788362469005-2-IMG_E1691.jpg",
+      "/photos/the-scabs-2__the-scabs-e-p__hosehead-records-hhr/1788362469163-3-IMG_E1692.jpg",
+      "/photos/the-scabs-2__the-scabs-e-p__hosehead-records-hhr/1788362469317-4-IMG_E1693.jpg",
+      "/photos/the-scabs-2__the-scabs-e-p__hosehead-records-hhr/1788362469459-5-IMG_E1694.jpg",
+      "/photos/the-scabs-2__the-scabs-e-p__hosehead-records-hhr/1788362469605-6-IMG_E1695.jpg",
+      "/photos/the-scabs-2__the-scabs-e-p__hosehead-records-hhr/1788362469748-7-IMG_E1696.jpg",
+      "/photos/the-scabs-2__the-scabs-e-p__hosehead-records-hhr/1788362469823-8-IMG_E1697.jpg",
+      "/photos/the-scabs-2__the-scabs-e-p__hosehead-records-hhr/1788362469901-9-IMG_E1698.jpg",
+      "/photos/the-scabs-2__the-scabs-e-p__hosehead-records-hhr/1788362469978-10-IMG_E1699.jpg",
+      "/photos/the-scabs-2__the-scabs-e-p__hosehead-records-hhr/1788362470056-11-IMG_E1700.jpg"
+    ],
     "status": {
-      "ebay": "unlisted",
+      "ebay": "listed",
       "fb": "unlisted",
       "discogs": "unlisted"
     },
-    "ebay_listing_id": null,
+    "ebay_listing_id": "407188047101",
     "sold": false,
     "discogs_release_id": null,
     "discogs_price_by_grade": null,
@@ -9828,7 +10376,29 @@
     },
     "discogs_listing_id": null,
     "listing_extras": "",
-    "photo_hosted_urls": {}
+    "photo_hosted_urls": {
+      "/photos/the-scabs-2__the-scabs-e-p__hosehead-records-hhr/1788362468707-0-IMG_E1689.jpg": "https://i.ibb.co/Nw8qwvF/1788362468707-0-IMG-E1689.jpg",
+      "/photos/the-scabs-2__the-scabs-e-p__hosehead-records-hhr/1788362468852-1-IMG_E1690.jpg": "https://i.ibb.co/VG19LH8/1788362468852-1-IMG-E1690.jpg",
+      "/photos/the-scabs-2__the-scabs-e-p__hosehead-records-hhr/1788362469005-2-IMG_E1691.jpg": "https://i.ibb.co/KjYFjx7P/1788362469005-2-IMG-E1691.jpg",
+      "/photos/the-scabs-2__the-scabs-e-p__hosehead-records-hhr/1788362469163-3-IMG_E1692.jpg": "https://i.ibb.co/yncJfYG8/1788362469163-3-IMG-E1692.jpg",
+      "/photos/the-scabs-2__the-scabs-e-p__hosehead-records-hhr/1788362469317-4-IMG_E1693.jpg": "https://i.ibb.co/p687JQKD/1788362469317-4-IMG-E1693.jpg",
+      "/photos/the-scabs-2__the-scabs-e-p__hosehead-records-hhr/1788362469459-5-IMG_E1694.jpg": "https://i.ibb.co/WvT1RLKC/1788362469459-5-IMG-E1694.jpg",
+      "/photos/the-scabs-2__the-scabs-e-p__hosehead-records-hhr/1788362469605-6-IMG_E1695.jpg": "https://i.ibb.co/1GRh2sr9/1788362469605-6-IMG-E1695.jpg",
+      "/photos/the-scabs-2__the-scabs-e-p__hosehead-records-hhr/1788362469748-7-IMG_E1696.jpg": "https://i.ibb.co/tTjG2ntw/1788362469748-7-IMG-E1696.jpg",
+      "/photos/the-scabs-2__the-scabs-e-p__hosehead-records-hhr/1788362469823-8-IMG_E1697.jpg": "https://i.ibb.co/jZDcCTGW/1788362469823-8-IMG-E1697.jpg",
+      "/photos/the-scabs-2__the-scabs-e-p__hosehead-records-hhr/1788362469901-9-IMG_E1698.jpg": "https://i.ibb.co/jPg7VMhX/1788362469901-9-IMG-E1698.jpg",
+      "/photos/the-scabs-2__the-scabs-e-p__hosehead-records-hhr/1788362469978-10-IMG_E1699.jpg": "https://i.ibb.co/v4YNJN22/1788362469978-10-IMG-E1699.jpg",
+      "/photos/the-scabs-2__the-scabs-e-p__hosehead-records-hhr/1788362470056-11-IMG_E1700.jpg": "https://i.ibb.co/ch6s51tp/1788362470056-11-IMG-E1700.jpg"
+    },
+    "deadwax_photos": [
+      "/photos/the-scabs-2__the-scabs-e-p__hosehead-records-hhr/1788362469823-8-IMG_E1697.jpg",
+      "/photos/the-scabs-2__the-scabs-e-p__hosehead-records-hhr/1788362469978-10-IMG_E1699.jpg",
+      "/photos/the-scabs-2__the-scabs-e-p__hosehead-records-hhr/1788362470056-11-IMG_E1700.jpg",
+      "/photos/the-scabs-2__the-scabs-e-p__hosehead-records-hhr/1788362469901-9-IMG_E1698.jpg"
+    ],
+    "matrix_number": "",
+    "sealed": false,
+    "ebay_sku": "thescabs2thescabsephoseheadrecordshhr"
   },
   {
     "id": "the-queer-pills-a-k-a-the-angry-samoans__the-depraved__homophobic-records-h",
@@ -10165,21 +10735,75 @@
     "tier": "Tier 3 - Bulk grab bag",
     "discogs_low_price": "14.95",
     "copies_for_sale_on_discogs": "4",
-    "asking_price": "14.95",
-    "condition_media": "",
-    "condition_sleeve": "",
+    "asking_price": "20",
+    "condition_media": "VG+",
+    "condition_sleeve": "VG+",
     "notes": "",
-    "photos": [],
+    "photos": [
+      "/photos/personal-the-pizzas__dead-meat-vs-joanie__total-punk-tpr-01/1788372164638-14-IMG_E1769.jpg",
+      "/photos/personal-the-pizzas__dead-meat-vs-joanie__total-punk-tpr-01/1788372164634-13-IMG_E1766.jpg",
+      "/photos/personal-the-pizzas__dead-meat-vs-joanie__total-punk-tpr-01/1788372163933-5-IMG_E1758.jpg",
+      "/photos/personal-the-pizzas__dead-meat-vs-joanie__total-punk-tpr-01/1788372163781-4-IMG_E1757.jpg",
+      "/photos/personal-the-pizzas__dead-meat-vs-joanie__total-punk-tpr-01/1788372164563-12-IMG_E1765.jpg",
+      "/photos/personal-the-pizzas__dead-meat-vs-joanie__total-punk-tpr-01/1788372163394-0-IMG_E1753.jpg",
+      "/photos/personal-the-pizzas__dead-meat-vs-joanie__total-punk-tpr-01/1788372163473-1-IMG_E1754.jpg",
+      "/photos/personal-the-pizzas__dead-meat-vs-joanie__total-punk-tpr-01/1788372163551-2-IMG_E1755.jpg",
+      "/photos/personal-the-pizzas__dead-meat-vs-joanie__total-punk-tpr-01/1788372163638-3-IMG_E1756.jpg",
+      "/photos/personal-the-pizzas__dead-meat-vs-joanie__total-punk-tpr-01/1788372164007-6-IMG_E1759.jpg",
+      "/photos/personal-the-pizzas__dead-meat-vs-joanie__total-punk-tpr-01/1788372164088-7-IMG_E1760.jpg",
+      "/photos/personal-the-pizzas__dead-meat-vs-joanie__total-punk-tpr-01/1788372164181-8-IMG_E1761.jpg",
+      "/photos/personal-the-pizzas__dead-meat-vs-joanie__total-punk-tpr-01/1788372164263-9-IMG_E1762.jpg",
+      "/photos/personal-the-pizzas__dead-meat-vs-joanie__total-punk-tpr-01/1788372164337-10-IMG_E1763.jpg",
+      "/photos/personal-the-pizzas__dead-meat-vs-joanie__total-punk-tpr-01/1788372164417-11-IMG_E1764.jpg"
+    ],
     "status": {
-      "ebay": "unlisted",
+      "ebay": "listed",
       "fb": "unlisted",
       "discogs": "unlisted"
     },
-    "ebay_listing_id": null,
+    "ebay_listing_id": "407188348818",
     "sold": false,
-    "discogs_release_id": null,
-    "discogs_price_by_grade": null,
-    "discogs_community": null,
+    "discogs_release_id": 2838330,
+    "discogs_price_by_grade": {
+      "Mint (M)": {
+        "currency": "USD",
+        "value": 3.8662790697674416
+      },
+      "Near Mint (NM or M-)": {
+        "currency": "USD",
+        "value": 3.4593023255813953
+      },
+      "Very Good Plus (VG+)": {
+        "currency": "USD",
+        "value": 2.6453488372093026
+      },
+      "Very Good (VG)": {
+        "currency": "USD",
+        "value": 1.8313953488372094
+      },
+      "Good Plus (G+)": {
+        "currency": "USD",
+        "value": 1.0174418604651163
+      },
+      "Good (G)": {
+        "currency": "USD",
+        "value": 0.6104651162790697
+      },
+      "Fair (F)": {
+        "currency": "USD",
+        "value": 0.40697674418604657
+      },
+      "Poor (P)": {
+        "currency": "USD",
+        "value": 0.20348837209302328
+      }
+    },
+    "discogs_community": {
+      "have": 225,
+      "want": 70,
+      "ratingAverage": 3.91,
+      "ratingCount": 11
+    },
     "discogs_sold_stats": {
       "low": "",
       "median": "",
@@ -10188,7 +10812,38 @@
     },
     "discogs_listing_id": null,
     "listing_extras": "",
-    "photo_hosted_urls": {}
+    "photo_hosted_urls": {
+      "/photos/personal-the-pizzas__dead-meat-vs-joanie__total-punk-tpr-01/1788372164638-14-IMG_E1769.jpg": "https://i.ibb.co/h1hQq7FJ/1788372164638-14-IMG-E1769.jpg",
+      "/photos/personal-the-pizzas__dead-meat-vs-joanie__total-punk-tpr-01/1788372164634-13-IMG_E1766.jpg": "https://i.ibb.co/RqDGGN7/1788372164634-13-IMG-E1766.jpg",
+      "/photos/personal-the-pizzas__dead-meat-vs-joanie__total-punk-tpr-01/1788372163933-5-IMG_E1758.jpg": "https://i.ibb.co/DHf4bGVS/1788372163933-5-IMG-E1758.jpg",
+      "/photos/personal-the-pizzas__dead-meat-vs-joanie__total-punk-tpr-01/1788372163781-4-IMG_E1757.jpg": "https://i.ibb.co/Y7qcrdNX/1788372163781-4-IMG-E1757.jpg",
+      "/photos/personal-the-pizzas__dead-meat-vs-joanie__total-punk-tpr-01/1788372164563-12-IMG_E1765.jpg": "https://i.ibb.co/Fk3ST4bm/1788372164563-12-IMG-E1765.jpg",
+      "/photos/personal-the-pizzas__dead-meat-vs-joanie__total-punk-tpr-01/1788372163394-0-IMG_E1753.jpg": "https://i.ibb.co/M5BNLTW1/1788372163394-0-IMG-E1753.jpg",
+      "/photos/personal-the-pizzas__dead-meat-vs-joanie__total-punk-tpr-01/1788372163473-1-IMG_E1754.jpg": "https://i.ibb.co/XxHnb6vw/1788372163473-1-IMG-E1754.jpg",
+      "/photos/personal-the-pizzas__dead-meat-vs-joanie__total-punk-tpr-01/1788372163551-2-IMG_E1755.jpg": "https://i.ibb.co/zTRM9Mkz/1788372163551-2-IMG-E1755.jpg",
+      "/photos/personal-the-pizzas__dead-meat-vs-joanie__total-punk-tpr-01/1788372163638-3-IMG_E1756.jpg": "https://i.ibb.co/W4z27kNC/1788372163638-3-IMG-E1756.jpg",
+      "/photos/personal-the-pizzas__dead-meat-vs-joanie__total-punk-tpr-01/1788372164007-6-IMG_E1759.jpg": "https://i.ibb.co/Vp3fDgKG/1788372164007-6-IMG-E1759.jpg",
+      "/photos/personal-the-pizzas__dead-meat-vs-joanie__total-punk-tpr-01/1788372164088-7-IMG_E1760.jpg": "https://i.ibb.co/p6N93kBW/1788372164088-7-IMG-E1760.jpg",
+      "/photos/personal-the-pizzas__dead-meat-vs-joanie__total-punk-tpr-01/1788372164181-8-IMG_E1761.jpg": "https://i.ibb.co/Q7sRYvFP/1788372164181-8-IMG-E1761.jpg",
+      "/photos/personal-the-pizzas__dead-meat-vs-joanie__total-punk-tpr-01/1788372164263-9-IMG_E1762.jpg": "https://i.ibb.co/twvjTzBY/1788372164263-9-IMG-E1762.jpg",
+      "/photos/personal-the-pizzas__dead-meat-vs-joanie__total-punk-tpr-01/1788372164337-10-IMG_E1763.jpg": "https://i.ibb.co/20bXC7b1/1788372164337-10-IMG-E1763.jpg",
+      "/photos/personal-the-pizzas__dead-meat-vs-joanie__total-punk-tpr-01/1788372164417-11-IMG_E1764.jpg": "https://i.ibb.co/QFFTyjHD/1788372164417-11-IMG-E1764.jpg"
+    },
+    "deadwax_photos": [
+      "/photos/personal-the-pizzas__dead-meat-vs-joanie__total-punk-tpr-01/1788372163473-1-IMG_E1754.jpg",
+      "/photos/personal-the-pizzas__dead-meat-vs-joanie__total-punk-tpr-01/1788372163551-2-IMG_E1755.jpg",
+      "/photos/personal-the-pizzas__dead-meat-vs-joanie__total-punk-tpr-01/1788372163638-3-IMG_E1756.jpg",
+      "/photos/personal-the-pizzas__dead-meat-vs-joanie__total-punk-tpr-01/1788372164007-6-IMG_E1759.jpg",
+      "/photos/personal-the-pizzas__dead-meat-vs-joanie__total-punk-tpr-01/1788372164088-7-IMG_E1760.jpg",
+      "/photos/personal-the-pizzas__dead-meat-vs-joanie__total-punk-tpr-01/1788372164181-8-IMG_E1761.jpg",
+      "/photos/personal-the-pizzas__dead-meat-vs-joanie__total-punk-tpr-01/1788372164263-9-IMG_E1762.jpg",
+      "/photos/personal-the-pizzas__dead-meat-vs-joanie__total-punk-tpr-01/1788372164337-10-IMG_E1763.jpg",
+      "/photos/personal-the-pizzas__dead-meat-vs-joanie__total-punk-tpr-01/1788372164417-11-IMG_E1764.jpg",
+      "/photos/personal-the-pizzas__dead-meat-vs-joanie__total-punk-tpr-01/1788372163394-0-IMG_E1753.jpg"
+    ],
+    "matrix_number": "",
+    "sealed": false,
+    "ebay_sku": "personalthepizzasdeadmeatvsjoanietotalpunktpr01"
   },
   {
     "id": "the-defects__defective-breakdown__antisociety-anti-017",
@@ -11007,7 +11662,7 @@
   },
   {
     "id": "last-words__todays-kidz__remand-records-reman",
-    "artist": "Last Words*",
+    "artist": "Last Words",
     "title": "Todays Kidz",
     "year": "1979",
     "country": "UK",
@@ -11016,21 +11671,69 @@
     "tier": "Tier 3 - Bulk grab bag",
     "discogs_low_price": "12.29",
     "copies_for_sale_on_discogs": "17",
-    "asking_price": "12.29",
-    "condition_media": "",
-    "condition_sleeve": "",
+    "asking_price": "34",
+    "condition_media": "NM",
+    "condition_sleeve": "VG+",
     "notes": "",
-    "photos": [],
+    "photos": [
+      "/photos/last-words__todays-kidz__remand-records-reman/1788364010005-0-IMG_E1641.jpg",
+      "/photos/last-words__todays-kidz__remand-records-reman/1788364010150-1-IMG_E1642.jpg",
+      "/photos/last-words__todays-kidz__remand-records-reman/1788364010296-2-IMG_E1643.jpg",
+      "/photos/last-words__todays-kidz__remand-records-reman/1788364010443-3-IMG_E1644.jpg",
+      "/photos/last-words__todays-kidz__remand-records-reman/1788364010520-4-IMG_E1646.jpg",
+      "/photos/last-words__todays-kidz__remand-records-reman/1788364010592-5-IMG_E1648.jpg",
+      "/photos/last-words__todays-kidz__remand-records-reman/1788364010665-6-IMG_E1649.jpg",
+      "/photos/last-words__todays-kidz__remand-records-reman/1788364010741-7-IMG_E1650.jpg",
+      "/photos/last-words__todays-kidz__remand-records-reman/1788364010819-8-IMG_E1651.jpg"
+    ],
     "status": {
-      "ebay": "unlisted",
+      "ebay": "listed",
       "fb": "unlisted",
       "discogs": "unlisted"
     },
-    "ebay_listing_id": null,
+    "ebay_listing_id": "407188101764",
     "sold": false,
-    "discogs_release_id": null,
-    "discogs_price_by_grade": null,
-    "discogs_community": null,
+    "discogs_release_id": 1586086,
+    "discogs_price_by_grade": {
+      "Mint (M)": {
+        "currency": "USD",
+        "value": 25.99179206566348
+      },
+      "Near Mint (NM or M-)": {
+        "currency": "USD",
+        "value": 23.255813953488374
+      },
+      "Very Good Plus (VG+)": {
+        "currency": "USD",
+        "value": 17.78385772913817
+      },
+      "Very Good (VG)": {
+        "currency": "USD",
+        "value": 12.311901504787963
+      },
+      "Good Plus (G+)": {
+        "currency": "USD",
+        "value": 6.839945280437758
+      },
+      "Good (G)": {
+        "currency": "USD",
+        "value": 4.103967168262654
+      },
+      "Fair (F)": {
+        "currency": "USD",
+        "value": 2.7359781121751032
+      },
+      "Poor (P)": {
+        "currency": "USD",
+        "value": 1.3679890560875516
+      }
+    },
+    "discogs_community": {
+      "have": 440,
+      "want": 149,
+      "ratingAverage": 4.21,
+      "ratingCount": 28
+    },
     "discogs_sold_stats": {
       "low": "",
       "median": "",
@@ -11039,7 +11742,27 @@
     },
     "discogs_listing_id": null,
     "listing_extras": "",
-    "photo_hosted_urls": {}
+    "photo_hosted_urls": {
+      "/photos/last-words__todays-kidz__remand-records-reman/1788364010005-0-IMG_E1641.jpg": "https://i.ibb.co/2326PMF9/1788364010005-0-IMG-E1641.jpg",
+      "/photos/last-words__todays-kidz__remand-records-reman/1788364010150-1-IMG_E1642.jpg": "https://i.ibb.co/MmXysCM/1788364010150-1-IMG-E1642.jpg",
+      "/photos/last-words__todays-kidz__remand-records-reman/1788364010296-2-IMG_E1643.jpg": "https://i.ibb.co/ZpT3YPnL/1788364010296-2-IMG-E1643.jpg",
+      "/photos/last-words__todays-kidz__remand-records-reman/1788364010443-3-IMG_E1644.jpg": "https://i.ibb.co/xqXQb1dy/1788364010443-3-IMG-E1644.jpg",
+      "/photos/last-words__todays-kidz__remand-records-reman/1788364010520-4-IMG_E1646.jpg": "https://i.ibb.co/wZhPmg49/1788364010520-4-IMG-E1646.jpg",
+      "/photos/last-words__todays-kidz__remand-records-reman/1788364010592-5-IMG_E1648.jpg": "https://i.ibb.co/Y46BtLRn/1788364010592-5-IMG-E1648.jpg",
+      "/photos/last-words__todays-kidz__remand-records-reman/1788364010665-6-IMG_E1649.jpg": "https://i.ibb.co/w9z8cdL/1788364010665-6-IMG-E1649.jpg",
+      "/photos/last-words__todays-kidz__remand-records-reman/1788364010741-7-IMG_E1650.jpg": "https://i.ibb.co/hFFnHYLS/1788364010741-7-IMG-E1650.jpg",
+      "/photos/last-words__todays-kidz__remand-records-reman/1788364010819-8-IMG_E1651.jpg": "https://i.ibb.co/wFVcjMJT/1788364010819-8-IMG-E1651.jpg"
+    },
+    "matrix_number": "",
+    "sealed": false,
+    "deadwax_photos": [
+      "/photos/last-words__todays-kidz__remand-records-reman/1788364010520-4-IMG_E1646.jpg",
+      "/photos/last-words__todays-kidz__remand-records-reman/1788364010592-5-IMG_E1648.jpg",
+      "/photos/last-words__todays-kidz__remand-records-reman/1788364010665-6-IMG_E1649.jpg",
+      "/photos/last-words__todays-kidz__remand-records-reman/1788364010819-8-IMG_E1651.jpg",
+      "/photos/last-words__todays-kidz__remand-records-reman/1788364010741-7-IMG_E1650.jpg"
+    ],
+    "ebay_sku": "lastwordstodayskidzremandrecordsreman"
   },
   {
     "id": "fear-3__now-your-dead-i-love-livin-in-the-city__not-on-label-fear-3-",
@@ -11897,21 +12620,70 @@
     "tier": "Tier 3 - Bulk grab bag",
     "discogs_low_price": "10.00",
     "copies_for_sale_on_discogs": "6",
-    "asking_price": "10.00",
-    "condition_media": "",
-    "condition_sleeve": "",
+    "asking_price": "20",
+    "condition_media": "NM",
+    "condition_sleeve": "NM",
     "notes": "",
-    "photos": [],
+    "photos": [
+      "/photos/gg-allin-the-jabbers__from-the-vaults-dead-or-alive-occupation-gimme-some-head-unh-interview__blood-orange-records/1788464595302-8-IMG_E1924.jpg",
+      "/photos/gg-allin-the-jabbers__from-the-vaults-dead-or-alive-occupation-gimme-some-head-unh-interview__blood-orange-records/1788464595454-9-IMG_E1925.jpg",
+      "/photos/gg-allin-the-jabbers__from-the-vaults-dead-or-alive-occupation-gimme-some-head-unh-interview__blood-orange-records/1788464594838-4-IMG_E1918.jpg",
+      "/photos/gg-allin-the-jabbers__from-the-vaults-dead-or-alive-occupation-gimme-some-head-unh-interview__blood-orange-records/1788464595138-7-IMG_E1921.jpg",
+      "/photos/gg-allin-the-jabbers__from-the-vaults-dead-or-alive-occupation-gimme-some-head-unh-interview__blood-orange-records/1788464594992-6-IMG_E1920.jpg",
+      "/photos/gg-allin-the-jabbers__from-the-vaults-dead-or-alive-occupation-gimme-some-head-unh-interview__blood-orange-records/1788464594374-0-IMG_E1902.jpg",
+      "/photos/gg-allin-the-jabbers__from-the-vaults-dead-or-alive-occupation-gimme-some-head-unh-interview__blood-orange-records/1788464594519-1-IMG_E1913.jpg",
+      "/photos/gg-allin-the-jabbers__from-the-vaults-dead-or-alive-occupation-gimme-some-head-unh-interview__blood-orange-records/1788464594682-3-IMG_E1917.jpg",
+      "/photos/gg-allin-the-jabbers__from-the-vaults-dead-or-alive-occupation-gimme-some-head-unh-interview__blood-orange-records/1788464594910-5-IMG_E1919.jpg",
+      "/photos/gg-allin-the-jabbers__from-the-vaults-dead-or-alive-occupation-gimme-some-head-unh-interview__blood-orange-records/1788464594600-2-IMG_E1914.jpg"
+    ],
     "status": {
-      "ebay": "unlisted",
+      "ebay": "listed",
       "fb": "unlisted",
       "discogs": "unlisted"
     },
-    "ebay_listing_id": null,
+    "ebay_listing_id": "407191015935",
     "sold": false,
-    "discogs_release_id": null,
-    "discogs_price_by_grade": null,
-    "discogs_community": null,
+    "discogs_release_id": 13429552,
+    "discogs_price_by_grade": {
+      "Mint (M)": {
+        "currency": "USD",
+        "value": 22.093023255813954
+      },
+      "Near Mint (NM or M-)": {
+        "currency": "USD",
+        "value": 19.76744186046512
+      },
+      "Very Good Plus (VG+)": {
+        "currency": "USD",
+        "value": 15.116279069767444
+      },
+      "Very Good (VG)": {
+        "currency": "USD",
+        "value": 10.465116279069768
+      },
+      "Good Plus (G+)": {
+        "currency": "USD",
+        "value": 5.813953488372094
+      },
+      "Good (G)": {
+        "currency": "USD",
+        "value": 3.4883720930232562
+      },
+      "Fair (F)": {
+        "currency": "USD",
+        "value": 2.3255813953488373
+      },
+      "Poor (P)": {
+        "currency": "USD",
+        "value": 1.1627906976744187
+      }
+    },
+    "discogs_community": {
+      "have": 284,
+      "want": 92,
+      "ratingAverage": 4.74,
+      "ratingCount": 23
+    },
     "discogs_sold_stats": {
       "low": "",
       "median": "",
@@ -11919,44 +12691,51 @@
       "lastSoldDate": ""
     },
     "discogs_listing_id": null,
-    "listing_extras": "",
-    "photo_hosted_urls": {}
-  },
-  {
-    "id": "screeching-weasel-born-against__el-mozote-janelle__lookout-records-look",
-    "artist": "Screeching Weasel / Born Against",
-    "title": "El Mozote / Janelle",
-    "year": "1993",
-    "country": "US",
-    "format": "Vinyl, 7\"",
-    "label": "Lookout! Records – Lookout 73, Lookout! Records – Number 73",
-    "tier": "Tier 3 - Bulk grab bag",
-    "discogs_low_price": "9.99",
-    "copies_for_sale_on_discogs": "15",
-    "asking_price": "9.99",
-    "condition_media": "",
-    "condition_sleeve": "",
-    "notes": "",
-    "photos": [],
-    "status": {
-      "ebay": "unlisted",
-      "fb": "unlisted",
-      "discogs": "unlisted"
+    "listing_extras": "Comes with 3 folded inserts, all perfect condition. OG owner",
+    "photo_hosted_urls": {
+      "/photos/gg-allin-the-jabbers__from-the-vaults-dead-or-alive-occupation-gimme-some-head-unh-interview__blood-orange-records/1788463201199-23-IMG_E1924.jpg": "https://i.ibb.co/F4Dh1jG7/1788463201199-23-IMG-E1924.jpg",
+      "/photos/gg-allin-the-jabbers__from-the-vaults-dead-or-alive-occupation-gimme-some-head-unh-interview__blood-orange-records/1788463201347-24-IMG_E1925.jpg": "https://i.ibb.co/qFN6tKZL/1788463201347-24-IMG-E1925.jpg",
+      "/photos/gg-allin-the-jabbers__from-the-vaults-dead-or-alive-occupation-gimme-some-head-unh-interview__blood-orange-records/1788463200599-17-IMG_E1918.jpg": "https://i.ibb.co/rRRm6rSr/1788463200599-17-IMG-E1918.jpg",
+      "/photos/gg-allin-the-jabbers__from-the-vaults-dead-or-alive-occupation-gimme-some-head-unh-interview__blood-orange-records/1788463200284-14-IMG_E1915.jpg": "https://i.ibb.co/4wH0jvtj/1788463200284-14-IMG-E1915.jpg",
+      "/photos/gg-allin-the-jabbers__from-the-vaults-dead-or-alive-occupation-gimme-some-head-unh-interview__blood-orange-records/1788463200360-15-IMG_E1916.jpg": "https://i.ibb.co/7tqpH9kL/1788463200360-15-IMG-E1916.jpg",
+      "/photos/gg-allin-the-jabbers__from-the-vaults-dead-or-alive-occupation-gimme-some-head-unh-interview__blood-orange-records/1788463200135-13-IMG_E1914.jpg": "https://i.ibb.co/CsSxYVGS/1788463200135-13-IMG-E1914.jpg",
+      "/photos/gg-allin-the-jabbers__from-the-vaults-dead-or-alive-occupation-gimme-some-head-unh-interview__blood-orange-records/1788463198222-0-IMG_E1900.jpg": "https://i.ibb.co/Lhp1vQqB/1788463198222-0-IMG-E1900.jpg",
+      "/photos/gg-allin-the-jabbers__from-the-vaults-dead-or-alive-occupation-gimme-some-head-unh-interview__blood-orange-records/1788463198371-1-IMG_E1901.jpg": "https://i.ibb.co/rGggqf5C/1788463198371-1-IMG-E1901.jpg",
+      "/photos/gg-allin-the-jabbers__from-the-vaults-dead-or-alive-occupation-gimme-some-head-unh-interview__blood-orange-records/1788463198516-2-IMG_E1902.jpg": "https://i.ibb.co/m5qnXcwt/1788463198516-2-IMG-E1902.jpg",
+      "/photos/gg-allin-the-jabbers__from-the-vaults-dead-or-alive-occupation-gimme-some-head-unh-interview__blood-orange-records/1788463198673-3-IMG_E1903.jpg": "https://i.ibb.co/VcnSXxdP/1788463198673-3-IMG-E1903.jpg",
+      "/photos/gg-allin-the-jabbers__from-the-vaults-dead-or-alive-occupation-gimme-some-head-unh-interview__blood-orange-records/1788463198831-4-IMG_E1904.jpg": "https://i.ibb.co/p6HgYrfN/1788463198831-4-IMG-E1904.jpg",
+      "/photos/gg-allin-the-jabbers__from-the-vaults-dead-or-alive-occupation-gimme-some-head-unh-interview__blood-orange-records/1788463198987-5-IMG_E1905.jpg": "https://i.ibb.co/Pv9SfgwF/1788463198987-5-IMG-E1905.jpg",
+      "/photos/gg-allin-the-jabbers__from-the-vaults-dead-or-alive-occupation-gimme-some-head-unh-interview__blood-orange-records/1788463199141-6-IMG_E1906.jpg": "https://i.ibb.co/8nrGHmDs/1788463199141-6-IMG-E1906.jpg",
+      "/photos/gg-allin-the-jabbers__from-the-vaults-dead-or-alive-occupation-gimme-some-head-unh-interview__blood-orange-records/1788463199296-7-IMG_E1907.jpg": "https://i.ibb.co/mrRSSM5b/1788463199296-7-IMG-E1907.jpg",
+      "/photos/gg-allin-the-jabbers__from-the-vaults-dead-or-alive-occupation-gimme-some-head-unh-interview__blood-orange-records/1788463199447-8-IMG_E1908.jpg": "https://i.ibb.co/7tZWW9kP/1788463199447-8-IMG-E1908.jpg",
+      "/photos/gg-allin-the-jabbers__from-the-vaults-dead-or-alive-occupation-gimme-some-head-unh-interview__blood-orange-records/1788463199608-9-IMG_E1910.jpg": "https://i.ibb.co/9m6kt4GL/1788463199608-9-IMG-E1910.jpg",
+      "/photos/gg-allin-the-jabbers__from-the-vaults-dead-or-alive-occupation-gimme-some-head-unh-interview__blood-orange-records/1788463199758-10-IMG_E1911.jpg": "https://i.ibb.co/jcHLpc0/1788463199758-10-IMG-E1911.jpg",
+      "/photos/gg-allin-the-jabbers__from-the-vaults-dead-or-alive-occupation-gimme-some-head-unh-interview__blood-orange-records/1788463199913-11-IMG_E1912.jpg": "https://i.ibb.co/TxKyxR7z/1788463199913-11-IMG-E1912.jpg",
+      "/photos/gg-allin-the-jabbers__from-the-vaults-dead-or-alive-occupation-gimme-some-head-unh-interview__blood-orange-records/1788463200057-12-IMG_E1913.jpg": "https://i.ibb.co/Jw1171yY/1788463200057-12-IMG-E1913.jpg",
+      "/photos/gg-allin-the-jabbers__from-the-vaults-dead-or-alive-occupation-gimme-some-head-unh-interview__blood-orange-records/1788463200444-16-IMG_E1917.jpg": "https://i.ibb.co/V039bjMt/1788463200444-16-IMG-E1917.jpg",
+      "/photos/gg-allin-the-jabbers__from-the-vaults-dead-or-alive-occupation-gimme-some-head-unh-interview__blood-orange-records/1788463200670-18-IMG_E1919.jpg": "https://i.ibb.co/mFRTC3Sd/1788463200670-18-IMG-E1919.jpg",
+      "/photos/gg-allin-the-jabbers__from-the-vaults-dead-or-alive-occupation-gimme-some-head-unh-interview__blood-orange-records/1788463200749-19-IMG_E1920.jpg": "https://i.ibb.co/DHZg1N5w/1788463200749-19-IMG-E1920.jpg",
+      "/photos/gg-allin-the-jabbers__from-the-vaults-dead-or-alive-occupation-gimme-some-head-unh-interview__blood-orange-records/1788463200891-20-IMG_E1921.jpg": "https://i.ibb.co/v67HVCBg/1788463200891-20-IMG-E1921.jpg",
+      "/photos/gg-allin-the-jabbers__from-the-vaults-dead-or-alive-occupation-gimme-some-head-unh-interview__blood-orange-records/1788463200970-21-IMG_E1922.jpg": "https://i.ibb.co/b5ryBfhW/1788463200970-21-IMG-E1922.jpg",
+      "/photos/gg-allin-the-jabbers__from-the-vaults-dead-or-alive-occupation-gimme-some-head-unh-interview__blood-orange-records/1788463201047-22-IMG_E1923.jpg": "https://i.ibb.co/Lds7JYXY/1788463201047-22-IMG-E1923.jpg",
+      "/photos/gg-allin-the-jabbers__from-the-vaults-dead-or-alive-occupation-gimme-some-head-unh-interview__blood-orange-records/1788464595302-8-IMG_E1924.jpg": "https://i.ibb.co/F4Dh1jG7/1788463201199-23-IMG-E1924.jpg",
+      "/photos/gg-allin-the-jabbers__from-the-vaults-dead-or-alive-occupation-gimme-some-head-unh-interview__blood-orange-records/1788464595454-9-IMG_E1925.jpg": "https://i.ibb.co/qFN6tKZL/1788463201347-24-IMG-E1925.jpg",
+      "/photos/gg-allin-the-jabbers__from-the-vaults-dead-or-alive-occupation-gimme-some-head-unh-interview__blood-orange-records/1788464594838-4-IMG_E1918.jpg": "https://i.ibb.co/rRRm6rSr/1788463200599-17-IMG-E1918.jpg",
+      "/photos/gg-allin-the-jabbers__from-the-vaults-dead-or-alive-occupation-gimme-some-head-unh-interview__blood-orange-records/1788464595138-7-IMG_E1921.jpg": "https://i.ibb.co/v67HVCBg/1788463200891-20-IMG-E1921.jpg",
+      "/photos/gg-allin-the-jabbers__from-the-vaults-dead-or-alive-occupation-gimme-some-head-unh-interview__blood-orange-records/1788464594992-6-IMG_E1920.jpg": "https://i.ibb.co/DHZg1N5w/1788463200749-19-IMG-E1920.jpg",
+      "/photos/gg-allin-the-jabbers__from-the-vaults-dead-or-alive-occupation-gimme-some-head-unh-interview__blood-orange-records/1788464594374-0-IMG_E1902.jpg": "https://i.ibb.co/m5qnXcwt/1788463198516-2-IMG-E1902.jpg",
+      "/photos/gg-allin-the-jabbers__from-the-vaults-dead-or-alive-occupation-gimme-some-head-unh-interview__blood-orange-records/1788464594519-1-IMG_E1913.jpg": "https://i.ibb.co/Jw1171yY/1788463200057-12-IMG-E1913.jpg",
+      "/photos/gg-allin-the-jabbers__from-the-vaults-dead-or-alive-occupation-gimme-some-head-unh-interview__blood-orange-records/1788464594682-3-IMG_E1917.jpg": "https://i.ibb.co/V039bjMt/1788463200444-16-IMG-E1917.jpg",
+      "/photos/gg-allin-the-jabbers__from-the-vaults-dead-or-alive-occupation-gimme-some-head-unh-interview__blood-orange-records/1788464594910-5-IMG_E1919.jpg": "https://i.ibb.co/mFRTC3Sd/1788463200670-18-IMG-E1919.jpg",
+      "/photos/gg-allin-the-jabbers__from-the-vaults-dead-or-alive-occupation-gimme-some-head-unh-interview__blood-orange-records/1788464594600-2-IMG_E1914.jpg": "https://i.ibb.co/CsSxYVGS/1788463200135-13-IMG-E1914.jpg"
     },
-    "ebay_listing_id": null,
-    "sold": false,
-    "discogs_release_id": null,
-    "discogs_price_by_grade": null,
-    "discogs_community": null,
-    "discogs_sold_stats": {
-      "low": "",
-      "median": "",
-      "high": "",
-      "lastSoldDate": ""
-    },
-    "discogs_listing_id": null,
-    "listing_extras": "",
-    "photo_hosted_urls": {}
+    "matrix_number": "",
+    "sealed": false,
+    "deadwax_photos": [
+      "/photos/gg-allin-the-jabbers__from-the-vaults-dead-or-alive-occupation-gimme-some-head-unh-interview__blood-orange-records/1788464594682-3-IMG_E1917.jpg",
+      "/photos/gg-allin-the-jabbers__from-the-vaults-dead-or-alive-occupation-gimme-some-head-unh-interview__blood-orange-records/1788464594910-5-IMG_E1919.jpg"
+    ],
+    "ebay_sku": "ggallinthejabbersfromthevaultsdeadoraliveoccupatio"
   },
   {
     "id": "various__i-r-s-greatest-hits-vols-2-3__i-r-s-records-sp-708",
@@ -12032,7 +12811,7 @@
   },
   {
     "id": "the-exit-2__the-exit-e-p__permanent-records-2-",
-    "artist": "The Exit (2)",
+    "artist": "The Exit",
     "title": "The Exit E.P.",
     "year": "2014",
     "country": "US",
@@ -12041,21 +12820,72 @@
     "tier": "Tier 3 - Bulk grab bag",
     "discogs_low_price": "9.49",
     "copies_for_sale_on_discogs": "1",
-    "asking_price": "9.49",
-    "condition_media": "",
-    "condition_sleeve": "",
+    "asking_price": "15",
+    "condition_media": "VG+",
+    "condition_sleeve": "M",
     "notes": "",
-    "photos": [],
+    "photos": [
+      "/photos/the-exit-2__the-exit-e-p__permanent-records-2-/1788367740081-0-IMG_E1725.jpg",
+      "/photos/the-exit-2__the-exit-e-p__permanent-records-2-/1788367740233-1-IMG_E1726.jpg",
+      "/photos/the-exit-2__the-exit-e-p__permanent-records-2-/1788367740380-2-IMG_E1727.jpg",
+      "/photos/the-exit-2__the-exit-e-p__permanent-records-2-/1788367740597-3-IMG_E1728.jpg",
+      "/photos/the-exit-2__the-exit-e-p__permanent-records-2-/1788367740710-4-IMG_E1729.jpg",
+      "/photos/the-exit-2__the-exit-e-p__permanent-records-2-/1788367740891-5-IMG_E1730.jpg",
+      "/photos/the-exit-2__the-exit-e-p__permanent-records-2-/1788367741062-6-IMG_E1731.jpg",
+      "/photos/the-exit-2__the-exit-e-p__permanent-records-2-/1788367741372-9-IMG_E1734.jpg",
+      "/photos/the-exit-2__the-exit-e-p__permanent-records-2-/1788367741142-7-IMG_E1732.jpg",
+      "/photos/the-exit-2__the-exit-e-p__permanent-records-2-/1788367741221-8-IMG_E1733.jpg",
+      "/photos/the-exit-2__the-exit-e-p__permanent-records-2-/1788367741450-10-IMG_E1735.jpg",
+      "/photos/the-exit-2__the-exit-e-p__permanent-records-2-/1788367741527-11-IMG_E1736.jpg"
+    ],
     "status": {
-      "ebay": "unlisted",
+      "ebay": "listed",
       "fb": "unlisted",
       "discogs": "unlisted"
     },
-    "ebay_listing_id": null,
+    "ebay_listing_id": "407188198211",
     "sold": false,
-    "discogs_release_id": null,
-    "discogs_price_by_grade": null,
-    "discogs_community": null,
+    "discogs_release_id": 5668168,
+    "discogs_price_by_grade": {
+      "Mint (M)": {
+        "currency": "USD",
+        "value": 16.569767441860467
+      },
+      "Near Mint (NM or M-)": {
+        "currency": "USD",
+        "value": 14.82558139534884
+      },
+      "Very Good Plus (VG+)": {
+        "currency": "USD",
+        "value": 11.337209302325583
+      },
+      "Very Good (VG)": {
+        "currency": "USD",
+        "value": 7.848837209302327
+      },
+      "Good Plus (G+)": {
+        "currency": "USD",
+        "value": 4.36046511627907
+      },
+      "Good (G)": {
+        "currency": "USD",
+        "value": 2.616279069767442
+      },
+      "Fair (F)": {
+        "currency": "USD",
+        "value": 1.7441860465116283
+      },
+      "Poor (P)": {
+        "currency": "USD",
+        "value": 0.8720930232558142
+      }
+    },
+    "discogs_community": {
+      "have": 97,
+      "want": 38,
+      "ratingAverage": 4.29,
+      "ratingCount": 7
+    },
     "discogs_sold_stats": {
       "low": "",
       "median": "",
@@ -12064,7 +12894,29 @@
     },
     "discogs_listing_id": null,
     "listing_extras": "",
-    "photo_hosted_urls": {}
+    "photo_hosted_urls": {
+      "/photos/the-exit-2__the-exit-e-p__permanent-records-2-/1788367740081-0-IMG_E1725.jpg": "https://i.ibb.co/1tN77kdW/1788367740081-0-IMG-E1725.jpg",
+      "/photos/the-exit-2__the-exit-e-p__permanent-records-2-/1788367740233-1-IMG_E1726.jpg": "https://i.ibb.co/nVP8Pz1/1788367740233-1-IMG-E1726.jpg",
+      "/photos/the-exit-2__the-exit-e-p__permanent-records-2-/1788367740380-2-IMG_E1727.jpg": "https://i.ibb.co/84Gcc20Z/1788367740380-2-IMG-E1727.jpg",
+      "/photos/the-exit-2__the-exit-e-p__permanent-records-2-/1788367740597-3-IMG_E1728.jpg": "https://i.ibb.co/Kp5kdz2G/1788367740597-3-IMG-E1728.jpg",
+      "/photos/the-exit-2__the-exit-e-p__permanent-records-2-/1788367740710-4-IMG_E1729.jpg": "https://i.ibb.co/HDvRkbJr/1788367740710-4-IMG-E1729.jpg",
+      "/photos/the-exit-2__the-exit-e-p__permanent-records-2-/1788367740891-5-IMG_E1730.jpg": "https://i.ibb.co/qLcjT446/1788367740891-5-IMG-E1730.jpg",
+      "/photos/the-exit-2__the-exit-e-p__permanent-records-2-/1788367741062-6-IMG_E1731.jpg": "https://i.ibb.co/Hk1bsHX/1788367741062-6-IMG-E1731.jpg",
+      "/photos/the-exit-2__the-exit-e-p__permanent-records-2-/1788367741372-9-IMG_E1734.jpg": "https://i.ibb.co/VW903YFs/1788367741372-9-IMG-E1734.jpg",
+      "/photos/the-exit-2__the-exit-e-p__permanent-records-2-/1788367741142-7-IMG_E1732.jpg": "https://i.ibb.co/chwZT28n/1788367741142-7-IMG-E1732.jpg",
+      "/photos/the-exit-2__the-exit-e-p__permanent-records-2-/1788367741221-8-IMG_E1733.jpg": "https://i.ibb.co/Zpsg5Hw5/1788367741221-8-IMG-E1733.jpg",
+      "/photos/the-exit-2__the-exit-e-p__permanent-records-2-/1788367741450-10-IMG_E1735.jpg": "https://i.ibb.co/m5dNChW9/1788367741450-10-IMG-E1735.jpg",
+      "/photos/the-exit-2__the-exit-e-p__permanent-records-2-/1788367741527-11-IMG_E1736.jpg": "https://i.ibb.co/mC0VHwfF/1788367741527-11-IMG-E1736.jpg"
+    },
+    "matrix_number": "",
+    "sealed": false,
+    "deadwax_photos": [
+      "/photos/the-exit-2__the-exit-e-p__permanent-records-2-/1788367741142-7-IMG_E1732.jpg",
+      "/photos/the-exit-2__the-exit-e-p__permanent-records-2-/1788367741221-8-IMG_E1733.jpg",
+      "/photos/the-exit-2__the-exit-e-p__permanent-records-2-/1788367741450-10-IMG_E1735.jpg",
+      "/photos/the-exit-2__the-exit-e-p__permanent-records-2-/1788367741527-11-IMG_E1736.jpg"
+    ],
+    "ebay_sku": "theexit2theexiteppermanentrecords2"
   },
   {
     "id": "jj-180__talk-talk-classroom__alona-s-dream-record",
@@ -12562,21 +13414,66 @@
     "tier": "Tier 3 - Bulk grab bag",
     "discogs_low_price": "8.03",
     "copies_for_sale_on_discogs": "22",
-    "asking_price": "8.03",
-    "condition_media": "",
-    "condition_sleeve": "",
+    "asking_price": "35",
+    "condition_media": "NM",
+    "condition_sleeve": "VG",
     "notes": "",
-    "photos": [],
+    "photos": [
+      "/photos/physicals__all-sexed-up__physical-records-2-p/1788372882796-0-IMG_E1770.jpg",
+      "/photos/physicals__all-sexed-up__physical-records-2-p/1788372882950-1-IMG_E1771.jpg",
+      "/photos/physicals__all-sexed-up__physical-records-2-p/1788372883103-2-IMG_E1772.jpg",
+      "/photos/physicals__all-sexed-up__physical-records-2-p/1788372883410-5-IMG_E1775.jpg",
+      "/photos/physicals__all-sexed-up__physical-records-2-p/1788372883185-3-IMG_E1773.jpg",
+      "/photos/physicals__all-sexed-up__physical-records-2-p/1788372883260-4-IMG_E1774.jpg"
+    ],
     "status": {
-      "ebay": "unlisted",
+      "ebay": "listed",
       "fb": "unlisted",
       "discogs": "unlisted"
     },
-    "ebay_listing_id": null,
+    "ebay_listing_id": "407188365417",
     "sold": false,
-    "discogs_release_id": null,
-    "discogs_price_by_grade": null,
-    "discogs_community": null,
+    "discogs_release_id": 2234963,
+    "discogs_price_by_grade": {
+      "Mint (M)": {
+        "currency": "USD",
+        "value": 25.99179206566348
+      },
+      "Near Mint (NM or M-)": {
+        "currency": "USD",
+        "value": 23.255813953488374
+      },
+      "Very Good Plus (VG+)": {
+        "currency": "USD",
+        "value": 17.78385772913817
+      },
+      "Very Good (VG)": {
+        "currency": "USD",
+        "value": 12.311901504787963
+      },
+      "Good Plus (G+)": {
+        "currency": "USD",
+        "value": 6.839945280437758
+      },
+      "Good (G)": {
+        "currency": "USD",
+        "value": 4.103967168262654
+      },
+      "Fair (F)": {
+        "currency": "USD",
+        "value": 2.7359781121751032
+      },
+      "Poor (P)": {
+        "currency": "USD",
+        "value": 1.3679890560875516
+      }
+    },
+    "discogs_community": {
+      "have": 293,
+      "want": 128,
+      "ratingAverage": 4,
+      "ratingCount": 25
+    },
     "discogs_sold_stats": {
       "low": "",
       "median": "",
@@ -12585,11 +13482,25 @@
     },
     "discogs_listing_id": null,
     "listing_extras": "",
-    "photo_hosted_urls": {}
+    "photo_hosted_urls": {
+      "/photos/physicals__all-sexed-up__physical-records-2-p/1788372882796-0-IMG_E1770.jpg": "https://i.ibb.co/CxbFX3h/1788372882796-0-IMG-E1770.jpg",
+      "/photos/physicals__all-sexed-up__physical-records-2-p/1788372882950-1-IMG_E1771.jpg": "https://i.ibb.co/nMLjSz9B/1788372882950-1-IMG-E1771.jpg",
+      "/photos/physicals__all-sexed-up__physical-records-2-p/1788372883103-2-IMG_E1772.jpg": "https://i.ibb.co/4gsTNNrb/1788372883103-2-IMG-E1772.jpg",
+      "/photos/physicals__all-sexed-up__physical-records-2-p/1788372883410-5-IMG_E1775.jpg": "https://i.ibb.co/4w3SQHZb/1788372883410-5-IMG-E1775.jpg",
+      "/photos/physicals__all-sexed-up__physical-records-2-p/1788372883185-3-IMG_E1773.jpg": "https://i.ibb.co/1Y0bQxMj/1788372883185-3-IMG-E1773.jpg",
+      "/photos/physicals__all-sexed-up__physical-records-2-p/1788372883260-4-IMG_E1774.jpg": "https://i.ibb.co/Q3qc25jg/1788372883260-4-IMG-E1774.jpg"
+    },
+    "deadwax_photos": [
+      "/photos/physicals__all-sexed-up__physical-records-2-p/1788372883185-3-IMG_E1773.jpg",
+      "/photos/physicals__all-sexed-up__physical-records-2-p/1788372883260-4-IMG_E1774.jpg"
+    ],
+    "matrix_number": "",
+    "sealed": false,
+    "ebay_sku": "physicalsallsexedupphysicalrecords2p"
   },
   {
     "id": "conflict-2__the-serenade-is-dead__mortarhate-records-m",
-    "artist": "Conflict (2)",
+    "artist": "Conflict",
     "title": "The Serenade Is Dead",
     "year": "1995",
     "country": "UK & Europe",
@@ -12598,17 +13509,26 @@
     "tier": "Tier 3 - Bulk grab bag",
     "discogs_low_price": "8.00",
     "copies_for_sale_on_discogs": "9",
-    "asking_price": "8.00",
-    "condition_media": "",
-    "condition_sleeve": "",
+    "asking_price": "13",
+    "condition_media": "VG+",
+    "condition_sleeve": "VG+",
     "notes": "",
-    "photos": [],
+    "photos": [
+      "/photos/conflict-2__the-serenade-is-dead__mortarhate-records-m/1788279274691-0-IMG_E1563.jpg",
+      "/photos/conflict-2__the-serenade-is-dead__mortarhate-records-m/1788279274836-1-IMG_E1564.jpg",
+      "/photos/conflict-2__the-serenade-is-dead__mortarhate-records-m/1788279274983-2-IMG_E1565.jpg",
+      "/photos/conflict-2__the-serenade-is-dead__mortarhate-records-m/1788279275072-3-IMG_E1566.jpg",
+      "/photos/conflict-2__the-serenade-is-dead__mortarhate-records-m/1788279275150-4-IMG_E1567.jpg",
+      "/photos/conflict-2__the-serenade-is-dead__mortarhate-records-m/1788279275224-5-IMG_E1568.jpg",
+      "/photos/conflict-2__the-serenade-is-dead__mortarhate-records-m/1788279275298-6-IMG_E1569.jpg",
+      "/photos/conflict-2__the-serenade-is-dead__mortarhate-records-m/1788279275371-7-IMG_E1570.jpg"
+    ],
     "status": {
-      "ebay": "unlisted",
+      "ebay": "listed",
       "fb": "unlisted",
       "discogs": "unlisted"
     },
-    "ebay_listing_id": null,
+    "ebay_listing_id": "407185641357",
     "sold": false,
     "discogs_release_id": null,
     "discogs_price_by_grade": null,
@@ -12621,7 +13541,19 @@
     },
     "discogs_listing_id": null,
     "listing_extras": "",
-    "photo_hosted_urls": {}
+    "photo_hosted_urls": {
+      "/photos/conflict-2__the-serenade-is-dead__mortarhate-records-m/1788279274691-0-IMG_E1563.jpg": "https://i.ibb.co/zWSK0HZX/1788279274691-0-IMG-E1563.jpg",
+      "/photos/conflict-2__the-serenade-is-dead__mortarhate-records-m/1788279274836-1-IMG_E1564.jpg": "https://i.ibb.co/XZbCf4CK/1788279274836-1-IMG-E1564.jpg",
+      "/photos/conflict-2__the-serenade-is-dead__mortarhate-records-m/1788279274983-2-IMG_E1565.jpg": "https://i.ibb.co/YBC70nMG/1788279274983-2-IMG-E1565.jpg",
+      "/photos/conflict-2__the-serenade-is-dead__mortarhate-records-m/1788279275072-3-IMG_E1566.jpg": "https://i.ibb.co/SwN2GKKR/1788279275072-3-IMG-E1566.jpg",
+      "/photos/conflict-2__the-serenade-is-dead__mortarhate-records-m/1788279275150-4-IMG_E1567.jpg": "https://i.ibb.co/21nnwb7j/1788279275150-4-IMG-E1567.jpg",
+      "/photos/conflict-2__the-serenade-is-dead__mortarhate-records-m/1788279275224-5-IMG_E1568.jpg": "https://i.ibb.co/zVqsMsH7/1788279275224-5-IMG-E1568.jpg",
+      "/photos/conflict-2__the-serenade-is-dead__mortarhate-records-m/1788279275298-6-IMG_E1569.jpg": "https://i.ibb.co/7tsGgpyb/1788279275298-6-IMG-E1569.jpg",
+      "/photos/conflict-2__the-serenade-is-dead__mortarhate-records-m/1788279275371-7-IMG_E1570.jpg": "https://i.ibb.co/LdDv6Sh6/1788279275371-7-IMG-E1570.jpg"
+    },
+    "matrix_number": "",
+    "sealed": false,
+    "ebay_sku": "conflict2theserenadeisdeadmortarhaterecordsm"
   },
   {
     "id": "the-cheetahs__radio-active__zoom-records-zum-14",
@@ -13233,21 +14165,67 @@
     "tier": "Tier 3 - Bulk grab bag",
     "discogs_low_price": "7.00",
     "copies_for_sale_on_discogs": "2",
-    "asking_price": "7.00",
-    "condition_media": "",
-    "condition_sleeve": "",
+    "asking_price": "15",
+    "condition_media": "NM",
+    "condition_sleeve": "M",
     "notes": "",
-    "photos": [],
+    "photos": [
+      "/photos/fire-exit__time-wall__last-laugh-records-2/1788370234940-0-IMG_E1743.jpg",
+      "/photos/fire-exit__time-wall__last-laugh-records-2/1788370235090-1-IMG_E1744.jpg",
+      "/photos/fire-exit__time-wall__last-laugh-records-2/1788370235237-2-IMG_E1745.jpg",
+      "/photos/fire-exit__time-wall__last-laugh-records-2/1788370235306-3-IMG_E1746.jpg",
+      "/photos/fire-exit__time-wall__last-laugh-records-2/1788370235377-4-IMG_E1747.jpg",
+      "/photos/fire-exit__time-wall__last-laugh-records-2/1788370235448-5-IMG_E1750.jpg",
+      "/photos/fire-exit__time-wall__last-laugh-records-2/1788370235523-6-IMG_E1751.jpg"
+    ],
     "status": {
-      "ebay": "unlisted",
+      "ebay": "listed",
       "fb": "unlisted",
       "discogs": "unlisted"
     },
-    "ebay_listing_id": null,
+    "ebay_listing_id": "407188264341",
     "sold": false,
-    "discogs_release_id": null,
-    "discogs_price_by_grade": null,
-    "discogs_community": null,
+    "discogs_release_id": 4854629,
+    "discogs_price_by_grade": {
+      "Mint (M)": {
+        "currency": "USD",
+        "value": 16.459302325581394
+      },
+      "Near Mint (NM or M-)": {
+        "currency": "USD",
+        "value": 14.726744186046512
+      },
+      "Very Good Plus (VG+)": {
+        "currency": "USD",
+        "value": 11.261627906976745
+      },
+      "Very Good (VG)": {
+        "currency": "USD",
+        "value": 7.796511627906977
+      },
+      "Good Plus (G+)": {
+        "currency": "USD",
+        "value": 4.3313953488372094
+      },
+      "Good (G)": {
+        "currency": "USD",
+        "value": 2.5988372093023258
+      },
+      "Fair (F)": {
+        "currency": "USD",
+        "value": 1.732558139534884
+      },
+      "Poor (P)": {
+        "currency": "USD",
+        "value": 0.866279069767442
+      }
+    },
+    "discogs_community": {
+      "have": 263,
+      "want": 77,
+      "ratingAverage": 4.57,
+      "ratingCount": 21
+    },
     "discogs_sold_stats": {
       "low": "",
       "median": "",
@@ -13256,7 +14234,24 @@
     },
     "discogs_listing_id": null,
     "listing_extras": "",
-    "photo_hosted_urls": {}
+    "photo_hosted_urls": {
+      "/photos/fire-exit__time-wall__last-laugh-records-2/1788370234940-0-IMG_E1743.jpg": "https://i.ibb.co/FL8hgsxX/1788370234940-0-IMG-E1743.jpg",
+      "/photos/fire-exit__time-wall__last-laugh-records-2/1788370235090-1-IMG_E1744.jpg": "https://i.ibb.co/7JfYGSMD/1788370235090-1-IMG-E1744.jpg",
+      "/photos/fire-exit__time-wall__last-laugh-records-2/1788370235237-2-IMG_E1745.jpg": "https://i.ibb.co/21NFgPmy/1788370235237-2-IMG-E1745.jpg",
+      "/photos/fire-exit__time-wall__last-laugh-records-2/1788370235306-3-IMG_E1746.jpg": "https://i.ibb.co/8gHSL2Qw/1788370235306-3-IMG-E1746.jpg",
+      "/photos/fire-exit__time-wall__last-laugh-records-2/1788370235377-4-IMG_E1747.jpg": "https://i.ibb.co/VYXdhyGC/1788370235377-4-IMG-E1747.jpg",
+      "/photos/fire-exit__time-wall__last-laugh-records-2/1788370235448-5-IMG_E1750.jpg": "https://i.ibb.co/mV41PfPh/1788370235448-5-IMG-E1750.jpg",
+      "/photos/fire-exit__time-wall__last-laugh-records-2/1788370235523-6-IMG_E1751.jpg": "https://i.ibb.co/q3ykv1gj/1788370235523-6-IMG-E1751.jpg"
+    },
+    "matrix_number": "",
+    "sealed": false,
+    "deadwax_photos": [
+      "/photos/fire-exit__time-wall__last-laugh-records-2/1788370235306-3-IMG_E1746.jpg",
+      "/photos/fire-exit__time-wall__last-laugh-records-2/1788370235377-4-IMG_E1747.jpg",
+      "/photos/fire-exit__time-wall__last-laugh-records-2/1788370235448-5-IMG_E1750.jpg",
+      "/photos/fire-exit__time-wall__last-laugh-records-2/1788370235523-6-IMG_E1751.jpg"
+    ],
+    "ebay_sku": "fireexittimewalllastlaughrecords2"
   },
   {
     "id": "gundog__a-dog-s-eye-view__new-blood-records-ne",
@@ -14010,21 +15005,67 @@
     "tier": "Tier 3 - Bulk grab bag",
     "discogs_low_price": "5.74",
     "copies_for_sale_on_discogs": "4",
-    "asking_price": "5.74",
-    "condition_media": "",
-    "condition_sleeve": "",
+    "asking_price": "10",
+    "condition_media": "VG+",
+    "condition_sleeve": "VG",
     "notes": "",
-    "photos": [],
+    "photos": [
+      "/photos/stalin-video__vivisection__no-front-teeth-recor/1788457719672-0-IMG_E1853.jpg",
+      "/photos/stalin-video__vivisection__no-front-teeth-recor/1788457720255-4-IMG_E1857.jpg",
+      "/photos/stalin-video__vivisection__no-front-teeth-recor/1788457720116-3-IMG_E1856.jpg",
+      "/photos/stalin-video__vivisection__no-front-teeth-recor/1788457719825-1-IMG_E1854.jpg",
+      "/photos/stalin-video__vivisection__no-front-teeth-recor/1788457719973-2-IMG_E1855.jpg",
+      "/photos/stalin-video__vivisection__no-front-teeth-recor/1788457720330-5-IMG_E1858.jpg",
+      "/photos/stalin-video__vivisection__no-front-teeth-recor/1788457720402-6-IMG_E1859.jpg"
+    ],
     "status": {
-      "ebay": "unlisted",
+      "ebay": "listed",
       "fb": "unlisted",
       "discogs": "unlisted"
     },
-    "ebay_listing_id": null,
+    "ebay_listing_id": "407190795545",
     "sold": false,
-    "discogs_release_id": null,
-    "discogs_price_by_grade": null,
-    "discogs_community": null,
+    "discogs_release_id": 6199668,
+    "discogs_price_by_grade": {
+      "Mint (M)": {
+        "currency": "USD",
+        "value": 13.400588235294117
+      },
+      "Near Mint (NM or M-)": {
+        "currency": "USD",
+        "value": 11.99
+      },
+      "Very Good Plus (VG+)": {
+        "currency": "USD",
+        "value": 9.168823529411766
+      },
+      "Very Good (VG)": {
+        "currency": "USD",
+        "value": 6.34764705882353
+      },
+      "Good Plus (G+)": {
+        "currency": "USD",
+        "value": 3.5264705882352945
+      },
+      "Good (G)": {
+        "currency": "USD",
+        "value": 2.1158823529411768
+      },
+      "Fair (F)": {
+        "currency": "USD",
+        "value": 1.410588235294118
+      },
+      "Poor (P)": {
+        "currency": "USD",
+        "value": 0.705294117647059
+      }
+    },
+    "discogs_community": {
+      "have": 13,
+      "want": 12,
+      "ratingAverage": 5,
+      "ratingCount": 1
+    },
     "discogs_sold_stats": {
       "low": "",
       "median": "",
@@ -14033,7 +15074,24 @@
     },
     "discogs_listing_id": null,
     "listing_extras": "",
-    "photo_hosted_urls": {}
+    "photo_hosted_urls": {
+      "/photos/stalin-video__vivisection__no-front-teeth-recor/1788457719672-0-IMG_E1853.jpg": "https://i.ibb.co/0VDHK6BN/1788457719672-0-IMG-E1853.jpg",
+      "/photos/stalin-video__vivisection__no-front-teeth-recor/1788457720255-4-IMG_E1857.jpg": "https://i.ibb.co/rGsTCdQx/1788457720255-4-IMG-E1857.jpg",
+      "/photos/stalin-video__vivisection__no-front-teeth-recor/1788457720116-3-IMG_E1856.jpg": "https://i.ibb.co/r2bXfNYw/1788457720116-3-IMG-E1856.jpg",
+      "/photos/stalin-video__vivisection__no-front-teeth-recor/1788457719825-1-IMG_E1854.jpg": "https://i.ibb.co/kV2ZxCHf/1788457719825-1-IMG-E1854.jpg",
+      "/photos/stalin-video__vivisection__no-front-teeth-recor/1788457719973-2-IMG_E1855.jpg": "https://i.ibb.co/KxXpfwKG/1788457719973-2-IMG-E1855.jpg",
+      "/photos/stalin-video__vivisection__no-front-teeth-recor/1788457720330-5-IMG_E1858.jpg": "https://i.ibb.co/TB5NKZYG/1788457720330-5-IMG-E1858.jpg",
+      "/photos/stalin-video__vivisection__no-front-teeth-recor/1788457720402-6-IMG_E1859.jpg": "https://i.ibb.co/6cTR99gQ/1788457720402-6-IMG-E1859.jpg"
+    },
+    "deadwax_photos": [
+      "/photos/stalin-video__vivisection__no-front-teeth-recor/1788457720116-3-IMG_E1856.jpg",
+      "/photos/stalin-video__vivisection__no-front-teeth-recor/1788457720255-4-IMG_E1857.jpg",
+      "/photos/stalin-video__vivisection__no-front-teeth-recor/1788457720330-5-IMG_E1858.jpg",
+      "/photos/stalin-video__vivisection__no-front-teeth-recor/1788457720402-6-IMG_E1859.jpg"
+    ],
+    "matrix_number": "",
+    "sealed": false,
+    "ebay_sku": "stalinvideovivisectionnofrontteethrecor"
   },
   {
     "id": "various__skinhead-times-issue-17__skinhead-times-publi",
@@ -14334,21 +15392,72 @@
     "tier": "Tier 3 - Bulk grab bag",
     "discogs_low_price": "4.60",
     "copies_for_sale_on_discogs": "14",
-    "asking_price": "4.60",
-    "condition_media": "",
-    "condition_sleeve": "",
+    "asking_price": "29",
+    "condition_media": "VG",
+    "condition_sleeve": "VG+",
     "notes": "",
-    "photos": [],
+    "photos": [
+      "/photos/anti-establishment__future-girl-no-trust__glass-records-2-glas/1788456206131-0-IMG_E1830.jpg",
+      "/photos/anti-establishment__future-girl-no-trust__glass-records-2-glas/1788456206279-1-IMG_E1831.jpg",
+      "/photos/anti-establishment__future-girl-no-trust__glass-records-2-glas/1788456206428-2-IMG_E1832.jpg",
+      "/photos/anti-establishment__future-girl-no-trust__glass-records-2-glas/1788456206814-6-IMG_E1836.jpg",
+      "/photos/anti-establishment__future-girl-no-trust__glass-records-2-glas/1788456206511-3-IMG_E1833.jpg",
+      "/photos/anti-establishment__future-girl-no-trust__glass-records-2-glas/1788456206589-4-IMG_E1834.jpg",
+      "/photos/anti-establishment__future-girl-no-trust__glass-records-2-glas/1788456206664-5-IMG_E1835.jpg",
+      "/photos/anti-establishment__future-girl-no-trust__glass-records-2-glas/1788456206892-7-IMG_E1837.jpg",
+      "/photos/anti-establishment__future-girl-no-trust__glass-records-2-glas/1788456206972-8-IMG_E1838.jpg",
+      "/photos/anti-establishment__future-girl-no-trust__glass-records-2-glas/1788456207049-9-IMG_E1839.jpg",
+      "/photos/anti-establishment__future-girl-no-trust__glass-records-2-glas/1788456207128-10-IMG_E1840.jpg",
+      "/photos/anti-establishment__future-girl-no-trust__glass-records-2-glas/1788456207206-11-IMG_E1841.jpg"
+    ],
     "status": {
-      "ebay": "unlisted",
+      "ebay": "listed",
       "fb": "unlisted",
       "discogs": "unlisted"
     },
-    "ebay_listing_id": null,
+    "ebay_listing_id": "407190754495",
     "sold": false,
-    "discogs_release_id": null,
-    "discogs_price_by_grade": null,
-    "discogs_community": null,
+    "discogs_release_id": 1112791,
+    "discogs_price_by_grade": {
+      "Mint (M)": {
+        "currency": "USD",
+        "value": 25.675675675675674
+      },
+      "Near Mint (NM or M-)": {
+        "currency": "USD",
+        "value": 22.972972972972972
+      },
+      "Very Good Plus (VG+)": {
+        "currency": "USD",
+        "value": 17.567567567567565
+      },
+      "Very Good (VG)": {
+        "currency": "USD",
+        "value": 12.162162162162161
+      },
+      "Good Plus (G+)": {
+        "currency": "USD",
+        "value": 6.756756756756756
+      },
+      "Good (G)": {
+        "currency": "USD",
+        "value": 4.0540540540540535
+      },
+      "Fair (F)": {
+        "currency": "USD",
+        "value": 2.7027027027027026
+      },
+      "Poor (P)": {
+        "currency": "USD",
+        "value": 1.3513513513513513
+      }
+    },
+    "discogs_community": {
+      "have": 310,
+      "want": 116,
+      "ratingAverage": 3.47,
+      "ratingCount": 15
+    },
     "discogs_sold_stats": {
       "low": "",
       "median": "",
@@ -14357,7 +15466,33 @@
     },
     "discogs_listing_id": null,
     "listing_extras": "",
-    "photo_hosted_urls": {}
+    "photo_hosted_urls": {
+      "/photos/anti-establishment__future-girl-no-trust__glass-records-2-glas/1788456206131-0-IMG_E1830.jpg": "https://i.ibb.co/ZpXsjVKz/1788456206131-0-IMG-E1830.jpg",
+      "/photos/anti-establishment__future-girl-no-trust__glass-records-2-glas/1788456206279-1-IMG_E1831.jpg": "https://i.ibb.co/Gfg9yDpd/1788456206279-1-IMG-E1831.jpg",
+      "/photos/anti-establishment__future-girl-no-trust__glass-records-2-glas/1788456206428-2-IMG_E1832.jpg": "https://i.ibb.co/FL9Ky97y/1788456206428-2-IMG-E1832.jpg",
+      "/photos/anti-establishment__future-girl-no-trust__glass-records-2-glas/1788456206814-6-IMG_E1836.jpg": "https://i.ibb.co/NnY6Hcn3/1788456206814-6-IMG-E1836.jpg",
+      "/photos/anti-establishment__future-girl-no-trust__glass-records-2-glas/1788456206511-3-IMG_E1833.jpg": "https://i.ibb.co/hFpwtPbx/1788456206511-3-IMG-E1833.jpg",
+      "/photos/anti-establishment__future-girl-no-trust__glass-records-2-glas/1788456206589-4-IMG_E1834.jpg": "https://i.ibb.co/1tBKDsxB/1788456206589-4-IMG-E1834.jpg",
+      "/photos/anti-establishment__future-girl-no-trust__glass-records-2-glas/1788456206664-5-IMG_E1835.jpg": "https://i.ibb.co/VhWsG9n/1788456206664-5-IMG-E1835.jpg",
+      "/photos/anti-establishment__future-girl-no-trust__glass-records-2-glas/1788456206892-7-IMG_E1837.jpg": "https://i.ibb.co/zTkX9MTv/1788456206892-7-IMG-E1837.jpg",
+      "/photos/anti-establishment__future-girl-no-trust__glass-records-2-glas/1788456206972-8-IMG_E1838.jpg": "https://i.ibb.co/6Qc8JJg/1788456206972-8-IMG-E1838.jpg",
+      "/photos/anti-establishment__future-girl-no-trust__glass-records-2-glas/1788456207049-9-IMG_E1839.jpg": "https://i.ibb.co/8nXrQ0NJ/1788456207049-9-IMG-E1839.jpg",
+      "/photos/anti-establishment__future-girl-no-trust__glass-records-2-glas/1788456207128-10-IMG_E1840.jpg": "https://i.ibb.co/rKKYVdzW/1788456207128-10-IMG-E1840.jpg",
+      "/photos/anti-establishment__future-girl-no-trust__glass-records-2-glas/1788456207206-11-IMG_E1841.jpg": "https://i.ibb.co/jkRcpwbX/1788456207206-11-IMG-E1841.jpg"
+    },
+    "matrix_number": "",
+    "sealed": false,
+    "deadwax_photos": [
+      "/photos/anti-establishment__future-girl-no-trust__glass-records-2-glas/1788456206664-5-IMG_E1835.jpg",
+      "/photos/anti-establishment__future-girl-no-trust__glass-records-2-glas/1788456206892-7-IMG_E1837.jpg",
+      "/photos/anti-establishment__future-girl-no-trust__glass-records-2-glas/1788456207049-9-IMG_E1839.jpg",
+      "/photos/anti-establishment__future-girl-no-trust__glass-records-2-glas/1788456207128-10-IMG_E1840.jpg",
+      "/photos/anti-establishment__future-girl-no-trust__glass-records-2-glas/1788456207206-11-IMG_E1841.jpg",
+      "/photos/anti-establishment__future-girl-no-trust__glass-records-2-glas/1788456206972-8-IMG_E1838.jpg",
+      "/photos/anti-establishment__future-girl-no-trust__glass-records-2-glas/1788456206511-3-IMG_E1833.jpg",
+      "/photos/anti-establishment__future-girl-no-trust__glass-records-2-glas/1788456206589-4-IMG_E1834.jpg"
+    ],
+    "ebay_sku": "antiestablishmentfuturegirlnotrustglassrecords2gla"
   },
   {
     "id": "various__special-rockin-the-streets-promo-ep__longshot-music-ls702",
@@ -14527,21 +15662,33 @@
     "tier": "Tier 3 - Bulk grab bag",
     "discogs_low_price": "4.23",
     "copies_for_sale_on_discogs": "7",
-    "asking_price": "4.23",
-    "condition_media": "",
-    "condition_sleeve": "",
+    "asking_price": "14",
+    "condition_media": "VG+",
+    "condition_sleeve": "NM",
     "notes": "",
-    "photos": [],
+    "photos": [
+      "/photos/ed-nasty-and-the-dopeds__i-m-gonna-be-everything__last-laugh-records-2/1788368916222-0-IMG_E1737.jpg",
+      "/photos/ed-nasty-and-the-dopeds__i-m-gonna-be-everything__last-laugh-records-2/1788368916382-1-IMG_E1738.jpg",
+      "/photos/ed-nasty-and-the-dopeds__i-m-gonna-be-everything__last-laugh-records-2/1788368916541-2-IMG_E1739.jpg",
+      "/photos/ed-nasty-and-the-dopeds__i-m-gonna-be-everything__last-laugh-records-2/1788368916780-4-IMG_E1741.jpg",
+      "/photos/ed-nasty-and-the-dopeds__i-m-gonna-be-everything__last-laugh-records-2/1788368916620-3-IMG_E1740.jpg",
+      "/photos/ed-nasty-and-the-dopeds__i-m-gonna-be-everything__last-laugh-records-2/1788368916850-5-IMG_E1742.jpg"
+    ],
     "status": {
-      "ebay": "unlisted",
+      "ebay": "listed",
       "fb": "unlisted",
       "discogs": "unlisted"
     },
-    "ebay_listing_id": null,
+    "ebay_listing_id": "407188232248",
     "sold": false,
-    "discogs_release_id": null,
-    "discogs_price_by_grade": null,
-    "discogs_community": null,
+    "discogs_release_id": 37704201,
+    "discogs_price_by_grade": {},
+    "discogs_community": {
+      "have": 2,
+      "want": 2,
+      "ratingAverage": 5,
+      "ratingCount": 1
+    },
     "discogs_sold_stats": {
       "low": "",
       "median": "",
@@ -14550,7 +15697,21 @@
     },
     "discogs_listing_id": null,
     "listing_extras": "",
-    "photo_hosted_urls": {}
+    "photo_hosted_urls": {
+      "/photos/ed-nasty-and-the-dopeds__i-m-gonna-be-everything__last-laugh-records-2/1788368916222-0-IMG_E1737.jpg": "https://i.ibb.co/rGvD1QgS/1788368916222-0-IMG-E1737.jpg",
+      "/photos/ed-nasty-and-the-dopeds__i-m-gonna-be-everything__last-laugh-records-2/1788368916382-1-IMG_E1738.jpg": "https://i.ibb.co/tpgjkT91/1788368916382-1-IMG-E1738.jpg",
+      "/photos/ed-nasty-and-the-dopeds__i-m-gonna-be-everything__last-laugh-records-2/1788368916541-2-IMG_E1739.jpg": "https://i.ibb.co/8LCkP8cr/1788368916541-2-IMG-E1739.jpg",
+      "/photos/ed-nasty-and-the-dopeds__i-m-gonna-be-everything__last-laugh-records-2/1788368916780-4-IMG_E1741.jpg": "https://i.ibb.co/7t1cXMPS/1788368916780-4-IMG-E1741.jpg",
+      "/photos/ed-nasty-and-the-dopeds__i-m-gonna-be-everything__last-laugh-records-2/1788368916620-3-IMG_E1740.jpg": "https://i.ibb.co/5gvkLKLH/1788368916620-3-IMG-E1740.jpg",
+      "/photos/ed-nasty-and-the-dopeds__i-m-gonna-be-everything__last-laugh-records-2/1788368916850-5-IMG_E1742.jpg": "https://i.ibb.co/DfZnSPRH/1788368916850-5-IMG-E1742.jpg"
+    },
+    "deadwax_photos": [
+      "/photos/ed-nasty-and-the-dopeds__i-m-gonna-be-everything__last-laugh-records-2/1788368916850-5-IMG_E1742.jpg",
+      "/photos/ed-nasty-and-the-dopeds__i-m-gonna-be-everything__last-laugh-records-2/1788368916620-3-IMG_E1740.jpg"
+    ],
+    "matrix_number": "",
+    "sealed": false,
+    "ebay_sku": "ednastyandthedopedsimgonnabeeverythinglastlaughrec"
   },
   {
     "id": "slade__give-us-a-goal__barn-records-ltd-201",
@@ -15304,21 +16465,66 @@
     "tier": "Tier 3 - Bulk grab bag",
     "discogs_low_price": "3.09",
     "copies_for_sale_on_discogs": "20",
-    "asking_price": "3.09",
-    "condition_media": "",
-    "condition_sleeve": "",
+    "asking_price": "41",
+    "condition_media": "NM",
+    "condition_sleeve": "No Cover",
     "notes": "",
-    "photos": [],
+    "photos": [
+      "/photos/suburban-studs__i-hate-school__pogo-2-pog-002/1788373911604-2-IMG_E1781.jpg",
+      "/photos/suburban-studs__i-hate-school__pogo-2-pog-002/1788373911837-5-IMG_E1784.jpg",
+      "/photos/suburban-studs__i-hate-school__pogo-2-pog-002/1788373911369-0-IMG_E1779.jpg",
+      "/photos/suburban-studs__i-hate-school__pogo-2-pog-002/1788373911447-1-IMG_E1780.jpg",
+      "/photos/suburban-studs__i-hate-school__pogo-2-pog-002/1788373911683-3-IMG_E1782.jpg",
+      "/photos/suburban-studs__i-hate-school__pogo-2-pog-002/1788373911762-4-IMG_E1783.jpg"
+    ],
     "status": {
-      "ebay": "unlisted",
+      "ebay": "listed",
       "fb": "unlisted",
       "discogs": "unlisted"
     },
-    "ebay_listing_id": null,
+    "ebay_listing_id": "407188397317",
     "sold": false,
-    "discogs_release_id": null,
-    "discogs_price_by_grade": null,
-    "discogs_community": null,
+    "discogs_release_id": 1867886,
+    "discogs_price_by_grade": {
+      "Mint (M)": {
+        "currency": "USD",
+        "value": 46.395348837209305
+      },
+      "Near Mint (NM or M-)": {
+        "currency": "USD",
+        "value": 41.51162790697674
+      },
+      "Very Good Plus (VG+)": {
+        "currency": "USD",
+        "value": 31.74418604651163
+      },
+      "Very Good (VG)": {
+        "currency": "USD",
+        "value": 21.976744186046513
+      },
+      "Good Plus (G+)": {
+        "currency": "USD",
+        "value": 12.209302325581396
+      },
+      "Good (G)": {
+        "currency": "USD",
+        "value": 7.325581395348837
+      },
+      "Fair (F)": {
+        "currency": "USD",
+        "value": 4.883720930232559
+      },
+      "Poor (P)": {
+        "currency": "USD",
+        "value": 2.4418604651162794
+      }
+    },
+    "discogs_community": {
+      "have": 369,
+      "want": 208,
+      "ratingAverage": 3.96,
+      "ratingCount": 26
+    },
     "discogs_sold_stats": {
       "low": "",
       "median": "",
@@ -15327,7 +16533,23 @@
     },
     "discogs_listing_id": null,
     "listing_extras": "",
-    "photo_hosted_urls": {}
+    "photo_hosted_urls": {
+      "/photos/suburban-studs__i-hate-school__pogo-2-pog-002/1788373911604-2-IMG_E1781.jpg": "https://i.ibb.co/4wLp6N1h/1788373911604-2-IMG-E1781.jpg",
+      "/photos/suburban-studs__i-hate-school__pogo-2-pog-002/1788373911837-5-IMG_E1784.jpg": "https://i.ibb.co/YBW9mZPm/1788373911837-5-IMG-E1784.jpg",
+      "/photos/suburban-studs__i-hate-school__pogo-2-pog-002/1788373911369-0-IMG_E1779.jpg": "https://i.ibb.co/PsxVJPFB/1788373911369-0-IMG-E1779.jpg",
+      "/photos/suburban-studs__i-hate-school__pogo-2-pog-002/1788373911447-1-IMG_E1780.jpg": "https://i.ibb.co/23BKDdMT/1788373911447-1-IMG-E1780.jpg",
+      "/photos/suburban-studs__i-hate-school__pogo-2-pog-002/1788373911683-3-IMG_E1782.jpg": "https://i.ibb.co/KcD58MSj/1788373911683-3-IMG-E1782.jpg",
+      "/photos/suburban-studs__i-hate-school__pogo-2-pog-002/1788373911762-4-IMG_E1783.jpg": "https://i.ibb.co/PGqrHNxn/1788373911762-4-IMG-E1783.jpg"
+    },
+    "matrix_number": "",
+    "sealed": false,
+    "deadwax_photos": [
+      "/photos/suburban-studs__i-hate-school__pogo-2-pog-002/1788373911447-1-IMG_E1780.jpg",
+      "/photos/suburban-studs__i-hate-school__pogo-2-pog-002/1788373911762-4-IMG_E1783.jpg",
+      "/photos/suburban-studs__i-hate-school__pogo-2-pog-002/1788373911683-3-IMG_E1782.jpg",
+      "/photos/suburban-studs__i-hate-school__pogo-2-pog-002/1788373911369-0-IMG_E1779.jpg"
+    ],
+    "ebay_sku": "suburbanstudsihateschoolpogo2pog002"
   },
   {
     "id": "the-mighty-jabronis__put-em-in-a-headlock__uhhuh-uh001",
@@ -15376,21 +16598,65 @@
     "tier": "Tier 3 - Bulk grab bag",
     "discogs_low_price": "3.00",
     "copies_for_sale_on_discogs": "5",
-    "asking_price": "3.00",
-    "condition_media": "",
-    "condition_sleeve": "",
+    "asking_price": "15",
+    "condition_media": "M",
+    "condition_sleeve": "M",
     "notes": "",
-    "photos": [],
+    "photos": [
+      "/photos/datenight-spodee-boy__split-7__drop-medium-um-021/1788468228770-1-IMG_E1948.jpg",
+      "/photos/datenight-spodee-boy__split-7__drop-medium-um-021/1788468228626-0-IMG_E1947.jpg",
+      "/photos/datenight-spodee-boy__split-7__drop-medium-um-021/1788468228849-2-IMG_E1949.jpg",
+      "/photos/datenight-spodee-boy__split-7__drop-medium-um-021/1788468228926-3-IMG_E1950.jpg",
+      "/photos/datenight-spodee-boy__split-7__drop-medium-um-021/1788468229006-4-IMG_E1951.jpg"
+    ],
     "status": {
-      "ebay": "unlisted",
+      "ebay": "listed",
       "fb": "unlisted",
       "discogs": "unlisted"
     },
-    "ebay_listing_id": null,
+    "ebay_listing_id": "407191048964",
     "sold": false,
-    "discogs_release_id": null,
-    "discogs_price_by_grade": null,
-    "discogs_community": null,
+    "discogs_release_id": 11196461,
+    "discogs_price_by_grade": {
+      "Mint (M)": {
+        "currency": "USD",
+        "value": 10.991279069767442
+      },
+      "Near Mint (NM or M-)": {
+        "currency": "USD",
+        "value": 9.834302325581396
+      },
+      "Very Good Plus (VG+)": {
+        "currency": "USD",
+        "value": 7.520348837209303
+      },
+      "Very Good (VG)": {
+        "currency": "USD",
+        "value": 5.2063953488372094
+      },
+      "Good Plus (G+)": {
+        "currency": "USD",
+        "value": 2.8924418604651163
+      },
+      "Good (G)": {
+        "currency": "USD",
+        "value": 1.7354651162790697
+      },
+      "Fair (F)": {
+        "currency": "USD",
+        "value": 1.1569767441860466
+      },
+      "Poor (P)": {
+        "currency": "USD",
+        "value": 0.5784883720930233
+      }
+    },
+    "discogs_community": {
+      "have": 58,
+      "want": 24,
+      "ratingAverage": 3,
+      "ratingCount": 1
+    },
     "discogs_sold_stats": {
       "low": "",
       "median": "",
@@ -15398,8 +16664,17 @@
       "lastSoldDate": ""
     },
     "discogs_listing_id": null,
-    "listing_extras": "",
-    "photo_hosted_urls": {}
+    "listing_extras": "Still Sealed",
+    "photo_hosted_urls": {
+      "/photos/datenight-spodee-boy__split-7__drop-medium-um-021/1788468228770-1-IMG_E1948.jpg": "https://i.ibb.co/rGw4F33Q/1788468228770-1-IMG-E1948.jpg",
+      "/photos/datenight-spodee-boy__split-7__drop-medium-um-021/1788468228626-0-IMG_E1947.jpg": "https://i.ibb.co/KcZgh2NM/1788468228626-0-IMG-E1947.jpg",
+      "/photos/datenight-spodee-boy__split-7__drop-medium-um-021/1788468228849-2-IMG_E1949.jpg": "https://i.ibb.co/LdkKxGxz/1788468228849-2-IMG-E1949.jpg",
+      "/photos/datenight-spodee-boy__split-7__drop-medium-um-021/1788468228926-3-IMG_E1950.jpg": "https://i.ibb.co/SDJB7PrD/1788468228926-3-IMG-E1950.jpg",
+      "/photos/datenight-spodee-boy__split-7__drop-medium-um-021/1788468229006-4-IMG_E1951.jpg": "https://i.ibb.co/350NHY7F/1788468229006-4-IMG-E1951.jpg"
+    },
+    "matrix_number": "",
+    "sealed": true,
+    "ebay_sku": "datenightspodeeboysplit7dropmediumum021"
   },
   {
     "id": "violent-affray__lets-av-it__new-blood-records-ne",
@@ -15412,21 +16687,71 @@
     "tier": "Tier 3 - Bulk grab bag",
     "discogs_low_price": "3.00",
     "copies_for_sale_on_discogs": "14",
-    "asking_price": "3.00",
-    "condition_media": "",
-    "condition_sleeve": "",
+    "asking_price": "10",
+    "condition_media": "VG+",
+    "condition_sleeve": "VG+",
     "notes": "",
-    "photos": [],
+    "photos": [
+      "/photos/violent-affray__lets-av-it__new-blood-records-ne/1788457186497-0-IMG_E1842.jpg",
+      "/photos/violent-affray__lets-av-it__new-blood-records-ne/1788457186649-1-IMG_E1843.jpg",
+      "/photos/violent-affray__lets-av-it__new-blood-records-ne/1788457186802-2-IMG_E1844.jpg",
+      "/photos/violent-affray__lets-av-it__new-blood-records-ne/1788457186953-3-IMG_E1845.jpg",
+      "/photos/violent-affray__lets-av-it__new-blood-records-ne/1788457187098-4-IMG_E1846.jpg",
+      "/photos/violent-affray__lets-av-it__new-blood-records-ne/1788457187391-7-IMG_E1849.jpg",
+      "/photos/violent-affray__lets-av-it__new-blood-records-ne/1788457187176-5-IMG_E1847.jpg",
+      "/photos/violent-affray__lets-av-it__new-blood-records-ne/1788457187248-6-IMG_E1848.jpg",
+      "/photos/violent-affray__lets-av-it__new-blood-records-ne/1788457187470-8-IMG_E1850.jpg",
+      "/photos/violent-affray__lets-av-it__new-blood-records-ne/1788457187544-9-IMG_E1851.jpg",
+      "/photos/violent-affray__lets-av-it__new-blood-records-ne/1788457187622-10-IMG_E1852.jpg"
+    ],
     "status": {
-      "ebay": "unlisted",
+      "ebay": "listed",
       "fb": "unlisted",
       "discogs": "unlisted"
     },
-    "ebay_listing_id": null,
+    "ebay_listing_id": "407190782974",
     "sold": false,
-    "discogs_release_id": null,
-    "discogs_price_by_grade": null,
-    "discogs_community": null,
+    "discogs_release_id": 2557479,
+    "discogs_price_by_grade": {
+      "Mint (M)": {
+        "currency": "USD",
+        "value": 4.4186046511627906
+      },
+      "Near Mint (NM or M-)": {
+        "currency": "USD",
+        "value": 3.953488372093023
+      },
+      "Very Good Plus (VG+)": {
+        "currency": "USD",
+        "value": 3.023255813953489
+      },
+      "Very Good (VG)": {
+        "currency": "USD",
+        "value": 2.0930232558139537
+      },
+      "Good Plus (G+)": {
+        "currency": "USD",
+        "value": 1.1627906976744187
+      },
+      "Good (G)": {
+        "currency": "USD",
+        "value": 0.6976744186046512
+      },
+      "Fair (F)": {
+        "currency": "USD",
+        "value": 0.4651162790697675
+      },
+      "Poor (P)": {
+        "currency": "USD",
+        "value": 0.23255813953488375
+      }
+    },
+    "discogs_community": {
+      "have": 120,
+      "want": 14,
+      "ratingAverage": 4.5,
+      "ratingCount": 2
+    },
     "discogs_sold_stats": {
       "low": "",
       "median": "",
@@ -15435,7 +16760,29 @@
     },
     "discogs_listing_id": null,
     "listing_extras": "",
-    "photo_hosted_urls": {}
+    "photo_hosted_urls": {
+      "/photos/violent-affray__lets-av-it__new-blood-records-ne/1788457186497-0-IMG_E1842.jpg": "https://i.ibb.co/DDDzpYWv/1788457186497-0-IMG-E1842.jpg",
+      "/photos/violent-affray__lets-av-it__new-blood-records-ne/1788457186649-1-IMG_E1843.jpg": "https://i.ibb.co/gLKLW42v/1788457186649-1-IMG-E1843.jpg",
+      "/photos/violent-affray__lets-av-it__new-blood-records-ne/1788457186802-2-IMG_E1844.jpg": "https://i.ibb.co/kgjPtGvB/1788457186802-2-IMG-E1844.jpg",
+      "/photos/violent-affray__lets-av-it__new-blood-records-ne/1788457186953-3-IMG_E1845.jpg": "https://i.ibb.co/Qv6wWm2g/1788457186953-3-IMG-E1845.jpg",
+      "/photos/violent-affray__lets-av-it__new-blood-records-ne/1788457187098-4-IMG_E1846.jpg": "https://i.ibb.co/0R2kqQdF/1788457187098-4-IMG-E1846.jpg",
+      "/photos/violent-affray__lets-av-it__new-blood-records-ne/1788457187391-7-IMG_E1849.jpg": "https://i.ibb.co/pjNvgHcd/1788457187391-7-IMG-E1849.jpg",
+      "/photos/violent-affray__lets-av-it__new-blood-records-ne/1788457187176-5-IMG_E1847.jpg": "https://i.ibb.co/LGYSCqZ/1788457187176-5-IMG-E1847.jpg",
+      "/photos/violent-affray__lets-av-it__new-blood-records-ne/1788457187248-6-IMG_E1848.jpg": "https://i.ibb.co/5hGjJzJS/1788457187248-6-IMG-E1848.jpg",
+      "/photos/violent-affray__lets-av-it__new-blood-records-ne/1788457187470-8-IMG_E1850.jpg": "https://i.ibb.co/RpH85XfH/1788457187470-8-IMG-E1850.jpg",
+      "/photos/violent-affray__lets-av-it__new-blood-records-ne/1788457187544-9-IMG_E1851.jpg": "https://i.ibb.co/PGgBPyVR/1788457187544-9-IMG-E1851.jpg",
+      "/photos/violent-affray__lets-av-it__new-blood-records-ne/1788457187622-10-IMG_E1852.jpg": "https://i.ibb.co/gb1hSKZx/1788457187622-10-IMG-E1852.jpg"
+    },
+    "matrix_number": "",
+    "sealed": false,
+    "deadwax_photos": [
+      "/photos/violent-affray__lets-av-it__new-blood-records-ne/1788457187176-5-IMG_E1847.jpg",
+      "/photos/violent-affray__lets-av-it__new-blood-records-ne/1788457187248-6-IMG_E1848.jpg",
+      "/photos/violent-affray__lets-av-it__new-blood-records-ne/1788457187470-8-IMG_E1850.jpg",
+      "/photos/violent-affray__lets-av-it__new-blood-records-ne/1788457187544-9-IMG_E1851.jpg",
+      "/photos/violent-affray__lets-av-it__new-blood-records-ne/1788457187622-10-IMG_E1852.jpg"
+    ],
+    "ebay_sku": "violentaffrayletsavitnewbloodrecordsne"
   },
   {
     "id": "the-chronics-2__first-time-best-time-go-on__rip-off-records-2-r-",
@@ -17353,6 +18700,1370 @@
     },
     "discogs_listing_id": null,
     "photo_hosted_urls": {},
+    "sold": false
+  },
+  {
+    "id": "5e6cfff0-18d6-4333-a2d6-f2658e88ff8c",
+    "artist": "",
+    "title": "",
+    "year": "",
+    "country": "",
+    "format": "",
+    "label": "",
+    "tier": "Unsorted - new arrival",
+    "discogs_low_price": "",
+    "copies_for_sale_on_discogs": "",
+    "asking_price": "",
+    "condition_media": "",
+    "condition_sleeve": "",
+    "matrix_number": "",
+    "sealed": false,
+    "notes": "",
+    "listing_extras": "",
+    "photos": [
+      "/photos/5e6cfff0-18d6-4333-a2d6-f2658e88ff8c/1788267659138-0-IMG_E1563.jpg",
+      "/photos/5e6cfff0-18d6-4333-a2d6-f2658e88ff8c/1788267659287-1-IMG_E1564.jpg",
+      "/photos/5e6cfff0-18d6-4333-a2d6-f2658e88ff8c/1788267659435-2-IMG_E1565.jpg",
+      "/photos/5e6cfff0-18d6-4333-a2d6-f2658e88ff8c/1788267659514-3-IMG_E1566.jpg",
+      "/photos/5e6cfff0-18d6-4333-a2d6-f2658e88ff8c/1788267659596-4-IMG_E1567.jpg",
+      "/photos/5e6cfff0-18d6-4333-a2d6-f2658e88ff8c/1788267659673-5-IMG_E1568.jpg",
+      "/photos/5e6cfff0-18d6-4333-a2d6-f2658e88ff8c/1788267659750-6-IMG_E1569.jpg",
+      "/photos/5e6cfff0-18d6-4333-a2d6-f2658e88ff8c/1788267659827-7-IMG_E1570.jpg"
+    ],
+    "status": {
+      "ebay": "unlisted",
+      "fb": "unlisted",
+      "discogs": "unlisted"
+    },
+    "ebay_listing_id": null,
+    "ebay_sku": null,
+    "discogs_release_id": null,
+    "discogs_price_by_grade": null,
+    "discogs_community": null,
+    "discogs_sold_stats": {
+      "low": "",
+      "median": "",
+      "high": "",
+      "lastSoldDate": ""
+    },
+    "discogs_listing_id": null,
+    "photo_hosted_urls": {},
+    "sold": false
+  },
+  {
+    "id": "5c15f586-f001-4eb9-b491-2d0f377ede85",
+    "artist": "",
+    "title": "",
+    "year": "",
+    "country": "",
+    "format": "",
+    "label": "",
+    "tier": "Unsorted - new arrival",
+    "discogs_low_price": "",
+    "copies_for_sale_on_discogs": "",
+    "asking_price": "",
+    "condition_media": "",
+    "condition_sleeve": "",
+    "matrix_number": "",
+    "sealed": false,
+    "notes": "",
+    "listing_extras": "",
+    "photos": [
+      "/photos/5c15f586-f001-4eb9-b491-2d0f377ede85/1788277875666-0-IMG_E1563.jpg",
+      "/photos/5c15f586-f001-4eb9-b491-2d0f377ede85/1788277875818-1-IMG_E1564.jpg",
+      "/photos/5c15f586-f001-4eb9-b491-2d0f377ede85/1788277875964-2-IMG_E1565.jpg",
+      "/photos/5c15f586-f001-4eb9-b491-2d0f377ede85/1788277876049-3-IMG_E1566.jpg",
+      "/photos/5c15f586-f001-4eb9-b491-2d0f377ede85/1788277876130-4-IMG_E1567.jpg",
+      "/photos/5c15f586-f001-4eb9-b491-2d0f377ede85/1788277876211-5-IMG_E1568.jpg",
+      "/photos/5c15f586-f001-4eb9-b491-2d0f377ede85/1788277876289-6-IMG_E1569.jpg",
+      "/photos/5c15f586-f001-4eb9-b491-2d0f377ede85/1788277876368-7-IMG_E1570.jpg"
+    ],
+    "status": {
+      "ebay": "unlisted",
+      "fb": "unlisted",
+      "discogs": "unlisted"
+    },
+    "ebay_listing_id": null,
+    "ebay_sku": null,
+    "discogs_release_id": null,
+    "discogs_price_by_grade": null,
+    "discogs_community": null,
+    "discogs_sold_stats": {
+      "low": "",
+      "median": "",
+      "high": "",
+      "lastSoldDate": ""
+    },
+    "discogs_listing_id": null,
+    "photo_hosted_urls": {},
+    "sold": false
+  },
+  {
+    "id": "f2261377-54d2-45f6-ae23-2e8045937aba",
+    "artist": "",
+    "title": "",
+    "year": "",
+    "country": "",
+    "format": "",
+    "label": "",
+    "tier": "Unsorted - new arrival",
+    "discogs_low_price": "",
+    "copies_for_sale_on_discogs": "",
+    "asking_price": "",
+    "condition_media": "",
+    "condition_sleeve": "",
+    "matrix_number": "",
+    "sealed": false,
+    "notes": "",
+    "listing_extras": "",
+    "photos": [
+      "/photos/f2261377-54d2-45f6-ae23-2e8045937aba/1788314145038-0-IMG_E1571.jpg",
+      "/photos/f2261377-54d2-45f6-ae23-2e8045937aba/1788314145190-1-IMG_E1572.jpg",
+      "/photos/f2261377-54d2-45f6-ae23-2e8045937aba/1788314145343-2-IMG_E1573.jpg",
+      "/photos/f2261377-54d2-45f6-ae23-2e8045937aba/1788314145427-3-IMG_E1574.jpg",
+      "/photos/f2261377-54d2-45f6-ae23-2e8045937aba/1788314145565-4-IMG_E1575.jpg",
+      "/photos/f2261377-54d2-45f6-ae23-2e8045937aba/1788314145709-5-IMG_E1576.jpg",
+      "/photos/f2261377-54d2-45f6-ae23-2e8045937aba/1788314145789-6-IMG_E1577.jpg",
+      "/photos/f2261377-54d2-45f6-ae23-2e8045937aba/1788314145868-7-IMG_E1578.jpg",
+      "/photos/f2261377-54d2-45f6-ae23-2e8045937aba/1788314145948-8-IMG_E1579.jpg",
+      "/photos/f2261377-54d2-45f6-ae23-2e8045937aba/1788314146031-9-IMG_E1580.jpg",
+      "/photos/f2261377-54d2-45f6-ae23-2e8045937aba/1788314146113-10-IMG_E1581.jpg",
+      "/photos/f2261377-54d2-45f6-ae23-2e8045937aba/1788314146188-11-IMG_E1582.jpg"
+    ],
+    "status": {
+      "ebay": "unlisted",
+      "fb": "unlisted",
+      "discogs": "unlisted"
+    },
+    "ebay_listing_id": null,
+    "ebay_sku": null,
+    "discogs_release_id": null,
+    "discogs_price_by_grade": null,
+    "discogs_community": null,
+    "discogs_sold_stats": {
+      "low": "",
+      "median": "",
+      "high": "",
+      "lastSoldDate": ""
+    },
+    "discogs_listing_id": null,
+    "photo_hosted_urls": {},
+    "sold": false
+  },
+  {
+    "id": "63e928b9-d204-4c9f-875e-a4fa64b672ec",
+    "artist": "",
+    "title": "",
+    "year": "",
+    "country": "",
+    "format": "",
+    "label": "",
+    "tier": "Unsorted - new arrival",
+    "discogs_low_price": "",
+    "copies_for_sale_on_discogs": "",
+    "asking_price": "",
+    "condition_media": "",
+    "condition_sleeve": "",
+    "matrix_number": "477-A / 477-A",
+    "sealed": false,
+    "notes": "",
+    "listing_extras": "",
+    "photos": [
+      "/photos/63e928b9-d204-4c9f-875e-a4fa64b672ec/1788314702005-0-IMG_E1571.jpg",
+      "/photos/63e928b9-d204-4c9f-875e-a4fa64b672ec/1788314702144-1-IMG_E1572.jpg",
+      "/photos/63e928b9-d204-4c9f-875e-a4fa64b672ec/1788314702288-2-IMG_E1573.jpg",
+      "/photos/63e928b9-d204-4c9f-875e-a4fa64b672ec/1788314702366-3-IMG_E1574.jpg",
+      "/photos/63e928b9-d204-4c9f-875e-a4fa64b672ec/1788314702504-4-IMG_E1575.jpg",
+      "/photos/63e928b9-d204-4c9f-875e-a4fa64b672ec/1788314702649-5-IMG_E1576.jpg",
+      "/photos/63e928b9-d204-4c9f-875e-a4fa64b672ec/1788314702731-6-IMG_E1577.jpg",
+      "/photos/63e928b9-d204-4c9f-875e-a4fa64b672ec/1788314702815-7-IMG_E1578.jpg",
+      "/photos/63e928b9-d204-4c9f-875e-a4fa64b672ec/1788314702895-8-IMG_E1579.jpg",
+      "/photos/63e928b9-d204-4c9f-875e-a4fa64b672ec/1788314702979-9-IMG_E1580.jpg",
+      "/photos/63e928b9-d204-4c9f-875e-a4fa64b672ec/1788314703059-10-IMG_E1581.jpg",
+      "/photos/63e928b9-d204-4c9f-875e-a4fa64b672ec/1788314703133-11-IMG_E1582.jpg"
+    ],
+    "status": {
+      "ebay": "unlisted",
+      "fb": "unlisted",
+      "discogs": "unlisted"
+    },
+    "ebay_listing_id": null,
+    "ebay_sku": null,
+    "discogs_release_id": null,
+    "discogs_price_by_grade": null,
+    "discogs_community": null,
+    "discogs_sold_stats": {
+      "low": "",
+      "median": "",
+      "high": "",
+      "lastSoldDate": ""
+    },
+    "discogs_listing_id": null,
+    "photo_hosted_urls": {},
+    "sold": false
+  },
+  {
+    "id": "5e0f1259-db05-47fa-9335-6edfc48979c8",
+    "artist": "",
+    "title": "",
+    "year": "",
+    "country": "",
+    "format": "",
+    "label": "",
+    "tier": "Unsorted - new arrival",
+    "discogs_low_price": "",
+    "copies_for_sale_on_discogs": "",
+    "asking_price": "",
+    "condition_media": "",
+    "condition_sleeve": "",
+    "matrix_number": "",
+    "sealed": false,
+    "notes": "",
+    "listing_extras": "",
+    "photos": [
+      "/photos/5e0f1259-db05-47fa-9335-6edfc48979c8/1788316036289-0-IMG_E1571.jpg",
+      "/photos/5e0f1259-db05-47fa-9335-6edfc48979c8/1788316036438-1-IMG_E1572.jpg",
+      "/photos/5e0f1259-db05-47fa-9335-6edfc48979c8/1788316036580-2-IMG_E1573.jpg",
+      "/photos/5e0f1259-db05-47fa-9335-6edfc48979c8/1788316036665-3-IMG_E1574.jpg",
+      "/photos/5e0f1259-db05-47fa-9335-6edfc48979c8/1788316036803-4-IMG_E1575.jpg",
+      "/photos/5e0f1259-db05-47fa-9335-6edfc48979c8/1788316036943-5-IMG_E1576.jpg",
+      "/photos/5e0f1259-db05-47fa-9335-6edfc48979c8/1788316037023-6-IMG_E1577.jpg",
+      "/photos/5e0f1259-db05-47fa-9335-6edfc48979c8/1788316037103-7-IMG_E1578.jpg",
+      "/photos/5e0f1259-db05-47fa-9335-6edfc48979c8/1788316037186-8-IMG_E1579.jpg",
+      "/photos/5e0f1259-db05-47fa-9335-6edfc48979c8/1788316037268-9-IMG_E1580.jpg",
+      "/photos/5e0f1259-db05-47fa-9335-6edfc48979c8/1788316037350-10-IMG_E1581.jpg",
+      "/photos/5e0f1259-db05-47fa-9335-6edfc48979c8/1788316037426-11-IMG_E1582.jpg"
+    ],
+    "deadwax_photos": [
+      "/photos/5e0f1259-db05-47fa-9335-6edfc48979c8/1788316037023-6-IMG_E1577.jpg",
+      "/photos/5e0f1259-db05-47fa-9335-6edfc48979c8/1788316037103-7-IMG_E1578.jpg",
+      "/photos/5e0f1259-db05-47fa-9335-6edfc48979c8/1788316037186-8-IMG_E1579.jpg",
+      "/photos/5e0f1259-db05-47fa-9335-6edfc48979c8/1788316037268-9-IMG_E1580.jpg"
+    ],
+    "status": {
+      "ebay": "unlisted",
+      "fb": "unlisted",
+      "discogs": "unlisted"
+    },
+    "ebay_listing_id": null,
+    "ebay_sku": null,
+    "discogs_release_id": null,
+    "discogs_price_by_grade": null,
+    "discogs_community": null,
+    "discogs_sold_stats": {
+      "low": "",
+      "median": "",
+      "high": "",
+      "lastSoldDate": ""
+    },
+    "discogs_listing_id": null,
+    "photo_hosted_urls": {},
+    "sold": false
+  },
+  {
+    "id": "61f89cf6-9948-4df6-aa31-cb3fc2ac4807",
+    "artist": "",
+    "title": "",
+    "year": "",
+    "country": "",
+    "format": "",
+    "label": "",
+    "tier": "Unsorted - new arrival",
+    "discogs_low_price": "",
+    "copies_for_sale_on_discogs": "",
+    "asking_price": "",
+    "condition_media": "",
+    "condition_sleeve": "",
+    "matrix_number": "",
+    "sealed": false,
+    "notes": "",
+    "listing_extras": "",
+    "photos": [
+      "/photos/61f89cf6-9948-4df6-aa31-cb3fc2ac4807/1788316544153-0-IMG_E1571.jpg",
+      "/photos/61f89cf6-9948-4df6-aa31-cb3fc2ac4807/1788316544303-1-IMG_E1572.jpg",
+      "/photos/61f89cf6-9948-4df6-aa31-cb3fc2ac4807/1788316544444-2-IMG_E1573.jpg",
+      "/photos/61f89cf6-9948-4df6-aa31-cb3fc2ac4807/1788316544522-3-IMG_E1574.jpg",
+      "/photos/61f89cf6-9948-4df6-aa31-cb3fc2ac4807/1788316544660-4-IMG_E1575.jpg",
+      "/photos/61f89cf6-9948-4df6-aa31-cb3fc2ac4807/1788316544798-5-IMG_E1576.jpg",
+      "/photos/61f89cf6-9948-4df6-aa31-cb3fc2ac4807/1788316544881-6-IMG_E1577.jpg",
+      "/photos/61f89cf6-9948-4df6-aa31-cb3fc2ac4807/1788316544968-7-IMG_E1578.jpg",
+      "/photos/61f89cf6-9948-4df6-aa31-cb3fc2ac4807/1788316545051-8-IMG_E1579.jpg",
+      "/photos/61f89cf6-9948-4df6-aa31-cb3fc2ac4807/1788316545132-9-IMG_E1580.jpg",
+      "/photos/61f89cf6-9948-4df6-aa31-cb3fc2ac4807/1788316545217-10-IMG_E1581.jpg",
+      "/photos/61f89cf6-9948-4df6-aa31-cb3fc2ac4807/1788316545298-11-IMG_E1582.jpg"
+    ],
+    "deadwax_photos": [
+      "/photos/61f89cf6-9948-4df6-aa31-cb3fc2ac4807/1788316544968-7-IMG_E1578.jpg",
+      "/photos/61f89cf6-9948-4df6-aa31-cb3fc2ac4807/1788316545051-8-IMG_E1579.jpg",
+      "/photos/61f89cf6-9948-4df6-aa31-cb3fc2ac4807/1788316545132-9-IMG_E1580.jpg",
+      "/photos/61f89cf6-9948-4df6-aa31-cb3fc2ac4807/1788316544881-6-IMG_E1577.jpg",
+      "/photos/61f89cf6-9948-4df6-aa31-cb3fc2ac4807/1788316545217-10-IMG_E1581.jpg"
+    ],
+    "status": {
+      "ebay": "unlisted",
+      "fb": "unlisted",
+      "discogs": "unlisted"
+    },
+    "ebay_listing_id": null,
+    "ebay_sku": null,
+    "discogs_release_id": null,
+    "discogs_price_by_grade": null,
+    "discogs_community": null,
+    "discogs_sold_stats": {
+      "low": "",
+      "median": "",
+      "high": "",
+      "lastSoldDate": ""
+    },
+    "discogs_listing_id": null,
+    "photo_hosted_urls": {},
+    "sold": false
+  },
+  {
+    "id": "2923149f-8c20-4558-951d-59f624c3f376",
+    "artist": "",
+    "title": "",
+    "year": "",
+    "country": "",
+    "format": "",
+    "label": "",
+    "tier": "Unsorted - new arrival",
+    "discogs_low_price": "",
+    "copies_for_sale_on_discogs": "",
+    "asking_price": "",
+    "condition_media": "",
+    "condition_sleeve": "",
+    "matrix_number": "",
+    "sealed": false,
+    "notes": "",
+    "listing_extras": "",
+    "photos": [],
+    "deadwax_photos": [],
+    "status": {
+      "ebay": "unlisted",
+      "fb": "unlisted",
+      "discogs": "unlisted"
+    },
+    "ebay_listing_id": null,
+    "ebay_sku": null,
+    "discogs_release_id": null,
+    "discogs_price_by_grade": null,
+    "discogs_community": null,
+    "discogs_sold_stats": {
+      "low": "",
+      "median": "",
+      "high": "",
+      "lastSoldDate": ""
+    },
+    "discogs_listing_id": null,
+    "photo_hosted_urls": {},
+    "sold": false
+  },
+  {
+    "id": "c76d9b12-9ebb-4ce9-a89d-c26b9e7468ad",
+    "artist": "Career Suicide",
+    "title": "SARS EP",
+    "year": "2003",
+    "country": "Canada",
+    "format": "Vinyl, 7\", 45 RPM",
+    "label": "Deranged Records",
+    "tier": "Unsorted - new arrival",
+    "discogs_low_price": "",
+    "copies_for_sale_on_discogs": "",
+    "asking_price": "12.99",
+    "condition_media": "NM",
+    "condition_sleeve": "NM",
+    "matrix_number": "",
+    "sealed": false,
+    "notes": "",
+    "listing_extras": "",
+    "photos": [
+      "/photos/c76d9b12-9ebb-4ce9-a89d-c26b9e7468ad/1788317617678-0-IMG_E1571.jpg",
+      "/photos/c76d9b12-9ebb-4ce9-a89d-c26b9e7468ad/1788317617832-1-IMG_E1572.jpg",
+      "/photos/c76d9b12-9ebb-4ce9-a89d-c26b9e7468ad/1788317617988-2-IMG_E1573.jpg",
+      "/photos/c76d9b12-9ebb-4ce9-a89d-c26b9e7468ad/1788317618069-3-IMG_E1574.jpg",
+      "/photos/c76d9b12-9ebb-4ce9-a89d-c26b9e7468ad/1788317618214-4-IMG_E1575.jpg",
+      "/photos/c76d9b12-9ebb-4ce9-a89d-c26b9e7468ad/1788317618357-5-IMG_E1576.jpg",
+      "/photos/c76d9b12-9ebb-4ce9-a89d-c26b9e7468ad/1788317618437-6-IMG_E1577.jpg",
+      "/photos/c76d9b12-9ebb-4ce9-a89d-c26b9e7468ad/1788317618517-7-IMG_E1578.jpg",
+      "/photos/c76d9b12-9ebb-4ce9-a89d-c26b9e7468ad/1788317618600-8-IMG_E1579.jpg",
+      "/photos/c76d9b12-9ebb-4ce9-a89d-c26b9e7468ad/1788317618685-9-IMG_E1580.jpg",
+      "/photos/c76d9b12-9ebb-4ce9-a89d-c26b9e7468ad/1788317618766-10-IMG_E1581.jpg",
+      "/photos/c76d9b12-9ebb-4ce9-a89d-c26b9e7468ad/1788317618840-11-IMG_E1582.jpg"
+    ],
+    "deadwax_photos": [
+      "/photos/c76d9b12-9ebb-4ce9-a89d-c26b9e7468ad/1788317618437-6-IMG_E1577.jpg",
+      "/photos/c76d9b12-9ebb-4ce9-a89d-c26b9e7468ad/1788317618517-7-IMG_E1578.jpg",
+      "/photos/c76d9b12-9ebb-4ce9-a89d-c26b9e7468ad/1788317618600-8-IMG_E1579.jpg",
+      "/photos/c76d9b12-9ebb-4ce9-a89d-c26b9e7468ad/1788317618685-9-IMG_E1580.jpg",
+      "/photos/c76d9b12-9ebb-4ce9-a89d-c26b9e7468ad/1788317618766-10-IMG_E1581.jpg"
+    ],
+    "status": {
+      "ebay": "listed",
+      "fb": "unlisted",
+      "discogs": "unlisted"
+    },
+    "ebay_listing_id": "407186477159",
+    "ebay_sku": "c76d9b129ebb4ce9a89dc26b9e7468ad",
+    "discogs_release_id": null,
+    "discogs_price_by_grade": null,
+    "discogs_community": null,
+    "discogs_sold_stats": {
+      "low": "",
+      "median": "",
+      "high": "",
+      "lastSoldDate": ""
+    },
+    "discogs_listing_id": null,
+    "photo_hosted_urls": {
+      "/photos/c76d9b12-9ebb-4ce9-a89d-c26b9e7468ad/1788317617678-0-IMG_E1571.jpg": "https://i.ibb.co/pB9b0WBb/1788317617678-0-IMG-E1571.jpg",
+      "/photos/c76d9b12-9ebb-4ce9-a89d-c26b9e7468ad/1788317617832-1-IMG_E1572.jpg": "https://i.ibb.co/mV0HKXH5/1788317617832-1-IMG-E1572.jpg",
+      "/photos/c76d9b12-9ebb-4ce9-a89d-c26b9e7468ad/1788317617988-2-IMG_E1573.jpg": "https://i.ibb.co/tT9BdDc0/1788317617988-2-IMG-E1573.jpg",
+      "/photos/c76d9b12-9ebb-4ce9-a89d-c26b9e7468ad/1788317618069-3-IMG_E1574.jpg": "https://i.ibb.co/Mxj61jxN/1788317618069-3-IMG-E1574.jpg",
+      "/photos/c76d9b12-9ebb-4ce9-a89d-c26b9e7468ad/1788317618214-4-IMG_E1575.jpg": "https://i.ibb.co/vCFBnbRT/1788317618214-4-IMG-E1575.jpg",
+      "/photos/c76d9b12-9ebb-4ce9-a89d-c26b9e7468ad/1788317618357-5-IMG_E1576.jpg": "https://i.ibb.co/pv641Sd9/1788317618357-5-IMG-E1576.jpg",
+      "/photos/c76d9b12-9ebb-4ce9-a89d-c26b9e7468ad/1788317618437-6-IMG_E1577.jpg": "https://i.ibb.co/TqR7Kv3N/1788317618437-6-IMG-E1577.jpg",
+      "/photos/c76d9b12-9ebb-4ce9-a89d-c26b9e7468ad/1788317618517-7-IMG_E1578.jpg": "https://i.ibb.co/kj7k725/1788317618517-7-IMG-E1578.jpg",
+      "/photos/c76d9b12-9ebb-4ce9-a89d-c26b9e7468ad/1788317618600-8-IMG_E1579.jpg": "https://i.ibb.co/0yFG8JMs/1788317618600-8-IMG-E1579.jpg",
+      "/photos/c76d9b12-9ebb-4ce9-a89d-c26b9e7468ad/1788317618685-9-IMG_E1580.jpg": "https://i.ibb.co/LdNXQddK/1788317618685-9-IMG-E1580.jpg",
+      "/photos/c76d9b12-9ebb-4ce9-a89d-c26b9e7468ad/1788317618766-10-IMG_E1581.jpg": "https://i.ibb.co/C4XM55q/1788317618766-10-IMG-E1581.jpg",
+      "/photos/c76d9b12-9ebb-4ce9-a89d-c26b9e7468ad/1788317618840-11-IMG_E1582.jpg": "https://i.ibb.co/Szh6Kyz/1788317618840-11-IMG-E1582.jpg"
+    },
+    "sold": false
+  },
+  {
+    "id": "929e851a-60d6-44da-8a9d-8971d82a48ac",
+    "artist": "",
+    "title": "",
+    "year": "",
+    "country": "",
+    "format": "",
+    "label": "",
+    "tier": "Unsorted - new arrival",
+    "discogs_low_price": "",
+    "copies_for_sale_on_discogs": "",
+    "asking_price": "",
+    "condition_media": "",
+    "condition_sleeve": "",
+    "matrix_number": "",
+    "sealed": false,
+    "notes": "",
+    "listing_extras": "",
+    "photos": [],
+    "deadwax_photos": [],
+    "status": {
+      "ebay": "unlisted",
+      "fb": "unlisted",
+      "discogs": "unlisted"
+    },
+    "ebay_listing_id": null,
+    "ebay_sku": null,
+    "discogs_release_id": null,
+    "discogs_price_by_grade": null,
+    "discogs_community": null,
+    "discogs_sold_stats": {
+      "low": "",
+      "median": "",
+      "high": "",
+      "lastSoldDate": ""
+    },
+    "discogs_listing_id": null,
+    "photo_hosted_urls": {},
+    "sold": false
+  },
+  {
+    "id": "6aa9cf19-cb80-4966-b93d-a2ab00231e90",
+    "artist": "Rhino 39",
+    "title": "Xerox / No Compromise",
+    "year": "2016",
+    "country": "Los Angeles, CA",
+    "format": "Vinyl, 7\"",
+    "label": "Dangerhouse",
+    "tier": "Unsorted - new arrival",
+    "discogs_low_price": "",
+    "copies_for_sale_on_discogs": "",
+    "asking_price": "19",
+    "condition_media": "NM",
+    "condition_sleeve": "NM",
+    "matrix_number": "(Side A, stamped): 109956H25/A (Side B, stamped): 109956H26/A",
+    "sealed": false,
+    "notes": "",
+    "listing_extras": "",
+    "photos": [
+      "/photos/6aa9cf19-cb80-4966-b93d-a2ab00231e90/1788318436776-4-IMG_E1624.jpg",
+      "/photos/6aa9cf19-cb80-4966-b93d-a2ab00231e90/1788318436910-5-IMG_E1625.jpg",
+      "/photos/6aa9cf19-cb80-4966-b93d-a2ab00231e90/1788318436337-0-IMG_E1620.jpg",
+      "/photos/6aa9cf19-cb80-4966-b93d-a2ab00231e90/1788318436480-1-IMG_E1621.jpg",
+      "/photos/6aa9cf19-cb80-4966-b93d-a2ab00231e90/1788318436561-2-IMG_E1622.jpg",
+      "/photos/6aa9cf19-cb80-4966-b93d-a2ab00231e90/1788318436637-3-IMG_E1623.jpg"
+    ],
+    "deadwax_photos": [
+      "/photos/6aa9cf19-cb80-4966-b93d-a2ab00231e90/1788318436561-2-IMG_E1622.jpg",
+      "/photos/6aa9cf19-cb80-4966-b93d-a2ab00231e90/1788318436637-3-IMG_E1623.jpg"
+    ],
+    "status": {
+      "ebay": "listed",
+      "fb": "unlisted",
+      "discogs": "unlisted"
+    },
+    "ebay_listing_id": "407186498678",
+    "ebay_sku": "6aa9cf19cb804966b93da2ab00231e90",
+    "discogs_release_id": null,
+    "discogs_price_by_grade": null,
+    "discogs_community": null,
+    "discogs_sold_stats": {
+      "low": "",
+      "median": "",
+      "high": "",
+      "lastSoldDate": ""
+    },
+    "discogs_listing_id": null,
+    "photo_hosted_urls": {
+      "/photos/6aa9cf19-cb80-4966-b93d-a2ab00231e90/1788318436776-4-IMG_E1624.jpg": "https://i.ibb.co/s9sX4WxM/1788318436776-4-IMG-E1624.jpg",
+      "/photos/6aa9cf19-cb80-4966-b93d-a2ab00231e90/1788318436910-5-IMG_E1625.jpg": "https://i.ibb.co/gb8FyF9n/1788318436910-5-IMG-E1625.jpg",
+      "/photos/6aa9cf19-cb80-4966-b93d-a2ab00231e90/1788318436337-0-IMG_E1620.jpg": "https://i.ibb.co/hFMv14tQ/1788318436337-0-IMG-E1620.jpg",
+      "/photos/6aa9cf19-cb80-4966-b93d-a2ab00231e90/1788318436480-1-IMG_E1621.jpg": "https://i.ibb.co/mCRpBwYq/1788318436480-1-IMG-E1621.jpg",
+      "/photos/6aa9cf19-cb80-4966-b93d-a2ab00231e90/1788318436561-2-IMG_E1622.jpg": "https://i.ibb.co/mVrctgw9/1788318436561-2-IMG-E1622.jpg",
+      "/photos/6aa9cf19-cb80-4966-b93d-a2ab00231e90/1788318436637-3-IMG_E1623.jpg": "https://i.ibb.co/wrFRWnRM/1788318436637-3-IMG-E1623.jpg"
+    },
+    "sold": false
+  },
+  {
+    "id": "2e5429bd-edef-4968-902b-53905f4228af",
+    "artist": "Screeching Weasel",
+    "title": "El Mozote",
+    "year": "1993",
+    "country": "",
+    "format": "Vinyl, 7\"",
+    "label": "Screeching Weasel",
+    "tier": "Unsorted - new arrival",
+    "discogs_low_price": "",
+    "copies_for_sale_on_discogs": "",
+    "asking_price": "29",
+    "condition_media": "NM",
+    "condition_sleeve": "NM",
+    "matrix_number": "",
+    "sealed": false,
+    "notes": "",
+    "listing_extras": "",
+    "photos": [
+      "/photos/2e5429bd-edef-4968-902b-53905f4228af/1788318647053-0-IMG_E1609.jpg",
+      "/photos/2e5429bd-edef-4968-902b-53905f4228af/1788318647189-1-IMG_E1610.jpg",
+      "/photos/2e5429bd-edef-4968-902b-53905f4228af/1788318647326-2-IMG_E1611.jpg",
+      "/photos/2e5429bd-edef-4968-902b-53905f4228af/1788318647465-3-IMG_E1612.jpg",
+      "/photos/2e5429bd-edef-4968-902b-53905f4228af/1788318647608-4-IMG_E1613.jpg",
+      "/photos/2e5429bd-edef-4968-902b-53905f4228af/1788318647745-5-IMG_E1614.jpg",
+      "/photos/2e5429bd-edef-4968-902b-53905f4228af/1788318647817-6-IMG_E1615.jpg",
+      "/photos/2e5429bd-edef-4968-902b-53905f4228af/1788318647888-7-IMG_E1616.jpg",
+      "/photos/2e5429bd-edef-4968-902b-53905f4228af/1788318647966-8-IMG_E1617.jpg",
+      "/photos/2e5429bd-edef-4968-902b-53905f4228af/1788318648048-9-IMG_E1618.jpg",
+      "/photos/2e5429bd-edef-4968-902b-53905f4228af/1788318648118-10-IMG_E1619.jpg"
+    ],
+    "deadwax_photos": [
+      "/photos/2e5429bd-edef-4968-902b-53905f4228af/1788318647817-6-IMG_E1615.jpg",
+      "/photos/2e5429bd-edef-4968-902b-53905f4228af/1788318647888-7-IMG_E1616.jpg",
+      "/photos/2e5429bd-edef-4968-902b-53905f4228af/1788318647966-8-IMG_E1617.jpg",
+      "/photos/2e5429bd-edef-4968-902b-53905f4228af/1788318648048-9-IMG_E1618.jpg",
+      "/photos/2e5429bd-edef-4968-902b-53905f4228af/1788318648118-10-IMG_E1619.jpg"
+    ],
+    "status": {
+      "ebay": "listed",
+      "fb": "unlisted",
+      "discogs": "unlisted"
+    },
+    "ebay_listing_id": "407186508510",
+    "ebay_sku": "2e5429bdedef4968902b53905f4228af",
+    "discogs_release_id": null,
+    "discogs_price_by_grade": null,
+    "discogs_community": null,
+    "discogs_sold_stats": {
+      "low": "",
+      "median": "",
+      "high": "",
+      "lastSoldDate": ""
+    },
+    "discogs_listing_id": null,
+    "photo_hosted_urls": {
+      "/photos/2e5429bd-edef-4968-902b-53905f4228af/1788318647053-0-IMG_E1609.jpg": "https://i.ibb.co/MJ54xyv/1788318647053-0-IMG-E1609.jpg",
+      "/photos/2e5429bd-edef-4968-902b-53905f4228af/1788318647189-1-IMG_E1610.jpg": "https://i.ibb.co/53Hmdj0/1788318647189-1-IMG-E1610.jpg",
+      "/photos/2e5429bd-edef-4968-902b-53905f4228af/1788318647326-2-IMG_E1611.jpg": "https://i.ibb.co/S7VDbjNt/1788318647326-2-IMG-E1611.jpg",
+      "/photos/2e5429bd-edef-4968-902b-53905f4228af/1788318647465-3-IMG_E1612.jpg": "https://i.ibb.co/N2wLYmVd/1788318647465-3-IMG-E1612.jpg",
+      "/photos/2e5429bd-edef-4968-902b-53905f4228af/1788318647608-4-IMG_E1613.jpg": "https://i.ibb.co/xqrHx498/1788318647608-4-IMG-E1613.jpg",
+      "/photos/2e5429bd-edef-4968-902b-53905f4228af/1788318647745-5-IMG_E1614.jpg": "https://i.ibb.co/6JBW72pF/1788318647745-5-IMG-E1614.jpg",
+      "/photos/2e5429bd-edef-4968-902b-53905f4228af/1788318647817-6-IMG_E1615.jpg": "https://i.ibb.co/F46QbDCK/1788318647817-6-IMG-E1615.jpg",
+      "/photos/2e5429bd-edef-4968-902b-53905f4228af/1788318647888-7-IMG_E1616.jpg": "https://i.ibb.co/nqzbksKd/1788318647888-7-IMG-E1616.jpg",
+      "/photos/2e5429bd-edef-4968-902b-53905f4228af/1788318647966-8-IMG_E1617.jpg": "https://i.ibb.co/n87wj3sn/1788318647966-8-IMG-E1617.jpg",
+      "/photos/2e5429bd-edef-4968-902b-53905f4228af/1788318648048-9-IMG_E1618.jpg": "https://i.ibb.co/QqyvXJq/1788318648048-9-IMG-E1618.jpg",
+      "/photos/2e5429bd-edef-4968-902b-53905f4228af/1788318648118-10-IMG_E1619.jpg": "https://i.ibb.co/1JJkR5k9/1788318648118-10-IMG-E1619.jpg"
+    },
+    "sold": false
+  },
+  {
+    "id": "2e214d27-d743-439e-8398-0b6328a97a4e",
+    "artist": "RIXE",
+    "title": "BAPTÊME DU FEU",
+    "year": "2017",
+    "country": "UK",
+    "format": "Vinyl, 7\", 33 ⅓ RPM, EP",
+    "label": "La Vida Es Un Mus – MUS136",
+    "tier": "Tier 3 - Bulk grab bag",
+    "discogs_low_price": "",
+    "copies_for_sale_on_discogs": "",
+    "asking_price": "30",
+    "condition_media": "M",
+    "condition_sleeve": "M",
+    "matrix_number": "",
+    "sealed": false,
+    "notes": "",
+    "listing_extras": "",
+    "photos": [
+      "/photos/2e214d27-d743-439e-8398-0b6328a97a4e/1788454655357-0-IMG_E1816.jpg",
+      "/photos/2e214d27-d743-439e-8398-0b6328a97a4e/1788454655509-1-IMG_E1817.jpg",
+      "/photos/2e214d27-d743-439e-8398-0b6328a97a4e/1788454655653-2-IMG_E1818.jpg",
+      "/photos/2e214d27-d743-439e-8398-0b6328a97a4e/1788454655690-3-IMG_E1819.jpg",
+      "/photos/2e214d27-d743-439e-8398-0b6328a97a4e/1788454655837-4-IMG_E1820.jpg",
+      "/photos/2e214d27-d743-439e-8398-0b6328a97a4e/1788454655916-5-IMG_E1821.jpg",
+      "/photos/2e214d27-d743-439e-8398-0b6328a97a4e/1788454655992-6-IMG_E1822.jpg",
+      "/photos/2e214d27-d743-439e-8398-0b6328a97a4e/1788454656073-7-IMG_E1823.jpg",
+      "/photos/2e214d27-d743-439e-8398-0b6328a97a4e/1788454656152-8-IMG_E1824.jpg"
+    ],
+    "deadwax_photos": [
+      "/photos/2e214d27-d743-439e-8398-0b6328a97a4e/1788454655916-5-IMG_E1821.jpg",
+      "/photos/2e214d27-d743-439e-8398-0b6328a97a4e/1788454655992-6-IMG_E1822.jpg",
+      "/photos/2e214d27-d743-439e-8398-0b6328a97a4e/1788454656073-7-IMG_E1823.jpg",
+      "/photos/2e214d27-d743-439e-8398-0b6328a97a4e/1788454656152-8-IMG_E1824.jpg"
+    ],
+    "status": {
+      "ebay": "listed",
+      "fb": "unlisted",
+      "discogs": "unlisted"
+    },
+    "ebay_listing_id": "407190713765",
+    "ebay_sku": "2e214d27d743439e83980b6328a97a4e",
+    "discogs_release_id": 9960531,
+    "discogs_price_by_grade": {
+      "Mint (M)": {
+        "currency": "USD",
+        "value": 21.982558139534884
+      },
+      "Near Mint (NM or M-)": {
+        "currency": "USD",
+        "value": 19.66860465116279
+      },
+      "Very Good Plus (VG+)": {
+        "currency": "USD",
+        "value": 15.040697674418606
+      },
+      "Very Good (VG)": {
+        "currency": "USD",
+        "value": 10.412790697674419
+      },
+      "Good Plus (G+)": {
+        "currency": "USD",
+        "value": 5.784883720930233
+      },
+      "Good (G)": {
+        "currency": "USD",
+        "value": 3.4709302325581395
+      },
+      "Fair (F)": {
+        "currency": "USD",
+        "value": 2.313953488372093
+      },
+      "Poor (P)": {
+        "currency": "USD",
+        "value": 1.1569767441860466
+      }
+    },
+    "discogs_community": {
+      "have": 943,
+      "want": 208,
+      "ratingAverage": 4.69,
+      "ratingCount": 36
+    },
+    "discogs_sold_stats": {
+      "low": "",
+      "median": "",
+      "high": "",
+      "lastSoldDate": ""
+    },
+    "discogs_listing_id": null,
+    "photo_hosted_urls": {
+      "/photos/2e214d27-d743-439e-8398-0b6328a97a4e/1788454655357-0-IMG_E1816.jpg": "https://i.ibb.co/N6QNP8Pg/1788454655357-0-IMG-E1816.jpg",
+      "/photos/2e214d27-d743-439e-8398-0b6328a97a4e/1788454655509-1-IMG_E1817.jpg": "https://i.ibb.co/chs6yyhZ/1788454655509-1-IMG-E1817.jpg",
+      "/photos/2e214d27-d743-439e-8398-0b6328a97a4e/1788454655653-2-IMG_E1818.jpg": "https://i.ibb.co/Wptv60Mx/1788454655653-2-IMG-E1818.jpg",
+      "/photos/2e214d27-d743-439e-8398-0b6328a97a4e/1788454655690-3-IMG_E1819.jpg": "https://i.ibb.co/bj2xgJ8Q/1788454655690-3-IMG-E1819.jpg",
+      "/photos/2e214d27-d743-439e-8398-0b6328a97a4e/1788454655837-4-IMG_E1820.jpg": "https://i.ibb.co/1fBSktpp/1788454655837-4-IMG-E1820.jpg",
+      "/photos/2e214d27-d743-439e-8398-0b6328a97a4e/1788454655916-5-IMG_E1821.jpg": "https://i.ibb.co/gLfKjqmt/1788454655916-5-IMG-E1821.jpg",
+      "/photos/2e214d27-d743-439e-8398-0b6328a97a4e/1788454655992-6-IMG_E1822.jpg": "https://i.ibb.co/XZX86t6W/1788454655992-6-IMG-E1822.jpg",
+      "/photos/2e214d27-d743-439e-8398-0b6328a97a4e/1788454656073-7-IMG_E1823.jpg": "https://i.ibb.co/Xxfkbzdw/1788454656073-7-IMG-E1823.jpg",
+      "/photos/2e214d27-d743-439e-8398-0b6328a97a4e/1788454656152-8-IMG_E1824.jpg": "https://i.ibb.co/FkmJyW8M/1788454656152-8-IMG-E1824.jpg"
+    },
+    "sold": false
+  },
+  {
+    "id": "f4276294-6652-46c3-a13a-a5680f03312a",
+    "artist": "The Distillers",
+    "title": "Man Vs. Magnet / Blood In Gutters",
+    "year": "2019",
+    "country": "US",
+    "format": "Vinyl, 7\", 45 RPM, Single",
+    "label": "Third Man Records – TMR-582",
+    "tier": "Tier 3 - Bulk grab bag",
+    "discogs_low_price": "",
+    "copies_for_sale_on_discogs": "",
+    "asking_price": "20",
+    "condition_media": "M",
+    "condition_sleeve": "M",
+    "matrix_number": "",
+    "sealed": false,
+    "notes": "",
+    "listing_extras": "",
+    "photos": [
+      "/photos/f4276294-6652-46c3-a13a-a5680f03312a/1788458410683-0-IMG_E1860.jpg",
+      "/photos/f4276294-6652-46c3-a13a-a5680f03312a/1788458410838-1-IMG_E1861.jpg",
+      "/photos/f4276294-6652-46c3-a13a-a5680f03312a/1788458410989-2-IMG_E1862.jpg",
+      "/photos/f4276294-6652-46c3-a13a-a5680f03312a/1788458411137-3-IMG_E1863.jpg",
+      "/photos/f4276294-6652-46c3-a13a-a5680f03312a/1788458411284-4-IMG_E1864.jpg",
+      "/photos/f4276294-6652-46c3-a13a-a5680f03312a/1788458411670-8-IMG_E1868.jpg",
+      "/photos/f4276294-6652-46c3-a13a-a5680f03312a/1788458411362-5-IMG_E1865.jpg",
+      "/photos/f4276294-6652-46c3-a13a-a5680f03312a/1788458411437-6-IMG_E1866.jpg",
+      "/photos/f4276294-6652-46c3-a13a-a5680f03312a/1788458411520-7-IMG_E1867.jpg",
+      "/photos/f4276294-6652-46c3-a13a-a5680f03312a/1788458411744-9-IMG_E1869.jpg",
+      "/photos/f4276294-6652-46c3-a13a-a5680f03312a/1788458411821-10-IMG_E1870.jpg",
+      "/photos/f4276294-6652-46c3-a13a-a5680f03312a/1788458411899-11-IMG_E1871.jpg",
+      "/photos/f4276294-6652-46c3-a13a-a5680f03312a/1788458411985-12-IMG_E1872.jpg",
+      "/photos/f4276294-6652-46c3-a13a-a5680f03312a/1788458412074-13-IMG_E1873.jpg",
+      "/photos/f4276294-6652-46c3-a13a-a5680f03312a/1788458412154-14-IMG_E1874.jpg"
+    ],
+    "deadwax_photos": [
+      "/photos/f4276294-6652-46c3-a13a-a5680f03312a/1788458411437-6-IMG_E1866.jpg",
+      "/photos/f4276294-6652-46c3-a13a-a5680f03312a/1788458411520-7-IMG_E1867.jpg",
+      "/photos/f4276294-6652-46c3-a13a-a5680f03312a/1788458411744-9-IMG_E1869.jpg",
+      "/photos/f4276294-6652-46c3-a13a-a5680f03312a/1788458411821-10-IMG_E1870.jpg",
+      "/photos/f4276294-6652-46c3-a13a-a5680f03312a/1788458411899-11-IMG_E1871.jpg",
+      "/photos/f4276294-6652-46c3-a13a-a5680f03312a/1788458411985-12-IMG_E1872.jpg",
+      "/photos/f4276294-6652-46c3-a13a-a5680f03312a/1788458412074-13-IMG_E1873.jpg",
+      "/photos/f4276294-6652-46c3-a13a-a5680f03312a/1788458412154-14-IMG_E1874.jpg",
+      "/photos/f4276294-6652-46c3-a13a-a5680f03312a/1788458411362-5-IMG_E1865.jpg"
+    ],
+    "status": {
+      "ebay": "listed",
+      "fb": "unlisted",
+      "discogs": "unlisted"
+    },
+    "ebay_listing_id": "407190817263",
+    "ebay_sku": "f4276294665246c3a13aa5680f03312a",
+    "discogs_release_id": 13205291,
+    "discogs_price_by_grade": {
+      "Mint (M)": {
+        "currency": "USD",
+        "value": 14.36046511627907
+      },
+      "Near Mint (NM or M-)": {
+        "currency": "USD",
+        "value": 12.848837209302326
+      },
+      "Very Good Plus (VG+)": {
+        "currency": "USD",
+        "value": 9.825581395348838
+      },
+      "Very Good (VG)": {
+        "currency": "USD",
+        "value": 6.802325581395349
+      },
+      "Good Plus (G+)": {
+        "currency": "USD",
+        "value": 3.7790697674418605
+      },
+      "Good (G)": {
+        "currency": "USD",
+        "value": 2.2674418604651163
+      },
+      "Fair (F)": {
+        "currency": "USD",
+        "value": 1.5116279069767442
+      },
+      "Poor (P)": {
+        "currency": "USD",
+        "value": 0.7558139534883721
+      }
+    },
+    "discogs_community": {
+      "have": 845,
+      "want": 125,
+      "ratingAverage": 4.2,
+      "ratingCount": 40
+    },
+    "discogs_sold_stats": {
+      "low": "",
+      "median": "",
+      "high": "",
+      "lastSoldDate": ""
+    },
+    "discogs_listing_id": null,
+    "photo_hosted_urls": {
+      "/photos/f4276294-6652-46c3-a13a-a5680f03312a/1788458410683-0-IMG_E1860.jpg": "https://i.ibb.co/20qF7wdJ/1788458410683-0-IMG-E1860.jpg",
+      "/photos/f4276294-6652-46c3-a13a-a5680f03312a/1788458410838-1-IMG_E1861.jpg": "https://i.ibb.co/PvcNfc3h/1788458410838-1-IMG-E1861.jpg",
+      "/photos/f4276294-6652-46c3-a13a-a5680f03312a/1788458410989-2-IMG_E1862.jpg": "https://i.ibb.co/FTZX84H/1788458410989-2-IMG-E1862.jpg",
+      "/photos/f4276294-6652-46c3-a13a-a5680f03312a/1788458411137-3-IMG_E1863.jpg": "https://i.ibb.co/R87J1T8/1788458411137-3-IMG-E1863.jpg",
+      "/photos/f4276294-6652-46c3-a13a-a5680f03312a/1788458411284-4-IMG_E1864.jpg": "https://i.ibb.co/p6SfDw7r/1788458411284-4-IMG-E1864.jpg",
+      "/photos/f4276294-6652-46c3-a13a-a5680f03312a/1788458411670-8-IMG_E1868.jpg": "https://i.ibb.co/N28Nrqwj/1788458411670-8-IMG-E1868.jpg",
+      "/photos/f4276294-6652-46c3-a13a-a5680f03312a/1788458411362-5-IMG_E1865.jpg": "https://i.ibb.co/v6NMvQL5/1788458411362-5-IMG-E1865.jpg",
+      "/photos/f4276294-6652-46c3-a13a-a5680f03312a/1788458411437-6-IMG_E1866.jpg": "https://i.ibb.co/3JxQ6XW/1788458411437-6-IMG-E1866.jpg",
+      "/photos/f4276294-6652-46c3-a13a-a5680f03312a/1788458411520-7-IMG_E1867.jpg": "https://i.ibb.co/1fzcw5M4/1788458411520-7-IMG-E1867.jpg",
+      "/photos/f4276294-6652-46c3-a13a-a5680f03312a/1788458411744-9-IMG_E1869.jpg": "https://i.ibb.co/q37KhLP7/1788458411744-9-IMG-E1869.jpg",
+      "/photos/f4276294-6652-46c3-a13a-a5680f03312a/1788458411821-10-IMG_E1870.jpg": "https://i.ibb.co/7dFghy4M/1788458411821-10-IMG-E1870.jpg",
+      "/photos/f4276294-6652-46c3-a13a-a5680f03312a/1788458411899-11-IMG_E1871.jpg": "https://i.ibb.co/twrbwRX5/1788458411899-11-IMG-E1871.jpg",
+      "/photos/f4276294-6652-46c3-a13a-a5680f03312a/1788458411985-12-IMG_E1872.jpg": "https://i.ibb.co/nNGDp2QH/1788458411985-12-IMG-E1872.jpg",
+      "/photos/f4276294-6652-46c3-a13a-a5680f03312a/1788458412074-13-IMG_E1873.jpg": "https://i.ibb.co/3mw2jkhc/1788458412074-13-IMG-E1873.jpg",
+      "/photos/f4276294-6652-46c3-a13a-a5680f03312a/1788458412154-14-IMG_E1874.jpg": "https://i.ibb.co/xK8yMxFF/1788458412154-14-IMG-E1874.jpg"
+    },
+    "sold": false
+  },
+  {
+    "id": "51a0094b-455b-4bda-aae0-73db48f8535f",
+    "artist": "Shannon and the Clams",
+    "title": "Hunk Hunt",
+    "year": "2010",
+    "country": "US",
+    "format": "Vinyl, 7\", 33 ⅓ RPM, Reissue, Remastered",
+    "label": " 1-2-3-4 Go! Records ‎– GO-44",
+    "tier": "Tier 1 - Individual (high value)",
+    "discogs_low_price": "",
+    "copies_for_sale_on_discogs": "",
+    "asking_price": "27.25",
+    "condition_media": "M",
+    "condition_sleeve": "NM",
+    "matrix_number": "",
+    "sealed": false,
+    "notes": "",
+    "listing_extras": "Sleeve is in mint condition minus very slight price sticker residue on top right corner. Sleeve is a harder material and could likely be cleaned off without notice. hardly noticeable as is. ",
+    "photos": [
+      "/photos/51a0094b-455b-4bda-aae0-73db48f8535f/1788460556705-0-IMG_E1886.jpg",
+      "/photos/51a0094b-455b-4bda-aae0-73db48f8535f/1788460556873-1-IMG_E1887.jpg",
+      "/photos/51a0094b-455b-4bda-aae0-73db48f8535f/1788460557017-2-IMG_E1888.jpg",
+      "/photos/51a0094b-455b-4bda-aae0-73db48f8535f/1788460557394-6-IMG_E1892.jpg",
+      "/photos/51a0094b-455b-4bda-aae0-73db48f8535f/1788460557095-3-IMG_E1889.jpg",
+      "/photos/51a0094b-455b-4bda-aae0-73db48f8535f/1788460557172-4-IMG_E1890.jpg",
+      "/photos/51a0094b-455b-4bda-aae0-73db48f8535f/1788460557250-5-IMG_E1891.jpg",
+      "/photos/51a0094b-455b-4bda-aae0-73db48f8535f/1788460557474-7-IMG_E1893.jpg",
+      "/photos/51a0094b-455b-4bda-aae0-73db48f8535f/1788460557553-8-IMG_E1894.jpg",
+      "/photos/51a0094b-455b-4bda-aae0-73db48f8535f/1788460557630-9-IMG_E1895.jpg",
+      "/photos/51a0094b-455b-4bda-aae0-73db48f8535f/1788460557710-10-IMG_E1896.jpg"
+    ],
+    "deadwax_photos": [
+      "/photos/51a0094b-455b-4bda-aae0-73db48f8535f/1788460557095-3-IMG_E1889.jpg",
+      "/photos/51a0094b-455b-4bda-aae0-73db48f8535f/1788460557172-4-IMG_E1890.jpg",
+      "/photos/51a0094b-455b-4bda-aae0-73db48f8535f/1788460557250-5-IMG_E1891.jpg",
+      "/photos/51a0094b-455b-4bda-aae0-73db48f8535f/1788460557474-7-IMG_E1893.jpg",
+      "/photos/51a0094b-455b-4bda-aae0-73db48f8535f/1788460557553-8-IMG_E1894.jpg",
+      "/photos/51a0094b-455b-4bda-aae0-73db48f8535f/1788460557630-9-IMG_E1895.jpg",
+      "/photos/51a0094b-455b-4bda-aae0-73db48f8535f/1788460557710-10-IMG_E1896.jpg"
+    ],
+    "status": {
+      "ebay": "listed",
+      "fb": "unlisted",
+      "discogs": "unlisted"
+    },
+    "ebay_listing_id": "407190889834",
+    "ebay_sku": "51a0094b455b4bdaaae073db48f8535f",
+    "discogs_release_id": 5700438,
+    "discogs_price_by_grade": {
+      "Mint (M)": {
+        "currency": "USD",
+        "value": 27.312499999999996
+      },
+      "Near Mint (NM or M-)": {
+        "currency": "USD",
+        "value": 24.437499999999996
+      },
+      "Very Good Plus (VG+)": {
+        "currency": "USD",
+        "value": 18.6875
+      },
+      "Very Good (VG)": {
+        "currency": "USD",
+        "value": 12.937499999999998
+      },
+      "Good Plus (G+)": {
+        "currency": "USD",
+        "value": 7.187499999999999
+      },
+      "Good (G)": {
+        "currency": "USD",
+        "value": 4.312499999999999
+      },
+      "Fair (F)": {
+        "currency": "USD",
+        "value": 2.875
+      },
+      "Poor (P)": {
+        "currency": "USD",
+        "value": 1.4375
+      }
+    },
+    "discogs_community": {
+      "have": 13,
+      "want": 69,
+      "ratingAverage": 5,
+      "ratingCount": 3
+    },
+    "discogs_sold_stats": {
+      "low": "",
+      "median": "",
+      "high": "",
+      "lastSoldDate": ""
+    },
+    "discogs_listing_id": null,
+    "photo_hosted_urls": {
+      "/photos/51a0094b-455b-4bda-aae0-73db48f8535f/1788460556705-0-IMG_E1886.jpg": "https://i.ibb.co/gZ4ymTgf/1788460556705-0-IMG-E1886.jpg",
+      "/photos/51a0094b-455b-4bda-aae0-73db48f8535f/1788460556873-1-IMG_E1887.jpg": "https://i.ibb.co/bpSsvrt/1788460556873-1-IMG-E1887.jpg",
+      "/photos/51a0094b-455b-4bda-aae0-73db48f8535f/1788460557017-2-IMG_E1888.jpg": "https://i.ibb.co/rGQjD9zm/1788460557017-2-IMG-E1888.jpg",
+      "/photos/51a0094b-455b-4bda-aae0-73db48f8535f/1788460557394-6-IMG_E1892.jpg": "https://i.ibb.co/4g49f9yp/1788460557394-6-IMG-E1892.jpg",
+      "/photos/51a0094b-455b-4bda-aae0-73db48f8535f/1788460557095-3-IMG_E1889.jpg": "https://i.ibb.co/Pz6CNV24/1788460557095-3-IMG-E1889.jpg",
+      "/photos/51a0094b-455b-4bda-aae0-73db48f8535f/1788460557172-4-IMG_E1890.jpg": "https://i.ibb.co/pBv3JrQ5/1788460557172-4-IMG-E1890.jpg",
+      "/photos/51a0094b-455b-4bda-aae0-73db48f8535f/1788460557250-5-IMG_E1891.jpg": "https://i.ibb.co/v6dqbpjn/1788460557250-5-IMG-E1891.jpg",
+      "/photos/51a0094b-455b-4bda-aae0-73db48f8535f/1788460557474-7-IMG_E1893.jpg": "https://i.ibb.co/bM0cHS9C/1788460557474-7-IMG-E1893.jpg",
+      "/photos/51a0094b-455b-4bda-aae0-73db48f8535f/1788460557553-8-IMG_E1894.jpg": "https://i.ibb.co/LzSwdftN/1788460557553-8-IMG-E1894.jpg",
+      "/photos/51a0094b-455b-4bda-aae0-73db48f8535f/1788460557630-9-IMG_E1895.jpg": "https://i.ibb.co/LdBR7xwx/1788460557630-9-IMG-E1895.jpg",
+      "/photos/51a0094b-455b-4bda-aae0-73db48f8535f/1788460557710-10-IMG_E1896.jpg": "https://i.ibb.co/1JtzKKSX/1788460557710-10-IMG-E1896.jpg"
+    },
+    "sold": false
+  },
+  {
+    "id": "cd1e9f06-7bab-4527-b86f-0ed9a211c659",
+    "artist": "Gunfighter",
+    "title": "Ballads",
+    "year": "2022",
+    "country": "US",
+    "format": "Vinyl, 7\", EP 45 RPM",
+    "label": " Under The Gun Records ‎– UTGR-093",
+    "tier": "Tier 3 - Bulk grab bag",
+    "discogs_low_price": "",
+    "copies_for_sale_on_discogs": "",
+    "asking_price": "15",
+    "condition_media": "M",
+    "condition_sleeve": "M",
+    "matrix_number": "",
+    "sealed": false,
+    "notes": "",
+    "listing_extras": "",
+    "photos": [
+      "/photos/cd1e9f06-7bab-4527-b86f-0ed9a211c659/1788467595714-0-IMG_E1935.jpg",
+      "/photos/cd1e9f06-7bab-4527-b86f-0ed9a211c659/1788467595861-1-IMG_E1936.jpg",
+      "/photos/cd1e9f06-7bab-4527-b86f-0ed9a211c659/1788467596015-2-IMG_E1937.jpg",
+      "/photos/cd1e9f06-7bab-4527-b86f-0ed9a211c659/1788467596320-5-IMG_E1941.jpg",
+      "/photos/cd1e9f06-7bab-4527-b86f-0ed9a211c659/1788467596092-3-IMG_E1938.jpg",
+      "/photos/cd1e9f06-7bab-4527-b86f-0ed9a211c659/1788467596170-4-IMG_E1939.jpg",
+      "/photos/cd1e9f06-7bab-4527-b86f-0ed9a211c659/1788467596397-6-IMG_E1942.jpg",
+      "/photos/cd1e9f06-7bab-4527-b86f-0ed9a211c659/1788467596477-7-IMG_E1943.jpg",
+      "/photos/cd1e9f06-7bab-4527-b86f-0ed9a211c659/1788467596561-8-IMG_E1945.jpg",
+      "/photos/cd1e9f06-7bab-4527-b86f-0ed9a211c659/1788467596643-9-IMG_E1946.jpg"
+    ],
+    "deadwax_photos": [
+      "/photos/cd1e9f06-7bab-4527-b86f-0ed9a211c659/1788467596092-3-IMG_E1938.jpg",
+      "/photos/cd1e9f06-7bab-4527-b86f-0ed9a211c659/1788467596170-4-IMG_E1939.jpg",
+      "/photos/cd1e9f06-7bab-4527-b86f-0ed9a211c659/1788467596477-7-IMG_E1943.jpg",
+      "/photos/cd1e9f06-7bab-4527-b86f-0ed9a211c659/1788467596561-8-IMG_E1945.jpg",
+      "/photos/cd1e9f06-7bab-4527-b86f-0ed9a211c659/1788467596643-9-IMG_E1946.jpg",
+      "/photos/cd1e9f06-7bab-4527-b86f-0ed9a211c659/1788467596397-6-IMG_E1942.jpg"
+    ],
+    "status": {
+      "ebay": "listed",
+      "fb": "unlisted",
+      "discogs": "unlisted"
+    },
+    "ebay_listing_id": "407191041908",
+    "ebay_sku": "cd1e9f067bab4527b86f0ed9a211c659",
+    "discogs_release_id": 25915672,
+    "discogs_price_by_grade": {
+      "Mint (M)": {
+        "currency": "USD",
+        "value": 11.25639534883721
+      },
+      "Near Mint (NM or M-)": {
+        "currency": "USD",
+        "value": 10.071511627906977
+      },
+      "Very Good Plus (VG+)": {
+        "currency": "USD",
+        "value": 7.701744186046512
+      },
+      "Very Good (VG)": {
+        "currency": "USD",
+        "value": 5.331976744186047
+      },
+      "Good Plus (G+)": {
+        "currency": "USD",
+        "value": 2.9622093023255816
+      },
+      "Good (G)": {
+        "currency": "USD",
+        "value": 1.7773255813953488
+      },
+      "Fair (F)": {
+        "currency": "USD",
+        "value": 1.1848837209302328
+      },
+      "Poor (P)": {
+        "currency": "USD",
+        "value": 0.5924418604651164
+      }
+    },
+    "discogs_community": {
+      "have": 30,
+      "want": 3,
+      "ratingAverage": 0,
+      "ratingCount": 0
+    },
+    "discogs_sold_stats": {
+      "low": "",
+      "median": "",
+      "high": "",
+      "lastSoldDate": ""
+    },
+    "discogs_listing_id": null,
+    "photo_hosted_urls": {
+      "/photos/cd1e9f06-7bab-4527-b86f-0ed9a211c659/1788467595714-0-IMG_E1935.jpg": "https://i.ibb.co/23t4mMk4/1788467595714-0-IMG-E1935.jpg",
+      "/photos/cd1e9f06-7bab-4527-b86f-0ed9a211c659/1788467595861-1-IMG_E1936.jpg": "https://i.ibb.co/XrmTTyrr/1788467595861-1-IMG-E1936.jpg",
+      "/photos/cd1e9f06-7bab-4527-b86f-0ed9a211c659/1788467596015-2-IMG_E1937.jpg": "https://i.ibb.co/q32xmb6m/1788467596015-2-IMG-E1937.jpg",
+      "/photos/cd1e9f06-7bab-4527-b86f-0ed9a211c659/1788467596320-5-IMG_E1941.jpg": "https://i.ibb.co/zTDbSG6j/1788467596320-5-IMG-E1941.jpg",
+      "/photos/cd1e9f06-7bab-4527-b86f-0ed9a211c659/1788467596092-3-IMG_E1938.jpg": "https://i.ibb.co/3YkzL0r8/1788467596092-3-IMG-E1938.jpg",
+      "/photos/cd1e9f06-7bab-4527-b86f-0ed9a211c659/1788467596170-4-IMG_E1939.jpg": "https://i.ibb.co/YB0bzKjP/1788467596170-4-IMG-E1939.jpg",
+      "/photos/cd1e9f06-7bab-4527-b86f-0ed9a211c659/1788467596397-6-IMG_E1942.jpg": "https://i.ibb.co/84RQMg9q/1788467596397-6-IMG-E1942.jpg",
+      "/photos/cd1e9f06-7bab-4527-b86f-0ed9a211c659/1788467596477-7-IMG_E1943.jpg": "https://i.ibb.co/0R9J3J8g/1788467596477-7-IMG-E1943.jpg",
+      "/photos/cd1e9f06-7bab-4527-b86f-0ed9a211c659/1788467596561-8-IMG_E1945.jpg": "https://i.ibb.co/xKYbNNVk/1788467596561-8-IMG-E1945.jpg",
+      "/photos/cd1e9f06-7bab-4527-b86f-0ed9a211c659/1788467596643-9-IMG_E1946.jpg": "https://i.ibb.co/678RsNsc/1788467596643-9-IMG-E1946.jpg"
+    },
+    "sold": false
+  },
+  {
+    "id": "a0098c7d-22dd-4059-ad6f-de79bbaec75f",
+    "artist": "The Spits",
+    "title": "Pain",
+    "year": "2009",
+    "country": "US",
+    "format": "Vinyl, 7\", 45 RPM, EP",
+    "label": "Slovenly Recordings – 702-89",
+    "tier": "Tier 3 - Bulk grab bag",
+    "discogs_low_price": "",
+    "copies_for_sale_on_discogs": "",
+    "asking_price": "25",
+    "condition_media": "M",
+    "condition_sleeve": "NM",
+    "matrix_number": "",
+    "sealed": false,
+    "notes": "",
+    "listing_extras": "",
+    "photos": [
+      "/photos/a0098c7d-22dd-4059-ad6f-de79bbaec75f/1788472073380-0-IMG_E1961.jpg",
+      "/photos/a0098c7d-22dd-4059-ad6f-de79bbaec75f/1788472073535-1-IMG_E1962.jpg",
+      "/photos/a0098c7d-22dd-4059-ad6f-de79bbaec75f/1788472073690-2-IMG_E1964.jpg",
+      "/photos/a0098c7d-22dd-4059-ad6f-de79bbaec75f/1788472073999-5-IMG_E1967.jpg",
+      "/photos/a0098c7d-22dd-4059-ad6f-de79bbaec75f/1788472073772-3-IMG_E1965.jpg",
+      "/photos/a0098c7d-22dd-4059-ad6f-de79bbaec75f/1788472073852-4-IMG_E1966.jpg",
+      "/photos/a0098c7d-22dd-4059-ad6f-de79bbaec75f/1788472074081-6-IMG_E1968.jpg",
+      "/photos/a0098c7d-22dd-4059-ad6f-de79bbaec75f/1788472074160-7-IMG_E1969.jpg",
+      "/photos/a0098c7d-22dd-4059-ad6f-de79bbaec75f/1788472074240-8-IMG_E1970.jpg"
+    ],
+    "deadwax_photos": [
+      "/photos/a0098c7d-22dd-4059-ad6f-de79bbaec75f/1788472073772-3-IMG_E1965.jpg",
+      "/photos/a0098c7d-22dd-4059-ad6f-de79bbaec75f/1788472073852-4-IMG_E1966.jpg",
+      "/photos/a0098c7d-22dd-4059-ad6f-de79bbaec75f/1788472074081-6-IMG_E1968.jpg",
+      "/photos/a0098c7d-22dd-4059-ad6f-de79bbaec75f/1788472074160-7-IMG_E1969.jpg",
+      "/photos/a0098c7d-22dd-4059-ad6f-de79bbaec75f/1788472074240-8-IMG_E1970.jpg"
+    ],
+    "status": {
+      "ebay": "listed",
+      "fb": "unlisted",
+      "discogs": "unlisted"
+    },
+    "ebay_listing_id": "407191141753",
+    "ebay_sku": "a0098c7d22dd4059ad6fde79bbaec75f",
+    "discogs_release_id": 1985871,
+    "discogs_price_by_grade": {
+      "Mint (M)": {
+        "currency": "USD",
+        "value": 11.3905
+      },
+      "Near Mint (NM or M-)": {
+        "currency": "USD",
+        "value": 10.1915
+      },
+      "Very Good Plus (VG+)": {
+        "currency": "USD",
+        "value": 7.793500000000001
+      },
+      "Very Good (VG)": {
+        "currency": "USD",
+        "value": 5.3955
+      },
+      "Good Plus (G+)": {
+        "currency": "USD",
+        "value": 2.9975
+      },
+      "Good (G)": {
+        "currency": "USD",
+        "value": 1.7985
+      },
+      "Fair (F)": {
+        "currency": "USD",
+        "value": 1.199
+      },
+      "Poor (P)": {
+        "currency": "USD",
+        "value": 0.5995
+      }
+    },
+    "discogs_community": {
+      "have": 781,
+      "want": 107,
+      "ratingAverage": 4.42,
+      "ratingCount": 50
+    },
+    "discogs_sold_stats": {
+      "low": "",
+      "median": "",
+      "high": "",
+      "lastSoldDate": ""
+    },
+    "discogs_listing_id": null,
+    "photo_hosted_urls": {
+      "/photos/a0098c7d-22dd-4059-ad6f-de79bbaec75f/1788472073380-0-IMG_E1961.jpg": "https://i.ibb.co/d0KNP3fv/1788472073380-0-IMG-E1961.jpg",
+      "/photos/a0098c7d-22dd-4059-ad6f-de79bbaec75f/1788472073535-1-IMG_E1962.jpg": "https://i.ibb.co/3mNM04XK/1788472073535-1-IMG-E1962.jpg",
+      "/photos/a0098c7d-22dd-4059-ad6f-de79bbaec75f/1788472073690-2-IMG_E1964.jpg": "https://i.ibb.co/G3MwQwV1/1788472073690-2-IMG-E1964.jpg",
+      "/photos/a0098c7d-22dd-4059-ad6f-de79bbaec75f/1788472073999-5-IMG_E1967.jpg": "https://i.ibb.co/B58FCkNr/1788472073999-5-IMG-E1967.jpg",
+      "/photos/a0098c7d-22dd-4059-ad6f-de79bbaec75f/1788472073772-3-IMG_E1965.jpg": "https://i.ibb.co/VWq1Bz8y/1788472073772-3-IMG-E1965.jpg",
+      "/photos/a0098c7d-22dd-4059-ad6f-de79bbaec75f/1788472073852-4-IMG_E1966.jpg": "https://i.ibb.co/YFSGCknM/1788472073852-4-IMG-E1966.jpg",
+      "/photos/a0098c7d-22dd-4059-ad6f-de79bbaec75f/1788472074081-6-IMG_E1968.jpg": "https://i.ibb.co/RTHTykYh/1788472074081-6-IMG-E1968.jpg",
+      "/photos/a0098c7d-22dd-4059-ad6f-de79bbaec75f/1788472074160-7-IMG_E1969.jpg": "https://i.ibb.co/23K6Z41y/1788472074160-7-IMG-E1969.jpg",
+      "/photos/a0098c7d-22dd-4059-ad6f-de79bbaec75f/1788472074240-8-IMG_E1970.jpg": "https://i.ibb.co/FqqNg31s/1788472074240-8-IMG-E1970.jpg"
+    },
+    "sold": false
+  },
+  {
+    "id": "b755f46a-9935-4fe9-9848-4cab82a67361",
+    "artist": "Timmy's Organism",
+    "title": "I'm a Nice Guy Now",
+    "year": "2010",
+    "country": "US",
+    "format": "Vinyl, 7\"",
+    "label": " Cass Records ‎– MAMA 049",
+    "tier": "Tier 3 - Bulk grab bag",
+    "discogs_low_price": "",
+    "copies_for_sale_on_discogs": "",
+    "asking_price": "12",
+    "condition_media": "NM",
+    "condition_sleeve": "NM",
+    "matrix_number": "",
+    "sealed": false,
+    "notes": "",
+    "listing_extras": "Has price sticker on sleeve",
+    "photos": [
+      "/photos/b755f46a-9935-4fe9-9848-4cab82a67361/1788472768125-8-IMG_E1980.jpg",
+      "/photos/b755f46a-9935-4fe9-9848-4cab82a67361/1788472768289-9-IMG_E1981.jpg",
+      "/photos/b755f46a-9935-4fe9-9848-4cab82a67361/1788472767408-0-IMG_E1971.jpg",
+      "/photos/b755f46a-9935-4fe9-9848-4cab82a67361/1788472767728-4-IMG_E1976.jpg",
+      "/photos/b755f46a-9935-4fe9-9848-4cab82a67361/1788472767886-6-IMG_E1978.jpg",
+      "/photos/b755f46a-9935-4fe9-9848-4cab82a67361/1788472767488-1-IMG_E1972.jpg",
+      "/photos/b755f46a-9935-4fe9-9848-4cab82a67361/1788472767568-2-IMG_E1973.jpg",
+      "/photos/b755f46a-9935-4fe9-9848-4cab82a67361/1788472767647-3-IMG_E1974.jpg",
+      "/photos/b755f46a-9935-4fe9-9848-4cab82a67361/1788472767808-5-IMG_E1977.jpg",
+      "/photos/b755f46a-9935-4fe9-9848-4cab82a67361/1788472767966-7-IMG_E1979.jpg"
+    ],
+    "deadwax_photos": [
+      "/photos/b755f46a-9935-4fe9-9848-4cab82a67361/1788472767488-1-IMG_E1972.jpg",
+      "/photos/b755f46a-9935-4fe9-9848-4cab82a67361/1788472767568-2-IMG_E1973.jpg",
+      "/photos/b755f46a-9935-4fe9-9848-4cab82a67361/1788472767647-3-IMG_E1974.jpg",
+      "/photos/b755f46a-9935-4fe9-9848-4cab82a67361/1788472767808-5-IMG_E1977.jpg",
+      "/photos/b755f46a-9935-4fe9-9848-4cab82a67361/1788472767886-6-IMG_E1978.jpg",
+      "/photos/b755f46a-9935-4fe9-9848-4cab82a67361/1788472767966-7-IMG_E1979.jpg"
+    ],
+    "status": {
+      "ebay": "listed",
+      "fb": "unlisted",
+      "discogs": "unlisted"
+    },
+    "ebay_listing_id": "407191155751",
+    "ebay_sku": "b755f46a99354fe998484cab82a67361",
+    "discogs_release_id": 2254721,
+    "discogs_price_by_grade": {
+      "Mint (M)": {
+        "currency": "USD",
+        "value": 8.284883720930234
+      },
+      "Near Mint (NM or M-)": {
+        "currency": "USD",
+        "value": 7.41279069767442
+      },
+      "Very Good Plus (VG+)": {
+        "currency": "USD",
+        "value": 5.668604651162791
+      },
+      "Very Good (VG)": {
+        "currency": "USD",
+        "value": 3.9244186046511635
+      },
+      "Good Plus (G+)": {
+        "currency": "USD",
+        "value": 2.180232558139535
+      },
+      "Good (G)": {
+        "currency": "USD",
+        "value": 1.308139534883721
+      },
+      "Fair (F)": {
+        "currency": "USD",
+        "value": 0.8720930232558142
+      },
+      "Poor (P)": {
+        "currency": "USD",
+        "value": 0.4360465116279071
+      }
+    },
+    "discogs_community": {
+      "have": 122,
+      "want": 45,
+      "ratingAverage": 4.5,
+      "ratingCount": 10
+    },
+    "discogs_sold_stats": {
+      "low": "",
+      "median": "",
+      "high": "",
+      "lastSoldDate": ""
+    },
+    "discogs_listing_id": null,
+    "photo_hosted_urls": {
+      "/photos/b755f46a-9935-4fe9-9848-4cab82a67361/1788472768125-8-IMG_E1980.jpg": "https://i.ibb.co/0LJhY0v/1788472768125-8-IMG-E1980.jpg",
+      "/photos/b755f46a-9935-4fe9-9848-4cab82a67361/1788472768289-9-IMG_E1981.jpg": "https://i.ibb.co/Jhwcx8b/1788472768289-9-IMG-E1981.jpg",
+      "/photos/b755f46a-9935-4fe9-9848-4cab82a67361/1788472767408-0-IMG_E1971.jpg": "https://i.ibb.co/Cs9JwQMy/1788472767408-0-IMG-E1971.jpg",
+      "/photos/b755f46a-9935-4fe9-9848-4cab82a67361/1788472767728-4-IMG_E1976.jpg": "https://i.ibb.co/nqhXPHK3/1788472767728-4-IMG-E1976.jpg",
+      "/photos/b755f46a-9935-4fe9-9848-4cab82a67361/1788472767488-1-IMG_E1972.jpg": "https://i.ibb.co/LDR6Zr6g/1788472767488-1-IMG-E1972.jpg",
+      "/photos/b755f46a-9935-4fe9-9848-4cab82a67361/1788472767568-2-IMG_E1973.jpg": "https://i.ibb.co/j9KPxFMd/1788472767568-2-IMG-E1973.jpg",
+      "/photos/b755f46a-9935-4fe9-9848-4cab82a67361/1788472767647-3-IMG_E1974.jpg": "https://i.ibb.co/Fb4Rx1Vk/1788472767647-3-IMG-E1974.jpg",
+      "/photos/b755f46a-9935-4fe9-9848-4cab82a67361/1788472767808-5-IMG_E1977.jpg": "https://i.ibb.co/SXrPjscQ/1788472767808-5-IMG-E1977.jpg",
+      "/photos/b755f46a-9935-4fe9-9848-4cab82a67361/1788472767886-6-IMG_E1978.jpg": "https://i.ibb.co/1V55Xr7/1788472767886-6-IMG-E1978.jpg",
+      "/photos/b755f46a-9935-4fe9-9848-4cab82a67361/1788472767966-7-IMG_E1979.jpg": "https://i.ibb.co/N67FGTS4/1788472767966-7-IMG-E1979.jpg"
+    },
+    "sold": false
+  },
+  {
+    "id": "5d71b8ce-ba38-4924-bc39-7275d6406da8",
+    "artist": "Timmy's Organism",
+    "title": "Squeeze the Giant",
+    "year": "2009",
+    "country": "US",
+    "format": "2 x Vinyl, 7\", 45 RPM",
+    "label": "Sacred Bones Records – SBR-021",
+    "tier": "Tier 3 - Bulk grab bag",
+    "discogs_low_price": "",
+    "copies_for_sale_on_discogs": "",
+    "asking_price": "14",
+    "condition_media": "VG+",
+    "condition_sleeve": "VG+",
+    "matrix_number": "",
+    "sealed": false,
+    "notes": "",
+    "listing_extras": "Has price sticker on sleeve.",
+    "photos": [
+      "/photos/5d71b8ce-ba38-4924-bc39-7275d6406da8/1788473922150-0-IMG_E1982.jpg",
+      "/photos/5d71b8ce-ba38-4924-bc39-7275d6406da8/1788473922323-1-IMG_E1983.jpg",
+      "/photos/5d71b8ce-ba38-4924-bc39-7275d6406da8/1788473922481-2-IMG_E1984.jpg",
+      "/photos/5d71b8ce-ba38-4924-bc39-7275d6406da8/1788473922631-3-IMG_E1985.jpg",
+      "/photos/5d71b8ce-ba38-4924-bc39-7275d6406da8/1788473922776-4-IMG_E1986.jpg",
+      "/photos/5d71b8ce-ba38-4924-bc39-7275d6406da8/1788473923009-6-IMG_E1988.jpg",
+      "/photos/5d71b8ce-ba38-4924-bc39-7275d6406da8/1788473923327-9-IMG_E1992.jpg",
+      "/photos/5d71b8ce-ba38-4924-bc39-7275d6406da8/1788473923553-11-IMG_E1994.jpg",
+      "/photos/5d71b8ce-ba38-4924-bc39-7275d6406da8/1788473922858-5-IMG_E1987.jpg",
+      "/photos/5d71b8ce-ba38-4924-bc39-7275d6406da8/1788473923093-7-IMG_E1989.jpg",
+      "/photos/5d71b8ce-ba38-4924-bc39-7275d6406da8/1788473923173-8-IMG_E1990.jpg",
+      "/photos/5d71b8ce-ba38-4924-bc39-7275d6406da8/1788473923405-10-IMG_E1993.jpg",
+      "/photos/5d71b8ce-ba38-4924-bc39-7275d6406da8/1788473923633-12-IMG_E1995.jpg",
+      "/photos/5d71b8ce-ba38-4924-bc39-7275d6406da8/1788473923709-13-IMG_E1996.jpg"
+    ],
+    "deadwax_photos": [
+      "/photos/5d71b8ce-ba38-4924-bc39-7275d6406da8/1788473922481-2-IMG_E1984.jpg",
+      "/photos/5d71b8ce-ba38-4924-bc39-7275d6406da8/1788473922631-3-IMG_E1985.jpg",
+      "/photos/5d71b8ce-ba38-4924-bc39-7275d6406da8/1788473922858-5-IMG_E1987.jpg",
+      "/photos/5d71b8ce-ba38-4924-bc39-7275d6406da8/1788473923093-7-IMG_E1989.jpg",
+      "/photos/5d71b8ce-ba38-4924-bc39-7275d6406da8/1788473923405-10-IMG_E1993.jpg",
+      "/photos/5d71b8ce-ba38-4924-bc39-7275d6406da8/1788473923633-12-IMG_E1995.jpg",
+      "/photos/5d71b8ce-ba38-4924-bc39-7275d6406da8/1788473923709-13-IMG_E1996.jpg",
+      "/photos/5d71b8ce-ba38-4924-bc39-7275d6406da8/1788473923173-8-IMG_E1990.jpg"
+    ],
+    "status": {
+      "ebay": "listed",
+      "fb": "unlisted",
+      "discogs": "unlisted"
+    },
+    "ebay_listing_id": "407191180725",
+    "ebay_sku": "5d71b8ceba384924bc397275d6406da8",
+    "discogs_release_id": 1759810,
+    "discogs_price_by_grade": {
+      "Mint (M)": {
+        "currency": "USD",
+        "value": 14.305232558139533
+      },
+      "Near Mint (NM or M-)": {
+        "currency": "USD",
+        "value": 12.799418604651162
+      },
+      "Very Good Plus (VG+)": {
+        "currency": "USD",
+        "value": 9.787790697674419
+      },
+      "Very Good (VG)": {
+        "currency": "USD",
+        "value": 6.776162790697674
+      },
+      "Good Plus (G+)": {
+        "currency": "USD",
+        "value": 3.76453488372093
+      },
+      "Good (G)": {
+        "currency": "USD",
+        "value": 2.258720930232558
+      },
+      "Fair (F)": {
+        "currency": "USD",
+        "value": 1.505813953488372
+      },
+      "Poor (P)": {
+        "currency": "USD",
+        "value": 0.752906976744186
+      }
+    },
+    "discogs_community": {
+      "have": 161,
+      "want": 39,
+      "ratingAverage": 3.75,
+      "ratingCount": 12
+    },
+    "discogs_sold_stats": {
+      "low": "",
+      "median": "",
+      "high": "",
+      "lastSoldDate": ""
+    },
+    "discogs_listing_id": null,
+    "photo_hosted_urls": {
+      "/photos/5d71b8ce-ba38-4924-bc39-7275d6406da8/1788473922150-0-IMG_E1982.jpg": "https://i.ibb.co/s9XjsDbw/1788473922150-0-IMG-E1982.jpg",
+      "/photos/5d71b8ce-ba38-4924-bc39-7275d6406da8/1788473922323-1-IMG_E1983.jpg": "https://i.ibb.co/C3vXn9Td/1788473922323-1-IMG-E1983.jpg",
+      "/photos/5d71b8ce-ba38-4924-bc39-7275d6406da8/1788473922481-2-IMG_E1984.jpg": "https://i.ibb.co/ymJDkR0h/1788473922481-2-IMG-E1984.jpg",
+      "/photos/5d71b8ce-ba38-4924-bc39-7275d6406da8/1788473922631-3-IMG_E1985.jpg": "https://i.ibb.co/9mDjSPT0/1788473922631-3-IMG-E1985.jpg",
+      "/photos/5d71b8ce-ba38-4924-bc39-7275d6406da8/1788473922776-4-IMG_E1986.jpg": "https://i.ibb.co/dwQ2cT4D/1788473922776-4-IMG-E1986.jpg",
+      "/photos/5d71b8ce-ba38-4924-bc39-7275d6406da8/1788473923009-6-IMG_E1988.jpg": "https://i.ibb.co/v4stcmYw/1788473923009-6-IMG-E1988.jpg",
+      "/photos/5d71b8ce-ba38-4924-bc39-7275d6406da8/1788473923327-9-IMG_E1992.jpg": "https://i.ibb.co/jvcxdNDg/1788473923327-9-IMG-E1992.jpg",
+      "/photos/5d71b8ce-ba38-4924-bc39-7275d6406da8/1788473923553-11-IMG_E1994.jpg": "https://i.ibb.co/hJX2jvJL/1788473923553-11-IMG-E1994.jpg",
+      "/photos/5d71b8ce-ba38-4924-bc39-7275d6406da8/1788473922858-5-IMG_E1987.jpg": "https://i.ibb.co/TMWTS1fS/1788473922858-5-IMG-E1987.jpg",
+      "/photos/5d71b8ce-ba38-4924-bc39-7275d6406da8/1788473923093-7-IMG_E1989.jpg": "https://i.ibb.co/wZ8yD3rY/1788473923093-7-IMG-E1989.jpg",
+      "/photos/5d71b8ce-ba38-4924-bc39-7275d6406da8/1788473923173-8-IMG_E1990.jpg": "https://i.ibb.co/mVxpWNfQ/1788473923173-8-IMG-E1990.jpg",
+      "/photos/5d71b8ce-ba38-4924-bc39-7275d6406da8/1788473923405-10-IMG_E1993.jpg": "https://i.ibb.co/QF8m6jrr/1788473923405-10-IMG-E1993.jpg",
+      "/photos/5d71b8ce-ba38-4924-bc39-7275d6406da8/1788473923633-12-IMG_E1995.jpg": "https://i.ibb.co/cKzLQ2ms/1788473923633-12-IMG-E1995.jpg",
+      "/photos/5d71b8ce-ba38-4924-bc39-7275d6406da8/1788473923709-13-IMG_E1996.jpg": "https://i.ibb.co/vxdqfyQG/1788473923709-13-IMG-E1996.jpg"
+    },
     "sold": false
   }
 ]
