@@ -90,6 +90,41 @@ is actually present before telling the user something is fixed.
   Germs-LP-style) to every photo that goes out publicly, plus a diagonal
   "STILL SEALED" ribbon when `record.sealed` is true. Never touches the local
   originals in `data/photos/` — only the hosted copies.
+- `server/ollama.js` — thin shared client for the local vision LLM (Ollama,
+  see `OLLAMA_SETUP.md`): `isReachable()` and a low-level `generate(images,
+  prompt, opts)`. Everything below builds on this. Silently reports
+  unreachable rather than throwing — no feature here is ever a hard
+  dependency for photo upload.
+- `server/photoRoles.js` — classifies what each newly-uploaded photo shows:
+  one closed-set question per photo (`FRONT_COVER` / `BACK_COVER` / `LABEL`
+  / `RUNOUT` / `SPINE` / `OTHER`), which the model is reliably good at
+  (unlike freeform transcription). One classification pass, shared by both
+  features below, wired into both photo-upload routes (`/photos` and
+  `/photos-zip`) in `server/server.js` via the `autoTagAndIdentify()` helper
+  there.
+- `server/deadwax.js` — a **not-wired-in** attempt at actually transcribing
+  the dead-wax/runout etching (as opposed to just spotting which photo it's
+  on, which `photoRoles.js` handles). In testing it regularly hallucinated
+  confident, wrong, or fabricated text — including on photos that weren't
+  the runout at all — even when explicitly prompted to say so when unsure.
+  Trusting it unsupervised was worse than leaving `matrix_number` blank, so
+  nothing calls `readRunout()` automatically. Kept working in case it's
+  worth revisiting against a stronger model later.
+- `server/identify.js` — extracts artist/title/label/format/year/country
+  from a new arrival's front-cover/back-cover/label photos (as classified by
+  `photoRoles.js`) and fills Step 2 — much more reliable than the dead-wax
+  case above since it's reading large printed cover/label text, not tiny
+  etched vinyl. Only fills fields still blank, and `autoTagAndIdentify()`
+  only attempts it while artist and title are both blank (a genuinely
+  unidentified new arrival). Deliberately does **not** auto-run the Discogs
+  lookup afterward — that stays a manual "Look up Discogs pricing" click so
+  there's a human checkpoint between the two automated steps (photo
+  extraction, then Discogs version matching) before anything commits.
+- `server/settings.js` — small app-wide settings store (`data/settings.json`,
+  separate from `data/inventory.json`). Currently `auto_tag_deadwax_photos`
+  and `auto_identify_from_photos`, both on by default, both toggleable
+  live (no restart) via checkboxes in the UI toolbar (`GET`/`PUT
+  /api/settings`).
 - `server/listing.js` / `server/pricing.js` / `server/tiering.js` — shared
   listing text, price-suggestion logic, and tiering rules (Tier 1 individual
   high-value or no-comp, Tier 2 same-artist lot of 3+, Tier 3 bulk grab bag,

@@ -31,6 +31,9 @@ const { suggestPrice } = require('./pricing');
 const ebay = require('./ebay');
 const discogs = require('./discogs');
 const photoHosting = require('./photoHosting');
+const photoRoles = require('./photoRoles');
+const identify = require('./identify');
+const settings = require('./settings');
 const tiering = require('./tiering');
 
 const app = express();
@@ -97,6 +100,14 @@ app.get('/api/stats', (req, res) => {
     stats.byTier[r.tier] = (stats.byTier[r.tier] || 0) + 1;
   }
   res.json(stats);
+});
+
+app.get('/api/settings', (req, res) => {
+  res.json(settings.getSettings());
+});
+
+app.put('/api/settings', (req, res) => {
+  res.json(settings.updateSettings(req.body || {}));
 });
 
 app.get('/api/grades', (req, res) => {
@@ -236,6 +247,47 @@ app.get('/api/inventory/:id/listing', (req, res) => {
 });
 
 // ---- photos ----
+
+// Runs the local-Ollama classification pass on a batch of newly-uploaded
+// photos and, per the current settings, tags the dead-wax photo(s) and/or
+// fills in Step 2 fields (artist/title/label/format/year/country) — one
+// classification pass covers both, since both just need to know what each
+// photo shows. Mutates `patch` in place; never throws (logs and no-ops on
+// any failure, including Ollama not running).
+async function autoTagAndIdentify(record, newPhotoAbsPaths, newPhotos, patch) {
+  const current = settings.getSettings();
+  if (!current.auto_tag_deadwax_photos && !current.auto_identify_from_photos) return;
+
+  try {
+    const roles = await photoRoles.classifyPhotos(newPhotoAbsPaths);
+
+    if (current.auto_tag_deadwax_photos) {
+      const flaggedUrls = newPhotoAbsPaths
+        .filter(p => roles.get(p) === 'RUNOUT')
+        .map(absPath => newPhotos[newPhotoAbsPaths.indexOf(absPath)]);
+      if (flaggedUrls.length) {
+        patch.deadwax_photos = [...new Set([...(record.deadwax_photos || []), ...flaggedUrls])];
+      }
+    }
+
+    if (current.auto_identify_from_photos && !record.artist && !record.title) {
+      const byRole = {
+        front: newPhotoAbsPaths.filter(p => roles.get(p) === 'FRONT_COVER'),
+        back: newPhotoAbsPaths.filter(p => roles.get(p) === 'BACK_COVER'),
+        label: newPhotoAbsPaths.filter(p => roles.get(p) === 'LABEL')
+      };
+      const fields = await identify.identifyFromPhotos(byRole);
+      if (fields) {
+        for (const key of identify.FIELDS) {
+          if (fields[key] && !record[key]) patch[key] = fields[key];
+        }
+      }
+    }
+  } catch (err) {
+    console.error('Photo classification/identification failed:', err.message);
+  }
+}
+
 const upload = multer({
   storage: multer.memoryStorage(),
   limits: { fileSize: 15 * 1024 * 1024 },
@@ -252,17 +304,22 @@ app.post('/api/inventory/:id/photos', upload.array('photos', 10), async (req, re
   fs.mkdirSync(dir, { recursive: true });
   try {
     const newPhotos = [];
+    const newPhotoAbsPaths = [];
     const files = req.files || [];
     for (let i = 0; i < files.length; i++) {
       const f = files[i];
       const normalized = await normalizeOrientation(f.buffer);
       const base = f.originalname.replace(/\.[^.]+$/, '').replace(/[^a-zA-Z0-9.\-]/g, '_');
       const safe = Date.now() + '-' + i + '-' + base + '.jpg';
-      fs.writeFileSync(path.join(dir, safe), normalized);
+      const dest = path.join(dir, safe);
+      fs.writeFileSync(dest, normalized);
       newPhotos.push(`/photos/${req.params.id}/${safe}`);
+      newPhotoAbsPaths.push(dest);
     }
     const photos = [...(record.photos || []), ...newPhotos];
-    const updated = store.updateById(req.params.id, { photos });
+    const patch = { photos };
+    await autoTagAndIdentify(record, newPhotoAbsPaths, newPhotos, patch);
+    const updated = store.updateById(req.params.id, patch);
     res.json(updated);
   } catch (err) {
     res.status(500).json({ error: 'Photo processing failed: ' + err.message });
@@ -345,17 +402,22 @@ app.post('/api/inventory/:id/photos-zip', zipUpload.single('zip'), async (req, r
     const destDir = path.join(PHOTOS_DIR, req.params.id);
     fs.mkdirSync(destDir, { recursive: true });
     const newPhotos = [];
+    const newPhotoAbsPaths = [];
     for (let i = 0; i < finalFiles.length; i++) {
       const f = finalFiles[i];
       const normalized = await normalizeOrientation(fs.readFileSync(f));
       const base = path.basename(f).replace(/\.[^.]+$/, '').replace(/[^a-zA-Z0-9.\-]/g, '_');
       const safeName = Date.now() + '-' + i + '-' + base + '.jpg';
-      fs.writeFileSync(path.join(destDir, safeName), normalized);
+      const dest = path.join(destDir, safeName);
+      fs.writeFileSync(dest, normalized);
       newPhotos.push(`/photos/${req.params.id}/${safeName}`);
+      newPhotoAbsPaths.push(dest);
     }
 
     const photos = [...(record.photos || []), ...newPhotos];
-    const updated = store.updateById(req.params.id, { photos });
+    const patch = { photos };
+    await autoTagAndIdentify(record, newPhotoAbsPaths, newPhotos, patch);
+    const updated = store.updateById(req.params.id, patch);
     res.json(updated);
   } catch (err) {
     res.status(500).json({ error: 'Zip processing failed: ' + err.message });
@@ -369,11 +431,30 @@ app.delete('/api/inventory/:id/photos', (req, res) => {
   if (!record) return res.status(404).json({ error: 'Not found' });
   const { url } = req.body;
   const photos = (record.photos || []).filter(p => p !== url);
+  const deadwax_photos = (record.deadwax_photos || []).filter(p => p !== url);
   if (url) {
     const filePath = path.join(__dirname, '..', 'data', url.replace(/^\/photos/, 'photos'));
     fs.unlink(filePath, () => {});
   }
-  const updated = store.updateById(req.params.id, { photos });
+  const updated = store.updateById(req.params.id, { photos, deadwax_photos });
+  res.json(updated);
+});
+
+// Manual correction for the auto-tagging in the upload routes above — the
+// classification is usually right but not infallible, so the badge in the
+// UI is toggleable on any photo rather than a fixed automatic-only label.
+app.post('/api/inventory/:id/photos/toggle-deadwax', (req, res) => {
+  const record = store.getById(req.params.id);
+  if (!record) return res.status(404).json({ error: 'Not found' });
+  const { url } = req.body;
+  if (!url || !(record.photos || []).includes(url)) {
+    return res.status(400).json({ error: 'Unknown photo url for this record.' });
+  }
+  const current = record.deadwax_photos || [];
+  const deadwax_photos = current.includes(url)
+    ? current.filter(p => p !== url)
+    : [...current, url];
+  const updated = store.updateById(req.params.id, { deadwax_photos });
   res.json(updated);
 });
 
@@ -501,7 +582,7 @@ app.post('/api/inventory/:id/publish-ebay', async (req, res) => {
     });
     res.json(updated);
   } catch (err) {
-    const knownCodes = ['EBAY_NOT_CONFIGURED', 'IMGBB_NOT_CONFIGURED', 'NO_PHOTOS'];
+    const knownCodes = ['EBAY_NOT_CONFIGURED', 'IMGBB_NOT_CONFIGURED', 'NO_PHOTOS', 'MISSING_PRICE'];
     const status = knownCodes.includes(err.code) ? 400 : 500;
     res.status(status).json({ error: err.message });
   }

@@ -131,6 +131,46 @@
         }
       }
     },
+    "/api/settings": {
+      "get": {
+        "tags": ["Inventory"],
+        "summary": "App-wide settings",
+        "responses": {
+          "200": {
+            "description": "Current settings",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "auto_tag_deadwax_photos": { "type": "boolean", "description": "Whether photo uploads run the local-Ollama dead wax photo classification. On by default." },
+                    "auto_identify_from_photos": { "type": "boolean", "description": "Whether photo uploads run the local-Ollama artist/title/label/format/year/country extraction on a new arrival's cover/label photos. Only fills fields still blank, only while artist and title are both blank. On by default." }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": ["Inventory"],
+        "summary": "Update app-wide settings",
+        "description": "Merges the given fields into the current settings.",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": { "type": "object", "properties": { "auto_tag_deadwax_photos": { "type": "boolean" }, "auto_identify_from_photos": { "type": "boolean" } } }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "The updated settings",
+            "content": { "application/json": { "schema": { "type": "object", "properties": { "auto_tag_deadwax_photos": { "type": "boolean" }, "auto_identify_from_photos": { "type": "boolean" } } } } }
+          }
+        }
+      }
+    },
     "/api/inventory/{id}/price-suggestion": {
       "get": {
         "tags": ["Pricing & Discogs"],
@@ -334,6 +374,26 @@
         }
       }
     },
+    "/api/inventory/{id}/photos/toggle-deadwax": {
+      "post": {
+        "tags": ["Photos"],
+        "summary": "Mark/unmark a photo as showing the dead wax/runout area",
+        "description": "Manual correction for the automatic classification in the upload routes — flips membership in deadwax_photos for the given photo.",
+        "parameters": [{ "$ref": "#/components/parameters/RecordId" }],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": { "type": "object", "properties": { "url": { "type": "string", "example": "/photos/<record-id>/162...-deadwax.jpg" } } }
+            }
+          }
+        },
+        "responses": {
+          "200": { "description": "The updated record", "content": { "application/json": { "schema": { "$ref": "#/components/schemas/Record" } } } },
+          "400": { "description": "Unknown photo url for this record" },
+          "404": { "$ref": "#/components/responses/NotFound" }
+        }
+      }
+    },
     "/photos/{recordId}/{filename}": {
       "get": {
         "tags": ["Photos"],
@@ -483,6 +543,11 @@
           "notes": { "type": "string" },
           "listing_extras": { "type": "string" },
           "photos": { "type": "array", "items": { "type": "string" } },
+          "deadwax_photos": {
+            "type": "array",
+            "items": { "type": "string" },
+            "description": "Subset of `photos` flagged (automatically via Ollama, or by hand) as showing the dead wax/runout area — see /api/settings and POST .../photos/toggle-deadwax."
+          },
           "status": {
             "type": "object",
             "properties": {

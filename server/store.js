@@ -28,6 +28,7 @@ function createBlank() {
     notes: '',
     listing_extras: '',
     photos: [],
+    deadwax_photos: [],
     status: { ebay: 'unlisted', fb: 'unlisted', discogs: 'unlisted' },
     ebay_listing_id: null,
     ebay_sku: null,
