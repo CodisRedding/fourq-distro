@@ -40,6 +40,12 @@
       <option value="sold">Sold</option>
     </select>
     <label class="hide-sold"><input id="hideSold" type="checkbox" checked> Hide sold</label>
+    <label class="hide-sold" title="Uses the local Ollama vision model to flag which uploaded photo shows the dead wax/runout ring, so it's marked in the photo grid for you to read yourself. Does not attempt to read the text itself.">
+      <input id="autoTagDeadwax" type="checkbox"> Auto-tag runout photos
+    </label>
+    <label class="hide-sold" title="Uses the local Ollama vision model to read artist/title/label/format/year/country off a new arrival's cover and label photos and fill in Step 2 — only while those fields are still blank, and never overwrites anything you've typed. Does not run the Discogs lookup for you; that's still a manual click once you've checked the fields.">
+      <input id="autoIdentify" type="checkbox"> Auto-identify from photos
+    </label>
     <button id="addRecordBtn" class="primary">+ Add record</button>
   </div>
 
@@ -65,6 +71,10 @@
 
   <div id="overlay" class="overlay hidden">
     <div id="panel" class="panel"></div>
+  </div>
+
+  <div id="lightbox" class="lightbox hidden">
+    <img id="lightboxImg" src="" draggable="false">
   </div>
 
   <script src="fees.js"></script>

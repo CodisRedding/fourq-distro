@@ -1,6 +1,91 @@
 const tbody = document.getElementById('tbody');
 const overlay = document.getElementById('overlay');
 const panel = document.getElementById('panel');
+const lightbox = document.getElementById('lightbox');
+const lightboxImg = document.getElementById('lightboxImg');
+
+// Zoom is a CSS scale() on top of the image's normal fit-to-viewport size
+// (so scale 1 = fully zoomed out), pan is a translate() alongside it. Wheel
+// zooms in/out gradually, keeping the point under the cursor fixed; drag
+// pans once zoomed in past 1x.
+const MIN_ZOOM = 1;
+const MAX_ZOOM = 8;
+let lbZoom = 1;
+let lbPanX = 0;
+let lbPanY = 0;
+let lbPanning = false;
+let lbPanStartX = 0;
+let lbPanStartY = 0;
+
+function applyLightboxTransform() {
+  lightboxImg.style.transform = `translate(${lbPanX}px, ${lbPanY}px) scale(${lbZoom})`;
+  lightboxImg.classList.toggle('zoomed', lbZoom > MIN_ZOOM);
+}
+
+function openLightbox(src) {
+  lightboxImg.src = src;
+  lbZoom = 1;
+  lbPanX = 0;
+  lbPanY = 0;
+  applyLightboxTransform();
+  lightbox.classList.remove('hidden');
+}
+function closeLightbox() {
+  lightbox.classList.add('hidden');
+  lightboxImg.src = '';
+}
+lightbox.addEventListener('click', (e) => {
+  if (e.target === lightbox) closeLightbox();
+});
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape' && !lightbox.classList.contains('hidden')) closeLightbox();
+});
+
+lightboxImg.addEventListener('wheel', (e) => {
+  e.preventDefault();
+  const rect = lightbox.getBoundingClientRect();
+  const centerX = rect.left + rect.width / 2;
+  const centerY = rect.top + rect.height / 2;
+  const cursorX = e.clientX - centerX;
+  const cursorY = e.clientY - centerY;
+
+  const oldZoom = lbZoom;
+  const factor = Math.exp(-e.deltaY * 0.0015);
+  const newZoom = Math.min(MAX_ZOOM, Math.max(MIN_ZOOM, oldZoom * factor));
+  if (newZoom === oldZoom) return;
+
+  // Keep the image point currently under the cursor fixed on screen.
+  lbPanX = cursorX - (cursorX - lbPanX) * (newZoom / oldZoom);
+  lbPanY = cursorY - (cursorY - lbPanY) * (newZoom / oldZoom);
+  lbZoom = newZoom;
+  if (lbZoom === MIN_ZOOM) { lbPanX = 0; lbPanY = 0; }
+  applyLightboxTransform();
+}, { passive: false });
+
+lightboxImg.addEventListener('mousedown', (e) => {
+  if (lbZoom <= MIN_ZOOM) return;
+  e.preventDefault();
+  lbPanning = true;
+  lbPanStartX = e.clientX - lbPanX;
+  lbPanStartY = e.clientY - lbPanY;
+  lightboxImg.classList.add('panning');
+});
+window.addEventListener('mousemove', (e) => {
+  if (!lbPanning) return;
+  lbPanX = e.clientX - lbPanStartX;
+  lbPanY = e.clientY - lbPanStartY;
+  applyLightboxTransform();
+});
+window.addEventListener('mouseup', () => {
+  lbPanning = false;
+  lightboxImg.classList.remove('panning');
+});
+lightboxImg.addEventListener('dblclick', () => {
+  lbZoom = 1;
+  lbPanX = 0;
+  lbPanY = 0;
+  applyLightboxTransform();
+});
 
 const searchEl = document.getElementById('search');
 const tierEl = document.getElementById('tierFilter');
@@ -8,6 +93,28 @@ const ebayEl = document.getElementById('ebayFilter');
 const fbEl = document.getElementById('fbFilter');
 const discogsEl = document.getElementById('discogsFilter');
 const hideSoldEl = document.getElementById('hideSold');
+const autoTagDeadwaxEl = document.getElementById('autoTagDeadwax');
+const autoIdentifyEl = document.getElementById('autoIdentify');
+
+async function loadSettings() {
+  const s = await fetch('/api/settings').then(r => r.json());
+  autoTagDeadwaxEl.checked = !!s.auto_tag_deadwax_photos;
+  autoIdentifyEl.checked = !!s.auto_identify_from_photos;
+}
+autoTagDeadwaxEl.addEventListener('change', () => {
+  fetch('/api/settings', {
+    method: 'PUT',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ auto_tag_deadwax_photos: autoTagDeadwaxEl.checked })
+  });
+});
+autoIdentifyEl.addEventListener('change', () => {
+  fetch('/api/settings', {
+    method: 'PUT',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ auto_identify_from_photos: autoIdentifyEl.checked })
+  });
+});
 
 let gradeOptions = { media: [], sleeve: [] };
 async function loadGradeOptions() {
@@ -30,17 +137,51 @@ const GRADE_MEANINGS = [
   ['F', 'Fair — well-worn, rough playback, may skip'],
   ['P', 'Poor — barely playable, major damage']
 ];
+const SLEEVE_MEANINGS = [
+  ['M', 'Mint — flawless; no ring wear, seam splits, creases, or writing'],
+  ['NM', 'Near Mint — just about perfect; may have the slightest sign of handling but nothing that detracts'],
+  ['VG+', 'Very Good Plus — minor ring wear, slightly turned-up corners, or light shelf wear; no major structural damage'],
+  ['VG', 'Very Good — ring wear visible, possible seam wear or a small split (usually at the bottom seam), noticeable corner wear'],
+  ['G+', 'Good Plus — significant ring wear, seam splits (may be taped), creases, and/or writing/stickers present'],
+  ['G', 'Good — significant ring wear, seam splits (may be taped), creases, and/or writing/stickers present'],
+  ['F', 'Fair — major damage: heavy seam splits, missing pieces, water damage, heavy writing, or barely holding together'],
+  ['P', 'Poor — major damage: heavy seam splits, missing pieces, water damage, heavy writing, or barely holding together']
+];
 const SLEEVE_EXTRA_MEANINGS = [
   ['Generic', 'Plain blank sleeve, not the original artwork'],
   ['No Cover', 'No sleeve included at all'],
   ['Not Graded', 'Sleeve condition wasn\'t assessed']
 ];
 
-function gradeInfoIcon(includeSleeveExtras) {
-  const rows = GRADE_MEANINGS.concat(includeSleeveExtras ? SLEEVE_EXTRA_MEANINGS : [])
+function gradeInfoIcon(isSleeve) {
+  const base = isSleeve ? SLEEVE_MEANINGS : GRADE_MEANINGS;
+  const rows = base.concat(isSleeve ? SLEEVE_EXTRA_MEANINGS : [])
     .map(([code, desc]) => `<dt>${code}</dt><dd>${desc}</dd>`).join('');
   return `<span class="info-icon" tabindex="0">i<span class="tooltip"><dl>${rows}</dl></span></span>`;
 }
+
+function positionTooltip(e) {
+  const icon = e.target.closest && e.target.closest('.info-icon');
+  if (!icon) return;
+  const tooltip = icon.querySelector('.tooltip');
+  if (!tooltip) return;
+  const margin = 8;
+  tooltip.style.transform = 'translateX(-50%)';
+  tooltip.classList.remove('tooltip-below');
+  const rect = tooltip.getBoundingClientRect();
+  const overflowRight = rect.right - (window.innerWidth - margin);
+  const overflowLeft = margin - rect.left;
+  if (overflowRight > 0) {
+    tooltip.style.transform = `translateX(calc(-50% - ${overflowRight}px))`;
+  } else if (overflowLeft > 0) {
+    tooltip.style.transform = `translateX(calc(-50% + ${overflowLeft}px))`;
+  }
+  if (rect.top < margin) {
+    tooltip.classList.add('tooltip-below');
+  }
+}
+document.addEventListener('mouseover', positionTooltip, true);
+document.addEventListener('focusin', positionTooltip);
 
 function tierClass(tier) {
   if (tier.startsWith('Unsorted')) return 'tier-new';
@@ -127,20 +268,21 @@ function renderPanel(r, listing, priceSuggestion) {
   const panelRenderStamp = Date.now();
 
   const photosMarkup = `
-      <label>Photos <span class="meta">(first photo is the primary/thumbnail image on eBay and most marketplaces)</span></label>
+      <label>Photos <span class="meta">(first photo is the primary/thumbnail image on eBay and most marketplaces — drag to reorder, click to zoom)</span></label>
       <div class="photos" id="photos">
-        ${(r.photos || []).map((p, i) => `
-          <div class="photo-wrap">
+        ${(r.photos || []).map((p, i) => {
+          const isDeadwax = (r.deadwax_photos || []).includes(p);
+          return `
+          <div class="photo-wrap" draggable="true" data-idx="${i}">
             ${i === 0 ? '<span class="photo-primary-badge">1st</span>' : ''}
-            <img src="${p}?v=${panelRenderStamp}">
+            ${isDeadwax ? '<span class="photo-deadwax-badge">⊙ Runout</span>' : ''}
+            <img src="${p}?v=${panelRenderStamp}" draggable="false">
             <button data-url="${p}" class="delPhoto" title="Delete">✕</button>
             <button data-url="${p}" class="rotatePhoto" title="Rotate 90°">⟳</button>
-            <div class="photo-move-controls">
-              <button data-idx="${i}" data-dir="-1" class="movePhoto" ${i === 0 ? 'disabled' : ''} title="Move earlier">◀</button>
-              <button data-idx="${i}" data-dir="1" class="movePhoto" ${i === r.photos.length - 1 ? 'disabled' : ''} title="Move later">▶</button>
-            </div>
+            <button data-url="${p}" class="toggleDeadwax" title="${isDeadwax ? 'Unmark as runout/deadwax photo' : 'Mark as runout/deadwax photo'}">⊙</button>
           </div>
-        `).join('')}
+        `;
+        }).join('')}
       </div>
       <input type="file" id="photoInput" accept="image/*,.zip" multiple>
       <div class="meta" style="margin-top:4px">Tip: drop a .zip of a whole camera-roll export here instead — HEIC photos get converted automatically.</div>
@@ -577,7 +719,7 @@ function renderPanel(r, listing, priceSuggestion) {
     const isSingleZip = files.length === 1 && /\.zip$/i.test(files[0].name);
     if (isSingleZip) {
       statusEl.hidden = false;
-      statusEl.innerHTML = '<span class="spinner"></span> <span class="step-text">Extracting zip and converting any HEIC photos…</span>';
+      statusEl.innerHTML = '<span class="spinner"></span> <span class="step-text">Extracting zip, converting any HEIC photos, and checking photos with the local AI model (can take a minute or so if that\'s on)…</span>';
       const formData = new FormData();
       formData.append('zip', files[0]);
       try {
@@ -625,21 +767,52 @@ function renderPanel(r, listing, priceSuggestion) {
     };
   });
 
-  [...panel.querySelectorAll('.movePhoto')].forEach(btn => {
+  [...panel.querySelectorAll('.toggleDeadwax')].forEach(btn => {
     btn.onclick = async () => {
-      const idx = parseInt(btn.dataset.idx, 10);
-      const dir = parseInt(btn.dataset.dir, 10);
+      await fetch(`/api/inventory/${r.id}/photos/toggle-deadwax`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ url: btn.dataset.url })
+      });
+      await openPanel(r.id);
+    };
+  });
+
+  let draggedIdx = null;
+  [...panel.querySelectorAll('.photo-wrap')].forEach(el => {
+    el.addEventListener('dragstart', () => {
+      draggedIdx = parseInt(el.dataset.idx, 10);
+      el.classList.add('dragging');
+    });
+    el.addEventListener('dragend', () => {
+      el.classList.remove('dragging');
+    });
+    el.addEventListener('dragover', (e) => {
+      e.preventDefault();
+      el.classList.add('drag-over');
+    });
+    el.addEventListener('dragleave', () => {
+      el.classList.remove('drag-over');
+    });
+    el.addEventListener('drop', async (e) => {
+      e.preventDefault();
+      el.classList.remove('drag-over');
+      const targetIdx = parseInt(el.dataset.idx, 10);
+      if (draggedIdx === null || draggedIdx === targetIdx) return;
       const newOrder = [...r.photos];
-      const swapIdx = idx + dir;
-      if (swapIdx < 0 || swapIdx >= newOrder.length) return;
-      [newOrder[idx], newOrder[swapIdx]] = [newOrder[swapIdx], newOrder[idx]];
+      const [moved] = newOrder.splice(draggedIdx, 1);
+      newOrder.splice(targetIdx, 0, moved);
+      draggedIdx = null;
       await fetch(`/api/inventory/${r.id}/photos/reorder`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ photos: newOrder })
       });
       await openPanel(r.id);
-    };
+    });
+
+    const img = el.querySelector('img');
+    img.addEventListener('click', () => openLightbox(img.src));
   });
 }
 
@@ -670,3 +843,4 @@ document.getElementById('addRecordBtn').addEventListener('click', async () => {
 loadStats();
 loadTable();
 loadGradeOptions();
+loadSettings();
