@@ -10,7 +10,19 @@ function isConfigured() {
   return Boolean(process.env.IMGBB_API_KEY);
 }
 
-async function uploadBuffer(buffer, filename) {
+const MAX_ATTEMPTS = 3;
+const RETRY_DELAY_MS = 800;
+const sleep = (ms) => new Promise(resolve => setTimeout(resolve, ms));
+
+// ImgBB occasionally returns a 400 wrapping a backend DB hiccup
+// ("SQLSTATE[HY000]: General error: 2006 MySQL server has gone away")
+// that has nothing to do with the image itself — it clears up if you just
+// retry the same upload.
+function isTransientImgbbError(bodyText) {
+  return /General error|MySQL server has gone away/i.test(bodyText);
+}
+
+async function uploadBuffer(buffer, filename, attempt = 1) {
   if (!isConfigured()) {
     const err = new Error('Image hosting is not configured — add IMGBB_API_KEY to .env.');
     err.code = 'IMGBB_NOT_CONFIGURED';
@@ -24,10 +36,17 @@ async function uploadBuffer(buffer, filename) {
     method: 'POST',
     body: form
   });
+  const bodyText = await res.text();
+
   if (!res.ok) {
-    throw new Error(`Image upload failed (${res.status}): ${await res.text()}`);
+    const transient = res.status >= 500 || isTransientImgbbError(bodyText);
+    if (transient && attempt < MAX_ATTEMPTS) {
+      await sleep(RETRY_DELAY_MS * attempt);
+      return uploadBuffer(buffer, filename, attempt + 1);
+    }
+    throw new Error(`Image upload failed (${res.status}): ${bodyText}`);
   }
-  const json = await res.json();
+  const json = JSON.parse(bodyText);
   if (!json.success) {
     throw new Error('Image upload failed: ' + JSON.stringify(json));
   }
