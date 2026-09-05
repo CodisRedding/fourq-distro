@@ -11,6 +11,10 @@ const API_BASE = 'https://api.ebay.com';
 // for publishOffer to succeed, confirmed via eBay's own Developer AI Assistant.
 const SCOPES = 'https://api.ebay.com/oauth/api_scope/sell.inventory https://api.ebay.com/oauth/api_scope/sell.account.readonly';
 
+// Without this, a stalled eBay API call would hang the whole publish flow
+// indefinitely instead of failing fast enough for the UI to recover.
+const REQUEST_TIMEOUT_MS = 20000;
+
 // eBay Item Specific aspect values (Format, Release Title, etc. — the
 // `aspects` object on an inventory item) each have their own 65-character
 // cap, separate from the actual listing title/description which have their
@@ -82,7 +86,8 @@ async function exchangeCodeForTokens(code) {
       grant_type: 'authorization_code',
       code,
       redirect_uri: process.env.EBAY_RUNAME
-    })
+    }),
+    signal: AbortSignal.timeout(REQUEST_TIMEOUT_MS)
   });
 
   if (!res.ok) {
@@ -113,7 +118,8 @@ async function createInventoryLocation(locationKey, address) {
       locationTypes: ['WAREHOUSE'],
       name: address.name || 'Home',
       merchantLocationStatus: 'ENABLED'
-    })
+    }),
+    signal: AbortSignal.timeout(REQUEST_TIMEOUT_MS)
   });
   if (!res.ok) {
     throw new Error(`Failed to create inventory location (${res.status}): ${await res.text()}`);
@@ -139,7 +145,8 @@ async function getUserAccessToken() {
       grant_type: 'refresh_token',
       refresh_token: process.env.EBAY_REFRESH_TOKEN,
       scope: SCOPES
-    })
+    }),
+    signal: AbortSignal.timeout(REQUEST_TIMEOUT_MS)
   });
 
   if (!res.ok) {
@@ -161,10 +168,11 @@ async function getBusinessPolicies() {
     'X-EBAY-C-MARKETPLACE-ID': 'EBAY_US'
   };
 
+  const fetchOpts = { headers, signal: AbortSignal.timeout(REQUEST_TIMEOUT_MS) };
   const [fulfillmentRes, paymentRes, returnRes] = await Promise.all([
-    fetch(`${API_BASE}/sell/account/v1/fulfillment_policy?marketplace_id=EBAY_US`, { headers }),
-    fetch(`${API_BASE}/sell/account/v1/payment_policy?marketplace_id=EBAY_US`, { headers }),
-    fetch(`${API_BASE}/sell/account/v1/return_policy?marketplace_id=EBAY_US`, { headers })
+    fetch(`${API_BASE}/sell/account/v1/fulfillment_policy?marketplace_id=EBAY_US`, fetchOpts),
+    fetch(`${API_BASE}/sell/account/v1/payment_policy?marketplace_id=EBAY_US`, fetchOpts),
+    fetch(`${API_BASE}/sell/account/v1/return_policy?marketplace_id=EBAY_US`, fetchOpts)
   ]);
   if (!fulfillmentRes.ok) throw new Error(`Failed to fetch fulfillment policies (${fulfillmentRes.status}): ${await fulfillmentRes.text()}`);
   if (!paymentRes.ok) throw new Error(`Failed to fetch payment policies (${paymentRes.status}): ${await paymentRes.text()}`);
@@ -293,7 +301,8 @@ async function publishListing(record, listingText, imageUrls) {
           ...(record.matrix_number ? { 'Vinyl Matrix Number': [record.matrix_number] } : {})
         })
       }
-    })
+    }),
+    signal: AbortSignal.timeout(REQUEST_TIMEOUT_MS)
   });
   if (!invRes.ok) {
     throw new Error(`Failed to create inventory item (${invRes.status}): ${await invRes.text()}`);
@@ -328,7 +337,8 @@ async function publishListing(record, listingText, imageUrls) {
   const offerRes = await fetch(`${API_BASE}/sell/inventory/v1/offer`, {
     method: 'POST',
     headers: offerHeaders,
-    body: JSON.stringify(offerBody)
+    body: JSON.stringify(offerBody),
+    signal: AbortSignal.timeout(REQUEST_TIMEOUT_MS)
   });
   let offerId;
   if (!offerRes.ok) {
@@ -352,7 +362,8 @@ async function publishListing(record, listingText, imageUrls) {
     const updateRes = await fetch(`${API_BASE}/sell/inventory/v1/offer/${existingOfferId}`, {
       method: 'PUT',
       headers: offerHeaders,
-      body: JSON.stringify(offerBody)
+      body: JSON.stringify(offerBody),
+      signal: AbortSignal.timeout(REQUEST_TIMEOUT_MS)
     });
     if (!updateRes.ok) {
       throw new Error(`Failed to update existing offer (${updateRes.status}): ${await updateRes.text()}`);
@@ -370,7 +381,8 @@ async function publishListing(record, listingText, imageUrls) {
       'Content-Language': 'en-US',
       'Accept-Language': 'en-US',
       'X-EBAY-C-MARKETPLACE-ID': 'EBAY_US'
-    }
+    },
+    signal: AbortSignal.timeout(REQUEST_TIMEOUT_MS)
   });
   if (!pubRes.ok) {
     throw new Error(`Failed to publish offer (${pubRes.status}): ${await pubRes.text()}`);
@@ -395,7 +407,8 @@ async function getSoldStatus(sku) {
       'Content-Language': 'en-US',
       'Accept-Language': 'en-US',
       'X-EBAY-C-MARKETPLACE-ID': 'EBAY_US'
-    }
+    },
+    signal: AbortSignal.timeout(REQUEST_TIMEOUT_MS)
   });
   if (!res.ok) {
     throw new Error(`Failed to fetch offer status (${res.status}): ${await res.text()}`);

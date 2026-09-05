@@ -26,6 +26,11 @@
 
 const GRAPH_BASE = 'https://graph.instagram.com';
 
+// Without this, a stalled Graph API call (or a stalled fetch of the hosted
+// image on Meta's end that never resolves back to us) would hang the whole
+// publish flow indefinitely instead of failing fast.
+const REQUEST_TIMEOUT_MS = 20000;
+
 // How long to keep polling a media container for processing to finish
 // before giving up. Image containers usually finish almost immediately,
 // but Instagram's own docs still recommend checking status before publish.
@@ -41,7 +46,7 @@ function isConfigured() {
 }
 
 async function get(url) {
-  const res = await fetch(url);
+  const res = await fetch(url, { signal: AbortSignal.timeout(REQUEST_TIMEOUT_MS) });
   const json = await res.json();
   if (!res.ok) throw new Error(`Instagram Graph API error (${res.status}): ${JSON.stringify(json)}`);
   return json;
@@ -51,7 +56,8 @@ async function post(url, body) {
   const res = await fetch(url, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify(body)
+    body: JSON.stringify(body),
+    signal: AbortSignal.timeout(REQUEST_TIMEOUT_MS)
   });
   const json = await res.json();
   if (!res.ok) throw new Error(`Instagram Graph API error (${res.status}): ${JSON.stringify(json)}`);

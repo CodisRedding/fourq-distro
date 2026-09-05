@@ -12,6 +12,10 @@ function isConfigured() {
 
 const MAX_ATTEMPTS = 3;
 const RETRY_DELAY_MS = 800;
+// ImgBB's CDN has been observed accepting a connection and then just hanging
+// with no response (no error, no data) — without this, that hang would block
+// the whole publish flow indefinitely instead of failing fast enough to retry.
+const UPLOAD_TIMEOUT_MS = 30000;
 const sleep = (ms) => new Promise(resolve => setTimeout(resolve, ms));
 
 // ImgBB occasionally returns a 400 wrapping a backend DB hiccup
@@ -32,11 +36,23 @@ async function uploadBuffer(buffer, filename, attempt = 1) {
   form.set('key', process.env.IMGBB_API_KEY);
   form.set('image', new Blob([buffer]), filename);
 
-  const res = await fetch('https://api.imgbb.com/1/upload', {
-    method: 'POST',
-    body: form
-  });
-  const bodyText = await res.text();
+  let res, bodyText;
+  try {
+    res = await fetch('https://api.imgbb.com/1/upload', {
+      method: 'POST',
+      body: form,
+      signal: AbortSignal.timeout(UPLOAD_TIMEOUT_MS)
+    });
+    bodyText = await res.text();
+  } catch (err) {
+    // A hang (no response at all) is exactly the kind of transient CDN issue
+    // the retry below already exists for — treat it the same way.
+    if (attempt < MAX_ATTEMPTS) {
+      await sleep(RETRY_DELAY_MS * attempt);
+      return uploadBuffer(buffer, filename, attempt + 1);
+    }
+    throw new Error(`Image upload to ImgBB timed out after ${MAX_ATTEMPTS} attempts: ${err.message}`);
+  }
 
   if (!res.ok) {
     const transient = res.status >= 500 || isTransientImgbbError(bodyText);
