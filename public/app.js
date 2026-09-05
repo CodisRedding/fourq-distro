@@ -92,6 +92,7 @@ const tierEl = document.getElementById('tierFilter');
 const ebayEl = document.getElementById('ebayFilter');
 const fbEl = document.getElementById('fbFilter');
 const discogsEl = document.getElementById('discogsFilter');
+const instagramEl = document.getElementById('instagramFilter');
 const hideSoldEl = document.getElementById('hideSold');
 const autoTagDeadwaxEl = document.getElementById('autoTagDeadwax');
 const autoIdentifyEl = document.getElementById('autoIdentify');
@@ -215,6 +216,7 @@ async function loadTable() {
   if (ebayEl.value) params.set('ebay_status', ebayEl.value);
   if (fbEl.value) params.set('fb_status', fbEl.value);
   if (discogsEl.value) params.set('discogs_status', discogsEl.value);
+  if (instagramEl.value) params.set('instagram_status', instagramEl.value);
   if (hideSoldEl.checked) params.set('sold', 'false');
 
   const records = await fetch('/api/inventory?' + params.toString()).then(r => r.json());
@@ -233,6 +235,7 @@ function renderTable(records) {
       <td><span class="status-badge ${r.status.ebay}">${r.status.ebay}</span></td>
       <td><span class="status-badge ${r.status.fb}">${r.status.fb}</span></td>
       <td><span class="status-badge ${r.status.discogs}">${r.status.discogs}</span></td>
+      <td><span class="status-badge ${r.status.instagram}">${r.status.instagram}</span></td>
       <td>${r.sold ? '✅ sold' : ''}</td>
     </tr>
   `).join('');
@@ -423,6 +426,7 @@ function renderPanel(r, listing, priceSuggestion) {
         <button class="tab-btn active" data-tab="ebay">eBay <span class="status-badge ${r.status.ebay}">${r.status.ebay}</span></button>
         <button class="tab-btn" data-tab="fb">Facebook <span class="status-badge ${r.status.fb}">${r.status.fb}</span></button>
         <button class="tab-btn" data-tab="discogs">Discogs <span class="status-badge ${r.status.discogs}">${r.status.discogs}</span></button>
+        <button class="tab-btn" data-tab="instagram">Instagram <span class="status-badge ${r.status.instagram}">${r.status.instagram}</span></button>
       </div>
 
       <div class="tab-panel" data-tab-panel="ebay">
@@ -469,6 +473,24 @@ function renderPanel(r, listing, priceSuggestion) {
           <button id="markDiscogsListed">Mark listed manually</button>
           ${r.discogs_listing_id ? '<button id="unlistDiscogs">Unlist from Discogs</button>' : ''}
         </div>
+      </div>
+
+      <div class="tab-panel" data-tab-panel="instagram" hidden>
+        <div class="meta">
+          ${r.photos.length > 1
+            ? `Posts ${Math.min(r.photos.length, 10)} of your ${r.photos.length} photos as a carousel`
+            : 'Posts your photo'}
+          with this caption:
+          ${r.photos.length > 10 ? '<br>(Instagram caps carousels at 10 — the rest are left out.)' : ''}
+          ${r.instagram_post_id ? `· Post ID ${escapeHtml(r.instagram_post_id)}` : ''}
+        </div>
+        <div class="listing-text">${escapeHtml(listing.instagramCaption)}</div>
+        <button data-copy="${encodeURIComponent(listing.instagramCaption)}" class="copyBtn">Copy caption</button>
+        <div class="actions">
+          <button id="publishInstagram" class="primary">Publish to Instagram</button>
+          <button id="markInstagramListed">Mark listed manually</button>
+        </div>
+        <div id="instagramPublishStatus" class="publish-status" hidden></div>
       </div>
     </div>
   `;
@@ -701,6 +723,50 @@ function renderPanel(r, listing, priceSuggestion) {
     };
   }
 
+  document.getElementById('markInstagramListed').onclick = async () => {
+    await patchRecord(r.id, { status: { instagram: 'listed' } });
+    await openPanel(r.id);
+    await loadTable();
+    await loadStats();
+  };
+
+  document.getElementById('publishInstagram').onclick = async () => {
+    const btn = document.getElementById('publishInstagram');
+    const statusEl = document.getElementById('instagramPublishStatus');
+    const steps = r.photos.length > 1
+      ? ['Uploading photos to image host…', 'Building Instagram carousel…', 'Publishing to Instagram…']
+      : ['Uploading photo to image host…', 'Publishing to Instagram…'];
+    let stepIndex = 0;
+    statusEl.hidden = false;
+    statusEl.innerHTML = `<span class="spinner"></span> <span class="step-text">${steps[0]}</span>`;
+    const stepTimer = setInterval(() => {
+      stepIndex = Math.min(stepIndex + 1, steps.length - 1);
+      statusEl.querySelector('.step-text').textContent = steps[stepIndex];
+    }, 2500);
+    btn.disabled = true;
+    btn.textContent = 'Publishing…';
+    try {
+      const res = await fetch(`/api/inventory/${r.id}/publish-instagram`, { method: 'POST' });
+      const json = await res.json();
+      if (!res.ok) throw new Error(json.error || 'Failed to publish');
+      clearInterval(stepTimer);
+      const link = json.instagram_permalink
+        ? ` — <a href="${json.instagram_permalink}" target="_blank" rel="noopener">view post ↗</a>`
+        : '';
+      statusEl.innerHTML = `<span class="step-done">✓ Published${link}</span>`;
+      setTimeout(() => { statusEl.hidden = true; }, 4000);
+      await openPanel(r.id);
+      await loadTable();
+      await loadStats();
+    } catch (err) {
+      clearInterval(stepTimer);
+      statusEl.hidden = true;
+      alert(err.message);
+      btn.disabled = false;
+      btn.textContent = 'Publish to Instagram';
+    }
+  };
+
   [...panel.querySelectorAll('.copyBtn')].forEach(btn => {
     btn.onclick = () => {
       const text = decodeURIComponent(btn.dataset.copy);
@@ -824,11 +890,21 @@ async function patchRecord(id, patch) {
   });
 }
 
+// Close only on a genuine click on the backdrop itself — i.e. mousedown AND
+// mouseup both land on the overlay, not the panel. A plain 'click' listener
+// fires based on where the mouse is released, so selecting text (or
+// dragging) inside the form and releasing just past the panel's edge would
+// register as a backdrop click and slam the modal shut mid-edit.
+let overlayMouseDownOnBackdrop = false;
+overlay.addEventListener('mousedown', (e) => {
+  overlayMouseDownOnBackdrop = e.target === overlay;
+});
 overlay.addEventListener('click', (e) => {
-  if (e.target === overlay) closePanel();
+  if (e.target === overlay && overlayMouseDownOnBackdrop) closePanel();
+  overlayMouseDownOnBackdrop = false;
 });
 
-[searchEl, tierEl, ebayEl, fbEl, discogsEl, hideSoldEl].forEach(el => {
+[searchEl, tierEl, ebayEl, fbEl, discogsEl, instagramEl, hideSoldEl].forEach(el => {
   el.addEventListener('input', loadTable);
   el.addEventListener('change', loadTable);
 });

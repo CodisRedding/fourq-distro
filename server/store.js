@@ -29,7 +29,7 @@ function createBlank() {
     listing_extras: '',
     photos: [],
     deadwax_photos: [],
-    status: { ebay: 'unlisted', fb: 'unlisted', discogs: 'unlisted' },
+    status: { ebay: 'unlisted', fb: 'unlisted', discogs: 'unlisted', instagram: 'unlisted' },
     ebay_listing_id: null,
     ebay_sku: null,
     discogs_release_id: null,
@@ -37,8 +37,20 @@ function createBlank() {
     discogs_community: null,
     discogs_sold_stats: { low: '', median: '', high: '', lastSoldDate: '' },
     discogs_listing_id: null,
+    instagram_post_id: null,
     photo_hosted_urls: {},
     sold: false
+  };
+}
+
+// Backfills fields added to createBlank() after older records were already
+// written to disk, so the frontend never has to null-check a missing key.
+// Read-only — never writes the fill-in back to inventory.json.
+function normalize(record) {
+  return {
+    ...record,
+    status: { ebay: 'unlisted', fb: 'unlisted', discogs: 'unlisted', instagram: 'unlisted', ...record.status },
+    instagram_post_id: record.instagram_post_id ?? null
   };
 }
 
@@ -51,7 +63,7 @@ function create(record) {
 
 function readAll() {
   const raw = fs.readFileSync(DATA_FILE, 'utf8');
-  return JSON.parse(raw);
+  return JSON.parse(raw).map(normalize);
 }
 
 function writeAll(records) {

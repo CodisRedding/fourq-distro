@@ -39,6 +39,12 @@
       <option value="listed">Listed</option>
       <option value="sold">Sold</option>
     </select>
+    <select id="instagramFilter">
+      <option value="">Instagram: any status</option>
+      <option value="unlisted">Unlisted</option>
+      <option value="listed">Listed</option>
+      <option value="sold">Sold</option>
+    </select>
     <label class="hide-sold"><input id="hideSold" type="checkbox" checked> Hide sold</label>
     <label class="hide-sold" title="Uses the local Ollama vision model to flag which uploaded photo shows the dead wax/runout ring, so it's marked in the photo grid for you to read yourself. Does not attempt to read the text itself.">
       <input id="autoTagDeadwax" type="checkbox"> Auto-tag runout photos
@@ -62,6 +68,7 @@
           <th>eBay</th>
           <th>FB</th>
           <th>Discogs</th>
+          <th>IG</th>
           <th></th>
         </tr>
       </thead>

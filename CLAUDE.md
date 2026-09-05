@@ -128,7 +128,22 @@ is actually present before telling the user something is fixed.
 - `server/listing.js` / `server/pricing.js` / `server/tiering.js` — shared
   listing text, price-suggestion logic, and tiering rules (Tier 1 individual
   high-value or no-comp, Tier 2 same-artist lot of 3+, Tier 3 bulk grab bag,
-  "Unsorted - new arrival" until graded).
+  "Unsorted - new arrival" until graded). `listing.js`'s Instagram caption
+  includes a real direct link (`ebay.com/itm/<id>`, `discogs.com/sell/item/
+  <id>`) to whichever platform(s) a record is actually live on — plain text
+  only, since Instagram never makes caption/comment links tappable (no API
+  changes that). FB isn't included yet since nothing persists an FB
+  listing ID/URL to link to; wiring that up will make it appear here too
+  with no caption changes needed.
+- `server/instagram.js` — Instagram Graph API: publishes an image post (a
+  carousel of the record's hosted photos, capped at Instagram's 10-item
+  limit — or a single-image post when there's only one) to the linked
+  Instagram Business Account — not a Reel or Story. Production only, no
+  sandbox — see `INSTAGRAM_SETUP.md`'s gotchas section. Reuses
+  `photoHosting.js`/ImgBB for image URLs, same as eBay; no separate hosting
+  setup. This module never touches Instagram audio in any way — if the
+  owner finds a matching song for a record, attaching it is entirely a
+  manual step done outside the app.
 - `server/openapi.json` + Scalar docs at `/docs` — interactive API reference.
 - `public/app.js` — the whole frontend (vanilla JS, no framework/build step).
 - `tools/catalog.js` — CLI for the cataloging workflow, talks to the running
@@ -150,10 +165,11 @@ is actually present before telling the user something is fixed.
 3. Owner grades condition and sets price themselves — this used to be a
    photo-by-photo AI judgment call; don't offer to re-grade from photos
    unless explicitly asked.
-4. Owner clicks Publish to eBay / Publish to Discogs directly from the panel.
+4. Owner clicks Publish to eBay / Publish to Discogs / Publish to Instagram
+   directly from the panel.
 
 ## Setup docs
 
-`EBAY_SETUP.md` and `DISCOGS_SETUP.md` cover one-time account/API setup and
-every integration gotcha hit so far — read those before re-deriving eBay or
-Discogs behavior from scratch.
+`EBAY_SETUP.md`, `DISCOGS_SETUP.md`, and `INSTAGRAM_SETUP.md` cover one-time
+account/API setup and every integration gotcha hit so far — read those
+before re-deriving eBay, Discogs, or Instagram behavior from scratch.

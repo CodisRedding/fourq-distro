@@ -26,7 +26,7 @@ if (fs.existsSync(envPath)) {
 }
 
 const store = require('./store');
-const { generateListing } = require('./listing');
+const { generateListing, generateInstagramCaption } = require('./listing');
 const { suggestPrice } = require('./pricing');
 const ebay = require('./ebay');
 const discogs = require('./discogs');
@@ -35,6 +35,7 @@ const photoRoles = require('./photoRoles');
 const identify = require('./identify');
 const settings = require('./settings');
 const tiering = require('./tiering');
+const instagram = require('./instagram');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -57,12 +58,13 @@ import('@scalar/express-api-reference').then(({ apiReference }) => {
 // ---- inventory list / filter ----
 app.get('/api/inventory', (req, res) => {
   let records = store.readAll();
-  const { tier, ebay_status, fb_status, discogs_status, search, sold } = req.query;
+  const { tier, ebay_status, fb_status, discogs_status, instagram_status, search, sold } = req.query;
 
   if (tier) records = records.filter(r => r.tier.startsWith(tier));
   if (ebay_status) records = records.filter(r => r.status.ebay === ebay_status);
   if (fb_status) records = records.filter(r => r.status.fb === fb_status);
   if (discogs_status) records = records.filter(r => r.status.discogs === discogs_status);
+  if (instagram_status) records = records.filter(r => r.status.instagram === instagram_status);
   if (sold === 'true') records = records.filter(r => r.sold);
   if (sold === 'false') records = records.filter(r => !r.sold);
   if (search) {
@@ -243,7 +245,10 @@ app.post('/api/inventory/:id/unlist-discogs', async (req, res) => {
 app.get('/api/inventory/:id/listing', (req, res) => {
   const record = store.getById(req.params.id);
   if (!record) return res.status(404).json({ error: 'Not found' });
-  res.json(generateListing(record));
+  res.json({
+    ...generateListing(record),
+    instagramCaption: generateInstagramCaption(record)
+  });
 });
 
 // ---- photos ----
@@ -588,10 +593,44 @@ app.post('/api/inventory/:id/publish-ebay', async (req, res) => {
   }
 });
 
+// ---- Instagram ----
+// No OAuth redirect routes here — IG_ACCESS_TOKEN/IG_USER_ID are obtained by
+// hand from the Meta App Dashboard's own tester/token-generator UI. See
+// INSTAGRAM_SETUP.md and the comment atop server/instagram.js for why.
+app.get('/api/instagram/status', (req, res) => {
+  res.json({ configured: instagram.isConfigured() });
+});
+
+app.post('/api/inventory/:id/publish-instagram', async (req, res) => {
+  const record = store.getById(req.params.id);
+  if (!record) return res.status(404).json({ error: 'Not found' });
+  if (!instagram.isConfigured()) {
+    return res.status(400).json({ error: 'Instagram is not connected yet. See INSTAGRAM_SETUP.md.' });
+  }
+  try {
+    const imageUrls = await photoHosting.ensureHostedPhotos(req.params.id);
+    const caption = generateInstagramCaption(record);
+
+    const { postId, permalink } = await instagram.publishPost(imageUrls, caption);
+    const updated = store.updateById(req.params.id, {
+      instagram_post_id: postId,
+      status: { instagram: 'listed' }
+    });
+    res.json({ ...updated, instagram_permalink: permalink });
+  } catch (err) {
+    const knownCodes = ['INSTAGRAM_NOT_CONFIGURED', 'IMGBB_NOT_CONFIGURED', 'NO_PHOTOS'];
+    const status = knownCodes.includes(err.code) ? 400 : 500;
+    res.status(status).json({ error: err.message });
+  }
+});
+
 app.listen(PORT, () => {
   console.log(`Record listing manager running at http://localhost:${PORT}`);
   if (!ebay.isConfigured()) {
     console.log('(eBay publishing is not configured yet — see EBAY_SETUP.md)');
+  }
+  if (!instagram.isConfigured()) {
+    console.log('(Instagram publishing is not configured yet — see INSTAGRAM_SETUP.md)');
   }
   if (!require('./imagehost').isConfigured()) {
     console.log('(Image hosting not configured — add IMGBB_API_KEY to .env for eBay photos to work)');
