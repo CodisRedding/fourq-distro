@@ -88,6 +88,8 @@ lightboxImg.addEventListener('dblclick', () => {
 });
 
 const searchEl = document.getElementById('search');
+const searchHistoryEl = document.getElementById('searchHistory');
+const searchClearEl = document.getElementById('searchClear');
 const tierEl = document.getElementById('tierFilter');
 const ebayEl = document.getElementById('ebayFilter');
 const fbEl = document.getElementById('fbFilter');
@@ -987,6 +989,94 @@ overlay.addEventListener('click', (e) => {
 [searchEl, tierEl, ebayEl, fbEl, discogsEl, instagramEl, hideSoldEl].forEach(el => {
   el.addEventListener('input', loadTable);
   el.addEventListener('change', loadTable);
+});
+
+function updateSearchClearVisibility() {
+  searchClearEl.hidden = !searchEl.value;
+}
+searchEl.addEventListener('input', updateSearchClearVisibility);
+updateSearchClearVisibility();
+searchClearEl.addEventListener('click', () => {
+  searchEl.value = '';
+  updateSearchClearVisibility();
+  loadTable();
+  searchEl.focus();
+});
+
+// Recent searches: stored client-side only (localStorage), most-recent-first, deduped.
+const RECENT_SEARCHES_KEY = 'fourq_recent_searches';
+const MAX_RECENT_SEARCHES = 8;
+
+function getRecentSearches() {
+  try {
+    return JSON.parse(localStorage.getItem(RECENT_SEARCHES_KEY)) || [];
+  } catch {
+    return [];
+  }
+}
+function setRecentSearches(list) {
+  try {
+    localStorage.setItem(RECENT_SEARCHES_KEY, JSON.stringify(list));
+  } catch {}
+}
+function addRecentSearch(term) {
+  term = term.trim();
+  if (!term) return;
+  const list = [term, ...getRecentSearches().filter(t => t.toLowerCase() !== term.toLowerCase())];
+  setRecentSearches(list.slice(0, MAX_RECENT_SEARCHES));
+}
+function renderSearchHistory() {
+  const list = getRecentSearches();
+  searchHistoryEl.innerHTML = !list.length
+    ? '<div class="search-history-empty">No recent searches</div>'
+    : list.map(term => `
+        <div class="search-history-item" data-term="${escapeHtml(term)}">
+          <span class="term">${escapeHtml(term)}</span>
+          <button type="button" class="remove" data-remove="${escapeHtml(term)}" title="Remove">×</button>
+        </div>
+      `).join('') + '<div class="search-history-footer" data-clear-all>Clear all</div>';
+}
+function hideSearchHistory() {
+  searchHistoryEl.hidden = true;
+}
+
+let searchHistoryMouseDown = false;
+searchHistoryEl.addEventListener('mousedown', () => { searchHistoryMouseDown = true; });
+searchEl.addEventListener('focus', () => {
+  renderSearchHistory();
+  searchHistoryEl.hidden = false;
+});
+searchEl.addEventListener('blur', () => {
+  if (searchHistoryMouseDown) { searchHistoryMouseDown = false; return; }
+  if (searchEl.value.trim()) addRecentSearch(searchEl.value);
+  hideSearchHistory();
+});
+searchEl.addEventListener('keydown', (e) => {
+  if (e.key === 'Enter') {
+    addRecentSearch(searchEl.value);
+    hideSearchHistory();
+  } else if (e.key === 'Escape') {
+    hideSearchHistory();
+  }
+});
+searchHistoryEl.addEventListener('click', (e) => {
+  searchHistoryMouseDown = false;
+  if (e.target.closest('[data-remove]')) {
+    setRecentSearches(getRecentSearches().filter(t => t !== e.target.closest('[data-remove]').dataset.remove));
+    renderSearchHistory();
+    return;
+  }
+  if (e.target.closest('[data-clear-all]')) {
+    setRecentSearches([]);
+    renderSearchHistory();
+    return;
+  }
+  const item = e.target.closest('.search-history-item');
+  if (item) {
+    searchEl.value = item.dataset.term;
+    loadTable();
+    hideSearchHistory();
+  }
 });
 
 document.getElementById('syncInstagramStatsBtn').addEventListener('click', async () => {
