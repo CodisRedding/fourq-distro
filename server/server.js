@@ -593,6 +593,35 @@ app.post('/api/inventory/:id/publish-ebay', async (req, res) => {
   }
 });
 
+// Manual, explicit sync — same "click to fetch, never auto-poll in the
+// background" pattern as the Instagram stats sync. Only checks records
+// eBay itself has PUBLISHED; flips status.ebay to 'sold' when the offer's
+// soldQuantity confirms it. Doesn't touch Discogs/FB/Instagram status for
+// the same physical record — pulling those listings once the one copy is
+// gone stays a manual step, same as everywhere else in this app.
+app.post('/api/ebay/sync-status', async (req, res) => {
+  if (!ebay.isConfigured()) {
+    return res.status(400).json({ error: 'eBay is not connected yet. See EBAY_SETUP.md.' });
+  }
+  const records = store.readAll().filter(r => r.status.ebay === 'listed' && r.ebay_sku);
+  let synced = 0;
+  let sold = 0;
+  const errors = [];
+  for (const r of records) {
+    try {
+      const status = await ebay.getSoldStatus(r.ebay_sku);
+      if (status.sold) {
+        store.updateById(r.id, { status: { ebay: 'sold' } });
+        sold++;
+      }
+      synced++;
+    } catch (err) {
+      errors.push({ id: r.id, artist: r.artist, title: r.title, error: err.message });
+    }
+  }
+  res.json({ synced, sold, total: records.length, errors });
+});
+
 // ---- Instagram ----
 // No OAuth redirect routes here — IG_ACCESS_TOKEN/IG_USER_ID are obtained by
 // hand from the Meta App Dashboard's own tester/token-generator UI. See

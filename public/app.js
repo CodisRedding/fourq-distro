@@ -268,12 +268,17 @@ function escapeHtml(s) {
 
 async function openPanel(id) {
   if (!gradeOptions.media.length) await loadGradeOptions();
+  // Preserve whichever tab was open before this refresh — renderPanel()
+  // rebuilds the whole panel from scratch, and without this it always
+  // snapped back to the eBay tab even when the refresh was triggered from
+  // e.g. the Instagram tab (Refresh stats).
+  const activeTab = panel.querySelector('.tab-btn.active')?.dataset.tab || 'ebay';
   const [record, listing, priceSuggestion] = await Promise.all([
     fetch(`/api/inventory/${id}`).then(r => r.json()),
     fetch(`/api/inventory/${id}/listing`).then(r => r.json()),
     fetch(`/api/inventory/${id}/price-suggestion`).then(r => r.json())
   ]);
-  renderPanel(record, listing, priceSuggestion);
+  renderPanel(record, listing, priceSuggestion, activeTab);
   overlay.classList.remove('hidden');
 }
 
@@ -282,7 +287,7 @@ function closePanel() {
   panel.innerHTML = '';
 }
 
-function renderPanel(r, listing, priceSuggestion) {
+function renderPanel(r, listing, priceSuggestion, activeTab = 'ebay') {
   const isNewArrival = r.tier.startsWith('Unsorted');
   const hasPhotos = (r.photos || []).length > 0;
   const panelRenderStamp = Date.now();
@@ -440,13 +445,13 @@ function renderPanel(r, listing, priceSuggestion) {
       <button data-copy="${encodeURIComponent(listing.coreFacts)}" class="copyBtn">Copy core facts</button>
 
       <div class="tab-bar" style="margin-top:18px">
-        <button class="tab-btn active" data-tab="ebay">eBay <span class="status-badge ${r.status.ebay}">${r.status.ebay}</span></button>
-        <button class="tab-btn" data-tab="fb">Facebook <span class="status-badge ${r.status.fb}">${r.status.fb}</span></button>
-        <button class="tab-btn" data-tab="discogs">Discogs <span class="status-badge ${r.status.discogs}">${r.status.discogs}</span></button>
-        <button class="tab-btn" data-tab="instagram">Instagram <span class="status-badge ${r.status.instagram}">${r.status.instagram}</span></button>
+        <button class="tab-btn ${activeTab === 'ebay' ? 'active' : ''}" data-tab="ebay">eBay <span class="status-badge ${r.status.ebay}">${r.status.ebay}</span></button>
+        <button class="tab-btn ${activeTab === 'fb' ? 'active' : ''}" data-tab="fb">Facebook <span class="status-badge ${r.status.fb}">${r.status.fb}</span></button>
+        <button class="tab-btn ${activeTab === 'discogs' ? 'active' : ''}" data-tab="discogs">Discogs <span class="status-badge ${r.status.discogs}">${r.status.discogs}</span></button>
+        <button class="tab-btn ${activeTab === 'instagram' ? 'active' : ''}" data-tab="instagram">Instagram <span class="status-badge ${r.status.instagram}">${r.status.instagram}</span></button>
       </div>
 
-      <div class="tab-panel" data-tab-panel="ebay">
+      <div class="tab-panel" data-tab-panel="ebay" ${activeTab === 'ebay' ? '' : 'hidden'}>
         <div><strong>Title:</strong></div>
         <div class="listing-text">${escapeHtml(listing.ebayTitle)}</div>
         <button data-copy="${encodeURIComponent(listing.ebayTitle)}" class="copyBtn">Copy title</button>
@@ -460,7 +465,7 @@ function renderPanel(r, listing, priceSuggestion) {
         <div id="ebayPublishStatus" class="publish-status" hidden></div>
       </div>
 
-      <div class="tab-panel" data-tab-panel="fb" hidden>
+      <div class="tab-panel" data-tab-panel="fb" ${activeTab === 'fb' ? '' : 'hidden'}>
         <div><strong>Title:</strong></div>
         <div class="listing-text">${escapeHtml(listing.fbTitle)}</div>
         <button data-copy="${encodeURIComponent(listing.fbTitle)}" class="copyBtn">Copy title</button>
@@ -473,7 +478,7 @@ function renderPanel(r, listing, priceSuggestion) {
         </div>
       </div>
 
-      <div class="tab-panel" data-tab-panel="discogs" hidden>
+      <div class="tab-panel" data-tab-panel="discogs" ${activeTab === 'discogs' ? '' : 'hidden'}>
         <div class="meta">
           Condition: ${escapeHtml(r.condition_media || '(not set)')} media / ${escapeHtml(r.condition_sleeve || '(not set)')} sleeve
           · Price: ${r.asking_price ? '$' + r.asking_price : '(not set)'}
@@ -492,7 +497,7 @@ function renderPanel(r, listing, priceSuggestion) {
         </div>
       </div>
 
-      <div class="tab-panel" data-tab-panel="instagram" hidden>
+      <div class="tab-panel" data-tab-panel="instagram" ${activeTab === 'instagram' ? '' : 'hidden'}>
         <div class="meta">
           ${r.photos.length > 1
             ? `Posts ${Math.min(r.photos.length, 10)} of your ${r.photos.length} photos as a carousel`
@@ -1004,6 +1009,31 @@ document.getElementById('syncInstagramStatsBtn').addEventListener('click', async
     setTimeout(() => {
       btn.disabled = false;
       btn.textContent = 'Sync Instagram stats';
+    }, 3000);
+  }
+});
+
+document.getElementById('syncEbayStatusBtn').addEventListener('click', async () => {
+  const btn = document.getElementById('syncEbayStatusBtn');
+  btn.disabled = true;
+  btn.textContent = 'Syncing…';
+  try {
+    const res = await fetch('/api/ebay/sync-status', { method: 'POST' });
+    const json = await res.json();
+    if (!res.ok) throw new Error(json.error || 'Failed to sync');
+    await loadTable();
+    await loadStats();
+    btn.textContent = `${json.sold} sold / ${json.synced} checked`;
+    if (json.errors.length) {
+      console.error('eBay sync errors:', json.errors);
+    }
+  } catch (err) {
+    alert(err.message);
+    btn.textContent = 'Sync eBay status';
+  } finally {
+    setTimeout(() => {
+      btn.disabled = false;
+      btn.textContent = 'Sync eBay status';
     }, 3000);
   }
 });

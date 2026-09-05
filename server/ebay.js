@@ -379,11 +379,42 @@ async function publishListing(record, listingText, imageUrls) {
   return { listingId: published.listingId, sku };
 }
 
+// Checks whether a published offer's unit has sold. The Inventory API's
+// `listing` container (only present on PUBLISHED offers — omitted entirely
+// for UNPUBLISHED ones) carries `soldQuantity`, which eBay increments the
+// moment it finishes processing a completed order. Since every offer here
+// is always created with availableQuantity: 1 (see publishListing), any
+// soldQuantity > 0 unambiguously means this one-of-a-kind record sold —
+// no separate Fulfillment API call/scope (getOrders) needed just to answer
+// that question.
+async function getSoldStatus(sku) {
+  const token = await getUserAccessToken();
+  const res = await fetch(`${API_BASE}/sell/inventory/v1/offer?sku=${encodeURIComponent(sku)}`, {
+    headers: {
+      'Authorization': `Bearer ${token}`,
+      'Content-Language': 'en-US',
+      'Accept-Language': 'en-US',
+      'X-EBAY-C-MARKETPLACE-ID': 'EBAY_US'
+    }
+  });
+  if (!res.ok) {
+    throw new Error(`Failed to fetch offer status (${res.status}): ${await res.text()}`);
+  }
+  const json = await res.json();
+  const offer = json.offers && json.offers[0];
+  const listing = offer && offer.listing;
+  return {
+    sold: Boolean(listing && listing.soldQuantity > 0),
+    listingStatus: (listing && listing.listingStatus) || null
+  };
+}
+
 module.exports = {
   isConfigured,
   getAuthorizeUrl,
   publishListing,
   exchangeCodeForTokens,
   createInventoryLocation,
-  getBusinessPolicies
+  getBusinessPolicies,
+  getSoldStatus
 };
