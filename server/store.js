@@ -38,6 +38,8 @@ function createBlank() {
     discogs_sold_stats: { low: '', median: '', high: '', lastSoldDate: '' },
     discogs_listing_id: null,
     instagram_post_id: null,
+    instagram_permalink: null,
+    instagram_stats: { like_count: null, comments_count: null, comments: [], synced_at: null },
     photo_hosted_urls: {},
     sold: false
   };
@@ -50,7 +52,9 @@ function normalize(record) {
   return {
     ...record,
     status: { ebay: 'unlisted', fb: 'unlisted', discogs: 'unlisted', instagram: 'unlisted', ...record.status },
-    instagram_post_id: record.instagram_post_id ?? null
+    instagram_post_id: record.instagram_post_id ?? null,
+    instagram_permalink: record.instagram_permalink ?? null,
+    instagram_stats: record.instagram_stats || { like_count: null, comments_count: null, comments: [], synced_at: null }
   };
 }
 

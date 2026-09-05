@@ -96,11 +96,13 @@ const instagramEl = document.getElementById('instagramFilter');
 const hideSoldEl = document.getElementById('hideSold');
 const autoTagDeadwaxEl = document.getElementById('autoTagDeadwax');
 const autoIdentifyEl = document.getElementById('autoIdentify');
+const instagramBetaNoticeEl = document.getElementById('instagramBetaNotice');
 
 async function loadSettings() {
   const s = await fetch('/api/settings').then(r => r.json());
   autoTagDeadwaxEl.checked = !!s.auto_tag_deadwax_photos;
   autoIdentifyEl.checked = !!s.auto_identify_from_photos;
+  instagramBetaNoticeEl.checked = !!s.instagram_beta_notice;
 }
 autoTagDeadwaxEl.addEventListener('change', () => {
   fetch('/api/settings', {
@@ -114,6 +116,13 @@ autoIdentifyEl.addEventListener('change', () => {
     method: 'PUT',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ auto_identify_from_photos: autoIdentifyEl.checked })
+  });
+});
+instagramBetaNoticeEl.addEventListener('change', () => {
+  fetch('/api/settings', {
+    method: 'PUT',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ instagram_beta_notice: instagramBetaNoticeEl.checked })
   });
 });
 
@@ -235,7 +244,15 @@ function renderTable(records) {
       <td><span class="status-badge ${r.status.ebay}">${r.status.ebay}</span></td>
       <td><span class="status-badge ${r.status.fb}">${r.status.fb}</span></td>
       <td><span class="status-badge ${r.status.discogs}">${r.status.discogs}</span></td>
-      <td><span class="status-badge ${r.status.instagram}">${r.status.instagram}</span></td>
+      <td>
+        <span class="status-badge ${r.status.instagram}">${r.status.instagram}</span>
+        ${r.instagram_stats && r.instagram_stats.like_count != null
+          ? `<div class="meta" style="font-size:11px">❤${r.instagram_stats.like_count} 💬${r.instagram_stats.comments_count}</div>`
+          : ''}
+        ${r.instagram_permalink
+          ? `<a href="${r.instagram_permalink}" target="_blank" rel="noopener" style="font-size:11px">View ↗</a>`
+          : ''}
+      </td>
       <td>${r.sold ? '✅ sold' : ''}</td>
     </tr>
   `).join('');
@@ -487,10 +504,33 @@ function renderPanel(r, listing, priceSuggestion) {
         <div class="listing-text">${escapeHtml(listing.instagramCaption)}</div>
         <button data-copy="${encodeURIComponent(listing.instagramCaption)}" class="copyBtn">Copy caption</button>
         <div class="actions">
-          <button id="publishInstagram" class="primary">Publish to Instagram</button>
+          <button id="publishInstagram" class="primary">${r.instagram_post_id ? 'Publish again anyway' : 'Publish to Instagram'}</button>
           <button id="markInstagramListed">Mark listed manually</button>
+          ${r.instagram_permalink ? '<button id="viewOnInstagram">View on Instagram ↗</button>' : ''}
         </div>
         <div id="instagramPublishStatus" class="publish-status" hidden></div>
+
+        ${r.instagram_post_id ? `
+          <div class="section-header" style="margin-top:18px">Engagement</div>
+          <div class="meta">
+            ${r.instagram_stats.synced_at
+              ? `As of ${new Date(r.instagram_stats.synced_at).toLocaleString()}`
+              : 'Not synced yet — click Refresh to check.'}
+          </div>
+          <div>❤ ${r.instagram_stats.like_count ?? '—'} likes · 💬 ${r.instagram_stats.comments_count ?? '—'} comments</div>
+          <button id="refreshInstagramStats">Refresh stats</button>
+          <div style="margin-top:8px">
+            ${r.instagram_stats.comments.length
+              ? r.instagram_stats.comments.map(c => `
+                  <div class="listing-text"><strong>@${escapeHtml(c.username)}:</strong> ${escapeHtml(c.text)}</div>
+                `).join('')
+              : '<div class="meta">No comments yet.</div>'}
+          </div>
+          <div class="meta" style="margin-top:6px">
+            Direct messages can't be reliably tied back to a specific post via Instagram's API —
+            check your Instagram inbox directly for those.
+          </div>
+        ` : ''}
       </div>
     </div>
   `;
@@ -641,6 +681,13 @@ function renderPanel(r, listing, priceSuggestion) {
     window.open('https://www.facebook.com/marketplace/create/item', '_blank');
   };
 
+  const viewOnInstagramBtn = document.getElementById('viewOnInstagram');
+  if (viewOnInstagramBtn) {
+    viewOnInstagramBtn.onclick = () => {
+      window.open(r.instagram_permalink, '_blank', 'noopener');
+    };
+  }
+
   document.getElementById('publishEbay').onclick = async () => {
     const btn = document.getElementById('publishEbay');
     const statusEl = document.getElementById('ebayPublishStatus');
@@ -732,6 +779,15 @@ function renderPanel(r, listing, priceSuggestion) {
 
   document.getElementById('publishInstagram').onclick = async () => {
     const btn = document.getElementById('publishInstagram');
+    const defaultLabel = r.instagram_post_id ? 'Publish again anyway' : 'Publish to Instagram';
+    if (r.instagram_post_id) {
+      const confirmed = confirm(
+        `This record already has a live Instagram post (Post ID ${r.instagram_post_id}). ` +
+        `Instagram has no way to edit or replace an existing post, so publishing again creates a ` +
+        `brand-new, separate post — the old one stays up too. Continue?`
+      );
+      if (!confirmed) return;
+    }
     const statusEl = document.getElementById('instagramPublishStatus');
     const steps = r.photos.length > 1
       ? ['Uploading photos to image host…', 'Building Instagram carousel…', 'Publishing to Instagram…']
@@ -763,9 +819,28 @@ function renderPanel(r, listing, priceSuggestion) {
       statusEl.hidden = true;
       alert(err.message);
       btn.disabled = false;
-      btn.textContent = 'Publish to Instagram';
+      btn.textContent = defaultLabel;
     }
   };
+
+  const refreshStatsBtn = document.getElementById('refreshInstagramStats');
+  if (refreshStatsBtn) {
+    refreshStatsBtn.onclick = async () => {
+      refreshStatsBtn.disabled = true;
+      refreshStatsBtn.textContent = 'Refreshing…';
+      try {
+        const res = await fetch(`/api/inventory/${r.id}/instagram-stats`);
+        const json = await res.json();
+        if (!res.ok) throw new Error(json.error || 'Failed to refresh stats');
+        await openPanel(r.id);
+        await loadTable();
+      } catch (err) {
+        alert(err.message);
+        refreshStatsBtn.disabled = false;
+        refreshStatsBtn.textContent = 'Refresh stats';
+      }
+    };
+  }
 
   [...panel.querySelectorAll('.copyBtn')].forEach(btn => {
     btn.onclick = () => {
@@ -907,6 +982,30 @@ overlay.addEventListener('click', (e) => {
 [searchEl, tierEl, ebayEl, fbEl, discogsEl, instagramEl, hideSoldEl].forEach(el => {
   el.addEventListener('input', loadTable);
   el.addEventListener('change', loadTable);
+});
+
+document.getElementById('syncInstagramStatsBtn').addEventListener('click', async () => {
+  const btn = document.getElementById('syncInstagramStatsBtn');
+  btn.disabled = true;
+  btn.textContent = 'Syncing…';
+  try {
+    const res = await fetch('/api/instagram/sync-stats', { method: 'POST' });
+    const json = await res.json();
+    if (!res.ok) throw new Error(json.error || 'Failed to sync');
+    await loadTable();
+    btn.textContent = `Synced ${json.synced}/${json.total}`;
+    if (json.errors.length) {
+      console.error('Instagram sync errors:', json.errors);
+    }
+  } catch (err) {
+    alert(err.message);
+    btn.textContent = 'Sync Instagram stats';
+  } finally {
+    setTimeout(() => {
+      btn.disabled = false;
+      btn.textContent = 'Sync Instagram stats';
+    }, 3000);
+  }
 });
 
 document.getElementById('addRecordBtn').addEventListener('click', async () => {

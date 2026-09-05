@@ -52,6 +52,10 @@
     <label class="hide-sold" title="Uses the local Ollama vision model to read artist/title/label/format/year/country off a new arrival's cover and label photos and fill in Step 2 — only while those fields are still blank, and never overwrites anything you've typed. Does not run the Discogs lookup for you; that's still a manual click once you've checked the fields.">
       <input id="autoIdentify" type="checkbox"> Auto-identify from photos
     </label>
+    <label class="hide-sold" title="Prepends a short disclosure to every Instagram caption noting that posting is still a test on your personal account, while making clear the record itself is genuinely for sale. Turn this off once you move to a dedicated storefront account.">
+      <input id="instagramBetaNotice" type="checkbox"> Instagram beta-test notice
+    </label>
+    <button id="syncInstagramStatsBtn" title="Refreshes like/comment counts for every record with a live Instagram post. Never runs automatically — click when you want fresh numbers.">Sync Instagram stats</button>
     <button id="addRecordBtn" class="primary">+ Add record</button>
   </div>
 

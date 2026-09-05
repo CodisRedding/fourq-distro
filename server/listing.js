@@ -97,10 +97,17 @@ function buildListingLinks(r) {
   return links;
 }
 
+// Shown while posting still goes out under the owner's personal account
+// rather than a dedicated storefront one — toggleable via the
+// instagram_beta_notice setting (settings.js) since it's meant to come out
+// once that separate account exists. Makes clear the listings are real, not
+// just the posting process.
+const BETA_NOTICE = "🧪 Testing out posting listings here on my personal account for now — the record below is 100% real and available. I'll be moving this to its own dedicated account soon so it stops cluttering my regular feed.";
+
 // Instagram never makes a caption URL tappable (no API changes that — see
 // instagram.js) so a link here is plain copyable text, not a real link. Still
 // worth including: it's the actual place to buy, not just "DM me".
-function generateInstagramCaption(r) {
+function generateInstagramCaption(r, options = {}) {
   const core = generateCoreFacts(r);
   const price = r.asking_price ? `$${r.asking_price} + shipping` : 'DM for price';
   const links = buildListingLinks(r);
@@ -113,7 +120,11 @@ function generateInstagramCaption(r) {
     cta.push('Comment or DM to buy — first message gets it.');
   }
 
-  return [core.text, cta.join('\n'), IG_HASHTAGS].join('\n\n');
+  const paragraphs = [];
+  if (options.betaNotice) paragraphs.push(BETA_NOTICE);
+  paragraphs.push(core.text, cta.join('\n'), IG_HASHTAGS);
+
+  return paragraphs.join('\n\n');
 }
 
 module.exports = { generateListing, generateCoreFacts, generateInstagramCaption };

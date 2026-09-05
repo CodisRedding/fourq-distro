@@ -27,7 +27,16 @@ const DEFAULTS = {
   // with. Does not auto-run the Discogs lookup — that's still the owner
   // clicking "Look up Discogs pricing" once they've glanced over the
   // extracted fields.
-  auto_identify_from_photos: true
+  auto_identify_from_photos: true,
+
+  // Prepends a short disclosure to every Instagram caption noting that
+  // posting is still in a testing phase on the owner's personal account
+  // (while making clear the records themselves are genuinely for sale) —
+  // see listing.js's generateInstagramCaption(). On by default while
+  // posting goes out under the owner's personal account; meant to be
+  // turned off once a dedicated storefront account exists and this stops
+  // being a testing concern.
+  instagram_beta_notice: true
 };
 
 function getSettings() {

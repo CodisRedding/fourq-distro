@@ -247,7 +247,7 @@ app.get('/api/inventory/:id/listing', (req, res) => {
   if (!record) return res.status(404).json({ error: 'Not found' });
   res.json({
     ...generateListing(record),
-    instagramCaption: generateInstagramCaption(record)
+    instagramCaption: generateInstagramCaption(record, { betaNotice: settings.getSettings().instagram_beta_notice })
   });
 });
 
@@ -609,19 +609,65 @@ app.post('/api/inventory/:id/publish-instagram', async (req, res) => {
   }
   try {
     const imageUrls = await photoHosting.ensureHostedPhotos(req.params.id);
-    const caption = generateInstagramCaption(record);
+    const caption = generateInstagramCaption(record, { betaNotice: settings.getSettings().instagram_beta_notice });
 
     const { postId, permalink } = await instagram.publishPost(imageUrls, caption);
     const updated = store.updateById(req.params.id, {
       instagram_post_id: postId,
+      instagram_permalink: permalink,
       status: { instagram: 'listed' }
     });
-    res.json({ ...updated, instagram_permalink: permalink });
+    res.json(updated);
   } catch (err) {
     const knownCodes = ['INSTAGRAM_NOT_CONFIGURED', 'IMGBB_NOT_CONFIGURED', 'NO_PHOTOS'];
     const status = knownCodes.includes(err.code) ? 400 : 500;
     res.status(status).json({ error: err.message });
   }
+});
+
+// Manual, explicit refresh — same "click to fetch, never auto-poll in the
+// background" pattern as the Discogs price lookup, so this never spends API
+// calls the owner didn't ask for.
+app.get('/api/inventory/:id/instagram-stats', async (req, res) => {
+  const record = store.getById(req.params.id);
+  if (!record) return res.status(404).json({ error: 'Not found' });
+  if (!record.instagram_post_id) {
+    return res.status(400).json({ error: 'This record has no Instagram post yet.' });
+  }
+  if (!instagram.isConfigured()) {
+    return res.status(400).json({ error: 'Instagram is not connected yet. See INSTAGRAM_SETUP.md.' });
+  }
+  try {
+    const stats = await instagram.getPostStats(record.instagram_post_id);
+    const updated = store.updateById(req.params.id, {
+      instagram_stats: { ...stats, synced_at: new Date().toISOString() }
+    });
+    res.json(updated);
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
+// Bulk version for the inventory table — refreshes every record that has a
+// live Instagram post, one at a time (personal-scale usage, no need for
+// concurrency here).
+app.post('/api/instagram/sync-stats', async (req, res) => {
+  if (!instagram.isConfigured()) {
+    return res.status(400).json({ error: 'Instagram is not connected yet. See INSTAGRAM_SETUP.md.' });
+  }
+  const records = store.readAll().filter(r => r.instagram_post_id);
+  let synced = 0;
+  const errors = [];
+  for (const r of records) {
+    try {
+      const stats = await instagram.getPostStats(r.instagram_post_id);
+      store.updateById(r.id, { instagram_stats: { ...stats, synced_at: new Date().toISOString() } });
+      synced++;
+    } catch (err) {
+      errors.push({ id: r.id, artist: r.artist, title: r.title, error: err.message });
+    }
+  }
+  res.json({ synced, total: records.length, errors });
 });
 
 app.listen(PORT, () => {

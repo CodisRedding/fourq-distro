@@ -143,7 +143,14 @@ is actually present before telling the user something is fixed.
   `photoHosting.js`/ImgBB for image URLs, same as eBay; no separate hosting
   setup. This module never touches Instagram audio in any way — if the
   owner finds a matching song for a record, attaching it is entirely a
-  manual step done outside the app.
+  manual step done outside the app. Also exposes `getPostStats()` — read-only
+  like/comment-count/comment-text lookup for an already-published post,
+  surfaced via a manual "Refresh stats" button (per record) and a "Sync
+  Instagram stats" button (whole table) in the UI, never fetched
+  automatically. Deliberately doesn't attempt to surface DMs anywhere —
+  Instagram's API has no reliable way to tie a direct message back to a
+  specific post, so there's nothing trustworthy to show; checking the
+  Instagram inbox stays a manual step.
 - `server/openapi.json` + Scalar docs at `/docs` — interactive API reference.
 - `public/app.js` — the whole frontend (vanilla JS, no framework/build step).
 - `tools/catalog.js` — CLI for the cataloging workflow, talks to the running

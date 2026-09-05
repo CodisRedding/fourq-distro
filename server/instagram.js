@@ -128,4 +128,29 @@ async function publishPost(imageUrls, caption) {
   return { postId: published.id, permalink: details.permalink };
 }
 
-module.exports = { isConfigured, publishPost };
+// Read-only engagement numbers for an already-published post. like_count and
+// comments_count come straight off the media node; comment text is a
+// separate edge call since Graph API doesn't reliably nest it in one request.
+// Never attempts to surface DMs here — Instagram's API has no general way to
+// tie a direct message back to a specific post (only when someone explicitly
+// shares/replies to that post, which most "DM to buy" buyers won't do), so
+// there's nothing trustworthy to show; checking the Instagram inbox directly
+// stays a manual step.
+async function getPostStats(mediaId) {
+  const token = process.env.IG_ACCESS_TOKEN;
+  const media = await get(`${GRAPH_BASE}/${mediaId}?fields=like_count,comments_count&access_token=${token}`);
+  const commentsRes = await get(`${GRAPH_BASE}/${mediaId}/comments?fields=text,username,timestamp&limit=50&access_token=${token}`);
+
+  return {
+    like_count: media.like_count ?? null,
+    comments_count: media.comments_count ?? null,
+    comments: (commentsRes.data || []).map(c => ({
+      id: c.id,
+      text: c.text,
+      username: c.username,
+      timestamp: c.timestamp
+    }))
+  };
+}
+
+module.exports = { isConfigured, publishPost, getPostStats };
