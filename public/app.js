@@ -4,6 +4,51 @@ const panel = document.getElementById('panel');
 const lightbox = document.getElementById('lightbox');
 const lightboxImg = document.getElementById('lightboxImg');
 
+// A native alert() truncates long API error messages and its text isn't
+// reliably copyable across browsers — this gives publish/sync failures a
+// selectable, copy-to-clipboard-able error box instead.
+const errorOverlay = document.getElementById('errorOverlay');
+const errorText = document.getElementById('errorText');
+const errorCopyBtn = document.getElementById('errorCopyBtn');
+const errorCloseBtn = document.getElementById('errorCloseBtn');
+
+function showError(message) {
+  errorText.textContent = message;
+  errorCopyBtn.textContent = 'Copy';
+  errorOverlay.classList.remove('hidden');
+}
+function closeErrorOverlay() {
+  errorOverlay.classList.add('hidden');
+}
+errorCloseBtn.addEventListener('click', closeErrorOverlay);
+errorCopyBtn.addEventListener('click', async () => {
+  try {
+    await navigator.clipboard.writeText(errorText.textContent);
+    errorCopyBtn.textContent = 'Copied!';
+  } catch {
+    // Clipboard API can be unavailable (e.g. non-HTTPS context) — fall back
+    // to selecting the text so the user can Ctrl+C it themselves.
+    const range = document.createRange();
+    range.selectNodeContents(errorText);
+    const selection = window.getSelection();
+    selection.removeAllRanges();
+    selection.addRange(range);
+    errorCopyBtn.textContent = 'Selected';
+  }
+  setTimeout(() => { errorCopyBtn.textContent = 'Copy'; }, 1500);
+});
+let errorOverlayMouseDownOnBackdrop = false;
+errorOverlay.addEventListener('mousedown', (e) => {
+  errorOverlayMouseDownOnBackdrop = e.target === errorOverlay;
+});
+errorOverlay.addEventListener('click', (e) => {
+  if (e.target === errorOverlay && errorOverlayMouseDownOnBackdrop) closeErrorOverlay();
+  errorOverlayMouseDownOnBackdrop = false;
+});
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape' && !errorOverlay.classList.contains('hidden')) closeErrorOverlay();
+});
+
 // Zoom is a CSS scale() on top of the image's normal fit-to-viewport size
 // (so scale 1 = fully zoomed out), pan is a translate() alongside it. Wheel
 // zooms in/out gradually, keeping the point under the cursor fixed; drag
@@ -621,7 +666,7 @@ function renderPanel(r, listing, priceSuggestion, activeTab = 'ebay') {
       if (!res.ok) throw new Error(json.error || 'Lookup failed');
       await openPanel(r.id);
     } catch (err) {
-      alert(err.message);
+      showError(err.message);
       btn.disabled = false;
       btn.textContent = 'Look up Discogs pricing';
     }
@@ -726,7 +771,7 @@ function renderPanel(r, listing, priceSuggestion, activeTab = 'ebay') {
     } catch (err) {
       clearInterval(stepTimer);
       statusEl.hidden = true;
-      alert(err.message);
+      showError(err.message);
       btn.disabled = false;
       btn.textContent = 'Publish to eBay';
     }
@@ -751,7 +796,7 @@ function renderPanel(r, listing, priceSuggestion, activeTab = 'ebay') {
       await loadTable();
       await loadStats();
     } catch (err) {
-      alert(err.message);
+      showError(err.message);
       btn.disabled = false;
       btn.textContent = 'Publish to Discogs';
     }
@@ -770,7 +815,7 @@ function renderPanel(r, listing, priceSuggestion, activeTab = 'ebay') {
         await loadTable();
         await loadStats();
       } catch (err) {
-        alert(err.message);
+        showError(err.message);
         unlistDiscogsBtn.disabled = false;
         unlistDiscogsBtn.textContent = 'Unlist from Discogs';
       }
@@ -824,7 +869,7 @@ function renderPanel(r, listing, priceSuggestion, activeTab = 'ebay') {
     } catch (err) {
       clearInterval(stepTimer);
       statusEl.hidden = true;
-      alert(err.message);
+      showError(err.message);
       btn.disabled = false;
       btn.textContent = defaultLabel;
     }
@@ -842,7 +887,7 @@ function renderPanel(r, listing, priceSuggestion, activeTab = 'ebay') {
         await openPanel(r.id);
         await loadTable();
       } catch (err) {
-        alert(err.message);
+        showError(err.message);
         refreshStatsBtn.disabled = false;
         refreshStatsBtn.textContent = 'Refresh stats';
       }
@@ -878,7 +923,7 @@ function renderPanel(r, listing, priceSuggestion, activeTab = 'ebay') {
         setTimeout(() => { statusEl.hidden = true; }, 4000);
       } catch (err) {
         statusEl.hidden = true;
-        alert(err.message);
+        showError(err.message);
       }
       await openPanel(r.id);
       await loadTable();
@@ -1093,7 +1138,7 @@ document.getElementById('syncInstagramStatsBtn').addEventListener('click', async
       console.error('Instagram sync errors:', json.errors);
     }
   } catch (err) {
-    alert(err.message);
+    showError(err.message);
     btn.textContent = 'Sync Instagram stats';
   } finally {
     setTimeout(() => {
@@ -1118,7 +1163,7 @@ document.getElementById('syncEbayStatusBtn').addEventListener('click', async () 
       console.error('eBay sync errors:', json.errors);
     }
   } catch (err) {
-    alert(err.message);
+    showError(err.message);
     btn.textContent = 'Sync eBay status';
   } finally {
     setTimeout(() => {

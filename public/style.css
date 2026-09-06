@@ -192,6 +192,20 @@ td.title-cell, td.artist-cell { white-space: normal; max-width: 260px; }
   cursor: pointer;
 }
 .panel textarea { min-height: 90px; }
+.error-panel { max-width: 640px; }
+.error-text {
+  white-space: pre-wrap;
+  word-break: break-word;
+  background: var(--chip-bg);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 12px;
+  font-family: ui-monospace, Consolas, monospace;
+  font-size: 0.8rem;
+  max-height: 50vh;
+  overflow-y: auto;
+  user-select: text;
+}
 .row { display: flex; gap: 12px; }
 .row > div { flex: 1; }
 .actions { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 16px; }
