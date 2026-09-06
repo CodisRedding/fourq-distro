@@ -5,6 +5,8 @@ Notable changes to the app itself, newest first. Routine cataloging
 `git log` for that.
 
 ## 2026-09-06
+- **16:04** — Add README screenshots (inventory table, record panel, per-platform publish tabs)
+- **15:27** — Detect Instagram app-wide rate limits and surface usage in the UI
 - **12:20** — Fix stale ImgBB cache and oversized photos breaking Instagram publish
 - **11:39** — Switch image hosting from ImgBB to Cloudinary
 - **11:38** — Replace publish-failure alert() with a copyable error dialog

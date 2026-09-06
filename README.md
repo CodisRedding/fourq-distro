@@ -20,6 +20,12 @@ user running it on their own machine.
   single image or photo carousel) with one click, and track its status.
 - **Interactive API docs** at `/docs` once the server is running.
 
+## Screenshots
+
+| Inventory table | Record panel | Per-platform publish options |
+| --- | --- | --- |
+| ![Inventory table listing records with tier, pricing, and per-platform status](docs/screenshots/inventory-table.png) | ![A record's detail panel showing photos, condition, and pricing fields](docs/screenshots/record-panel.png) | ![The eBay/Facebook/Discogs/Instagram tabs, each with its own pricing and publish button](docs/screenshots/platform-tabs.png) |
+
 ## Setup
 
 ```bash
