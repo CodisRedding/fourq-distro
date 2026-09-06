@@ -19,6 +19,13 @@ const crypto = require('crypto');
 
 const UPLOAD_FOLDER = 'fourq-distro';
 
+// Cloudinary treats "/" in the folder param as a real subfolder, so each
+// listing's photos land in their own dir (record.id is already a clean,
+// unique slug) instead of all dumping into one flat fourq-distro folder.
+function folderFor(subfolder) {
+  return subfolder ? `${UPLOAD_FOLDER}/${subfolder}` : UPLOAD_FOLDER;
+}
+
 function isConfigured() {
   return Boolean(
     process.env.CLOUDINARY_CLOUD_NAME &&
@@ -45,7 +52,7 @@ function signParams(params, apiSecret) {
   return crypto.createHash('sha1').update(base + apiSecret).digest('hex');
 }
 
-async function uploadBuffer(buffer, filename, attempt = 1) {
+async function uploadBuffer(buffer, filename, subfolder, attempt = 1) {
   if (!isConfigured()) {
     const err = new Error(
       'Image hosting is not configured — add CLOUDINARY_CLOUD_NAME, CLOUDINARY_API_KEY, ' +
@@ -55,14 +62,15 @@ async function uploadBuffer(buffer, filename, attempt = 1) {
     throw err;
   }
 
+  const folder = folderFor(subfolder);
   const timestamp = Math.floor(Date.now() / 1000);
-  const signature = signParams({ folder: UPLOAD_FOLDER, timestamp }, process.env.CLOUDINARY_API_SECRET);
+  const signature = signParams({ folder, timestamp }, process.env.CLOUDINARY_API_SECRET);
 
   const form = new FormData();
   form.set('file', new Blob([buffer]), filename);
   form.set('api_key', process.env.CLOUDINARY_API_KEY);
   form.set('timestamp', String(timestamp));
-  form.set('folder', UPLOAD_FOLDER);
+  form.set('folder', folder);
   form.set('signature', signature);
 
   let res, bodyText;
@@ -78,7 +86,7 @@ async function uploadBuffer(buffer, filename, attempt = 1) {
     // as a completed-but-bad response below.
     if (attempt < MAX_ATTEMPTS) {
       await sleep(RETRY_DELAY_MS * attempt);
-      return uploadBuffer(buffer, filename, attempt + 1);
+      return uploadBuffer(buffer, filename, subfolder, attempt + 1);
     }
     throw new Error(`Image upload to Cloudinary timed out after ${MAX_ATTEMPTS} attempts: ${err.message}`);
   }
@@ -88,7 +96,7 @@ async function uploadBuffer(buffer, filename, attempt = 1) {
     // misconfigured credentials, etc.) won't fix itself on retry.
     if (res.status >= 500 && attempt < MAX_ATTEMPTS) {
       await sleep(RETRY_DELAY_MS * attempt);
-      return uploadBuffer(buffer, filename, attempt + 1);
+      return uploadBuffer(buffer, filename, subfolder, attempt + 1);
     }
     throw new Error(`Image upload failed (${res.status}): ${bodyText}`);
   }
@@ -96,8 +104,8 @@ async function uploadBuffer(buffer, filename, attempt = 1) {
   return json.secure_url;
 }
 
-async function uploadImage(localFilePath) {
-  return uploadBuffer(fs.readFileSync(localFilePath), path.basename(localFilePath));
+async function uploadImage(localFilePath, subfolder) {
+  return uploadBuffer(fs.readFileSync(localFilePath), path.basename(localFilePath), subfolder);
 }
 
 module.exports = { isConfigured, uploadImage, uploadBuffer };

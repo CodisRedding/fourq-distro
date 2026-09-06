@@ -36,9 +36,18 @@ async function addSealedRibbon(inputBuffer) {
     .toBuffer();
 }
 
+// Instagram's Graph API rejects (or silently mis-processes) photos wider
+// than 1440px — a full-res phone photo (e.g. 4284px) comes back as a
+// generic "Only photo or video can be accepted as media type" download
+// failure with no clearer explanation. eBay has no trouble with 1440px, so
+// this cap is safe for the one hosted copy both platforms share.
+const MAX_WIDTH = 1440;
+
 async function addBorder(inputBuffer, options = {}) {
   const source = options.sealed ? await addSealedRibbon(inputBuffer) : inputBuffer;
-  const { data, info } = await sharp(source).toBuffer({ resolveWithObject: true });
+  const { data, info } = await sharp(source)
+    .resize({ width: MAX_WIDTH, withoutEnlargement: true })
+    .toBuffer({ resolveWithObject: true });
   const topMargin = Math.round(info.width * 0.08);
   const bottomMargin = Math.round(info.width * 0.0275);
   const fontSize = Math.round(info.width * 0.0325);

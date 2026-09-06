@@ -60,12 +60,42 @@ async function post(url, body) {
     signal: AbortSignal.timeout(REQUEST_TIMEOUT_MS)
   });
   const json = await res.json();
-  if (!res.ok) throw new Error(`Instagram Graph API error (${res.status}): ${JSON.stringify(json)}`);
+  if (!res.ok) {
+    const err = new Error(`Instagram Graph API error (${res.status}): ${JSON.stringify(json)}`);
+    err.subcode = json && json.error && json.error.error_subcode;
+    throw err;
+  }
   return json;
 }
 
 function sleep(ms) {
   return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+const MAX_DOWNLOAD_ATTEMPTS = 3;
+const DOWNLOAD_RETRY_DELAY_MS = 1500;
+
+// Creating a media container (single image or one carousel child) has a
+// server timeout error_subcode 2207003 ("Timeout") and a download error
+// error_subcode 2207052 ("Only photo or video can be accepted as media
+// type") that both show up sporadically against a perfectly valid, publicly
+// fetchable, correctly-sized image — a transient hiccup fetching from
+// Cloudinary rather than anything wrong with the image itself (confirmed by
+// hand against a failing URL: valid baseline JPEG, in-spec dimensions,
+// fetches fine outside Instagram). A short retry clears it; a genuinely bad
+// image/format/aspect-ratio fails identically every attempt, so this isn't
+// masking a real problem, just absorbing the flake.
+async function createMediaContainer(url, body, attempt = 1) {
+  try {
+    return await post(url, body);
+  } catch (err) {
+    const isTransientDownloadFailure = err.subcode === 2207003 || err.subcode === 2207052;
+    if (isTransientDownloadFailure && attempt < MAX_DOWNLOAD_ATTEMPTS) {
+      await sleep(DOWNLOAD_RETRY_DELAY_MS * attempt);
+      return createMediaContainer(url, body, attempt + 1);
+    }
+    throw err;
+  }
 }
 
 async function waitForContainer(containerId) {
@@ -97,7 +127,7 @@ async function publishPost(imageUrls, caption) {
 
   let creationId;
   if (urls.length === 1) {
-    const container = await post(`${GRAPH_BASE}/${igUserId}/media`, {
+    const container = await createMediaContainer(`${GRAPH_BASE}/${igUserId}/media`, {
       image_url: urls[0],
       caption,
       access_token: token
@@ -107,7 +137,7 @@ async function publishPost(imageUrls, caption) {
   } else {
     const children = [];
     for (const url of urls) {
-      const child = await post(`${GRAPH_BASE}/${igUserId}/media`, {
+      const child = await createMediaContainer(`${GRAPH_BASE}/${igUserId}/media`, {
         image_url: url,
         is_carousel_item: true,
         access_token: token

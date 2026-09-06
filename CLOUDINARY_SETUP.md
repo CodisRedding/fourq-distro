@@ -28,8 +28,12 @@ nothing needs to be re-uploaded or re-published just from switching.
 ## Done
 "Publish to eBay" and "Publish to Instagram" will now host photos on
 Cloudinary automatically — nothing to click, nothing else to configure.
-Uploads land in a `fourq-distro` folder in your Cloudinary Media Library if
-you ever want to browse or clean them up by hand.
+Uploads land in a `fourq-distro` folder in your Cloudinary Media Library,
+one subfolder per listing (named after its record id), if you ever want to
+browse or clean them up by hand. Records published before this per-listing
+folder layout was added keep their photos in the flat `fourq-distro` root —
+nothing retroactively moves them, since that would change already-live
+listing image URLs out from under published eBay/Instagram posts.
 
 A couple of notes:
 - No separate metadata/privacy setting to flip here (ImgBB's "Keep EXIF data
