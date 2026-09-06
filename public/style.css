@@ -150,6 +150,10 @@ td.title-cell, td.artist-cell { white-space: normal; max-width: 260px; }
 .status-badge.sold { color: #2f8f4e; }
 .status-badge.unlisted { color: var(--muted); }
 
+.instagram-usage { margin-bottom: 8px; }
+.instagram-usage-medium { color: #b8860b; }
+.instagram-usage-high { color: #c0392b; }
+
 .overlay {
   position: fixed; inset: 0; background: rgba(0,0,0,0.5);
   display: flex; align-items: flex-start; justify-content: center;

@@ -320,12 +320,13 @@ async function openPanel(id) {
   // snapped back to the eBay tab even when the refresh was triggered from
   // e.g. the Instagram tab (Refresh stats).
   const activeTab = panel.querySelector('.tab-btn.active')?.dataset.tab || 'ebay';
-  const [record, listing, priceSuggestion] = await Promise.all([
+  const [record, listing, priceSuggestion, instagramStatus] = await Promise.all([
     fetch(`/api/inventory/${id}`).then(r => r.json()),
     fetch(`/api/inventory/${id}/listing`).then(r => r.json()),
-    fetch(`/api/inventory/${id}/price-suggestion`).then(r => r.json())
+    fetch(`/api/inventory/${id}/price-suggestion`).then(r => r.json()),
+    fetch('/api/instagram/status').then(r => r.json())
   ]);
-  renderPanel(record, listing, priceSuggestion, activeTab);
+  renderPanel(record, listing, priceSuggestion, activeTab, instagramStatus);
   overlay.classList.remove('hidden');
 }
 
@@ -334,7 +335,28 @@ function closePanel() {
   panel.innerHTML = '';
 }
 
-function renderPanel(r, listing, priceSuggestion, activeTab = 'ebay') {
+// Shows Meta's own rate-limit counters so the owner can eyeball "am I about
+// to get denied" before spending a click on Publish — this is only ever as
+// fresh as the last real Instagram API call the app made (publish, stats
+// refresh, sync), never a dedicated check-in call, so it can be stale or
+// missing if nothing's hit the API yet this run.
+function instagramUsageMarkup(status) {
+  const rows = [];
+  if (status.usage) {
+    const pct = status.usage.pct;
+    const level = pct >= 90 ? 'high' : pct >= 70 ? 'medium' : '';
+    rows.push(`<div class="meta instagram-usage ${level ? 'instagram-usage-' + level : ''}">Instagram API usage: ${pct}% (as of ${new Date(status.usage.checked_at).toLocaleString()})</div>`);
+  }
+  if (status.lastRateLimitedAt) {
+    rows.push(`<div class="meta instagram-usage instagram-usage-high">⚠ Last attempt was rate-limited at ${new Date(status.lastRateLimitedAt).toLocaleString()} — if that was recent, publishing again will likely fail too.</div>`);
+  }
+  if (!rows.length) {
+    return '<div class="meta instagram-usage">No rate-limit reading yet this run — shows up after the next publish or stats refresh.</div>';
+  }
+  return rows.join('');
+}
+
+function renderPanel(r, listing, priceSuggestion, activeTab = 'ebay', instagramStatus = {}) {
   const isNewArrival = r.tier.startsWith('Unsorted');
   const hasPhotos = (r.photos || []).length > 0;
   const panelRenderStamp = Date.now();
@@ -555,6 +577,7 @@ function renderPanel(r, listing, priceSuggestion, activeTab = 'ebay') {
         </div>
         <div class="listing-text">${escapeHtml(listing.instagramCaption)}</div>
         <button data-copy="${encodeURIComponent(listing.instagramCaption)}" class="copyBtn">Copy caption</button>
+        ${instagramUsageMarkup(instagramStatus)}
         <div class="actions">
           <button id="publishInstagram" class="primary">${r.instagram_post_id ? 'Publish again anyway' : 'Publish to Instagram'}</button>
           <button id="markInstagramListed">Mark listed manually</button>
@@ -1128,12 +1151,16 @@ document.getElementById('syncInstagramStatsBtn').addEventListener('click', async
   const btn = document.getElementById('syncInstagramStatsBtn');
   btn.disabled = true;
   btn.textContent = 'Syncing…';
+  let rateLimited = false;
   try {
     const res = await fetch('/api/instagram/sync-stats', { method: 'POST' });
     const json = await res.json();
     if (!res.ok) throw new Error(json.error || 'Failed to sync');
+    rateLimited = json.rateLimited;
     await loadTable();
-    btn.textContent = `Synced ${json.synced}/${json.total}`;
+    btn.textContent = rateLimited
+      ? `Synced ${json.synced}/${json.total} — rate-limited, try later`
+      : `Synced ${json.synced}/${json.total}`;
     if (json.errors.length) {
       console.error('Instagram sync errors:', json.errors);
     }
@@ -1144,7 +1171,7 @@ document.getElementById('syncInstagramStatsBtn').addEventListener('click', async
     setTimeout(() => {
       btn.disabled = false;
       btn.textContent = 'Sync Instagram stats';
-    }, 3000);
+    }, rateLimited ? 6000 : 3000);
   }
 });
 

@@ -45,10 +45,73 @@ function isConfigured() {
   return Boolean(process.env.IG_ACCESS_TOKEN && process.env.IG_USER_ID);
 }
 
+// In-memory only — this is a live reading of Meta's own counters, not data
+// worth persisting across restarts. Captured opportunistically off whatever
+// calls the app is already making (never a dedicated call spent just to
+// check quota, matching the "never spend an API call the owner didn't ask
+// for" rule the stats-sync endpoints already follow), so it's only ever as
+// fresh as the owner's last publish/stats action — good enough to answer
+// "is it safe to try again right now" without guessing.
+let lastUsage = null;
+let lastRateLimitedAt = null;
+
+// Meta returns this on graph.instagram.com responses (success or failure) as
+// a JSON string keyed by IG user id, e.g.
+// '{"17841...":[{"type":"instagram","call_count":12,"total_cputime":3,"total_time":8}]}'.
+// Take the worst of the three percentages as one headline number.
+function captureUsage(res) {
+  const raw = res.headers.get('x-business-use-case-usage');
+  if (!raw) return;
+  try {
+    const parsed = JSON.parse(raw);
+    const entries = Object.values(parsed).flat();
+    if (!entries.length) return;
+    const worst = entries.reduce((max, e) => Math.max(
+      max, e.call_count || 0, e.total_time || 0, e.total_cputime || 0
+    ), 0);
+    lastUsage = { pct: worst, checked_at: new Date().toISOString() };
+  } catch {
+    // Malformed/unexpected header shape — not worth surfacing, just skip it.
+  }
+}
+
+function getStatus() {
+  return { configured: isConfigured(), usage: lastUsage, lastRateLimitedAt };
+}
+
+// Meta flags an error `is_transient: true` when it means "not your fault,
+// safe to retry later" — app-wide rate limiting (code 4, seen as
+// error_subcode 1349210 "Application request limit reached") is the case
+// that actually shows up here. It's an hourly rolling window scoped to the
+// whole app, not this one call, so an immediate retry (like the download
+// flakiness below gets) would just burn another call against the same
+// exhausted quota — Meta's API gives no exact reset timestamp, only the
+// advice to wait. Surfacing that plainly beats dumping the raw JSON error
+// in the owner's face every time this trips.
+function toApiError(res, json) {
+  const meta = json && json.error;
+  if (meta && meta.is_transient) {
+    lastRateLimitedAt = new Date().toISOString();
+    const err = new Error(
+      `Instagram rate limit reached: ${meta.error_user_msg || meta.message} ` +
+      `This is an app-wide limit on a rolling ~1-hour window, not specific to this ` +
+      `record — retrying immediately won't help; wait a while and try again.` +
+      (meta.fbtrace_id ? ` (fbtrace_id: ${meta.fbtrace_id})` : '')
+    );
+    err.code = 'INSTAGRAM_RATE_LIMITED';
+    return err;
+  }
+  const err = new Error(`Instagram Graph API error (${res.status}): ${JSON.stringify(json)}`);
+  err.subcode = meta && meta.error_subcode;
+  return err;
+}
+
 async function get(url) {
   const res = await fetch(url, { signal: AbortSignal.timeout(REQUEST_TIMEOUT_MS) });
+  captureUsage(res);
+  if (res.ok) lastRateLimitedAt = null;
   const json = await res.json();
-  if (!res.ok) throw new Error(`Instagram Graph API error (${res.status}): ${JSON.stringify(json)}`);
+  if (!res.ok) throw toApiError(res, json);
   return json;
 }
 
@@ -59,12 +122,10 @@ async function post(url, body) {
     body: JSON.stringify(body),
     signal: AbortSignal.timeout(REQUEST_TIMEOUT_MS)
   });
+  captureUsage(res);
+  if (res.ok) lastRateLimitedAt = null;
   const json = await res.json();
-  if (!res.ok) {
-    const err = new Error(`Instagram Graph API error (${res.status}): ${JSON.stringify(json)}`);
-    err.subcode = json && json.error && json.error.error_subcode;
-    throw err;
-  }
+  if (!res.ok) throw toApiError(res, json);
   return json;
 }
 
@@ -189,4 +250,4 @@ async function getPostStats(mediaId) {
   };
 }
 
-module.exports = { isConfigured, publishPost, getPostStats };
+module.exports = { isConfigured, publishPost, getPostStats, getStatus };

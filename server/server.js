@@ -627,7 +627,7 @@ app.post('/api/ebay/sync-status', async (req, res) => {
 // hand from the Meta App Dashboard's own tester/token-generator UI. See
 // INSTAGRAM_SETUP.md and the comment atop server/instagram.js for why.
 app.get('/api/instagram/status', (req, res) => {
-  res.json({ configured: instagram.isConfigured() });
+  res.json(instagram.getStatus());
 });
 
 app.post('/api/inventory/:id/publish-instagram', async (req, res) => {
@@ -648,6 +648,7 @@ app.post('/api/inventory/:id/publish-instagram', async (req, res) => {
     });
     res.json(updated);
   } catch (err) {
+    if (err.code === 'INSTAGRAM_RATE_LIMITED') return res.status(429).json({ error: err.message });
     const knownCodes = ['INSTAGRAM_NOT_CONFIGURED', 'IMAGE_HOST_NOT_CONFIGURED', 'NO_PHOTOS'];
     const status = knownCodes.includes(err.code) ? 400 : 500;
     res.status(status).json({ error: err.message });
@@ -673,19 +674,24 @@ app.get('/api/inventory/:id/instagram-stats', async (req, res) => {
     });
     res.json(updated);
   } catch (err) {
+    if (err.code === 'INSTAGRAM_RATE_LIMITED') return res.status(429).json({ error: err.message });
     res.status(500).json({ error: err.message });
   }
 });
 
 // Bulk version for the inventory table — refreshes every record that has a
 // live Instagram post, one at a time (personal-scale usage, no need for
-// concurrency here).
+// concurrency here). Stops early if the app-wide rate limit gets hit — that
+// limit applies across the whole app, not per-record, so once it trips every
+// remaining record would just fail the same way; burning through the rest of
+// the list only wastes calls against a quota that's already exhausted.
 app.post('/api/instagram/sync-stats', async (req, res) => {
   if (!instagram.isConfigured()) {
     return res.status(400).json({ error: 'Instagram is not connected yet. See INSTAGRAM_SETUP.md.' });
   }
   const records = store.readAll().filter(r => r.instagram_post_id);
   let synced = 0;
+  let rateLimited = false;
   const errors = [];
   for (const r of records) {
     try {
@@ -694,9 +700,13 @@ app.post('/api/instagram/sync-stats', async (req, res) => {
       synced++;
     } catch (err) {
       errors.push({ id: r.id, artist: r.artist, title: r.title, error: err.message });
+      if (err.code === 'INSTAGRAM_RATE_LIMITED') {
+        rateLimited = true;
+        break;
+      }
     }
   }
-  res.json({ synced, total: records.length, errors });
+  res.json({ synced, total: records.length, errors, rateLimited });
 });
 
 app.listen(PORT, () => {
