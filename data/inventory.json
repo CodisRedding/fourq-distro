@@ -22483,7 +22483,7 @@
       "ebay": "listed",
       "fb": "unlisted",
       "discogs": "unlisted",
-      "instagram": "unlisted"
+      "instagram": "listed"
     },
     "ebay_listing_id": "407142637503",
     "ebay_sku": "382b644bd8424c07b5d06a006b2fcddb",
@@ -22549,14 +22549,14 @@
       "/photos/382b644b-d842-4c07-b5d0-6a006b2fcddb/1786660558384-IMG_E1194.jpg": "https://i.ibb.co/LzBDjTnD/1786660558384-IMG-E1194.jpg"
     },
     "sold": false,
-    "instagram_post_id": null,
+    "instagram_post_id": "18117338864474208",
     "instagram_stats": {
       "like_count": null,
       "comments_count": null,
       "comments": [],
       "synced_at": null
     },
-    "instagram_permalink": null
+    "instagram_permalink": "https://www.instagram.com/p/Dc87s59lqNG/"
   },
   {
     "id": "18cb5b3b-f7e7-4e78-9b94-c0864ec6e93c",
@@ -22588,7 +22588,7 @@
       "ebay": "listed",
       "fb": "unlisted",
       "discogs": "unlisted",
-      "instagram": "unlisted"
+      "instagram": "listed"
     },
     "ebay_listing_id": "407183692791",
     "ebay_sku": "18cb5b3bf7e74e789b94c0864ec6e93c",
@@ -22641,22 +22641,22 @@
     },
     "discogs_listing_id": null,
     "photo_hosted_urls": {
-      "/photos/18cb5b3b-f7e7-4e78-9b94-c0864ec6e93c/1788224426681-01_front_cover.jpg": "https://i.ibb.co/Mk546nqM/1788224426681-01-front-cover.jpg",
-      "/photos/18cb5b3b-f7e7-4e78-9b94-c0864ec6e93c/1788224426691-02_back_cover.jpg": "https://i.ibb.co/S4hbpvFM/1788224426691-02-back-cover.jpg",
       "/photos/18cb5b3b-f7e7-4e78-9b94-c0864ec6e93c/1788224426698-03_label_a.jpg": "https://i.ibb.co/0RjC3fF1/1788224426698-03-label-a.jpg",
       "/photos/18cb5b3b-f7e7-4e78-9b94-c0864ec6e93c/1788224426704-04_label_b.jpg": "https://i.ibb.co/MybRTKp5/1788224426704-04-label-b.jpg",
       "/photos/18cb5b3b-f7e7-4e78-9b94-c0864ec6e93c/1788224426711-05_runout_a.jpg": "https://i.ibb.co/nq0FLHzP/1788224426711-05-runout-a.jpg",
-      "/photos/18cb5b3b-f7e7-4e78-9b94-c0864ec6e93c/1788224426715-06_runout_b.jpg": "https://i.ibb.co/bMFRfCGx/1788224426715-06-runout-b.jpg"
+      "/photos/18cb5b3b-f7e7-4e78-9b94-c0864ec6e93c/1788224426715-06_runout_b.jpg": "https://i.ibb.co/bMFRfCGx/1788224426715-06-runout-b.jpg",
+      "/photos/18cb5b3b-f7e7-4e78-9b94-c0864ec6e93c/1788224426681-01_front_cover.jpg": "https://i.ibb.co/2YMRCDks/1788224426681-01-front-cover.jpg",
+      "/photos/18cb5b3b-f7e7-4e78-9b94-c0864ec6e93c/1788224426691-02_back_cover.jpg": "https://i.ibb.co/fdpJfKGf/1788224426691-02-back-cover.jpg"
     },
     "sold": false,
-    "instagram_post_id": null,
+    "instagram_post_id": "18457534156138056",
     "instagram_stats": {
       "like_count": null,
       "comments_count": null,
       "comments": [],
       "synced_at": null
     },
-    "instagram_permalink": null
+    "instagram_permalink": "https://www.instagram.com/p/Dc86oMHFupl/"
   },
   {
     "id": "1eae7be2-b6a8-4349-8428-ecdbbf814540",
