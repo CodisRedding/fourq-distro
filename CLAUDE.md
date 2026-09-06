@@ -82,10 +82,17 @@ is actually present before telling the user something is fixed.
   rule — `ebay_sku` is stored on the record and always reused on republish,
   never recomputed, because recomputing it once forked a listing into a live
   duplicate).
-- `server/photoHosting.js` — uploads photos to ImgBB for eBay/marketplace use;
+- `server/photoHosting.js` — uploads photos to Cloudinary (via
+  `server/imagehost.js`, see CLOUDINARY_SETUP.md) for eBay/marketplace use;
   applies `branding.js` (border + optional sealed watermark) first. Caches
   hosted URLs per photo in `photo_hosted_urls`; a rotate should invalidate
   that photo's cache entry so republish re-uploads the corrected version.
+  Switched from ImgBB on 2026-09-06 after its free CDN started
+  intermittently accepting a connection and then hanging with no response,
+  which surfaced as eBay/Instagram publish timeouts; already-published
+  records keep their existing `i.ibb.co` URLs since the cache only uploads a
+  photo once and photos this app already published shouldn't have their
+  live listing image URLs change out from under them.
 - `server/branding.js` — adds the "FOURQ (DISTRO)" border (thin rules,
   Germs-LP-style) to every photo that goes out publicly, plus a diagonal
   "STILL SEALED" ribbon when `record.sealed` is true. Never touches the local
@@ -140,7 +147,7 @@ is actually present before telling the user something is fixed.
   limit — or a single-image post when there's only one) to the linked
   Instagram Business Account — not a Reel or Story. Production only, no
   sandbox — see `INSTAGRAM_SETUP.md`'s gotchas section. Reuses
-  `photoHosting.js`/ImgBB for image URLs, same as eBay; no separate hosting
+  `photoHosting.js`/Cloudinary for image URLs, same as eBay; no separate hosting
   setup. This module never touches Instagram audio in any way — if the
   owner finds a matching song for a record, attaching it is entirely a
   manual step done outside the app. Also exposes `getPostStats()` — read-only

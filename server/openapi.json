@@ -495,11 +495,11 @@
       "post": {
         "tags": ["eBay"],
         "summary": "Publish a live eBay listing",
-        "description": "Hosts photos (via ImgBB), generates listing text, then creates/updates the eBay inventory item and offer and publishes it.",
+        "description": "Hosts photos (via Cloudinary), generates listing text, then creates/updates the eBay inventory item and offer and publishes it.",
         "parameters": [{ "$ref": "#/components/parameters/RecordId" }],
         "responses": {
           "200": { "description": "The updated record", "content": { "application/json": { "schema": { "$ref": "#/components/schemas/Record" } } } },
-          "400": { "description": "eBay not configured, ImgBB not configured, or no photos" },
+          "400": { "description": "eBay not configured, image hosting not configured, or no photos" },
           "404": { "$ref": "#/components/responses/NotFound" }
         }
       }

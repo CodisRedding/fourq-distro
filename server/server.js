@@ -587,7 +587,7 @@ app.post('/api/inventory/:id/publish-ebay', async (req, res) => {
     });
     res.json(updated);
   } catch (err) {
-    const knownCodes = ['EBAY_NOT_CONFIGURED', 'IMGBB_NOT_CONFIGURED', 'NO_PHOTOS', 'MISSING_PRICE'];
+    const knownCodes = ['EBAY_NOT_CONFIGURED', 'IMAGE_HOST_NOT_CONFIGURED', 'NO_PHOTOS', 'MISSING_PRICE'];
     const status = knownCodes.includes(err.code) ? 400 : 500;
     res.status(status).json({ error: err.message });
   }
@@ -648,7 +648,7 @@ app.post('/api/inventory/:id/publish-instagram', async (req, res) => {
     });
     res.json(updated);
   } catch (err) {
-    const knownCodes = ['INSTAGRAM_NOT_CONFIGURED', 'IMGBB_NOT_CONFIGURED', 'NO_PHOTOS'];
+    const knownCodes = ['INSTAGRAM_NOT_CONFIGURED', 'IMAGE_HOST_NOT_CONFIGURED', 'NO_PHOTOS'];
     const status = knownCodes.includes(err.code) ? 400 : 500;
     res.status(status).json({ error: err.message });
   }
@@ -708,6 +708,6 @@ app.listen(PORT, () => {
     console.log('(Instagram publishing is not configured yet — see INSTAGRAM_SETUP.md)');
   }
   if (!require('./imagehost').isConfigured()) {
-    console.log('(Image hosting not configured — add IMGBB_API_KEY to .env for eBay photos to work)');
+    console.log('(Image hosting not configured — see CLOUDINARY_SETUP.md for eBay/Instagram photos to work)');
   }
 });

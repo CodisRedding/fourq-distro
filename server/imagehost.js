@@ -1,72 +1,99 @@
-// Public image hosting via ImgBB, so eBay's Sell API (which requires publicly
-// fetchable HTTPS image URLs) has something to point at. Free API key from
-// https://api.imgbb.com/ — make sure "Keep EXIF data" is OFF in your account
-// settings so GPS/location metadata isn't exposed on public listing photos.
+// Public image hosting via Cloudinary, so eBay's Sell API and Instagram's
+// Graph API (both of which fetch the image themselves from a public HTTPS
+// URL) have something reliable to point at. Switched from ImgBB after its
+// free CDN started intermittently accepting a connection and then hanging
+// with no response at all, which surfaced as eBay/Instagram publish
+// timeouts with nothing wrong on this app's end. See CLOUDINARY_SETUP.md.
+//
+// Uses a signed upload (api_key + timestamp + sha1 signature) rather than an
+// unsigned upload preset, since this only ever runs server-side and the API
+// secret never needs to leave this process.
+//
+// No metadata-stripping step needed here — every buffer passed in has
+// already been through branding.js's sharp() pipeline, which drops EXIF/GPS
+// data on output by default.
 
 const fs = require('fs');
 const path = require('path');
+const crypto = require('crypto');
+
+const UPLOAD_FOLDER = 'fourq-distro';
 
 function isConfigured() {
-  return Boolean(process.env.IMGBB_API_KEY);
+  return Boolean(
+    process.env.CLOUDINARY_CLOUD_NAME &&
+    process.env.CLOUDINARY_API_KEY &&
+    process.env.CLOUDINARY_API_SECRET
+  );
 }
 
 const MAX_ATTEMPTS = 3;
 const RETRY_DELAY_MS = 800;
-// ImgBB's CDN has been observed accepting a connection and then just hanging
-// with no response (no error, no data) — without this, that hang would block
-// the whole publish flow indefinitely instead of failing fast enough to retry.
+// A stalled upload should fail fast and retry rather than block the whole
+// publish flow indefinitely — the exact failure mode ImgBB's CDN produced.
 const UPLOAD_TIMEOUT_MS = 30000;
 const sleep = (ms) => new Promise(resolve => setTimeout(resolve, ms));
 
-// ImgBB occasionally returns a 400 wrapping a backend DB hiccup
-// ("SQLSTATE[HY000]: General error: 2006 MySQL server has gone away")
-// that has nothing to do with the image itself — it clears up if you just
-// retry the same upload.
-function isTransientImgbbError(bodyText) {
-  return /General error|MySQL server has gone away/i.test(bodyText);
+// Cloudinary signs by sorting every non-file param alphabetically, joining
+// as key=value pairs, then SHA-1'ing that string with the API secret
+// appended — see https://cloudinary.com/documentation/upload_images#generating_authentication_signatures
+function signParams(params, apiSecret) {
+  const base = Object.keys(params)
+    .sort()
+    .map(key => `${key}=${params[key]}`)
+    .join('&');
+  return crypto.createHash('sha1').update(base + apiSecret).digest('hex');
 }
 
 async function uploadBuffer(buffer, filename, attempt = 1) {
   if (!isConfigured()) {
-    const err = new Error('Image hosting is not configured — add IMGBB_API_KEY to .env.');
-    err.code = 'IMGBB_NOT_CONFIGURED';
+    const err = new Error(
+      'Image hosting is not configured — add CLOUDINARY_CLOUD_NAME, CLOUDINARY_API_KEY, ' +
+      'and CLOUDINARY_API_SECRET to .env. See CLOUDINARY_SETUP.md.'
+    );
+    err.code = 'IMAGE_HOST_NOT_CONFIGURED';
     throw err;
   }
+
+  const timestamp = Math.floor(Date.now() / 1000);
+  const signature = signParams({ folder: UPLOAD_FOLDER, timestamp }, process.env.CLOUDINARY_API_SECRET);
+
   const form = new FormData();
-  form.set('key', process.env.IMGBB_API_KEY);
-  form.set('image', new Blob([buffer]), filename);
+  form.set('file', new Blob([buffer]), filename);
+  form.set('api_key', process.env.CLOUDINARY_API_KEY);
+  form.set('timestamp', String(timestamp));
+  form.set('folder', UPLOAD_FOLDER);
+  form.set('signature', signature);
 
   let res, bodyText;
   try {
-    res = await fetch('https://api.imgbb.com/1/upload', {
+    res = await fetch(`https://api.cloudinary.com/v1_1/${process.env.CLOUDINARY_CLOUD_NAME}/image/upload`, {
       method: 'POST',
       body: form,
       signal: AbortSignal.timeout(UPLOAD_TIMEOUT_MS)
     });
     bodyText = await res.text();
   } catch (err) {
-    // A hang (no response at all) is exactly the kind of transient CDN issue
-    // the retry below already exists for — treat it the same way.
+    // A hang (no response at all) or network error is worth the same retry
+    // as a completed-but-bad response below.
     if (attempt < MAX_ATTEMPTS) {
       await sleep(RETRY_DELAY_MS * attempt);
       return uploadBuffer(buffer, filename, attempt + 1);
     }
-    throw new Error(`Image upload to ImgBB timed out after ${MAX_ATTEMPTS} attempts: ${err.message}`);
+    throw new Error(`Image upload to Cloudinary timed out after ${MAX_ATTEMPTS} attempts: ${err.message}`);
   }
 
   if (!res.ok) {
-    const transient = res.status >= 500 || isTransientImgbbError(bodyText);
-    if (transient && attempt < MAX_ATTEMPTS) {
+    // 5xx from Cloudinary's own backend is transient; 4xx (bad signature,
+    // misconfigured credentials, etc.) won't fix itself on retry.
+    if (res.status >= 500 && attempt < MAX_ATTEMPTS) {
       await sleep(RETRY_DELAY_MS * attempt);
       return uploadBuffer(buffer, filename, attempt + 1);
     }
     throw new Error(`Image upload failed (${res.status}): ${bodyText}`);
   }
   const json = JSON.parse(bodyText);
-  if (!json.success) {
-    throw new Error('Image upload failed: ' + JSON.stringify(json));
-  }
-  return json.data.url;
+  return json.secure_url;
 }
 
 async function uploadImage(localFilePath) {

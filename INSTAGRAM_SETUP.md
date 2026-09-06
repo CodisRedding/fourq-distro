@@ -72,7 +72,8 @@ IG_ACCESS_TOKEN=the-generated-token
 IG_USER_ID=the-numeric-id-shown-under-your-username
 ```
 Restart the app (`npm start`). No separate image-hosting setup needed — this
-reuses the same `IMGBB_API_KEY` already configured for eBay.
+reuses the same Cloudinary credentials already configured for eBay (see
+CLOUDINARY_SETUP.md).
 
 ## 7. Done
 The "Publish to Instagram" button on each record will now post all of its photos
